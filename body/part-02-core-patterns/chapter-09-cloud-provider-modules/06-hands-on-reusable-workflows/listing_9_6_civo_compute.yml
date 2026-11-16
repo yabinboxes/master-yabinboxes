@@ -1,0 +1,31 @@
+# listing_9_6_civo_compute.yml
+# CLUSTER Terraform path. Empty type or type: kubernetes is the k8s image deploy
+# and uses kebab-case secrets (civo-token, snow-token).
+
+name: Civo compute cluster
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_compute:
+    uses: snow-monkeys-modules/civo-iac/.github/workflows/main.yml@main
+    with:
+      type: compute
+      name: server-civo-stateless
+      type_values: |
+        size=g4s.kube.small
+        region=LON1
+    secrets:
+      civo_token: ${{ secrets.CIVO_TOKEN }}
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+  print_server_ip:
+    needs: create_compute
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Server IP
+        run: echo "${{ needs.create_compute.outputs.server_ip }}"

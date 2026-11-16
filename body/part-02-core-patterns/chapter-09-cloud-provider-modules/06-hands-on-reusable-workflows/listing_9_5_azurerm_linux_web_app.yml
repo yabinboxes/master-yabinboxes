@@ -1,0 +1,24 @@
+# listing_9_5_azurerm_linux_web_app.yml
+# RESOURCE. Azure has no VM CLUSTER type.
+
+name: Azure linux web app
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_web_app:
+    uses: snow-monkeys-modules/azure-iac/.github/workflows/main.yml@main
+    with:
+      type: azurerm_linux_web_app
+      name: app-azure-stateless
+      type_values: |
+        location=eastus
+        resource_group_name=snow-rg
+    secrets:
+      azure_client_id: ${{ secrets.AZURE_CLIENT_ID }}
+      azure_client_secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+      azure_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      azure_tenant_id: ${{ secrets.AZURE_TENANT_ID }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}

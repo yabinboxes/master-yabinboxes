@@ -1,0 +1,32 @@
+# listing_7_1_server_stateless.yml
+# CLUSTER. Pattern from
+# yabinboxes/main-examples/hetzner/hetznez stateless/server/.github/workflows/server-stateless.yml
+
+name: Hetzner server stateless
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_server:
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: hcloud_server
+      name: server-hetzner-stateless
+      type_values: |
+        server_type=cpx11
+        image=ubuntu-24.04
+        location=hel1
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }}
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+  print_server_ip:
+    needs: create_server
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Server IP
+        run: echo "${{ needs.create_server.outputs.server_ip }}"

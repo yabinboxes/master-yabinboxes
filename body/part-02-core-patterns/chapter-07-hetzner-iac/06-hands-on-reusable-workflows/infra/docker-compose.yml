@@ -1,0 +1,7 @@
+services:
+  web:
+    image: nginx:1.28-alpine
+    container_name: snow-web
+    ports:
+      - "8080:80"
+    restart: unless-stopped
