@@ -1,10 +1,14 @@
 # Chapter 06 — Hands-on Reusable Workflows
 
-> Status: section 3 written. Other sections remain stubs until TOC approval.
+> Status: written.
 
 Part: Part III — Core Modules  
 Source repos: `snow-monkeys-modules/*-iac`, `yabinboxes/main-examples/`
 
-This chapter follows the five-section contract in [main.md](../../../main.md): learning objectives, conceptual explanation, hands-on example, walkthrough, summary + further reading.
+This chapter is the how-to for **using** Snow Monkeys reusable workflows. Implementations live in `snow-monkeys-modules/`. Callers live in `yabinboxes/main-examples/` and in [03-hands-on-example](./03-hands-on-example/).
 
-Runnable callers live in [03-hands-on-example](./03-hands-on-example/).
+1. [Learning objectives](./01-learning-objectives/)
+2. [Conceptual explanation](./02-conceptual-explanation/) — why the modules exist, and how a caller uses them
+3. [Hands-on Example](./03-hands-on-example/) — runnable callers (Listings 6.1–6.29)
+4. [Walkthrough](./04-walkthrough/) — line-by-line of the caller contract
+5. [Summary + Further Reading](./05-summary-and-further-reading/)

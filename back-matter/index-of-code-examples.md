@@ -33,3 +33,4 @@ Listings for Chapter 6, Hands-on Reusable Workflows. Implementations: `snow-monk
 | 6.27 | `providers/listing_6_27_digitalocean_droplet.yml` | minimal |
 | 6.28 | `providers/listing_6_28_azurerm_linux_web_app.yml` | minimal |
 | 6.29 | `providers/listing_6_29_civo_compute.yml` | minimal |
+| 6.30 | `copy_listing.sh` | minimal |

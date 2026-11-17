@@ -81,16 +81,16 @@ Theme: reusable workflows, walkthrough, pitfalls, exercises, and examples.
 
 ### [Chapter 6 — Hands-on Reusable Workflows](../body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/)
 
-1. Learning objectives
-2. Conceptual explanation
-3. [Hands-on Example](../body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/03-hands-on-example/) (written)
+1. [Learning objectives](../body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/01-learning-objectives/)
+2. [Conceptual explanation](../body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/02-conceptual-explanation/)
+3. [Hands-on Example](../body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/03-hands-on-example/)
    - Caller contract
    - Docker
    - Hetzner
    - Cloudflare
    - Other clouds
-4. Walkthrough
-5. Summary + Further Reading
+4. [Walkthrough](../body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/04-walkthrough/)
+5. [Summary + Further Reading](../body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/05-summary-and-further-reading/)
 
 ### [Chapter 7 — Walkthrough](../body/part-03-core-modules/chapter-07-walkthrough/)
 

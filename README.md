@@ -51,4 +51,4 @@ chapter-NN-slug/
 2. Write one chapter at a time, following `_templates/chapter/`.
 3. Fill the chapter checklist before moving on.
 
-Chapter 6 section 3 (Hands-on Example) is written. Start at [Chapter 6](./body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/03-hands-on-example/). Listings are indexed in [back-matter/index-of-code-examples.md](./back-matter/index-of-code-examples.md).
+Chapter 6 is written. Start at [Chapter 6](./body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/). Listings are indexed in [back-matter/index-of-code-examples.md](./back-matter/index-of-code-examples.md).

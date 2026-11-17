@@ -2,7 +2,7 @@
 
 Status: **approved** (17 November 2026). Canonical book TOC: [front-matter/table-of-contents.md](./front-matter/table-of-contents.md).
 
-Chapter 6 section 3 (Hands-on Example) is written. Implementations: `snow-monkeys-modules/`. Callers: `yabinboxes/main-examples/`.
+Chapter 6 is written (all five sections). Implementations: `snow-monkeys-modules/`. Callers: `yabinboxes/main-examples/`.
 
 Book: **Snow Monkeys**  
 Subtitle: Reusable workflows using infrastructure as code with Snow Monkeys Modules and Dashboard

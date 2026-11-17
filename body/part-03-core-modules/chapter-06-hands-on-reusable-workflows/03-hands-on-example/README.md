@@ -1,14 +1,28 @@
 # 3. Hands-on Example
 
-> Status: written. Runnable YAML lives in this folder. Copy a listing into `.github/workflows/` of a caller repository.
+> Status: written. Runnable YAML lives in this folder.
 
-The caller contract is [section 2](../02-conceptual-explanation/). Implementations live in `snow-monkeys-modules/`. Caller patterns live in `yabinboxes/main-examples/`.
+This folder is the **how-to kit**: copy a listing into `.github/workflows/` of a caller repository, set secrets, and dispatch. Do not copy Terraform out of `snow-monkeys-modules/`. The listings `uses:` those modules.
+
+Why: one implementation per provider, same job shape on every cloud, Snow notify without each caller talking to the API. How: [section 2](../02-conceptual-explanation/). Line-by-line: [section 4](../04-walkthrough/).
+
+Implementations: `snow-monkeys-modules/`. Caller patterns: `yabinboxes/main-examples/`.
+
+## How to run a listing
+
+1. Copy the YAML with Listing 6.30 (`copy_listing.sh`) or by hand into `.github/workflows/`.
+2. Create the repository secrets in the table below.
+3. Add `infra/docker-compose.yml` and `infra/init.sh` when the listing uses compose (Listings 6.7–6.8).
+4. Run **Actions → workflow_dispatch**.
+5. Read `server_ip` / `address` / `container_name` from the follow-up job or from the reusable-workflow outputs.
+
+**Try it yourself:** copy Listing 6.2 into a throwaway repo, dispatch it, then add Listing 6.5 with `host:` equal to the CLUSTER `name`.
 
 Provider listings in this folder:
 
 | Folder | Listings | Source |
 | --- | --- | --- |
-| `.` | 6.1–6.10 | caller skeleton through destroy |
+| `.` | 6.1–6.10, 6.30 | caller skeleton through destroy; `copy_listing.sh` |
 | [docker/](./docker/) | 6.11–6.16 | `docker-iac` `build_and_push_image` |
 | [hetzner/](./hetzner/) | 6.17–6.21 | `yabinboxes/main-examples/hetzner/` |
 | [cloudflare/](./cloudflare/) | 6.22–6.23 | `yabinboxes/main-examples/cloudflare/` |
@@ -16,7 +30,7 @@ Provider listings in this folder:
 
 ## Requirements
 
-List dependencies at first use. These listings are GitHub Actions YAML, not Python.
+List dependencies at first use. Callers are GitHub Actions YAML plus the shell helper in Listing 6.30.
 
 ```txt
 # requirements.txt
@@ -42,6 +56,30 @@ Repository secrets the listings expect:
 | `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` | AWS types and S3 Terraform backends |
 
 > **Note:** Secrets must sit under `secrets:`, never under `with:`. GitHub rejects secret values on `workflow_call` inputs.
+
+## Listing 6.30 — `copy_listing.sh`
+
+Shell helper (Language/version: shell script). Copies one listing into a caller repo. The listing still `uses:` `snow-monkeys-modules`; this script does not vendor the module.
+
+```bash
+#!/usr/bin/env bash
+# copy_listing.sh
+set -euo pipefail
+
+listing="${1:-}"
+dest_root="${2:-}"
+workflow_dir="${dest_root}/.github/workflows"
+mkdir -p "${workflow_dir}"
+cp "${listing}" "${workflow_dir}/$(basename "${listing}")"
+echo "copied ${listing} -> ${workflow_dir}/$(basename "${listing}")"
+```
+
+```text
+Output
+copied listing_6_2_cluster_hcloud_server.yml -> /path/to/caller-repo/.github/workflows/listing_6_2_cluster_hcloud_server.yml
+```
+
+See [copy_listing.sh](./copy_listing.sh) for argument checks. `chmod +x copy_listing.sh` before running.
 
 ## How a caller job is shaped
 
@@ -459,7 +497,7 @@ Docker image builds: [docker/](./docker/) (Listings 6.11–6.16). Hetzner: [hetz
 ## Chapter checklist (this section)
 
 - [x] Complete runnable files in this folder
-- [x] File-name headings and Listing 6.1 … 6.29
+- [x] File-name headings and Listing 6.1 … 6.30
 - [x] Expected Output blocks
 - [x] `requirements.txt` at first use
 - [x] snake_case file names
