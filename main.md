@@ -56,10 +56,10 @@ Conventions used (code style, icons, notation).
 
 For every code example:
 
-- Language/version: [e.g., Python 3.12]
+- Language/version: Java 21 and shell script
 - Format: complete, runnable file(s), not fragments — unless marked "snippet"
-- Include: file name as a heading (e.g., `example_01_parser.py`), imports, 
-docstring, type hints, comments on non-obvious lines
+- Include: file name as a heading (e.g., `Example01Parser.java`, `sync_list_of_resources.sh`), imports, 
+Javadoc or script comments, types, comments on non-obvious lines
 - Show expected output in a fenced block labeled "Output"
 - Use consistent naming: `snake_case` for files/functions, `PascalCase` for classes
 - Every module must be copy-paste runnable with stated dependencies

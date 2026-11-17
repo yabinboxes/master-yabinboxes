@@ -8,10 +8,10 @@ The body is four parts, from `main.md` **CHAPTERS**: Foundations, Dashboard, Cor
 
 ## Code style
 
-- Language/version: stated per listing (Terraform, GitHub Actions YAML, Docker Compose, TypeScript, Java, Bun, SQL)
+- Language/version: Java 21 and shell script
 - Files are complete and runnable unless marked `snippet`
-- File name is the heading (for example `` `example_01_parser.py` ``)
-- `snake_case` for files and functions, `PascalCase` for classes
+- File name is the heading (for example `` `Example01Parser.java` ``, `` `sync_list_of_resources.sh` ``)
+- `snake_case` for shell files and functions, `PascalCase` for Java classes
 - Dependencies appear in a `requirements.txt` (or equivalent) block at first use
 
 ## Listings and output
