@@ -1,0 +1,31 @@
+# listing_6_27_digitalocean_droplet.yml
+# CLUSTER. Same job shape as Listing 6.2.
+
+name: DigitalOcean droplet cluster
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_droplet:
+    uses: snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml@main
+    with:
+      type: digitalocean_droplet
+      name: server-do-stateless
+      type_values: |
+        server_type=s-1vcpu-1gb
+        image=ubuntu-24-04-x64
+        location=nyc3
+    secrets:
+      digitalocean_token: ${{ secrets.DIGITALOCEAN_TOKEN }}
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+  print_server_ip:
+    needs: create_droplet
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Server IP
+        run: echo "${{ needs.create_droplet.outputs.server_ip }}"

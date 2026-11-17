@@ -2,7 +2,7 @@ Author: Yabin Monroy Mendez
 Description: Snow Monkey's Book
 
 You are a senior technical author and educator, and you are helping Yabin Monroy to write a book in base of his code and examples. Write a technical book titled 
-"Snow Monkeys" on "reusable workflows using infrastructure as code with Snow Monkeys Modules and Dashboard" for [all developers, devops, and system engineers].
+"Snow Monkeys" on "reusable workflows using infrastructure as code with Snow Monkeys Modules and Dashboard" for [all Developers, DevOps, and System Engineers].
 
 ## BOOK STRUCTURE
 
@@ -11,35 +11,46 @@ Organize the book as follows:
 - Front matter: Preface (why this book, who it's for), Table of Contents, 
 Conventions used (code style, icons, notation).
 - Body: Divide into PARTS → CHAPTERS → SECTIONS → SUBSECTIONS.
-  - Each Part covers one major theme: [list themes, e.g., Part I: Foundations, 
-  Part II: Core Patterns, Part III: Advanced & Production].
+  - Each Part covers one major theme: [list themes, e.g., Part I: Foundations, Par II: Dashboard, Part III: Core Modules, Part IIII: Maintenance and Scripts].
   - Each Chapter = one self-contained concept, numbered (Ch. 1, 2, ...).
   - Each Chapter must contain, in order:
-    1. Learning objectives
-    2. Conceptual explanation and providers
-    3. "Snow Monkeys Dashboard" - visualization of IaC created
-    4. "Snow Monkeys Dashboard Selfhosted" - selfhosted dashboard visualization of IaC created
-    5. "Snow Monkeys Docs" - entry point for documentation with user examples and agent prompts
-    6. "Hands-on Reusable Workflows" — a runnable code module
-    7. "Walkthrough" — line-by-line explanation of key parts
-    8. "Common Pitfalls" — 2–3 mistakes and fixes
-    9. "Exercises" — 3 graded (easy/medium/hard)
-    10. Examples
-    11. "Dashboard Code" - ui, backend, and service for dashboard code
-    12. "Dashboard Selfhosted Code" - ui, backend, and service for dashboard code
-    13. "Other services" - database backup, server.
-    14. "Test Modules" - automated testing repositories
-    15. "Maintainer Scripts" - scripts that should be executed to have the modules and docs updates
-      15.1 sync list-of-resources.md in @master-modules with the one in @master-infra
-      15.2. Update terraform IaC projects using github action pipeline in @master-infra
-      15.3. Update documentation for dashboard/dashboard selfhosted and other services using @org-master
-      15.4. Update reusable workflows modules using @snow-monkeys-modules and             @snow-monkeys-infra with manual in prompt in local
-      15.5. update docs project in @org-snow-angular-ui using @snow-monkeys-modules: filters and modules configuration files, and modules md files
-      15.6. updates main examples in @main-examples
-      25.7. update automation examples in @automation-test-snow & @examples-automation-test
-    16. Script Summary and Reports
-    17. "Summary" + "Further Reading"
+    1. Learning objectives (1–5 bullets)
+    2. Conceptual explanation (with diagrams described in text if needed)
+    3. "Hands-on Example" — a runnable code module (if needed)
+    4. "Walkthrough" — line-by-line explanation of key parts
+    5. "Summary" + "Further Reading"
 - Back matter: Glossary, Appendix (setup/environment), Index of code examples.
+
+## CHAPTERS
+
+### Foundations
+1. Learning objectives
+2. Conceptual explanation and providers
+### Dashboard
+3. "Snow Monkeys Dashboard" - visualization of IaC created
+4. "Snow Monkeys Dashboard Selfhosted" - selfhosted dashboard visualization of IaC created
+5. "Snow Monkeys Docs" - entry point for documentation with user examples and agent prompts
+### Core Modules
+6. "Hands-on Reusable Workflows" — a runnable code module
+7. "Walkthrough" — line-by-line explanation of key parts
+8. "Common Pitfalls" — 2–3 mistakes and fixes
+9. "Exercises" — 3 graded (easy/medium/hard)
+10. Examples
+### Maintenance and Scripts
+11. "Dashboard Code" - ui, backend, and service for dashboard code
+12. "Dashboard Selfhosted Code" - ui, backend, and service for dashboard code
+13. "Other services" - database backup, server.
+14. "Test Modules" - automated testing repositories
+15. "Maintainer Scripts" - scripts that should be executed to have the modules and docs updates
+  15.1 sync list-of-resources.md in @master-modules with the one in @master-infra
+  15.2. Update terraform IaC projects using github action pipeline in @master-infra
+  15.3. Update documentation for dashboard/dashboard selfhosted and other services using @org-master
+  15.4. Update reusable workflows modules using @snow-monkeys-modules and             @snow-monkeys-infra with manual in prompt in local
+  15.5. update docs project in @org-snow-angular-ui using @snow-monkeys-modules: filters and modules configuration files, and modules md files
+  15.6. updates main examples in @main-examples
+  15.7. update automation examples in @automation-test-snow & @examples-automation-test
+16. Script Summary and Reports
+17. "Summary" + "Further Reading"
 
 ## CODE MODULE REQUIREMENTS
 

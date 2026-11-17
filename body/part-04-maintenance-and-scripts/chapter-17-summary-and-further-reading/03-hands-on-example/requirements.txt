@@ -1,0 +1,5 @@
+# Dependencies for this chapter's runnable modules.
+# Replace with the real toolchain at first use (terraform, gh, docker, node, java, bun).
+# terraform>=1.5
+# docker>=24
+# gh>=2

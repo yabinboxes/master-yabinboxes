@@ -1,0 +1,28 @@
+# listing_6_19_service_stateless.yml
+# SERVICE on the CLUSTER from Listing 6.17. Pattern from
+# yabinboxes/main-examples/hetzner/hetznez stateless/services/.github/workflows/service-stateless.yml
+
+name: Hetzner service stateless
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy_service:
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: docker_compose
+      name: service-hetzner-stateless
+      host: server-hetzner-stateless
+      expected_url: server-hetzner-stateless:8080
+      infra: infra
+    secrets:
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+  print_address:
+    needs: deploy_service
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Service address
+        run: echo "${{ needs.deploy_service.outputs.address }}"

@@ -1,0 +1,33 @@
+# listing_6_10_destroy.yml
+# Tear down a CLUSTER that stored Terraform state in S3.
+# Pass the same type, name, type_values, and s3_bucket_state as the create run.
+
+name: Destroy stateful cluster
+
+on:
+  workflow_dispatch:
+
+jobs:
+  destroy_server:
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: hcloud_server
+      name: server-stateful
+      destroy: true
+      type_values: |
+        server_type=cpx11
+        image=ubuntu-24.04
+        location=hel1
+      s3_bucket_state: s3-server-state
+      state_values: |
+        bucket_name=s3-server-state
+        region=us-east-2
+        encrypt=true
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }}
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}

@@ -1,35 +1,35 @@
 # Index of code examples
 
-Listings for section 6, Hands-on Reusable Workflows. Implementations: `snow-monkeys-modules/`. Caller patterns: `yabinboxes/main-examples/`.
+Listings for Chapter 6, Hands-on Reusable Workflows. Implementations: `snow-monkeys-modules/`. Caller patterns: `yabinboxes/main-examples/`.
 
-| Listing | Chapter | File | Kind |
-| --- | --- | --- | --- |
-| 5.1 | 5 Reusable workflows | `listing_5_1_caller_skeleton.yml` | minimal |
-| 5.2 | 5 | `listing_5_2_cluster_hcloud_server.yml` | minimal |
-| 5.3 | 5 | `listing_5_3_resource_hcloud_firewall.yml` | minimal |
-| 5.4 | 5 | `listing_5_4_service_docker_compose.yml` | minimal |
-| 5.5 | 5 | `listing_5_5_application_docker_compose_app.yml` | minimal |
-| 5.6 | 5 | `listing_5_6_stateful_s3.yml` | integrated |
-| 5.7 | 5 | `infra/docker-compose.yml` | minimal |
-| 5.8 | 5 | `infra/init.sh` | minimal |
-| 5.9 | 5 | `listing_5_9_cluster_then_app.yml` | integrated |
-| 5.10 | 5 | `listing_5_10_destroy.yml` | minimal |
-| 6.1 | 6 Docker IaC | `listing_6_1_build_and_push.yml` | minimal |
-| 6.2 | 6 | `Dockerfile` | minimal |
-| 6.3 | 6 | `default.conf` | minimal |
-| 6.4 | 6 | `listing_6_4_build_then_compose.yml` | integrated |
-| 6.5 | 6 | `infra/docker-compose.yml` | minimal |
-| 6.6 | 6 | `infra/init.sh` | minimal |
-| 7.1 | 7 Hetzner IaC | `listing_7_1_server_stateless.yml` | minimal |
-| 7.2 | 7 | `listing_7_2_firewall_stateless.yml` | minimal |
-| 7.3 | 7 | `listing_7_3_service_stateless.yml` | minimal |
-| 7.4 | 7 | `listing_7_4_application_stateless.yml` | minimal |
-| 7.5 | 7 | `listing_7_5_server_stateful.yml` | integrated |
-| 8.1 | 8 Cloudflare IaC | `listing_8_1_pages_stateless.yml` | minimal |
-| 8.2 | 8 | `listing_8_2_pages_stateful.yml` | integrated |
-| 9.1 | 9 Cloud providers | `listing_9_1_aws_s3_bucket.yml` | minimal |
-| 9.2 | 9 | `listing_9_2_aws_instance.yml` | minimal |
-| 9.3 | 9 | `listing_9_3_google_compute_instance.yml` | minimal |
-| 9.4 | 9 | `listing_9_4_digitalocean_droplet.yml` | minimal |
-| 9.5 | 9 | `listing_9_5_azurerm_linux_web_app.yml` | minimal |
-| 9.6 | 9 | `listing_9_6_civo_compute.yml` | minimal |
+| Listing | File | Kind |
+| --- | --- | --- |
+| 6.1 | `listing_6_1_caller_skeleton.yml` | minimal |
+| 6.2 | `listing_6_2_cluster_hcloud_server.yml` | minimal |
+| 6.3 | `listing_6_3_resource_hcloud_firewall.yml` | minimal |
+| 6.4 | `listing_6_4_service_docker_compose.yml` | minimal |
+| 6.5 | `listing_6_5_application_docker_compose_app.yml` | minimal |
+| 6.6 | `listing_6_6_stateful_s3.yml` | integrated |
+| 6.7 | `infra/docker-compose.yml` | minimal |
+| 6.8 | `infra/init.sh` | minimal |
+| 6.9 | `listing_6_9_cluster_then_app.yml` | integrated |
+| 6.10 | `listing_6_10_destroy.yml` | minimal |
+| 6.11 | `docker/listing_6_11_build_and_push.yml` | minimal |
+| 6.12 | `docker/Dockerfile` | minimal |
+| 6.13 | `docker/default.conf` | minimal |
+| 6.14 | `docker/listing_6_14_build_then_compose.yml` | integrated |
+| 6.15 | `docker/infra/docker-compose.yml` | minimal |
+| 6.16 | `docker/infra/init.sh` | minimal |
+| 6.17 | `hetzner/listing_6_17_server_stateless.yml` | minimal |
+| 6.18 | `hetzner/listing_6_18_firewall_stateless.yml` | minimal |
+| 6.19 | `hetzner/listing_6_19_service_stateless.yml` | minimal |
+| 6.20 | `hetzner/listing_6_20_application_stateless.yml` | minimal |
+| 6.21 | `hetzner/listing_6_21_server_stateful.yml` | integrated |
+| 6.22 | `cloudflare/listing_6_22_pages_stateless.yml` | minimal |
+| 6.23 | `cloudflare/listing_6_23_pages_stateful.yml` | integrated |
+| 6.24 | `providers/listing_6_24_aws_s3_bucket.yml` | minimal |
+| 6.25 | `providers/listing_6_25_aws_instance.yml` | minimal |
+| 6.26 | `providers/listing_6_26_google_compute_instance.yml` | minimal |
+| 6.27 | `providers/listing_6_27_digitalocean_droplet.yml` | minimal |
+| 6.28 | `providers/listing_6_28_azurerm_linux_web_app.yml` | minimal |
+| 6.29 | `providers/listing_6_29_civo_compute.yml` | minimal |

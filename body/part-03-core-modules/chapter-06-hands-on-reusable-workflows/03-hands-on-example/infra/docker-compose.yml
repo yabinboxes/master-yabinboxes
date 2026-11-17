@@ -1,0 +1,11 @@
+# listing_6_7_docker_compose.yml
+# Compose file copied to the host when type is docker_compose or docker_compose_app.
+# Place this next to init.sh under the path you pass as `infra:`.
+
+services:
+  web:
+    image: nginx:1.28-alpine
+    container_name: snow-web
+    ports:
+      - "8080:80"
+    restart: unless-stopped

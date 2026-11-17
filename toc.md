@@ -1,11 +1,13 @@
-# Table of Contents (proposed)
+# Table of Contents (workspace)
 
-Status: **awaiting approval**. Do not write full chapters until this TOC is approved.
+Status: **approved** (17 November 2026). Canonical book TOC: [front-matter/table-of-contents.md](./front-matter/table-of-contents.md).
 
-Exception: section 6 (Hands-on Reusable Workflows) is written. Canonical how-to is Chapter 5; Chapter 6 is the Docker runnable module; Chapters 7–9 retarget `main-examples`.
+Chapter 6 section 3 (Hands-on Example) is written. Implementations: `snow-monkeys-modules/`. Callers: `yabinboxes/main-examples/`.
 
 Book: **Snow Monkeys**  
 Subtitle: Reusable workflows using infrastructure as code with Snow Monkeys Modules and Dashboard
+
+Chapters follow `main.md` **CHAPTERS**. Each chapter uses the five-section contract: learning objectives (1–5 bullets), conceptual explanation, hands-on example (if needed), walkthrough, summary + further reading.
 
 ---
 
@@ -19,36 +21,40 @@ Subtitle: Reusable workflows using infrastructure as code with Snow Monkeys Modu
 
 ## Part I — Foundations
 
-Theme: what Snow Monkeys is, how the pieces fit, and how to run it locally.
+Theme: how to read this book, and how providers and modules fit together.
 
-- [Chapter 1 — Why Snow Monkeys](./body/part-01-foundations/chapter-01-why-snow-monkeys/)
-- [Chapter 2 — Architecture and execution flow](./body/part-01-foundations/chapter-02-architecture-and-execution-flow/)
-- [Chapter 3 — Providers and module schema](./body/part-01-foundations/chapter-03-providers-and-module-schema/)
-- [Chapter 4 — Local setup](./body/part-01-foundations/chapter-04-local-setup/)
+- [Chapter 1 — Learning objectives](./body/part-01-foundations/chapter-01-learning-objectives/)
+- [Chapter 2 — Conceptual explanation and providers](./body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/)
 
-## Part II — Core Patterns
+## Part II — Dashboard
 
-Theme: reusable workflows, provider modules, Terraform generation, and dashboard visualization.
+Theme: hosted dashboard, selfhosted dashboard, and docs.
 
-- [Chapter 5 — Reusable workflows](./body/part-02-core-patterns/chapter-05-reusable-workflows/)
-- [Chapter 6 — Docker IaC](./body/part-02-core-patterns/chapter-06-docker-iac/)
-- [Chapter 7 — Hetzner IaC](./body/part-02-core-patterns/chapter-07-hetzner-iac/)
-- [Chapter 8 — Cloudflare IaC](./body/part-02-core-patterns/chapter-08-cloudflare-iac/)
-- [Chapter 9 — Cloud provider modules](./body/part-02-core-patterns/chapter-09-cloud-provider-modules/)
-- [Chapter 10 — Terraform infra generation](./body/part-02-core-patterns/chapter-10-terraform-infra-generation/)
-- [Chapter 11 — Visualizing IaC on the dashboard](./body/part-02-core-patterns/chapter-11-visualizing-iac-on-the-dashboard/)
+- [Chapter 3 — Snow Monkeys Dashboard](./body/part-02-dashboard/chapter-03-snow-monkeys-dashboard/)
+- [Chapter 4 — Snow Monkeys Dashboard Selfhosted](./body/part-02-dashboard/chapter-04-snow-monkeys-dashboard-selfhosted/)
+- [Chapter 5 — Snow Monkeys Docs](./body/part-02-dashboard/chapter-05-snow-monkeys-docs/)
 
-## Part III — Advanced & Production
+## Part III — Core Modules
 
-Theme: docs, dashboard code (hosted and self-hosted), supporting services, tests, maintainer scripts, and production operations.
+Theme: reusable workflows, walkthrough, pitfalls, exercises, and examples.
 
-- [Chapter 12 — Snow Monkeys Docs and agent prompts](./body/part-03-advanced-production/chapter-12-snow-monkeys-docs-and-agent-prompts/)
-- [Chapter 13 — Dashboard code](./body/part-03-advanced-production/chapter-13-dashboard-code/)
-- [Chapter 14 — Dashboard self-hosted code](./body/part-03-advanced-production/chapter-14-dashboard-selfhosted-code/)
-- [Chapter 15 — Other services](./body/part-03-advanced-production/chapter-15-other-services/)
-- [Chapter 16 — Test modules](./body/part-03-advanced-production/chapter-16-test-modules/)
-- [Chapter 17 — Maintainer scripts and reports](./body/part-03-advanced-production/chapter-17-maintainer-scripts-and-reports/)
-- [Chapter 18 — Production operations](./body/part-03-advanced-production/chapter-18-production-operations/)
+- [Chapter 6 — Hands-on Reusable Workflows](./body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/)
+- [Chapter 7 — Walkthrough](./body/part-03-core-modules/chapter-07-walkthrough/)
+- [Chapter 8 — Common Pitfalls](./body/part-03-core-modules/chapter-08-common-pitfalls/)
+- [Chapter 9 — Exercises](./body/part-03-core-modules/chapter-09-exercises/)
+- [Chapter 10 — Examples](./body/part-03-core-modules/chapter-10-examples/)
+
+## Part IV — Maintenance and Scripts
+
+Theme: dashboard code, supporting services, tests, maintainer scripts, and wrap-up.
+
+- [Chapter 11 — Dashboard Code](./body/part-04-maintenance-and-scripts/chapter-11-dashboard-code/)
+- [Chapter 12 — Dashboard Selfhosted Code](./body/part-04-maintenance-and-scripts/chapter-12-dashboard-selfhosted-code/)
+- [Chapter 13 — Other services](./body/part-04-maintenance-and-scripts/chapter-13-other-services/)
+- [Chapter 14 — Test Modules](./body/part-04-maintenance-and-scripts/chapter-14-test-modules/)
+- [Chapter 15 — Maintainer Scripts](./body/part-04-maintenance-and-scripts/chapter-15-maintainer-scripts/)
+- [Chapter 16 — Script Summary and Reports](./body/part-04-maintenance-and-scripts/chapter-16-script-summary-and-reports/)
+- [Chapter 17 — Summary + Further Reading](./body/part-04-maintenance-and-scripts/chapter-17-summary-and-further-reading/)
 
 ---
 
@@ -62,23 +68,11 @@ Theme: docs, dashboard code (hosted and self-hosted), supporting services, tests
 
 ## Chapter section contract
 
-Every chapter folder contains these **section folders**, in this order (from `main.md`):
+Every chapter folder contains these **section folders**, in this order (from `main.md` BOOK STRUCTURE):
 
-1. `01-learning-objectives/`
-2. `02-conceptual-explanation-and-providers/` — `concept.md`, `providers.md`
-3. `03-snow-monkeys-dashboard/`
-4. `04-snow-monkeys-dashboard-selfhosted/`
-5. `05-snow-monkeys-docs/` — `user-examples.md`, `agent-prompts.md`
-6. `06-hands-on-reusable-workflows/`
-7. `07-walkthrough/`
-8. `08-common-pitfalls/` — `pitfall-01.md` … `pitfall-03.md`
-9. `09-exercises/` — `easy.md`, `medium.md`, `hard.md`
-10. `10-examples/` — `minimal/`, `integrated/`, each with `try-it-yourself.md`
-11. `11-dashboard-code/` — `ui.md`, `backend.md`, `service.md`
-12. `12-dashboard-selfhosted-code/` — `ui.md`, `backend.md`, `service.md`
-13. `13-other-services/` — `database-backup.md`, `server.md`
-14. `14-test-modules/`
-15. `15-maintainer-scripts/`
-16. `16-script-summary-and-reports/`
-17. `17-summary-and-further-reading/` — `summary.md`, `further-reading.md`
-18. `chapter-checklist.md`
+1. `01-learning-objectives/` — 1–5 bullets
+2. `02-conceptual-explanation/` — diagrams described in text if needed
+3. `03-hands-on-example/` — runnable module, if needed
+4. `04-walkthrough/` — line-by-line
+5. `05-summary-and-further-reading/` — `summary.md`, `further-reading.md`
+6. `chapter-checklist.md`

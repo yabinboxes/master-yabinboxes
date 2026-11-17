@@ -2,6 +2,10 @@
 
 > Status: stub — write after TOC approval.
 
+## Chapter shape
+
+The body is four parts, from `main.md` **CHAPTERS**: Foundations, Dashboard, Core Modules, Maintenance and Scripts. Every chapter has five sections, in order: learning objectives (1–5 bullets), conceptual explanation, hands-on example (if needed), walkthrough, summary + further reading. The seventeen chapter titles are listed in [table-of-contents.md](./table-of-contents.md).
+
 ## Code style
 
 - Language/version: stated per listing (Terraform, GitHub Actions YAML, Docker Compose, TypeScript, Java, Bun, SQL)

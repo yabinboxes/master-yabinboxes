@@ -2,22 +2,11 @@
 
 Confirm every required element from `main.md` is present before marking the chapter done.
 
-- [ ] Learning objectives
-- [ ] Conceptual explanation and providers
-- [ ] Snow Monkeys Dashboard
-- [ ] Snow Monkeys Dashboard Selfhosted
-- [ ] Snow Monkeys Docs (user examples and agent prompts)
-- [ ] Hands-on Reusable Workflows (runnable modules)
+- [ ] Learning objectives (1–5 bullets)
+- [ ] Conceptual explanation (diagrams in text if needed)
+- [ ] Hands-on Example (runnable module, if needed)
 - [ ] Walkthrough (line-by-line)
-- [ ] Common Pitfalls (2–3 mistakes and fixes)
-- [ ] Exercises (easy / medium / hard)
-- [ ] Examples (minimal + integrated + Try it yourself)
-- [ ] Dashboard Code (ui, backend, service)
-- [ ] Dashboard Selfhosted Code (ui, backend, service)
-- [ ] Other services (database backup, server)
-- [ ] Test Modules
-- [ ] Maintainer Scripts
-- [ ] Script Summary and Reports
 - [ ] Summary + Further Reading
 - [ ] Listings numbered and referenced in text
 - [ ] Expected output shown where code runs
+- [ ] `requirements.txt` at first use of a runnable module

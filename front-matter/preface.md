@@ -4,7 +4,7 @@
 
 ## Why this book
 
-Snow Monkeys is a set of reusable workflows, IaC modules, and a dashboard that shows what those modules provision. This book walks developers, DevOps, and systems engineers through that system using the real repositories in this workspace.
+Snow Monkeys is a set of reusable workflows, IaC modules, and a dashboard that shows what those modules provision. This book walks Developers, DevOps, and System Engineers through that system using the real repositories in this workspace.
 
 ## Who it is for
 
@@ -14,6 +14,6 @@ Snow Monkeys is a set of reusable workflows, IaC modules, and a dashboard that s
 
 ## How to use this book
 
-Read Part I for the mental model. Work Part II hands-on, one provider at a time. Use Part III when you need the dashboard, tests, or production operations.
+Read Part I for the mental model. Use Part II for the dashboard and docs. Work Part III hands-on, one provider at a time. Use Part IV for dashboard code, tests, and maintainer scripts.
 
 See [conventions.md](./conventions.md) for code style, callouts, and listing numbers.
