@@ -107,6 +107,7 @@ Theme: reusable workflows, walkthrough, pitfalls, exercises, and examples.
    - Services
    - Applications
    - Stateful create and destroy
+2. [Walkthrough](../body/part-04-core-modules/chapter-14-examples/02-walkthrough/) — index of every `main-examples` workflow and its implementation
 
 ---
 
