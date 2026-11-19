@@ -14,6 +14,6 @@ Snow Monkeys is a set of reusable workflows, IaC modules, and a dashboard that s
 
 ## How to use this book
 
-Read Part I for the mental model. Use Part II for the dashboard and docs. Work Part III hands-on, one provider at a time. Use Part IV for dashboard code, tests, and maintainer scripts.
+Read Part I for the mental model. Use Part II for the dashboard and docs. Use Part III for runners. Work Part IV hands-on, one provider at a time. Use Part V for dashboard code, tests, and maintainer scripts.
 
 See [conventions.md](./conventions.md) for code style, callouts, and listing numbers.

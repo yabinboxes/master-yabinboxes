@@ -14,11 +14,8 @@ Conventions used (code style, icons, notation).
   - Each Part covers one major theme: [list themes, e.g., Part I: Foundations, Par II: Dashboard, Part III: Core Modules, Part IIII: Maintenance and Scripts].
   - Each Chapter = one self-contained concept, numbered (Ch. 1, 2, ...).
   - Each Chapter must contain, in order:
-    1. Learning objectives (1–5 bullets)
-    2. Conceptual explanation (with diagrams described in text if needed)
-    3. "Hands-on Example" — a runnable code module (if needed)
-    4. "Walkthrough" — line-by-line explanation of key parts
-    5. "Summary" + "Further Reading"
+    1. Conceptual explanation (if needed)
+    2. "Walkthrough" — line-by-line explanation of key parts (if needed)
 - Back matter: Glossary, Appendix (setup/environment), Index of code examples.
 
 ## CHAPTERS
@@ -26,31 +23,36 @@ Conventions used (code style, icons, notation).
 ### Foundations
 1. Learning objectives
 2. Conceptual explanation and providers
+3. Masters
 ### Dashboard
-3. "Snow Monkeys Dashboard" - visualization of IaC created
-4. "Snow Monkeys Dashboard Selfhosted" - selfhosted dashboard visualization of IaC created
-5. "Snow Monkeys Docs" - entry point for documentation with user examples and agent prompts
+4. "Snow Monkeys Dashboard" - visualization of IaC created
+5. "Snow Monkeys Dashboard Selfhosted" - selfhosted dashboard visualization of IaC created
+6. "Snow Monkeys Docs" - entry point for documentation with user examples and agent prompts
+### Runners
+7. github runners
+8. gitlab runners
+9. local runners
 ### Core Modules
-6. "Hands-on Reusable Workflows" — a runnable code module
-7. "Walkthrough" — line-by-line explanation of key parts
-8. "Common Pitfalls" — 2–3 mistakes and fixes
-9. "Exercises" — 3 graded (easy/medium/hard)
-10. Examples
+10. "Hands-on Reusable Workflows" — a runnable code module
+11. "Walkthrough" — line-by-line explanation of key parts
+12. "Common Pitfalls" — 2–3 mistakes and fixes
+13. "Exercises" — 3 graded (easy/medium/hard)
+14. Examples
 ### Maintenance and Scripts
-11. "Dashboard Code" - ui, backend, and service for dashboard code
-12. "Dashboard Selfhosted Code" - ui, backend, and service for dashboard code
-13. "Other services" - database backup, server.
-14. "Test Modules" - automated testing repositories
-15. "Maintainer Scripts" - scripts that should be executed to have the modules and docs updates
-  15.1 sync list-of-resources.md in @master-modules with the one in @master-infra
-  15.2. Update terraform IaC projects using github action pipeline in @master-infra
-  15.3. Update documentation for dashboard/dashboard selfhosted and other services using @org-master
-  15.4. Update reusable workflows modules using @snow-monkeys-modules and             @snow-monkeys-infra with manual in prompt in local
-  15.5. update docs project in @org-snow-angular-ui using @snow-monkeys-modules: filters and modules configuration files, and modules md files
-  15.6. updates main examples in @main-examples
-  15.7. update automation examples in @automation-test-snow & @examples-automation-test
-16. Script Summary and Reports
-17. "Summary" + "Further Reading"
+15. "Dashboard Code" - ui, backend, and service for dashboard code
+16. "Dashboard Selfhosted Code" - ui, backend, and service for dashboard code
+17. "Other services" - database backup, server.
+18. "Test Modules" - automated testing repositories
+19. "Maintainer Scripts" - scripts that should be executed to have the modules and docs updates
+  19.1 sync list-of-resources.md in @master-modules with the one in @master-infra
+  19.2. Update terraform IaC projects using github action pipeline in @master-infra
+  19.3. Update documentation for dashboard/dashboard selfhosted and other services using @org-master
+  19.4. Update reusable workflows modules using @snow-monkeys-modules and             @snow-monkeys-infra with manual in prompt in local
+  19.5. update docs project in @org-snow-angular-ui using @snow-monkeys-modules: filters and modules configuration files, and modules md files
+  19.6. updates main examples in @main-examples
+  19.7. update automation examples in @automation-test-snow & @examples-automation-test
+20. Script Summary and Reports
+21. "Summary" + "Further Reading"
 
 ## CODE MODULE REQUIREMENTS
 

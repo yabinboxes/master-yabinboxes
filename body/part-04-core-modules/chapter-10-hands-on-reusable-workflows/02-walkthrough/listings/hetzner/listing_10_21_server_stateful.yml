@@ -1,0 +1,57 @@
+# listing_10_21_server_stateful.yml
+# Stateful CLUSTER: S3 backend then hcloud_server.
+# Pattern from yabinboxes/main-examples/hetzner/heztner statefull.
+# needs: of the Hetzner job is create_s3_bucket (not the Hetzner job itself).
+
+name: Hetzner server stateful
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_s3_bucket:
+    uses: snow-monkeys-modules/aws-iac/.github/workflows/main.yml@main
+    with:
+      type: aws_s3_bucket
+      name: s3-server-state
+      type_values: |
+        bucket_name=s3-server-state
+        region=us-east-2
+        versioning=true
+        encrypt=true
+    secrets:
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+  create_server:
+    needs: create_s3_bucket
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: hcloud_server
+      name: server-hetzner-stateful
+      type_values: |
+        server_type=cpx11
+        image=ubuntu-24.04
+        location=hel1
+      s3_bucket_state: s3-server-state
+      state_values: |
+        bucket_name=s3-server-state
+        region=us-east-2
+        encrypt=true
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }}
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+  print_server_ip:
+    needs: create_server
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Server IP
+        run: echo "${{ needs.create_server.outputs.server_ip }}"

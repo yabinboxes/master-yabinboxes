@@ -1,13 +1,11 @@
 # Table of Contents
 
-Status: **approved** (17 November 2026).
+Status: **awaiting approval**. Canonical workspace outline: [../toc.md](../toc.md)
 
 Book: **Snow Monkeys**  
 Subtitle: Reusable workflows using infrastructure as code with Snow Monkeys Modules and Dashboard
 
-Workspace outline with folder links: [../toc.md](../toc.md)
-
-Every chapter uses these five sections, in order: learning objectives, conceptual explanation, hands-on example (if needed), walkthrough, summary + further reading.
+Every chapter uses these sections, in order, and omits a section it does not need: conceptual explanation, walkthrough.
 
 ---
 
@@ -21,25 +19,21 @@ Every chapter uses these five sections, in order: learning objectives, conceptua
 
 ## Part I — Foundations
 
-Theme: how to read this book, and how providers and modules fit together.
+Theme: how to read this book, how providers and modules fit together, and the master catalogs.
 
 ### [Chapter 1 — Learning objectives](../body/part-01-foundations/chapter-01-learning-objectives/)
 
-1. Learning objectives
-2. Conceptual explanation
-3. Hands-on Example
-4. Walkthrough
-5. Summary + Further Reading
+1. Conceptual explanation
 
 ### [Chapter 2 — Conceptual explanation and providers](../body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/)
 
-1. Learning objectives
-2. Conceptual explanation
+1. Conceptual explanation
    - Concept
    - Providers
-3. Hands-on Example
-4. Walkthrough
-5. Summary + Further Reading
+
+### [Chapter 3 — Masters](../body/part-01-foundations/chapter-03-masters/)
+
+1. Conceptual explanation
 
 ---
 
@@ -47,168 +41,121 @@ Theme: how to read this book, and how providers and modules fit together.
 
 Theme: hosted dashboard, selfhosted dashboard, and docs.
 
-### [Chapter 3 — Snow Monkeys Dashboard](../body/part-02-dashboard/chapter-03-snow-monkeys-dashboard/)
+### [Chapter 4 — Snow Monkeys Dashboard](../body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/)
 
-1. Learning objectives
-2. Conceptual explanation
-3. Hands-on Example
-4. Walkthrough
-5. Summary + Further Reading
+1. Conceptual explanation
 
-### [Chapter 4 — Snow Monkeys Dashboard Selfhosted](../body/part-02-dashboard/chapter-04-snow-monkeys-dashboard-selfhosted/)
+### [Chapter 5 — Snow Monkeys Dashboard Selfhosted](../body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/)
 
-1. Learning objectives
-2. Conceptual explanation
-3. Hands-on Example
-4. Walkthrough
-5. Summary + Further Reading
+1. Conceptual explanation
 
-### [Chapter 5 — Snow Monkeys Docs](../body/part-02-dashboard/chapter-05-snow-monkeys-docs/)
+### [Chapter 6 — Snow Monkeys Docs](../body/part-02-dashboard/chapter-06-snow-monkeys-docs/)
 
-1. Learning objectives
-2. Conceptual explanation
+1. Conceptual explanation
    - User examples
    - Agent prompts
-3. Hands-on Example
-4. Walkthrough
-5. Summary + Further Reading
 
 ---
 
-## Part III — Core Modules
+## Part III — Runners
+
+Theme: GitHub runners, GitLab runners, and local runners that execute the reusable workflows.
+
+### [Chapter 7 — GitHub runners](../body/part-03-runners/chapter-07-github-runners/)
+
+1. Conceptual explanation
+
+### [Chapter 8 — GitLab runners](../body/part-03-runners/chapter-08-gitlab-runners/)
+
+1. Conceptual explanation
+
+### [Chapter 9 — Local runners](../body/part-03-runners/chapter-09-local-runners/)
+
+1. Conceptual explanation
+
+---
+
+## Part IV — Core Modules
 
 Theme: reusable workflows, walkthrough, pitfalls, exercises, and examples.
 
-### [Chapter 6 — Hands-on Reusable Workflows](../body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/)
+### [Chapter 10 — Hands-on Reusable Workflows](../body/part-04-core-modules/chapter-10-hands-on-reusable-workflows/)
 
-1. [Learning objectives](../body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/01-learning-objectives/)
-2. [Conceptual explanation](../body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/02-conceptual-explanation/)
-3. [Hands-on Example](../body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/03-hands-on-example/)
-   - Caller contract
-   - Docker
-   - Hetzner
-   - Cloudflare
-   - Other clouds
-4. [Walkthrough](../body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/04-walkthrough/)
-5. [Summary + Further Reading](../body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/05-summary-and-further-reading/)
+1. [Conceptual explanation](../body/part-04-core-modules/chapter-10-hands-on-reusable-workflows/01-conceptual-explanation/)
+2. [Walkthrough](../body/part-04-core-modules/chapter-10-hands-on-reusable-workflows/02-walkthrough/)
+   - [Listings](../body/part-04-core-modules/chapter-10-hands-on-reusable-workflows/02-walkthrough/listings/) — caller contract, Docker, Hetzner, Cloudflare, other clouds
 
-### [Chapter 7 — Walkthrough](../body/part-03-core-modules/chapter-07-walkthrough/)
+### [Chapter 11 — Walkthrough](../body/part-04-core-modules/chapter-11-walkthrough/)
 
-1. Learning objectives
-2. Conceptual explanation
-3. Hands-on Example
-4. Walkthrough
-5. Summary + Further Reading
+1. Conceptual explanation
 
-### [Chapter 8 — Common Pitfalls](../body/part-03-core-modules/chapter-08-common-pitfalls/)
+### [Chapter 12 — Common Pitfalls](../body/part-04-core-modules/chapter-12-common-pitfalls/)
 
-1. Learning objectives
-2. Conceptual explanation
+1. Conceptual explanation
    - Pitfall 1
    - Pitfall 2
    - Pitfall 3
-3. Hands-on Example
-4. Walkthrough
-5. Summary + Further Reading
 
-### [Chapter 9 — Exercises](../body/part-03-core-modules/chapter-09-exercises/)
+### [Chapter 13 — Exercises](../body/part-04-core-modules/chapter-13-exercises/)
 
-1. Learning objectives
-2. Conceptual explanation
-3. Hands-on Example
-   - Easy
-   - Medium
-   - Hard
-4. Walkthrough
-5. Summary + Further Reading
+1. Conceptual explanation
 
-### [Chapter 10 — Examples](../body/part-03-core-modules/chapter-10-examples/)
+### [Chapter 14 — Examples](../body/part-04-core-modules/chapter-14-examples/)
 
-1. Learning objectives
-2. Conceptual explanation
-3. Hands-on Example
-   - Minimal example
-   - Integrated example
-   - Try it yourself
-4. Walkthrough
-5. Summary + Further Reading
+1. Conceptual explanation
+   - Infrastructure
+   - Services
+   - Applications
+   - Stateful create and destroy
 
 ---
 
-## Part IV — Maintenance and Scripts
+## Part V — Maintenance and Scripts
 
 Theme: dashboard code, supporting services, tests, maintainer scripts, and wrap-up.
 
-### [Chapter 11 — Dashboard Code](../body/part-04-maintenance-and-scripts/chapter-11-dashboard-code/)
+### [Chapter 15 — Dashboard Code](../body/part-05-maintenance-and-scripts/chapter-15-dashboard-code/)
 
-1. Learning objectives
-2. Conceptual explanation
+1. Conceptual explanation
    - UI
    - Backend
    - Service
-3. Hands-on Example
-4. Walkthrough
-5. Summary + Further Reading
 
-### [Chapter 12 — Dashboard Selfhosted Code](../body/part-04-maintenance-and-scripts/chapter-12-dashboard-selfhosted-code/)
+### [Chapter 16 — Dashboard Selfhosted Code](../body/part-05-maintenance-and-scripts/chapter-16-dashboard-selfhosted-code/)
 
-1. Learning objectives
-2. Conceptual explanation
+1. Conceptual explanation
    - UI
    - Backend
    - Service
-3. Hands-on Example
-4. Walkthrough
-5. Summary + Further Reading
 
-### [Chapter 13 — Other services](../body/part-04-maintenance-and-scripts/chapter-13-other-services/)
+### [Chapter 17 — Other services](../body/part-05-maintenance-and-scripts/chapter-17-other-services/)
 
-1. Learning objectives
-2. Conceptual explanation
+1. Conceptual explanation
    - Database backup
    - Server
-3. Hands-on Example
-4. Walkthrough
-5. Summary + Further Reading
 
-### [Chapter 14 — Test Modules](../body/part-04-maintenance-and-scripts/chapter-14-test-modules/)
+### [Chapter 18 — Test Modules](../body/part-05-maintenance-and-scripts/chapter-18-test-modules/)
 
-1. Learning objectives
-2. Conceptual explanation
-3. Hands-on Example
-4. Walkthrough
-5. Summary + Further Reading
+1. Conceptual explanation
 
-### [Chapter 15 — Maintainer Scripts](../body/part-04-maintenance-and-scripts/chapter-15-maintainer-scripts/)
+### [Chapter 19 — Maintainer Scripts](../body/part-05-maintenance-and-scripts/chapter-19-maintainer-scripts/)
 
-1. Learning objectives
-2. Conceptual explanation
-3. Hands-on Example
-   - 15.1 Sync `list-of-resources.md` (`master-modules` ← `master-infra`)
-   - 15.2 Update Terraform IaC projects (`master-infra`)
-   - 15.3 Update dashboard and other-services docs (`org-master`)
-   - 15.4 Update reusable workflow modules (`snow-monkeys-modules`, `snow-monkeys-infra`)
-   - 15.5 Update docs project (`org-snow-angular-ui`)
-   - 15.6 Update main examples (`main-examples`)
-   - 15.7 Update automation examples (`automation-test-snow`, `examples-automation-test`)
-4. Walkthrough
-5. Summary + Further Reading
+1. Conceptual explanation
+   - 19.1 Sync `list-of-resources.md` (`master-modules` with `master-infra`)
+   - 19.2 Update Terraform IaC projects (`master-infra`)
+   - 19.3 Update dashboard and other-services docs (`org-master`)
+   - 19.4 Update reusable workflow modules (`snow-monkeys-modules`, `snow-monkeys-infra`)
+   - 19.5 Update docs project (`org-snow-angular-ui`)
+   - 19.6 Update main examples (`main-examples`)
+   - 19.7 Update automation examples (`automation-test-snow`, `examples-automation-test`)
 
-### [Chapter 16 — Script Summary and Reports](../body/part-04-maintenance-and-scripts/chapter-16-script-summary-and-reports/)
+### [Chapter 20 — Script Summary and Reports](../body/part-05-maintenance-and-scripts/chapter-20-script-summary-and-reports/)
 
-1. Learning objectives
-2. Conceptual explanation
-3. Hands-on Example
-4. Walkthrough
-5. Summary + Further Reading
+1. Conceptual explanation
 
-### [Chapter 17 — Summary + Further Reading](../body/part-04-maintenance-and-scripts/chapter-17-summary-and-further-reading/)
+### [Chapter 21 — Summary + Further Reading](../body/part-05-maintenance-and-scripts/chapter-21-summary-and-further-reading/)
 
-1. Learning objectives
-2. Conceptual explanation
-3. Hands-on Example
-4. Walkthrough
-5. Summary + Further Reading
+1. Conceptual explanation
 
 ---
 

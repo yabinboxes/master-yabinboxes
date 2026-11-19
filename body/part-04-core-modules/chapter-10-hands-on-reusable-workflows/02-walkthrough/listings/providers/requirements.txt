@@ -1,0 +1,16 @@
+# Toolchain for the listings in this folder.
+# These are GitHub Actions callers, not Python packages.
+
+# gh>=2
+# terraform>=1.5
+
+# Reusable workflows (implementation):
+#   snow-monkeys-modules/aws-iac/.github/workflows/main.yml
+#   snow-monkeys-modules/gcp-iac/.github/workflows/main.yml
+#   snow-monkeys-modules/azure-iac/.github/workflows/main.yml
+#   snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml
+#   snow-monkeys-modules/civo-iac/.github/workflows/main.yml
+# Caller examples:
+#   yabinboxes/main-examples/aws/
+# Caller contract:
+#   Chapter 10, 03-hands-on-example

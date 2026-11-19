@@ -1,0 +1,32 @@
+# listing_10_11_build_and_push.yml
+# Build a multi-arch image and push it to a registry.
+# Implementation: snow-monkeys-modules/docker-iac/.github/workflows/main.yml
+# type: build_and_push_image
+
+name: Build and push image
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_and_push:
+    uses: snow-monkeys-modules/docker-iac/.github/workflows/main.yml@main
+    with:
+      type: build_and_push_image
+      registry: ghcr.io
+      name: snow-monkeys/growing-gravity
+      tag: latest
+      platforms: linux/amd64,linux/arm64
+      docker_file: Dockerfile
+      infra: .
+    secrets:
+      registry_user: ${{ secrets.REGISTRY_USER }}
+      registry_token: ${{ secrets.REGISTRY_TOKEN }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+
+  print_container_name:
+    needs: build_and_push
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Image name from reusable workflow
+        run: echo "${{ needs.build_and_push.outputs.container_name }}"

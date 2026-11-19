@@ -1,0 +1,19 @@
+# listing_10_18_firewall_stateless.yml
+# RESOURCE. Pattern from
+# yabinboxes/main-examples/hetzner/hetznez stateless/resources/.github/workflows/firewall-stateless.yml
+
+name: Hetzner firewall stateless
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_firewall:
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: hcloud_firewall
+      name: firewall-hetzner
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}

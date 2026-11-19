@@ -1,0 +1,21 @@
+# listing_10_3_resource_hcloud_firewall.yml
+# RESOURCE path: Terraform folder iac-terraform/hcloud_firewall.
+# Pattern from yabinboxes/main-examples/hetzner/hetznez stateless/firewall.
+
+name: Resource hcloud_firewall
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_firewall:
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: hcloud_firewall
+      name: firewall-stateless
+      type_values: |
+        name=firewall-stateless
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}

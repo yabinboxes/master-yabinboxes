@@ -4,7 +4,7 @@
 
 ## Chapter shape
 
-The body is four parts, from `main.md` **CHAPTERS**: Foundations, Dashboard, Core Modules, Maintenance and Scripts. Every chapter has five sections, in order: learning objectives (1–5 bullets), conceptual explanation, hands-on example (if needed), walkthrough, summary + further reading. The seventeen chapter titles are listed in [table-of-contents.md](./table-of-contents.md).
+The body is five parts, from `main.md` **CHAPTERS**: Foundations, Dashboard, Runners, Core Modules, Maintenance and Scripts. Every chapter has, in order, a conceptual explanation (if needed) and a walkthrough (if needed). The twenty-one chapter titles are listed in [table-of-contents.md](./table-of-contents.md).
 
 ## Code style
 

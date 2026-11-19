@@ -1,0 +1,20 @@
+# listing_10_4_service_docker_compose.yml
+# SERVICE path: docker compose on a host already registered in Snow.
+# Pattern from yabinboxes/main-examples/hetzner/hetznez stateless/service.
+
+name: Service docker_compose
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy_service:
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: docker_compose
+      name: nginx-service
+      host: server-stateless
+      infra: infra
+    secrets:
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}

@@ -1,13 +1,13 @@
-# Table of Contents (workspace)
+# Table of Contents (proposed)
 
-Status: **approved** (17 November 2026). Canonical book TOC: [front-matter/table-of-contents.md](./front-matter/table-of-contents.md).
+Status: **awaiting approval**. Do not write full chapters until this TOC is approved.
 
-Chapter 6 is written (all five sections). Implementations: `snow-monkeys-modules/`. Callers: `yabinboxes/main-examples/`.
+Exception: Chapter 10 (Hands-on Reusable Workflows) is written — formerly Chapter 6 before the Runners part and Masters chapter were added. Implementations: `snow-monkeys-modules/`. Callers: `yabinboxes/main-examples/`.
 
 Book: **Snow Monkeys**  
 Subtitle: Reusable workflows using infrastructure as code with Snow Monkeys Modules and Dashboard
 
-Chapters follow `main.md` **CHAPTERS**. Each chapter uses the five-section contract: learning objectives (1–5 bullets), conceptual explanation, hands-on example (if needed), walkthrough, summary + further reading.
+Chapters follow `main.md` **CHAPTERS**. Each chapter uses the contract in `main.md`: conceptual explanation (if needed), then walkthrough (if needed).
 
 ---
 
@@ -21,40 +21,49 @@ Chapters follow `main.md` **CHAPTERS**. Each chapter uses the five-section contr
 
 ## Part I — Foundations
 
-Theme: how to read this book, and how providers and modules fit together.
+Theme: how to read this book, how providers and modules fit together, and the master catalogs.
 
 - [Chapter 1 — Learning objectives](./body/part-01-foundations/chapter-01-learning-objectives/)
 - [Chapter 2 — Conceptual explanation and providers](./body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/)
+- [Chapter 3 — Masters](./body/part-01-foundations/chapter-03-masters/)
 
 ## Part II — Dashboard
 
 Theme: hosted dashboard, selfhosted dashboard, and docs.
 
-- [Chapter 3 — Snow Monkeys Dashboard](./body/part-02-dashboard/chapter-03-snow-monkeys-dashboard/)
-- [Chapter 4 — Snow Monkeys Dashboard Selfhosted](./body/part-02-dashboard/chapter-04-snow-monkeys-dashboard-selfhosted/)
-- [Chapter 5 — Snow Monkeys Docs](./body/part-02-dashboard/chapter-05-snow-monkeys-docs/)
+- [Chapter 4 — Snow Monkeys Dashboard](./body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/)
+- [Chapter 5 — Snow Monkeys Dashboard Selfhosted](./body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/)
+- [Chapter 6 — Snow Monkeys Docs](./body/part-02-dashboard/chapter-06-snow-monkeys-docs/)
 
-## Part III — Core Modules
+## Part III — Runners
+
+Theme: GitHub runners, GitLab runners, and local runners that execute the reusable workflows.
+
+- [Chapter 7 — GitHub runners](./body/part-03-runners/chapter-07-github-runners/)
+- [Chapter 8 — GitLab runners](./body/part-03-runners/chapter-08-gitlab-runners/)
+- [Chapter 9 — Local runners](./body/part-03-runners/chapter-09-local-runners/)
+
+## Part IV — Core Modules
 
 Theme: reusable workflows, walkthrough, pitfalls, exercises, and examples.
 
-- [Chapter 6 — Hands-on Reusable Workflows](./body/part-03-core-modules/chapter-06-hands-on-reusable-workflows/)
-- [Chapter 7 — Walkthrough](./body/part-03-core-modules/chapter-07-walkthrough/)
-- [Chapter 8 — Common Pitfalls](./body/part-03-core-modules/chapter-08-common-pitfalls/)
-- [Chapter 9 — Exercises](./body/part-03-core-modules/chapter-09-exercises/)
-- [Chapter 10 — Examples](./body/part-03-core-modules/chapter-10-examples/)
+- [Chapter 10 — Hands-on Reusable Workflows](./body/part-04-core-modules/chapter-10-hands-on-reusable-workflows/)
+- [Chapter 11 — Walkthrough](./body/part-04-core-modules/chapter-11-walkthrough/)
+- [Chapter 12 — Common Pitfalls](./body/part-04-core-modules/chapter-12-common-pitfalls/)
+- [Chapter 13 — Exercises](./body/part-04-core-modules/chapter-13-exercises/)
+- [Chapter 14 — Examples](./body/part-04-core-modules/chapter-14-examples/)
 
-## Part IV — Maintenance and Scripts
+## Part V — Maintenance and Scripts
 
 Theme: dashboard code, supporting services, tests, maintainer scripts, and wrap-up.
 
-- [Chapter 11 — Dashboard Code](./body/part-04-maintenance-and-scripts/chapter-11-dashboard-code/)
-- [Chapter 12 — Dashboard Selfhosted Code](./body/part-04-maintenance-and-scripts/chapter-12-dashboard-selfhosted-code/)
-- [Chapter 13 — Other services](./body/part-04-maintenance-and-scripts/chapter-13-other-services/)
-- [Chapter 14 — Test Modules](./body/part-04-maintenance-and-scripts/chapter-14-test-modules/)
-- [Chapter 15 — Maintainer Scripts](./body/part-04-maintenance-and-scripts/chapter-15-maintainer-scripts/)
-- [Chapter 16 — Script Summary and Reports](./body/part-04-maintenance-and-scripts/chapter-16-script-summary-and-reports/)
-- [Chapter 17 — Summary + Further Reading](./body/part-04-maintenance-and-scripts/chapter-17-summary-and-further-reading/)
+- [Chapter 15 — Dashboard Code](./body/part-05-maintenance-and-scripts/chapter-15-dashboard-code/)
+- [Chapter 16 — Dashboard Selfhosted Code](./body/part-05-maintenance-and-scripts/chapter-16-dashboard-selfhosted-code/)
+- [Chapter 17 — Other services](./body/part-05-maintenance-and-scripts/chapter-17-other-services/)
+- [Chapter 18 — Test Modules](./body/part-05-maintenance-and-scripts/chapter-18-test-modules/)
+- [Chapter 19 — Maintainer Scripts](./body/part-05-maintenance-and-scripts/chapter-19-maintainer-scripts/)
+- [Chapter 20 — Script Summary and Reports](./body/part-05-maintenance-and-scripts/chapter-20-script-summary-and-reports/)
+- [Chapter 21 — Summary + Further Reading](./body/part-05-maintenance-and-scripts/chapter-21-summary-and-further-reading/)
 
 ---
 
@@ -68,11 +77,8 @@ Theme: dashboard code, supporting services, tests, maintainer scripts, and wrap-
 
 ## Chapter section contract
 
-Every chapter folder contains these **section folders**, in this order (from `main.md` BOOK STRUCTURE):
+Every chapter folder contains these **section folders**, in this order (from `main.md` BOOK STRUCTURE). Omit a section when that chapter does not need it.
 
-1. `01-learning-objectives/` — 1–5 bullets
-2. `02-conceptual-explanation/` — diagrams described in text if needed
-3. `03-hands-on-example/` — runnable module, if needed
-4. `04-walkthrough/` — line-by-line
-5. `05-summary-and-further-reading/` — `summary.md`, `further-reading.md`
-6. `chapter-checklist.md`
+1. `01-conceptual-explanation/` — prose, diagrams in text if needed
+2. `02-walkthrough/` — line-by-line
+3. `chapter-checklist.md`

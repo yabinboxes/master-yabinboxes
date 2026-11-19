@@ -1,0 +1,21 @@
+# listing_10_5_application_docker_compose_app.yml
+# APPLICATION path: compose stack on a Snow host.
+# Pattern from yabinboxes/main-examples/hetzner/hetznez stateless/application
+# and the combined example-1-stateless.yml.
+
+name: Application docker_compose_app
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy_application:
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: docker_compose_app
+      name: growing-gravity
+      host: server-stateless
+      infra: infra
+    secrets:
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
