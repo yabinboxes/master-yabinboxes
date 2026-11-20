@@ -2,8 +2,6 @@
 
 Status: **awaiting approval**. Do not write full chapters until this TOC is approved.
 
-Exception: Chapter 10 (Hands-on Reusable Workflows) is written — formerly Chapter 6 before the Runners part and Masters chapter were added. Implementations: `snow-monkeys-modules/`. Callers: `yabinboxes/main-examples/`.
-
 Book: **Snow Monkeys**  
 Subtitle: Reusable workflows using infrastructure as code with Snow Monkeys Modules and Dashboard
 

@@ -49,4 +49,4 @@ chapter-NN-slug/
 2. Write one chapter at a time, following `_templates/chapter/`.
 3. Fill the chapter checklist before moving on.
 
-Chapter 10 is written. Start at [Chapter 10](./body/part-04-core-modules/chapter-10-hands-on-reusable-workflows/). Listings are indexed in [back-matter/index-of-code-examples.md](./back-matter/index-of-code-examples.md).
+Chapter 10 has been cleared. Listings are indexed in [back-matter/index-of-code-examples.md](./back-matter/index-of-code-examples.md).
