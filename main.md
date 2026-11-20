@@ -54,6 +54,32 @@ Conventions used (code style, icons, notation).
 20. Script Summary and Reports
 21. "Summary" + "Further Reading"
 
+## CHAPTER STATUS
+
+| Chapter | Title | Status |
+| --- | --- | --- |
+| 1 | Learning objectives | implemented |
+| 2 | Conceptual explanation and providers | implemented |
+| 3 | Masters | implemented |
+| 4 | Snow Monkeys Dashboard | pending |
+| 5 | Snow Monkeys Dashboard Selfhosted | pending |
+| 6 | Snow Monkeys Docs | pending |
+| 7 | github runners | implemented |
+| 8 | gitlab runners | implemented |
+| 9 | local runners | implemented |
+| 10 | Hands-on Reusable Workflows | pending |
+| 11 | Walkthrough | pending |
+| 12 | Common Pitfalls | pending |
+| 13 | Exercises | pending |
+| 14 | Examples | implemented |
+| 15 | Dashboard Code | pending |
+| 16 | Dashboard Selfhosted Code | pending |
+| 17 | Other services | pending |
+| 18 | Test Modules | pending |
+| 19 | Maintainer Scripts | pending |
+| 20 | Script Summary and Reports | pending |
+| 21 | Summary + Further Reading | pending |
+
 ## CODE MODULE REQUIREMENTS
 
 For every code example:
