@@ -1,0 +1,684 @@
+{
+  "info": {
+    "name": "Snow Publish — Java Service Self Hosted",
+    "description": "API collection for snow-publish-java-selfhosted (Spring Boot). Default base URL: http://localhost:8080\n\nAuth (snow.auth.token-validation-enabled=true by default):\n- POST /connectors/publish-snow-deployment and GET /connectors/get-snow-url → Authorization: Bearer {{snowTokenPipeline}} (pipeline JWT; HMAC-verified with profile snowToken)\n- Other /connectors/**, health, and OpenAPI → no token check\n\nCORS: allow all origins/methods/headers (CorsFilter).\n\nJSON bodies and query params use camelCase (actorId, gitType, snowName, repository, tableName, terraformVars, dockerOutput, dockerVars).\nPublish required body: actorId, gitType, snowType, snowName, repository, repositoryOwner.\nOptional publish fields include terraformOutput, terraformVars, dockerOutput, and dockerVars (JSON object or string).\nDelete by repository query params: repository, actorId, optional gitType.\nSelf-hosted setup: GET/PUT /connectors/self-hosted and /connectors/self-hosted/first-time-flag.\nSee docs/api-authentication-and-security.md.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "noauth"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "snowTokenPipeline",
+      "value": "replace-with-snow-token-pipeline-jwt"
+    },
+    {
+      "key": "tokenValidationEnabled",
+      "value": "true"
+    },
+    {
+      "key": "email",
+      "value": "user@example.com"
+    },
+    {
+      "key": "actor",
+      "value": "yabinboxes"
+    },
+    {
+      "key": "actorId",
+      "value": "54486644"
+    },
+    {
+      "key": "gitType",
+      "value": "github"
+    },
+    {
+      "key": "snowName",
+      "value": "my-service-v1.2.0"
+    },
+    {
+      "key": "repository",
+      "value": "myorg/my-service"
+    },
+    {
+      "key": "snowDeploymentId",
+      "value": "1"
+    },
+    {
+      "key": "tabId",
+      "value": "1"
+    },
+    {
+      "key": "profileId",
+      "value": "3"
+    },
+    {
+      "key": "tableName",
+      "value": "snow_deployments_3"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "auth": {
+        "type": "noauth"
+      },
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/health",
+            "description": "No auth. Returns 200 with plain text 'Healthy'. Outside /connectors/**."
+          }
+        },
+        {
+          "name": "Liveness Test",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/liveness-test",
+            "description": "No auth. Returns 200 with plain text 'active'. Outside /connectors/**."
+          }
+        },
+        {
+          "name": "Update Liveness Status by Repository",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"repository\": \"myorg/my-service\",\n  \"status\": \"healthy\",\n  \"response\": \"All systems nominal\"\n}"
+            },
+            "url": "{{baseUrl}}/health/liveness-status",
+            "description": "No auth. Updates liveness_status and liveness_response for all rows in snow_deployments_anonymous matching repository. Maps status 'healthy' -> 'active', 'unhealthy' -> 'inactive'."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Profile",
+      "item": [
+        {
+          "name": "Get or Create Profile",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{email}}\",\n  \"actor\": \"{{actor}}\",\n  \"actorId\": \"{{actorId}}\",\n  \"gitType\": \"{{gitType}}\"\n}"
+            },
+            "url": "{{baseUrl}}/connectors/profile",
+            "description": "No token check. auth.token-validation-enabled=true. Returns existing profile by email, or creates one with generated snowToken, snowTokenPipeline (JWT), license='self', and connectors.snow_deployments_{profile_id}. Updates actor, actorId, and gitType on existing profiles when provided. Response JSON omits snowToken (write-only) and snowTokenPipeline."
+          }
+        },
+        {
+          "name": "Modify Profile",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{email}}\",\n  \"actor\": \"{{actor}}\",\n  \"actorId\": \"{{actorId}}\",\n  \"gitType\": \"{{gitType}}\",\n  \"snowToken\": \"new-token-abc\",\n  \"license\": \"pro\",\n  \"org\": \"myorg\"\n}"
+            },
+            "url": "{{baseUrl}}/connectors/profile",
+            "description": "No token check. Updates non-empty fields (actor, actorId, gitType, snowToken, license, org). snowToken is write-only. Returns 404 if profile not found."
+          }
+        },
+        {
+          "name": "Get Pipeline Token",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/connectors/profile/snow-token-pipeline?actorId={{actorId}}&gitType={{gitType}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connectors",
+                "profile",
+                "snow-token-pipeline"
+              ],
+              "query": [
+                {
+                  "key": "actorId",
+                  "value": "{{actorId}}",
+                  "description": "Required. Matches profile_owners.actor_id."
+                },
+                {
+                  "key": "gitType",
+                  "value": "{{gitType}}",
+                  "description": "Optional. Matches profile_owners.git_type when resolving profile."
+                }
+              ]
+            },
+            "description": "No token check. Returns {\"snowTokenPipeline\": \"<jwt>\"}. Use that JWT as Authorization Bearer on POST publish-snow-deployment and GET get-snow-url. DELETE publish-snow-deployment has no token check."
+          }
+        },
+        {
+          "name": "Regenerate Pipeline Token",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/connectors/profile/snow-token-pipeline?actorId={{actorId}}&gitType={{gitType}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connectors",
+                "profile",
+                "snow-token-pipeline"
+              ],
+              "query": [
+                {
+                  "key": "actorId",
+                  "value": "{{actorId}}",
+                  "description": "Required. Matches profile_owners.actor_id."
+                },
+                {
+                  "key": "gitType",
+                  "value": "{{gitType}}",
+                  "description": "Optional. Matches profile_owners.git_type when resolving profile."
+                }
+              ]
+            },
+            "description": "No token check. Regenerates snowToken (compact UUID) and snowTokenPipeline (HS256 JWT signed with snowToken). Returns {\"snowTokenPipeline\": \"<jwt>\"}. Copy into collection variable snowTokenPipeline for publish and get-snow-url."
+          }
+        },
+        {
+          "name": "Update License",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{email}}\",\n  \"license\": \"pro\"\n}"
+            },
+            "url": "{{baseUrl}}/connectors/profile/license",
+            "description": "No token check. Sets the license field on an existing profile. Email and license are required."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Self Hosted",
+      "auth": {
+        "type": "noauth"
+      },
+      "item": [
+        {
+          "name": "Get Self Hosted",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/connectors/self-hosted",
+            "description": "No token check. Returns the single connectors.self_hosted row, or 404 {\"error\":\"self_hosted record not found\"}."
+          }
+        },
+        {
+          "name": "Get First Time Flag",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/connectors/self-hosted/first-time-flag",
+            "description": "No token check. Returns {\"firstTimeFlag\": <int>} from the single connectors.self_hosted row, or 404 if the row is missing."
+          }
+        },
+        {
+          "name": "Update Self Hosted",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"auth\": \"gitlab\",\n  \"baseUrl\": \"https://gitlab.com\",\n  \"clientId\": \"your-oauth-client-id\",\n  \"redirectUri\": \"http://localhost:4200/login\",\n  \"hostBaseUrl\": \"http://localhost:8080\",\n  \"firstTimeFlag\": 1\n}"
+            },
+            "url": "{{baseUrl}}/connectors/self-hosted",
+            "description": "No token check. Partial update of the single connectors.self_hosted row. At least one of firstTimeFlag, auth, baseUrl, clientId, redirectUri, hostBaseUrl is required. Omitted fields stay unchanged. Returns 400 when no fields are sent, or 404 when the row is missing. Does not insert a row."
+          }
+        },
+        {
+          "name": "Finish First Time Setup",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"auth\": \"gitlab\",\n  \"baseUrl\": \"https://gitlab.com\",\n  \"clientId\": \"your-oauth-client-id\",\n  \"redirectUri\": \"http://localhost:4200/login\",\n  \"hostBaseUrl\": \"http://localhost:8080\"\n}"
+            },
+            "url": "{{baseUrl}}/connectors/self-hosted/first-time-flag",
+            "description": "No token check. Writes auth, baseUrl, clientId, redirectUri, and hostBaseUrl on the single connectors.self_hosted row and sets firstTimeFlag to 0. auth must be github or gitlab. baseUrl and hostBaseUrl are required. Returns 400 on validation failure, or 404 when the row is missing. Does not insert a row."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Deployments",
+      "item": [
+        {
+          "name": "Publish Deployment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{snowTokenPipeline}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"actorId\": \"{{actorId}}\",\n  \"gitType\": \"{{gitType}}\",\n  \"snowType\": \"SERVICE\",\n  \"snowName\": \"{{snowName}}\",\n  \"repository\": \"myorg/my-service\",\n  \"repositoryOwner\": \"myorg\",\n  \"actor\": \"{{actor}}\",\n  \"email\": \"{{email}}\",\n  \"sha\": \"abc123def456\",\n  \"provider\": \"aws\",\n  \"environment\": \"production\",\n  \"payload\": \"{}\",\n  \"url\": \"https://my-service.example.com\",\n  \"urlPath\": \"/api\",\n  \"tabName\": \"Main Tab\",\n  \"tabId\": 1,\n  \"port\": \"8080\",\n  \"image\": \"my-service:1.2.0\",\n  \"registry\": \"ghcr.io\",\n  \"notes\": \"Deployed from main branch\",\n  \"extras\": \"\",\n  \"description\": \"Main API service\",\n  \"healthCheckUrl\": \"https://my-service.example.com/health\",\n  \"healthCheckTime\": \"30s\",\n  \"livenessType\": \"deployable\",\n  \"livenessStatus\": \"active\",\n  \"livenessResponse\": \"\",\n  \"terraformOutput\": \"\",\n  \"terraformVars\": \"\",\n  \"dockerOutput\": \"\",\n  \"dockerVars\": \"\"\n}"
+            },
+            "url": "{{baseUrl}}/connectors/publish-snow-deployment",
+            "description": "Enqueues a deployment; returns 201 'completed'. Auth: Bearer {{snowTokenPipeline}} when snow.auth.token-validation-enabled=true. CORS allow all. Required body: actorId, gitType, snowType, snowName, repository, repositoryOwner. Optional terraformOutput, terraformVars, dockerOutput, and dockerVars (JSON object or string). Get/regenerate snowTokenPipeline via Profile → Get/Regenerate Pipeline Token. After ~2s, processDeployments upserts snow_deployments_anonymous by repository when actorId + gitType match profile_owners."
+          }
+        },
+        {
+          "name": "Delete Deployment by Repository",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/connectors/publish-snow-deployment?repository={{repository}}&actorId={{actorId}}&gitType={{gitType}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connectors",
+                "publish-snow-deployment"
+              ],
+              "query": [
+                {
+                  "key": "repository",
+                  "value": "{{repository}}",
+                  "description": "Required. Unique key in snow_deployments_{profile_id}."
+                },
+                {
+                  "key": "actorId",
+                  "value": "{{actorId}}",
+                  "description": "Required. Resolves profile_id."
+                },
+                {
+                  "key": "gitType",
+                  "value": "{{gitType}}",
+                  "description": "Optional. Matches profile_owners.git_type when resolving profile."
+                }
+              ]
+            },
+            "description": "Deletes the matching row from snow_deployments_{profile_id} by repository. No token check. auth.token-validation-enabled=true (not snowTokenPipeline). Required query params: repository, actorId. Optional gitType. Returns 200 {\"message\":\"Deployment deleted successfully\",\"repository\":\"...\"} or 404 if profile/row is missing."
+          }
+        },
+        {
+          "name": "Get Deployments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/connectors/get-snow-deployments",
+            "description": "No token check. Returns all rows from snow_deployments_anonymous. No query parameters. Populated by processDeployments when actorId + gitType match profile_owners."
+          }
+        },
+        {
+          "name": "Get All Deployments (Anonymous)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/connectors/get-snow-deployments/all",
+            "description": "No token check. Returns all rows from snow_deployments_anonymous. Same table as Get Deployments."
+          }
+        },
+        {
+          "name": "Get All Table Data (Anonymous)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/connectors/publish-snow-deployment/table-data?tableName=snow_deployments_anonymous",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connectors",
+                "publish-snow-deployment",
+                "table-data"
+              ],
+              "query": [
+                {
+                  "key": "tableName",
+                  "value": "snow_deployments_anonymous",
+                  "description": "Required. Allowed: snow_deployments_anonymous or snow_deployments_{profile_id}."
+                }
+              ]
+            },
+            "description": "No token check. Returns all rows from snow_deployments_anonymous by table name."
+          }
+        },
+        {
+          "name": "Get All Table Data (Profile)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/connectors/publish-snow-deployment/table-data?tableName={{tableName}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connectors",
+                "publish-snow-deployment",
+                "table-data"
+              ],
+              "query": [
+                {
+                  "key": "tableName",
+                  "value": "{{tableName}}",
+                  "description": "e.g. snow_deployments_{{profileId}}. Creates table if missing."
+                }
+              ]
+            },
+            "description": "No token check. Returns all rows from a profile table. Query param: tableName."
+          }
+        },
+        {
+          "name": "Get URL by Snow Name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/connectors/get-snow-url?snowName={{snowName}}&gitType={{gitType}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connectors",
+                "get-snow-url"
+              ],
+              "query": [
+                {
+                  "key": "snowName",
+                  "value": "{{snowName}}",
+                  "description": "Required. Matches snow_deployments_anonymous.snow_name."
+                },
+                {
+                  "key": "gitType",
+                  "value": "{{gitType}}",
+                  "description": "Optional. Matches snow_deployments_anonymous.git_type."
+                }
+              ]
+            },
+            "description": "Auth: Bearer {{snowTokenPipeline}} when token validation is enabled . Returns {\"url\": \"...\"} or {\"url\": \"\"}. Reads snow_deployments_anonymous. Query params: snowName (required), gitType (optional).",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{snowTokenPipeline}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Repository by Snow Name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/connectors/get-snow-repository?snowName={{snowName}}&gitType={{gitType}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connectors",
+                "get-snow-repository"
+              ],
+              "query": [
+                {
+                  "key": "snowName",
+                  "value": "{{snowName}}",
+                  "description": "Required. Matches snow_deployments_anonymous.snow_name."
+                },
+                {
+                  "key": "gitType",
+                  "value": "{{gitType}}",
+                  "description": "Optional. Matches snow_deployments_anonymous.git_type."
+                }
+              ]
+            },
+            "description": "No token check. Returns {\"repository\": \"...\"} or {\"repository\": \"\"}. Reads snow_deployments_anonymous. Query params: snowName (required), gitType (optional)."
+          }
+        },
+        {
+          "name": "Get All Profiles With Deployments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/connectors/get-snow-repository/all",
+            "description": "No token check. Returns all profile_owners rows plus each snow_deployments_{profileId}. HTTP 200 JSON array: [{ profile, deployments }]."
+          }
+        },
+        {
+          "name": "Update Color",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/connectors/publish-snow-deployment/color/{{snowDeploymentId}}?color=blue",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connectors",
+                "publish-snow-deployment",
+                "color",
+                "{{snowDeploymentId}}"
+              ],
+              "query": [
+                {
+                  "key": "color",
+                  "value": "blue",
+                  "description": "Use 'nocolor' to clear"
+                }
+              ]
+            },
+            "description": "No token check. Sets display color on snow_deployments_anonymous by deployment ID."
+          }
+        },
+        {
+          "name": "Set Liveness Type",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/connectors/publish-snow-deployment/liveness-type/{{snowDeploymentId}}?livenessType=deployable",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connectors",
+                "publish-snow-deployment",
+                "liveness-type",
+                "{{snowDeploymentId}}"
+              ],
+              "query": [
+                {
+                  "key": "livenessType",
+                  "value": "deployable"
+                }
+              ]
+            },
+            "description": "No token check. Sets liveness_type on snow_deployments_anonymous by deployment ID."
+          }
+        },
+        {
+          "name": "Clear Liveness Type",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/connectors/publish-snow-deployment/liveness-type/{{snowDeploymentId}}",
+            "description": "No token check. Clears liveness_type on snow_deployments_anonymous."
+          }
+        },
+        {
+          "name": "Set Liveness Status",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/connectors/publish-snow-deployment/liveness-status/{{snowDeploymentId}}?livenessStatus=active",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connectors",
+                "publish-snow-deployment",
+                "liveness-status",
+                "{{snowDeploymentId}}"
+              ],
+              "query": [
+                {
+                  "key": "livenessStatus",
+                  "value": "active"
+                }
+              ]
+            },
+            "description": "No token check. Sets liveness_status on snow_deployments_anonymous by deployment ID."
+          }
+        },
+        {
+          "name": "Clear Liveness Status",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/connectors/publish-snow-deployment/liveness-status/{{snowDeploymentId}}",
+            "description": "No token check. Clears liveness_status on snow_deployments_anonymous."
+          }
+        },
+        {
+          "name": "Truncate All Tables",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/connectors/publish-snow-deployment/truncate",
+            "description": "No token check. Truncates connector core tables. Does not drop per-profile snow_deployments_{profile_id} tables. Destructive."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tabs",
+      "item": [
+        {
+          "name": "Create Tab",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tabName\": \"Production\"\n}"
+            },
+            "url": "{{baseUrl}}/connectors/tabs",
+            "description": "No token check. Creates a new tab and returns it with the generated tabId."
+          }
+        },
+        {
+          "name": "List Tabs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/connectors/tabs",
+            "description": "No token check. Returns all tab records."
+          }
+        },
+        {
+          "name": "Update Tab",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tabName\": \"Staging\"\n}"
+            },
+            "url": "{{baseUrl}}/connectors/tabs/{{tabId}}",
+            "description": "No token check. Renames the tab with the given tabId. Returns 404 if not found."
+          }
+        },
+        {
+          "name": "Delete Tab",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/connectors/tabs/{{tabId}}",
+            "description": "No token check. Removes the tab with the given tabId. Returns 404 if not found."
+          }
+        }
+      ]
+    }
+  ]
+}

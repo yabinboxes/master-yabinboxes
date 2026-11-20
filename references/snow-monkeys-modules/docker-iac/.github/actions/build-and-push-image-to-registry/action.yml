@@ -1,0 +1,206 @@
+name: Build and push container image
+description: Build and push a container image to the specified registry
+author: Yabin Monroy
+
+inputs:
+    
+  # Registry host used by docker login and push
+  registry:
+    required: false
+    description: 'The registry to push the image to'
+    default: 'docker.io'
+  # Image name without tag
+  name:
+    required: false
+    description: 'The name of the image to build'
+    default: ''
+  # Image tag (output currently uses :latest)
+  tag:
+    required: false
+    description: 'The tag for the image'
+    default: latest
+  # Unused in the current buildx command (platforms are hardcoded in the build step)
+  platforms:
+    required: false
+    description: 'The platforms to build for'
+    default: linux/amd64,linux/arm64,linux/arm64/v8
+  # When true, build a local test image (--load) and docker run it
+  test_container:
+    required: false
+    description: 'Whether to build a test container'
+    default: ''
+  # Reserved: cloud Buildx driver (not used yet)
+  enable_cloud_builder:
+    required: false
+    description: 'Whether to enable the cloud builder'
+    default: ''
+  # Reserved: cloud Buildx endpoint (not used yet)
+  endpoint:
+    required: false
+    description: 'The endpoint for the cloud builder'
+    default: ''
+  # Dockerfile name inside the build context
+  docker_file:
+    required: false
+    description: 'defaulth dockerfile'
+    default: 'Dockerfile'
+  # Build context directory; empty falls back to repository root (.)
+  infra:
+    required: false
+    description: 'Caller repo directory copied to the remote host'
+    default: ''
+  # Test flag (accepted; not used in steps yet)
+  test_flag:
+    required: false
+    description: 'Test flag'
+    default: 'false'
+  # Username, or AWS access key id for ECR
+  registry_user:
+    required: false
+    description: 'The username for the registry'
+  # Password/token, AWS secret key for ECR, or GCP service-account JSON for GCR/GAR
+  registry_token:
+    required: false
+    description: 'The token for the registry'
+  snow_token:
+    required: false
+    description: 'The token for the Snow API'
+outputs:
+  container_name:
+    description: 'The name of the container image built and pushed'
+    value: ${{ steps.set_container_name.outputs.container_name }}
+
+runs:
+  using: "composite"
+  steps:
+    # checkout caller repo on the runner
+    - uses: actions/checkout@v4
+
+    # Login with docker login --password-stdin (no third-party login actions).
+    # Login to registry based on inputs.registry:
+    # - Docker Hub (docker.io)
+    # - GitHub (ghcr.io)
+    # - Azure (<registry-name>.azurecr.io)
+    # - AWS Public Elastic Container Registry (public.ecr.aws)
+    # - AWS Elastic Container Registry (<aws-account-number>.dkr.ecr.<region>.amazonaws.com)
+    # - Google Container Registry (gcr.io)  - service account JSON in registry_token
+    # - Google Artifact Registry (<location>-docker.pkg.dev)  - service account JSON in registry_token
+
+    - name: Login to registry
+      shell: bash
+      env:
+        REGISTRY: ${{ inputs.registry }}
+        REGISTRY_USER: ${{ inputs.registry_user }}
+        REGISTRY_TOKEN: ${{ inputs.registry_token }}
+      run: |
+        case "$REGISTRY" in
+          docker.io|"")
+            echo "$REGISTRY_TOKEN" | docker login \
+              --username "$REGISTRY_USER" \
+              --password-stdin
+            ;;
+          ghcr.io)
+            echo "$REGISTRY_TOKEN" | docker login ghcr.io \
+              --username "$REGISTRY_USER" \
+              --password-stdin
+            ;;
+          *.azurecr.io)
+            echo "$REGISTRY_TOKEN" | docker login "$REGISTRY" \
+              --username "$REGISTRY_USER" \
+              --password-stdin
+            ;;
+          public.ecr.aws)
+            export AWS_ACCESS_KEY_ID="$REGISTRY_USER"
+            export AWS_SECRET_ACCESS_KEY="$REGISTRY_TOKEN"
+            export AWS_DEFAULT_REGION="us-east-1"
+            aws ecr-public get-login-password --region us-east-1 \
+              | docker login --username AWS --password-stdin public.ecr.aws
+            ;;
+          *.dkr.ecr.*.amazonaws.com)
+            REGION=$(echo "$REGISTRY" | sed -n 's/.*\.dkr\.ecr\.\([^.]*\)\.amazonaws\.com/\1/p')
+            export AWS_ACCESS_KEY_ID="$REGISTRY_USER"
+            export AWS_SECRET_ACCESS_KEY="$REGISTRY_TOKEN"
+            export AWS_DEFAULT_REGION="$REGION"
+            aws ecr get-login-password --region "$REGION" \
+              | docker login --username AWS --password-stdin "$REGISTRY"
+            ;;
+          gcr.io|*.gcr.io)
+            echo "$REGISTRY_TOKEN" | docker login "$REGISTRY" \
+              --username _json_key \
+              --password-stdin
+            ;;
+          *-docker.pkg.dev)
+            echo "$REGISTRY_TOKEN" | docker login "$REGISTRY" \
+              --username _json_key \
+              --password-stdin
+            ;;
+          *)
+            echo "$REGISTRY_TOKEN" | docker login "$REGISTRY" \
+              --username "$REGISTRY_USER" \
+              --password-stdin
+            ;;
+        esac
+
+
+
+    # Create a named buildx builder so multi-arch --push works.
+    - name: setup BuildX
+      shell: bash
+      run: |
+        docker buildx create --name multi-builder --use --bootstrap
+        docker buildx ls
+
+    # Multi-arch build and push. Context is inputs.infra, or . if infra is empty.
+    # Dockerfile is $CONTEXT/$DOCKER_FILE. On failure prints an error and exits 1.
+    - name: Build and push, if the name input flag is empty string
+      id: build
+      shell: bash
+      env:
+        INFRA: ${{ inputs.infra }}
+        DOCKER_FILE: ${{ inputs.docker_file }}
+        IMAGE_NAME: ${{ inputs.name }}
+      run: |
+        CONTEXT="${INFRA:-.}"
+        if ! docker buildx build \
+          --platform linux/amd64,linux/arm64,linux/arm64/v8 \
+          -f $CONTEXT/$DOCKER_FILE \
+          -t $IMAGE_NAME:latest --push $CONTEXT; then
+          echo "error: docker build and push failed for $IMAGE_NAME:latest"
+          exit 1
+        fi 
+
+    # Local test image (--load, linux/amd64) then docker run --rm.
+    # Skipped unless test_container is true. On failure prints an error and exits 1.
+    - name: Build and run test image
+      if: ${{ inputs.test_container == 'true' }}
+      shell: bash
+      env:
+        INFRA: ${{ inputs.infra }}
+        DOCKER_FILE: ${{ inputs.docker_file }}
+        IMAGE_NAME: ${{ inputs.name }}
+      run: |
+        CONTEXT="${INFRA:-.}"
+        TEST_IMAGE="test-${IMAGE_NAME}:latest"
+        if ! docker buildx build \
+          --platform linux/amd64 \
+          -f $CONTEXT/$DOCKER_FILE \
+          -t "$TEST_IMAGE" --load "$CONTEXT"; then
+          echo "error: test image build failed for $TEST_IMAGE"
+          exit 1
+        fi
+        if ! docker run --rm "$TEST_IMAGE"; then
+          echo "error: test image run failed for $TEST_IMAGE"
+          exit 1
+        fi
+        sleep 5
+
+
+        
+    # Output: <name>:latest for the caller workflow / Snow notify.
+    - name: Set container_name output
+      id: set_container_name
+      shell: bash
+      run: |
+        echo "container_name=${{ inputs.name }}:latest" >> $GITHUB_OUTPUT
+
+   

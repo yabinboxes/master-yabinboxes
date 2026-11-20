@@ -1,0 +1,124 @@
+<!-- Hero Section -->
+<section id="section1" class="relative min-h-[500px] flex items-center justify-center p-8 md:p-12 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/SnowMonkey.png');">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50"></div>
+    <div class="relative z-10 text-center text-white max-w-4xl mx-auto">
+        <h1 class="mb-6 font-display text-[clamp(2.5rem,8vw,3.75rem)] font-normal leading-[1.02] tracking-tight drop-shadow-lg">Argo CD</h1>
+        <p class="text-xl md:text-2xl mb-10 text-white/90 drop-shadow-md">
+            Declarative continuous delivery with a fully-loaded UI.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a routerLink="/docs" class="btn btn-primary btn-lg text-lg px-8 hover:scale-105 transition-transform">
+                Get Started
+            </a>
+            <a routerLink="/docs" class="btn btn-outline btn-primary btn-lg text-lg px-8 hover:scale-105 transition-transform border-2">
+                View Docs
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Why Argo CD Section -->
+<section id="section2" class="py-16 md:py-20 px-4 md:px-8 bg-base-100">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="mb-6 font-display text-[clamp(1.8rem,5vw,3rem)] font-normal leading-[1.12] tracking-tight text-base-content">Why Argo CD?</h2>
+        <p class="text-lg md:text-xl text-base-content/80 leading-relaxed">
+            Application definitions, configurations, and environments should be declarative and version controlled. 
+            Application deployment and lifecycle management should be automated, auditable, and easy to understand.
+        </p>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="section3" class="py-16 md:py-20 px-4 md:px-8 bg-base-200">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="mb-12 text-center font-display text-[clamp(1.8rem,4vw,2.5rem)] font-normal leading-[1.12] tracking-tight text-base-content">What We Support</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <!-- Service Card -->
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="card-body items-center text-center">
+                    <div class="w-32 h-32 flex items-center justify-center mb-4 p-6 rounded-full bg-primary/10">
+                        <lucide-angular [img]="container" class="w-full h-full text-primary"></lucide-angular>
+                    </div>
+                    <h3 class="card-title text-2xl mb-3">Service</h3>
+                    <p class="text-base-content/70">
+                        Deploy and manage individual services with ease. Streamline your service lifecycle management.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Applications Card -->
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="card-body items-center text-center">
+                    <div class="w-32 h-32 flex items-center justify-center mb-4 p-6 rounded-full bg-secondary/10">
+                        <lucide-angular [img]="app" class="w-full h-full text-secondary"></lucide-angular>
+                    </div>
+                    <h3 class="card-title text-2xl mb-3">Applications</h3>
+                    <p class="text-base-content/70">
+                        Full-stack application deployment made simple. Manage complex applications with declarative configurations.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Clusters Card -->
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="card-body items-center text-center">
+                    <div class="w-32 h-32 flex items-center justify-center mb-4 p-6 rounded-full bg-accent/10">
+                        <lucide-angular [img]="kluster" class="w-full h-full text-accent"></lucide-angular>
+                    </div>
+                    <h3 class="card-title text-2xl mb-3">Clusters</h3>
+                    <p class="text-base-content/70">
+                        Orchestrate Kubernetes clusters efficiently. Scale and manage your infrastructure declaratively.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Providers Section -->
+<section id="section4" class="py-16 md:py-20 px-4 md:px-8 bg-base-100">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="mb-12 text-center font-display text-[clamp(1.8rem,4vw,2.5rem)] font-normal leading-[1.12] tracking-tight text-base-content">Supported Providers</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            <!-- Civo -->
+            <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="card-body items-center text-center p-6">
+                    <div class="w-16 h-16 flex items-center justify-center mb-3 rounded-lg bg-base-100">
+                        <lucide-angular [img]="cloud" class="w-10 h-10 text-primary"></lucide-angular>
+                    </div>
+                    <h3 class="font-semibold text-lg">Civo</h3>
+                </div>
+            </div>
+            
+            <!-- Cloudflare -->
+            <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="card-body items-center text-center p-6">
+                    <div class="w-16 h-16 flex items-center justify-center mb-3 rounded-lg bg-base-100">
+                        <img src="/icons/cloudflare.svg" alt="Cloudflare" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-lg">Cloudflare</h3>
+                </div>
+            </div>
+            
+            <!-- DigitalOcean -->
+            <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="card-body items-center text-center p-6">
+                    <div class="w-16 h-16 flex items-center justify-center mb-3 rounded-lg bg-base-100">
+                        <img src="/icons/digitalocean.svg" alt="DigitalOcean" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-lg">DigitalOcean</h3>
+                </div>
+            </div>
+            
+            <!-- Docker -->
+            <div class="card bg-base-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="card-body items-center text-center p-6">
+                    <div class="w-16 h-16 flex items-center justify-center mb-3 rounded-lg bg-base-100">
+                        <img src="/icons/docker.svg" alt="Docker" class="w-10 h-10" />
+                    </div>
+                    <h3 class="font-semibold text-lg">Docker</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

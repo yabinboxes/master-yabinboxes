@@ -1,0 +1,548 @@
+name: server-resource
+description: Server or Resource with Terraform
+author: Yabin Monroy
+
+inputs:
+  provider:
+    description: 'Cloud provider to use'
+    required: false
+    default: 'azure'
+  type:
+    description: 'Type of the server'
+    required: false
+    default: 'azurerm_linux_web_app'
+  resource:
+    description: 'Resource to use'
+    required: false
+    default: 'azurerm_linux_web_app'
+  name:
+    description: 'Snow resource name and Terraform state key prefix'
+    required: false
+    default: 'snow-server'
+  git_type:
+    description: 'Git provider type'
+    required: false
+    default: 'github'
+  s3_bucket_state:
+    description: 'S3 bucket name'
+    required: false
+    default: ''
+  destroy:
+    description: 'Destroy the cluster'
+    required: false
+    default: 'false'
+  enable_generate_ssh_key:
+    description: 'Enable generate SSH key'
+    required: false
+    default: 'false'
+  azure_client_id:
+    description: 'Azure service principal client ID'
+    required: false
+    default: ''
+  azure_client_secret:
+    description: 'Azure service principal client secret'
+    required: false
+    default: ''
+  azure_subscription_id:
+    description: 'Azure subscription ID'
+    required: false
+    default: ''
+  azure_tenant_id:
+    description: 'Azure tenant ID'
+    required: false
+    default: ''
+  aws_access_key_id:
+    description: 'AWS access key ID for the S3 Terraform backend'
+    required: false
+    default: ''
+  aws_secret_access_key:
+    description: 'AWS secret access key for the S3 Terraform backend'
+    required: false
+    default: ''
+  ssh_public_key:
+    description: 'SSH public key'
+    required: false
+  ssh_private_key:
+    description: 'SSH private key'
+    required: false
+  snow_github_token:
+    description: 'GitHub token'
+    required: false
+  snow_token:
+    description: 'Snow API token'
+    required: false
+  env_values:
+    description: 'Environment variables as key=value pairs'
+    required: false
+  type_values:
+    description: 'Type-specific variables written as .env in the Terraform module directory'
+    required: false
+  state_values:
+    description: 'State-specific variables written as .env in the Terraform module directory'
+    required: false
+  expected_url:
+    description: 'Expected URL if empty output'
+    required: false
+  infra:
+    description: 'Caller repo directory copied to the remote host'
+    required: false
+    default: 'infra'
+  test_flag:
+    description: 'Test flag'
+    required: false
+    default: 'false'
+outputs:
+  server_ip:
+    description: 'Server IP address from Azure'
+    value: ${{ steps.create_server.outputs.server_ip }}
+  terraform_output:
+    description: 'Terraform outputs as JSON'
+    value: ${{ steps.create_server.outputs.terraform_output }}
+  terraform_vars:
+    description: 'Non-secret Terraform variables as JSON'
+    value: ${{ steps.create_server.outputs.terraform_vars }}
+
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v4
+
+    - name: print inputs type and resource
+      shell: bash
+      env:
+        TYPE: ${{ inputs.type }}
+        RESOURCE: ${{ inputs.resource }}
+        S3_BUCKET_STATE: ${{ inputs.s3_bucket_state }}
+        TYPE_VALUES: ${{ inputs.type_values }}
+        STATE_VALUES: ${{ inputs.state_values }}
+      run: |
+        echo "type: $TYPE"
+        echo "resource: $RESOURCE"
+        echo "s3_bucket_state: $S3_BUCKET_STATE"
+        echo "type_values:"
+        echo "$TYPE_VALUES"
+        echo "state_values:"
+        echo "$STATE_VALUES"
+
+    - name: Assign TF_STATE_BUCKET
+      shell: bash
+      env:
+        S3_BUCKET_STATE: ${{ inputs.s3_bucket_state }}
+      run: |
+        echo "TF_STATE_BUCKET=$S3_BUCKET_STATE" >> "$GITHUB_ENV"
+
+    - name: Assign TF_STATE_KEY_PREFIX
+      id: assign_tf_state_key_prefix
+      shell: bash
+      env:
+        NAME: ${{ inputs.name }}
+        GIT_TYPE: ${{ inputs.git_type }}
+        ACTOR_ID: ${{ github.actor_id }}
+        SHA: ${{ github.sha }}
+      run: |
+        echo "sha: $SHA"
+        echo "TF_STATE_KEY_PREFIX=${NAME}/${GIT_TYPE}/${ACTOR_ID}/${SHA}" >> "$GITHUB_ENV"
+
+    - name: Assign TF_STATE_ENCRYPT
+      id: assign_tf_state_encrypt
+      shell: bash
+      env:
+        STATE_VALUES: ${{ inputs.state_values }}
+      run: |
+        TF_STATE_ENCRYPT=""
+        while IFS='=' read -r KEY VALUE || [ -n "$KEY" ]; do
+          KEY="${KEY//[[:space:]]/}"
+          if [ "$KEY" = "encrypt" ] || [ "$KEY" = "TF_VAR_encrypt" ]; then
+            TF_STATE_ENCRYPT="${VALUE//[[:space:]\\]/}"
+          fi
+        done <<< "$STATE_VALUES"
+        echo "TF_STATE_ENCRYPT=$TF_STATE_ENCRYPT" >> "$GITHUB_ENV"
+
+    # Clones the private Terraform module repo using the Snow GitHub token.
+    # The Terraform module lives at iac-terraform/v1/modules/dev/azure/$RESOURCE.
+    - name: 1. Clone snow azure $RESOURCE/$TYPE repo
+      id: clone_repo
+      shell: bash
+      env:
+        RESOURCE: ${{ inputs.resource }}
+        TYPE: ${{ inputs.type }}
+        SNOW_GITHUB_TOKEN: ${{ inputs.snow_github_token }}
+      run: |
+        sleep 1
+        echo "clone snow azure resource repo"
+        git config --global user.email yabin.monroy.1@gmail.com && git config --global user.name yabinboxes
+        echo "$SNOW_GITHUB_TOKEN" | gh auth login --with-token
+        git clone https://oath2:${SNOW_GITHUB_TOKEN}@github.com/snow-monkeys-infra/iac-terraform.git
+        ls
+        cd iac-terraform/v1/modules/dev/azure/$RESOURCE
+        echo "------------ list files ------------"
+        echo "path: iac-terraform/v1/modules/dev/azure/$RESOURCE"
+        pwd
+        ls
+        echo "---------------------"
+
+
+    # Writes env_values, type_values, and state_values as a .env file inside the Terraform module directory
+    # and exports each KEY=VALUE into GITHUB_ENV for later steps, plus TF_VAR_KEY for Terraform.
+    - name: Write env file
+      shell: bash
+      env:
+        ENV_VALUES: ${{ inputs.env_values }}
+        TYPE_VALUES: ${{ inputs.type_values }}
+        STATE_VALUES: ${{ inputs.state_values }}
+        RESOURCE: ${{ inputs.resource }}
+      run: |
+        ENV_FILE="iac-terraform/v1/modules/dev/azure/$RESOURCE/.env"
+        {
+          printf '%s' "$ENV_VALUES"
+          if [ -n "$ENV_VALUES" ] && [ -n "$TYPE_VALUES" ]; then
+            printf '\n'
+          fi
+          printf '%s' "$TYPE_VALUES"
+          if [ -n "$STATE_VALUES" ] && { [ -n "$ENV_VALUES" ] || [ -n "$TYPE_VALUES" ]; }; then
+            printf '\n'
+          fi
+          printf '%s' "$STATE_VALUES"
+        } > "$ENV_FILE"
+        while IFS= read -r line || [ -n "$line" ]; do
+          [ -z "$line" ] && continue
+          [[ "$line" == \#* ]] && continue
+          KEY="${line%%=*}"
+          VALUE="${line#*=}"
+          if [[ "$KEY" != TF_VAR_* ]]; then
+            echo "TF_VAR_${KEY}=${VALUE}" >> "$GITHUB_ENV"
+          else
+            echo "$line" >> "$GITHUB_ENV"
+          fi
+        done < "$ENV_FILE"
+
+    # Provisions the Azure server/resource via Terraform.
+    # Server/Resource parameters are passed as TF_VAR_* env vars to avoid inline expression injection.
+    # Output: terraform_output is terraform output -json; server_ip is server_ipv4.
+    # terraform_vars is every TF_VAR_* except secret names, lowercase or uppercase (token, secret, password, private key, access key).
+    - name: Create Azure Server/Resource
+      shell: bash
+      id: create_server
+      if: ${{ inputs.destroy == 'false' }}
+      env:
+        ARM_CLIENT_ID: ${{ inputs.azure_client_id }}
+        ARM_CLIENT_SECRET: ${{ inputs.azure_client_secret }}
+        ARM_SUBSCRIPTION_ID: ${{ inputs.azure_subscription_id }}
+        ARM_TENANT_ID: ${{ inputs.azure_tenant_id }}
+        TF_VAR_azure_client_id: ${{ inputs.azure_client_id }}
+        TF_VAR_azure_client_secret: ${{ inputs.azure_client_secret }}
+        TF_VAR_azure_subscription_id: ${{ inputs.azure_subscription_id }}
+        TF_VAR_azure_tenant_id: ${{ inputs.azure_tenant_id }}
+        AWS_ACCESS_KEY_ID: ${{ inputs.aws_access_key_id }}
+        AWS_SECRET_ACCESS_KEY: ${{ inputs.aws_secret_access_key }}
+        TF_VAR_ssh_public_key: ${{ inputs.ssh_public_key }}
+        RESOURCE: ${{ inputs.resource }}
+        TYPE: ${{ inputs.type }}
+        S3_BUCKET_STATE: ${{ inputs.s3_bucket_state }}
+        TF_STATE_BUCKET: ${{ inputs.s3_bucket_state }}
+      run: |
+        echo "Create Azure Server/Resource"
+        terraform_vars="$(
+          while IFS= read -r name; do
+            [ -z "$name" ] && continue
+            lower="$(printf '%s' "$name" | tr '[:upper:]' '[:lower:]')"
+            case "$lower" in
+              *token*|*secret*|*password*|*passwd*|*private_key*|*access_key*|*credential*|*api_key*)
+                continue
+                ;;
+            esac
+            case "$name" in
+              *TOKEN*|*SECRET*|*PASSWORD*|*PASSWD*|*PRIVATE_KEY*|*ACCESS_KEY*|*CREDENTIAL*|*API_KEY*)
+                continue
+                ;;
+            esac
+            key="${name#TF_VAR_}"
+            jq -nc --arg k "$key" --arg v "${!name}" '{($k): $v}'
+          done < <(compgen -v TF_VAR_ || true) | jq -s 'add // {}'
+        )"
+        echo "$terraform_vars"
+        echo "terraform_vars=$(jq -c . <<<"$terraform_vars")" >> "$GITHUB_OUTPUT"
+        cd iac-terraform/v1/modules/dev/azure/$RESOURCE
+        echo "path: iac-terraform/v1/modules/dev/azure/$RESOURCE"
+        pwd
+        TF_STATE_REGION=""
+        TF_STATE_ENCRYPT=""
+        while IFS='=' read -r KEY VALUE || [ -n "$KEY" ]; do
+          KEY="${KEY//[[:space:]]/}"
+          if [ "$KEY" = "region" ] || [ "$KEY" = "TF_VAR_region" ]; then
+            TF_STATE_REGION="${VALUE//[[:space:]\\]/}"
+          fi
+          if [ "$KEY" = "encrypt" ] || [ "$KEY" = "TF_VAR_encrypt" ]; then
+            TF_STATE_ENCRYPT="${VALUE//[[:space:]\\]/}"
+          fi
+        done < .env
+        export AWS_REGION="$TF_STATE_REGION"
+        export AWS_DEFAULT_REGION="$TF_STATE_REGION"
+        echo "------------ init ------------"
+        if [ -z "$S3_BUCKET_STATE" ]; then
+          echo "conditional: S3_BUCKET_STATE is empty"
+          echo "S3_BUCKET_STATE=$S3_BUCKET_STATE"
+          rm -f backend.tf
+          terraform init
+          echo "Skipping terraform plan because S3_BUCKET_STATE is empty"
+          echo "------------ apply ------------"
+          terraform apply -auto-approve
+          TF_OUTPUT_JSON="$(terraform output -json)"
+          echo "$TF_OUTPUT_JSON"
+          echo "terraform_output=$(jq -c . <<<"$TF_OUTPUT_JSON")" >> "$GITHUB_OUTPUT"
+          if echo "$TF_OUTPUT_JSON" | jq -e 'has("server_ipv4")' >/dev/null; then
+            echo "server_ip=$(terraform output -raw server_ipv4)" >> "$GITHUB_OUTPUT"
+          elif echo "$TF_OUTPUT_JSON" | jq -e 'has("public_ip")' >/dev/null; then
+            echo "server_ip=$(terraform output -raw public_ip)" >> "$GITHUB_OUTPUT"
+          elif echo "$TF_OUTPUT_JSON" | jq -e 'has("droplet_ip")' >/dev/null; then
+            echo "server_ip=$(terraform output -raw droplet_ip)" >> "$GITHUB_OUTPUT"
+          elif echo "$TF_OUTPUT_JSON" | jq -e 'has("default_hostname")' >/dev/null; then
+            echo "server_ip=$(terraform output -raw default_hostname)" >> "$GITHUB_OUTPUT"
+          elif echo "$TF_OUTPUT_JSON" | jq -e 'has("fqdn")' >/dev/null; then
+            echo "server_ip=$(terraform output -raw fqdn)" >> "$GITHUB_OUTPUT"
+          elif echo "$TF_OUTPUT_JSON" | jq -e 'has("fully_qualified_domain_name")' >/dev/null; then
+            echo "server_ip=$(terraform output -raw fully_qualified_domain_name)" >> "$GITHUB_OUTPUT"
+          elif echo "$TF_OUTPUT_JSON" | jq -e 'has("public_ip_address")' >/dev/null; then
+            echo "server_ip=$(terraform output -raw public_ip_address)" >> "$GITHUB_OUTPUT"
+          else
+            echo "server_ip=" >> "$GITHUB_OUTPUT"
+          fi
+        else
+          echo "conditional: S3_BUCKET_STATE is set"
+          echo "S3_BUCKET_STATE=$S3_BUCKET_STATE"
+          echo "TF_STATE_REGION=$TF_STATE_REGION"
+          echo "TF_STATE_ENCRYPT=$TF_STATE_ENCRYPT"
+          if [ -z "$TF_STATE_REGION" ]; then
+            echo "::error::state_values must contain region=<aws-region> when s3_bucket_state is set"
+            exit 1
+          fi
+          if [ -z "$TF_STATE_ENCRYPT" ]; then
+            echo "::error::state_values must contain encrypt=<true|false> when s3_bucket_state is set"
+            exit 1
+          fi
+          terraform init -reconfigure -backend-config="bucket=${TF_STATE_BUCKET}" -backend-config="key=${TF_STATE_KEY_PREFIX}" -backend-config="region=${TF_STATE_REGION}" -backend-config="encrypt=${TF_STATE_ENCRYPT}"
+          echo "------------ plan ------------"
+          terraform plan
+          echo "------------ apply ------------"
+          terraform apply -auto-approve
+          TF_OUTPUT_JSON="$(terraform output -json)"
+          echo "$TF_OUTPUT_JSON"
+          echo "terraform_output=$(jq -c . <<<"$TF_OUTPUT_JSON")" >> "$GITHUB_OUTPUT"
+          if echo "$TF_OUTPUT_JSON" | jq -e 'has("server_ipv4")' >/dev/null; then
+            echo "server_ip=$(terraform output -raw server_ipv4)" >> "$GITHUB_OUTPUT"
+          elif echo "$TF_OUTPUT_JSON" | jq -e 'has("public_ip")' >/dev/null; then
+            echo "server_ip=$(terraform output -raw public_ip)" >> "$GITHUB_OUTPUT"
+          elif echo "$TF_OUTPUT_JSON" | jq -e 'has("droplet_ip")' >/dev/null; then
+            echo "server_ip=$(terraform output -raw droplet_ip)" >> "$GITHUB_OUTPUT"
+          elif echo "$TF_OUTPUT_JSON" | jq -e 'has("default_hostname")' >/dev/null; then
+            echo "server_ip=$(terraform output -raw default_hostname)" >> "$GITHUB_OUTPUT"
+          elif echo "$TF_OUTPUT_JSON" | jq -e 'has("fqdn")' >/dev/null; then
+            echo "server_ip=$(terraform output -raw fqdn)" >> "$GITHUB_OUTPUT"
+          elif echo "$TF_OUTPUT_JSON" | jq -e 'has("fully_qualified_domain_name")' >/dev/null; then
+            echo "server_ip=$(terraform output -raw fully_qualified_domain_name)" >> "$GITHUB_OUTPUT"
+          elif echo "$TF_OUTPUT_JSON" | jq -e 'has("public_ip_address")' >/dev/null; then
+            echo "server_ip=$(terraform output -raw public_ip_address)" >> "$GITHUB_OUTPUT"
+          else
+            echo "server_ip=" >> "$GITHUB_OUTPUT"
+          fi
+        fi
+
+    - name: remove http and https from ip if is needed
+      id: remove_http_https
+      shell: bash
+      if: ${{ inputs.destroy == 'false' && steps.create_server.outcome == 'success' && false }}
+      env:
+        SSH_HOST: ${{ steps.create_server.outputs.server_ip }}
+      run: |
+        SSH_HOST="${SSH_HOST#https://}"
+        SSH_HOST="${SSH_HOST#http://}"
+        echo "host=$SSH_HOST" >> "$GITHUB_OUTPUT"
+
+    # Writes the SSH private key and waits for the new server's SSH port to be ready.
+    # Two sleeps are used: one before writing the key (cloud init delay), one before
+    # scanning the host key (sshd startup delay). ssh-keyscan || true prevents failure
+    # if the host is not yet reachable on the first attempt.
+    - name: Setup SSH
+      shell: bash
+      continue-on-error: true
+      if: ${{ inputs.destroy == 'false' && steps.create_server.outcome == 'success' && false }}
+      env:
+        SSH_PUBLIC_KEY: ${{ inputs.ssh_public_key }}
+        SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key}}
+        SSH_HOST: ${{ steps.remove_http_https.outputs.host || steps.create_server.outputs.server_ip }}
+      run: |
+        sleep 15
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
+        sleep 15
+        ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts || true
+
+    # Copies the caller's infra/ directory to the remote server and writes the .env file.
+    # The until loop polls SSH until the server is accepting connections before proceeding.
+    - name: Create remote directory
+      shell: bash
+      continue-on-error: true
+      if: ${{ inputs.destroy == 'false' && steps.create_server.outcome == 'success' && false }}
+      env:
+        SSH_PUBLIC_KEY: ${{ inputs.ssh_public_key }}
+        SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key }}
+        SSH_HOST: ${{ steps.remove_http_https.outputs.host || steps.create_server.outputs.server_ip }}
+        ENV_VALUES: ${{ inputs.env_values }}
+        INFRA: ${{ inputs.infra }}
+      run: |
+        until ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 root@$SSH_HOST "echo ready"; do
+          echo "Waiting for SSH..."
+          sleep 5
+        done
+        ssh root@$SSH_HOST "mkdir -p /tmp"
+        scp -r ./$INFRA/* root@$SSH_HOST:/tmp/
+        printf '%s' "$ENV_VALUES" | ssh root@$SSH_HOST "cat > /tmp/.env"
+
+    # Runs init.sh on the new server to bootstrap the application.
+    # The extra sleep gives init.sh time to complete before the job reports success.
+    - name: Make scripts be executable
+      shell: bash
+      if: ${{ inputs.destroy == 'false' && steps.create_server.outcome == 'success' && false }}
+      continue-on-error: true
+      env:
+        SSH_PUBLIC_KEY: ${{ inputs.ssh_public_key }}
+        SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key}}
+        SSH_HOST: ${{ steps.remove_http_https.outputs.host || steps.create_server.outputs.server_ip }}
+      run: |
+        sleep 5
+        ssh root@$SSH_HOST "cd /tmp && bash init.sh"
+        sleep 15
+        echo "address=$SSH_HOST" >> $GITHUB_OUTPUT
+    
+    # Test flag
+    - name: Destroy terraform resources and servers if test flag is true
+      id: destroy_terraform_resources
+      shell: bash
+      if: ${{ inputs.test_flag == 'true' }}
+      continue-on-error: true
+      env:
+        RESOURCE: ${{ inputs.resource }}
+        ARM_CLIENT_ID: ${{ inputs.azure_client_id }}
+        ARM_CLIENT_SECRET: ${{ inputs.azure_client_secret }}
+        ARM_SUBSCRIPTION_ID: ${{ inputs.azure_subscription_id }}
+        ARM_TENANT_ID: ${{ inputs.azure_tenant_id }}
+        TF_VAR_azure_client_id: ${{ inputs.azure_client_id }}
+        TF_VAR_azure_client_secret: ${{ inputs.azure_client_secret }}
+        TF_VAR_azure_subscription_id: ${{ inputs.azure_subscription_id }}
+        TF_VAR_azure_tenant_id: ${{ inputs.azure_tenant_id }}
+        AWS_ACCESS_KEY_ID: ${{ inputs.aws_access_key_id }}
+        AWS_SECRET_ACCESS_KEY: ${{ inputs.aws_secret_access_key }}
+        TF_VAR_ssh_public_key: ${{ inputs.ssh_public_key }}
+        S3_BUCKET_STATE: ${{ inputs.s3_bucket_state }}
+        TF_STATE_BUCKET: ${{ inputs.s3_bucket_state }}
+      run: |
+        sleep 15
+        echo "Destroying Azure Server for test"
+        cd iac-terraform/v1/modules/dev/azure/$RESOURCE
+        TF_STATE_REGION=""
+        TF_STATE_ENCRYPT=""
+        while IFS='=' read -r KEY VALUE || [ -n "$KEY" ]; do
+          KEY="${KEY//[[:space:]]/}"
+          if [ "$KEY" = "region" ] || [ "$KEY" = "TF_VAR_region" ]; then
+            TF_STATE_REGION="${VALUE//[[:space:]\\]/}"
+          fi
+          if [ "$KEY" = "encrypt" ] || [ "$KEY" = "TF_VAR_encrypt" ]; then
+            TF_STATE_ENCRYPT="${VALUE//[[:space:]\\]/}"
+          fi
+        done < .env
+        export AWS_REGION="$TF_STATE_REGION"
+        export AWS_DEFAULT_REGION="$TF_STATE_REGION"
+        echo "------------ init ------------"
+        if [ -z "$S3_BUCKET_STATE" ]; then
+          echo "conditional: S3_BUCKET_STATE is empty"
+          echo "S3_BUCKET_STATE=$S3_BUCKET_STATE"
+          rm -f backend.tf
+          terraform init
+        else
+          echo "conditional: S3_BUCKET_STATE is set"
+          echo "S3_BUCKET_STATE=$S3_BUCKET_STATE"
+          echo "TF_STATE_REGION=$TF_STATE_REGION"
+          echo "TF_STATE_ENCRYPT=$TF_STATE_ENCRYPT"
+          if [ -z "$TF_STATE_REGION" ]; then
+            echo "::error::state_values must contain region=<aws-region> when s3_bucket_state is set"
+            exit 1
+          fi
+          if [ -z "$TF_STATE_ENCRYPT" ]; then
+            echo "::error::state_values must contain encrypt=<true|false> when s3_bucket_state is set"
+            exit 1
+          fi
+          terraform init -reconfigure -backend-config="bucket=${TF_STATE_BUCKET}" -backend-config="key=${TF_STATE_KEY_PREFIX}" -backend-config="region=${TF_STATE_REGION}" -backend-config="encrypt=${TF_STATE_ENCRYPT}"
+        fi
+        echo "------------ destroy 1 ------------"
+        terraform destroy -auto-approve
+        sleep 5
+        echo "------------ destroy 2 ------------"
+        terraform destroy -auto-approve
+        
+
+    # Runs terraform destroy twice: the second pass catches resources that fail on the
+    # first attempt due to dependency ordering or transient API errors.
+    - name: Destroy Azure Server
+      id: destroy_azure_server
+      shell: bash
+      if: ${{ inputs.destroy == 'true' }}
+      continue-on-error: true
+      env:
+        RESOURCE: ${{ inputs.resource }}
+        ARM_CLIENT_ID: ${{ inputs.azure_client_id }}
+        ARM_CLIENT_SECRET: ${{ inputs.azure_client_secret }}
+        ARM_SUBSCRIPTION_ID: ${{ inputs.azure_subscription_id }}
+        ARM_TENANT_ID: ${{ inputs.azure_tenant_id }}
+        TF_VAR_azure_client_id: ${{ inputs.azure_client_id }}
+        TF_VAR_azure_client_secret: ${{ inputs.azure_client_secret }}
+        TF_VAR_azure_subscription_id: ${{ inputs.azure_subscription_id }}
+        TF_VAR_azure_tenant_id: ${{ inputs.azure_tenant_id }}
+        AWS_ACCESS_KEY_ID: ${{ inputs.aws_access_key_id }}
+        AWS_SECRET_ACCESS_KEY: ${{ inputs.aws_secret_access_key }}
+        TF_VAR_ssh_public_key: ${{ inputs.ssh_public_key }}
+        S3_BUCKET_STATE: ${{ inputs.s3_bucket_state }}
+        TF_STATE_BUCKET: ${{ inputs.s3_bucket_state }}
+      run: |
+        echo "Destroying Azure Server"
+        cd iac-terraform/v1/modules/dev/azure/$RESOURCE
+        TF_STATE_REGION=""
+        TF_STATE_ENCRYPT=""
+        while IFS='=' read -r KEY VALUE || [ -n "$KEY" ]; do
+          KEY="${KEY//[[:space:]]/}"
+          if [ "$KEY" = "region" ] || [ "$KEY" = "TF_VAR_region" ]; then
+            TF_STATE_REGION="${VALUE//[[:space:]\\]/}"
+          fi
+          if [ "$KEY" = "encrypt" ] || [ "$KEY" = "TF_VAR_encrypt" ]; then
+            TF_STATE_ENCRYPT="${VALUE//[[:space:]\\]/}"
+          fi
+        done < .env
+        export AWS_REGION="$TF_STATE_REGION"
+        export AWS_DEFAULT_REGION="$TF_STATE_REGION"
+        echo "------------ init ------------"
+        if [ -z "$S3_BUCKET_STATE" ]; then
+          echo "conditional: S3_BUCKET_STATE is empty"
+          echo "S3_BUCKET_STATE=$S3_BUCKET_STATE"
+          rm -f backend.tf
+          terraform init
+        else
+          echo "conditional: S3_BUCKET_STATE is set"
+          echo "S3_BUCKET_STATE=$S3_BUCKET_STATE"
+          echo "TF_STATE_REGION=$TF_STATE_REGION"
+          echo "TF_STATE_ENCRYPT=$TF_STATE_ENCRYPT"
+          if [ -z "$TF_STATE_REGION" ]; then
+            echo "::error::state_values must contain region=<aws-region> when s3_bucket_state is set"
+            exit 1
+          fi
+          if [ -z "$TF_STATE_ENCRYPT" ]; then
+            echo "::error::state_values must contain encrypt=<true|false> when s3_bucket_state is set"
+            exit 1
+          fi
+          terraform init -reconfigure -backend-config="bucket=${TF_STATE_BUCKET}" -backend-config="key=${TF_STATE_KEY_PREFIX}" -backend-config="region=${TF_STATE_REGION}" -backend-config="encrypt=${TF_STATE_ENCRYPT}"
+        fi
+        echo "------------ destroy 1 ------------"
+        terraform destroy -auto-approve
+        sleep 5
+        echo "------------ destroy 2 ------------"
+        terraform destroy -auto-approve

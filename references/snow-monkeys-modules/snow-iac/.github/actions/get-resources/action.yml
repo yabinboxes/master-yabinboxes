@@ -1,0 +1,84 @@
+name: Get url from snow name and actor id
+description: Fetch a Snow resource URL by name and actor ID
+author: Yabin Monroy
+
+inputs:
+  snow_host_url:
+    required: false
+    description: 'Snow dashboard host URL'
+    default: 'https://api.snow-monkeys.com'
+  resource_name:
+    required: false
+    description: 'Snow resource name, hostname, or IP'
+    default: ''
+  actor_id:
+    required: false
+    description: 'Actor ID'
+    default: ''
+  git_type:
+    required: false
+    description: 'Git provider type'
+    default: ''
+  snow_token_pipeline:
+    required: false
+    description: 'Snow API Bearer token'
+    default: ''
+
+outputs:
+  response:
+    description: 'Resolved host URL or IP'
+    value: ${{ steps.get_resource.outputs.response }}
+
+runs:
+  using: composite
+  steps:
+    - name: Get resource from snow monkeys
+      id: get_resource
+      shell: bash
+      env:
+        HOST: ${{ inputs.resource_name }}
+        SNOW_HOST_URL: ${{ inputs.snow_host_url }}
+        ACTOR_ID: ${{ inputs.actor_id }}
+        GIT_TYPE: ${{ inputs.git_type }}
+        SNOW_TOKEN_PIPELINE: ${{ inputs.snow_token_pipeline }}
+      run: |
+        echo "------ get resource name ------"
+        if [[ ! "$SNOW_HOST_URL" =~ ^https?:// ]] && [[ "$SNOW_HOST_URL" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+          SNOW_HOST_URL="https://$SNOW_HOST_URL"
+        fi
+        echo "------ env ------"
+        echo "HOST=$HOST"
+        echo "SNOW_HOST_URL=$SNOW_HOST_URL"
+        echo "ACTOR_ID=$ACTOR_ID"
+        echo "GIT_TYPE=$GIT_TYPE"
+        if [ -n "$SNOW_TOKEN_PIPELINE" ]; then
+          echo "SNOW_TOKEN_PIPELINE=set"
+        else
+          echo "SNOW_TOKEN_PIPELINE=empty"
+        fi
+        if [[ "$HOST" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+          echo "host is an IP, using directly"
+          echo "------ api call ------"
+          echo "skipped"
+          echo "------ response ------"
+          echo "$HOST"
+          echo "response=$HOST" >> "$GITHUB_OUTPUT"
+        else
+          API_URL="$SNOW_HOST_URL/connectors/get-snow-url?snowName=$HOST&actorId=$ACTOR_ID&gitType=$GIT_TYPE"
+          echo "------ api call ------"
+          echo "GET $API_URL"
+          echo "Content-Type: application/json"
+          echo "Authorization: Bearer \${SNOW_TOKEN_PIPELINE}"
+          RESPONSE=$(curl -s -X GET \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $SNOW_TOKEN_PIPELINE" \
+            "$API_URL")
+          echo "------ response ------"
+          echo "$RESPONSE"
+          NAME=$(echo "$RESPONSE" | jq -r '.url // empty')
+          if [ -z "$NAME" ] || [ "$NAME" = "null" ]; then
+            echo "::error::Snow API did not return a host for $HOST"
+            exit 1
+          fi
+          echo "response=$NAME" >> "$GITHUB_OUTPUT"
+        fi

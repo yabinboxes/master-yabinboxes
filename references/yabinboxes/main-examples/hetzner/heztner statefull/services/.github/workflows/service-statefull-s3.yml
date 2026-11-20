@@ -1,0 +1,80 @@
+name: Hetzner Service Statefull with S3
+
+
+on:
+  push:
+    branches: [ "main" ]
+
+
+jobs:
+
+  checkout:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+  # create aws s3 to store terraform state for hetzner
+  create_s3_bucket:
+    needs: checkout
+    uses: snow-monkeys-modules/aws-iac/.github/workflows/main.yml@main
+    with:
+      type: aws_s3_bucket
+      type_values: |
+        bucket_name=s3-server-state
+        region=us-east-2
+        versioning=true
+        encrypt=true
+      name: s3-server-state
+    secrets:
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }} # TODO: add aws access key id
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # TODO: add aws secret access key
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }} # TODO: add snow token pipeline
+
+
+
+  # create server (server) on hetzner
+  create_server_on_hetzner:
+    needs: create_s3_bucket
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: hcloud_server
+      name: server-hetzner
+      type_values: |
+        server_type=cpx12
+        image=ubuntu-26.04
+        location=hel1
+      s3_bucket_state: s3-server-state
+      state_values: |
+        bucket_name=s3-server-state
+        region=us-east-2
+        encrypt=true
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }} # TODO: add hcloud token
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }} # TODO: add aws access key id
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # TODO: add aws secret access key
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY_TEST }} # TODO: add ssh public key
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_TEST }} # TODO: add ssh private key
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }} # TODO: add snow token pipeline
+
+  # deploy service (docker compose) on the statefull hetzner server
+  # host is the Snow name of the server created above
+  deploy_service_on_hetzner:
+    needs: create_server_on_hetzner
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: docker_compose
+      name: service-hetzner
+      host: server-hetzner
+      expected_url: server-hetzner:8080
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }} # TODO: add hcloud token
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY_TEST }} # TODO: add ssh public key
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_TEST }} # TODO: add ssh private key
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }} # TODO: add snow token pipeline
+
+  use-output-service:
+    needs: deploy_service_on_hetzner
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "Url is ${{ needs.deploy_service_on_hetzner.outputs.address }}"

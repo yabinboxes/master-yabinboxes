@@ -1,0 +1,32 @@
+name: Create Hetzner Server with Terraform
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  create_server_on_hetzner:
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      snow_host_url: 65.109.233.99
+      provider: hetzner
+      type: server
+      name: snow-server
+      server_type: cpx12
+      image: ubuntu-26.04
+      location: hel1
+      destroy: false
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }}
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+      snow_token: "snow-1234"
+
+  use_output:
+    needs: create_server_on_hetzner
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "Server IP address is ${{ needs.create_server_on_hetzner.outputs.server_ip }}"

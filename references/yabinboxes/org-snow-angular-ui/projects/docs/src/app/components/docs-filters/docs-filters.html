@@ -1,0 +1,21 @@
+<section id="filters" class="px-4 py-7">
+  <h2 class="mb-4 px-2 text-[11px] font-semibold uppercase tracking-wider opacity-45">Filters</h2>
+  <form autocomplete="off" [formGroup]="typesForm" class="space-y-6">
+    @for (group of filterGroups; track group.label) {
+      <fieldset class="fieldset gap-0 p-0">
+        <legend class="mb-1 px-2 text-xs font-medium opacity-70">{{ group.label }}</legend>
+        @for (filter of group.filters; track filter.key) {
+          <label class="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm hover:bg-base-100">
+            <input
+              type="checkbox"
+              class="checkbox checkbox-xs"
+              [formControlName]="filter.key"
+              (change)="onChangeFilter()"
+            />
+            {{ filter.label }}
+          </label>
+        }
+      </fieldset>
+    }
+  </form>
+</section>

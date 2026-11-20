@@ -1,0 +1,11 @@
+<!-- navbar -->
+<snow-navbar></snow-navbar>
+
+@if (profileAndTabsReady()) {
+  <router-outlet />
+} @else {
+  <div class="flex items-center gap-3 px-6 py-10">
+    <span class="loading loading-dots loading-md opacity-60"></span>
+    <span class="text-sm opacity-60">Loading profile...</span><!-- TABS DISABLED — previously "Loading profile and tabs..." -->
+  </div>
+}

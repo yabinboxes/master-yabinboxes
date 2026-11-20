@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: monkeymetadataname
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  project: default
+  source:
+    repoURL: monkeyrepourl
+    targetRevision: HEAD
+    path: myapp-helm
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated: {}

@@ -1,0 +1,105 @@
+# Author: Yabin Monroy
+# Reusable workflow: build and push a container image to a registry.
+# Consumed by caller repos via workflow_call.
+name: Docker Snow Provider
+
+on:
+  workflow_call:
+    inputs:
+      # Deployment type: currently build_and_push_image
+      type:
+        required: false
+        type: string
+        default: 'build_and_push_image'
+      # Registry host: docker.io | ghcr.io | *.azurecr.io | public.ecr.aws | *.dkr.ecr.*.amazonaws.com | gcr.io | *-docker.pkg.dev
+      registry:
+        required: false
+        type: string
+        default: docker.io
+      # Image name to build and push (without tag)
+      name:
+        required: false
+        type: string
+        default: ''
+      # Image tag
+      tag:
+        required: false
+        type: string
+        default: latest
+      # Buildx platforms
+      platforms:
+        required: false
+        type: string
+        default: linux/amd64,linux/arm64,linux/arm64/v8
+      # When true, build a local test image and docker run it before/alongside push
+      test_container:
+        required: false
+        type: boolean
+        default: false
+      # Reserved: cloud Buildx driver
+      enable_cloud_builder:
+        required: false
+        type: boolean
+        default: false
+      # Reserved: cloud Buildx endpoint
+      endpoint:
+        required: false
+        type: string
+        default: ''
+      # Dockerfile filename inside the build context
+      docker_file:
+        required: false
+        type: string
+        default: Dockerfile
+      # Build context directory; empty means repository root
+      infra:
+        required: false
+        type: string
+        default: ''
+      # Test flag forwarded to the composite action
+      test_flag: 
+        required: false
+        type: boolean
+        default: false
+    secrets:
+      registry_user:       # registry username, or AWS access key for ECR
+        required: false
+      registry_token:      # registry token/password, AWS secret key, or GCP service-account JSON
+        required: false
+      snow_token:          # Snow API Bearer token
+        required: false
+    
+   
+jobs:
+
+  # Builds and pushes the image, then exposes container_name for callers / Snow notify.
+  notify_snow_monkeys_dashboard: 
+    runs-on: ubuntu-22.04
+    outputs:
+      container_name: ${{ steps.build_and_push.outputs.container_name }}
+
+    
+    steps:
+
+      # checkout caller repo on the runner
+      - uses: actions/checkout@v4
+
+      # Login, buildx, multi-arch push, optional test run. See action.yml.
+      - uses: snow-monkeys-modules/docker-iac/.github/actions/build-and-push-image-to-registry@main
+        id: build_and_push
+        if: ${{ inputs.type == 'build_and_push_image' }}
+        with:
+          type: ${{ inputs.type }}
+          registry: ${{ inputs.registry }}
+          name: ${{ inputs.name }}
+          tag: ${{ inputs.tag }}
+          platforms: ${{ inputs.platforms }}
+          test_container: ${{ inputs.test_container }}
+          enable_cloud_builder: ${{ inputs.enable_cloud_builder }}
+          endpoint: ${{ inputs.endpoint }}
+          docker_file: ${{ inputs.docker_file }}
+          infra: ${{ inputs.infra }}
+          test_flag: ${{ inputs.test_flag }}
+          registry_user: ${{ secrets.registry_user }}
+          registry_token: ${{ secrets.registry_token }}
+          snow_token: ${{ secrets.snow_token }}

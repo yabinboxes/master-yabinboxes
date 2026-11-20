@@ -1,0 +1,261 @@
+name: docker-compose
+description: Docker Compose Service
+author: Yabin Monroy
+
+inputs:
+
+  provider:
+    description: 'Cloud provider to use'
+    required: false
+    default: 'azure'
+  type:
+    description: 'Type of the server'
+    required: false
+    default: 'service'
+  name:
+    description: 'Name of the server'
+    required: false
+    default: 'docker-resource'
+  host:
+    description: 'Host of the server'
+    required: false
+    default: 'snow-server'
+  destroy:
+    description: 'Destroy the cluster'
+    required: false
+    default: 'false'
+  ssh_public_key:
+    description: 'SSH public key'
+    required: false
+  ssh_private_key:
+    description: 'SSH private key'
+    required: false
+  snow_token:
+    description: 'Snow API token'
+    required: false
+  env_values:
+    description: 'Environment variables as key=value pairs'
+    required: false
+  expected_url:
+    description: 'Expected URL if empty output'
+    required: false
+  infra:
+    description: 'Caller repo directory copied to the remote host'
+    required: false
+    default: 'infra'
+  test_flag:
+    description: 'Test flag'
+    required: false
+    default: 'false'
+outputs:
+  address:
+    description: 'Server IP address from Azure'
+    value: ${{ steps.make_scripts.outputs.address }}
+  container_name:
+    description: 'Container name returned by init.sh'
+    value: ${{ steps.make_scripts.outputs.container_name }}
+  docker_output:
+    description: 'Docker logs from the container returned by init.sh, as JSON'
+    value: ${{ steps.make_scripts.outputs.docker_output }}
+  docker_vars:
+    description: 'Compose service fields (image, container_name, ports, and the rest) as JSON'
+    value: ${{ steps.make_scripts.outputs.docker_vars }}
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v4
+
+    - name: Print inputs
+      shell: bash
+      env:
+        PROVIDER: ${{ inputs.provider }}
+        TYPE: ${{ inputs.type }}
+        NAME: ${{ inputs.name }}
+        HOST: ${{ inputs.host }}
+        DESTROY: ${{ inputs.destroy }}
+        SSH_PUBLIC_KEY: ${{ inputs.ssh_public_key }}
+        SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key }}
+        SNOW_TOKEN: ${{ inputs.snow_token }}
+        ENV_VALUES: ${{ inputs.env_values }}
+        EXPECTED_URL: ${{ inputs.expected_url }}
+        INFRA: ${{ inputs.infra }}
+        TEST_FLAG: ${{ inputs.test_flag }}
+      run: |
+        echo "provider=$PROVIDER"
+        echo "type=$TYPE"
+        echo "name=$NAME"
+        echo "host=$HOST"
+        echo "destroy=$DESTROY"
+        echo "ssh_public_key=$SSH_PUBLIC_KEY"
+        echo "ssh_private_key=$SSH_PRIVATE_KEY"
+        echo "snow_token=$SNOW_TOKEN"
+        echo "env_values=$ENV_VALUES"
+        echo "expected_url=$EXPECTED_URL"
+        echo "infra=$INFRA"
+        echo "test_flag=$TEST_FLAG"
+
+    - name: remove http and https from ip if is needed
+      id: remove_http_https
+      shell: bash
+      env:
+        SSH_HOST: ${{ inputs.host }}
+      run: |
+        SSH_HOST="${SSH_HOST#https://}"
+        SSH_HOST="${SSH_HOST#http://}"
+        echo "host=$SSH_HOST" >> "$GITHUB_OUTPUT"
+
+    # Writes the SSH private key to disk and adds the remote host to known_hosts.
+    # chmod 600 is required — SSH rejects keys with looser permissions.
+    - name: Setup SSH
+      shell: bash
+      env:
+        SSH_PUBLIC_KEY: ${{ inputs.ssh_public_key }}
+        SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key}}
+        SSH_HOST: ${{ steps.remove_http_https.outputs.host }}
+      run: |
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
+        ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
+
+    # Copies deployment scripts from the caller's infra/ directory to the remote host
+    # and writes env_values as a .env file.
+    # printf is used instead of echo to avoid adding a trailing newline to the secret.
+    - name: Create remote directory
+      shell: bash
+      env:
+        SSH_PUBLIC_KEY: ${{ inputs.ssh_public_key }}
+        SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key }}
+        SSH_HOST: ${{ steps.remove_http_https.outputs.host }}
+        ENV_VALUES: ${{ inputs.env_values }}
+        INFRA: ${{ inputs.infra }}
+      run: |
+        echo "------ local $INFRA files ------"
+        ls -la "./$INFRA"
+        ssh root@$SSH_HOST "mkdir -p /tmp"
+        scp -r ./$INFRA/* root@$SSH_HOST:/tmp/
+        printf '%s' "$ENV_VALUES" | ssh root@$SSH_HOST "cat > /tmp/.env"
+        echo "------ remote /tmp files ------"
+        ssh root@$SSH_HOST "ls -la /tmp"
+
+    # Runs init.sh on the remote host and captures its stdout as the container name.
+    # Then reads the full docker logs for that container (stdout and stderr).
+    # ADDRESS prefers the SSH host; falls back to expected_url for hosts that sit
+    # behind a load balancer or proxy and do not expose their own IP directly.
+    # docker_output is one-line JSON {"container_name":"...","logs":"..."} so it can be passed to Snow notify.
+    # docker_vars is one-line JSON of compose service fields. Secret env names are omitted.
+    - name: Make scripts be executable
+      id: make_scripts
+      shell: bash
+      env:
+        SSH_PUBLIC_KEY: ${{ inputs.ssh_public_key }}
+        SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key}}
+        SSH_HOST: ${{ steps.remove_http_https.outputs.host }}
+        EXPECTED_URL: ${{ inputs.expected_url }}
+        INFRA: ${{ inputs.infra }}
+        ENV_VALUES: ${{ inputs.env_values }}
+      run: |
+        CONTAINER_NAME=$(ssh root@$SSH_HOST "cd /tmp && bash init.sh")
+        read -r LOG_NAME <<<"$CONTAINER_NAME"
+        DOCKER_LOGS=$(printf '%s' "$LOG_NAME" | ssh root@$SSH_HOST 'read -r name; docker logs "$name" 2>&1' || true)
+        ADDRESS=${SSH_HOST:-$EXPECTED_URL}
+        echo "------ docker logs ($CONTAINER_NAME) ------"
+        printf '%s\n' "$DOCKER_LOGS"
+        echo "address=$ADDRESS" >> $GITHUB_OUTPUT
+        echo "container_name=$CONTAINER_NAME" >> $GITHUB_OUTPUT
+        echo "docker_output=$(jq -nc --arg container_name "$LOG_NAME" --arg logs "$DOCKER_LOGS" '{container_name: $container_name, logs: $logs}')" >> $GITHUB_OUTPUT
+        DOCKER_VARS='{}'
+        COMPOSE_FILE=""
+        if [ -d "$INFRA" ]; then
+          for name in docker-compose.yml docker-compose.yaml compose.yml compose.yaml; do
+            if [ -f "$INFRA/$name" ]; then
+              COMPOSE_FILE="$INFRA/$name"
+              break
+            fi
+          done
+          if [ -z "$COMPOSE_FILE" ]; then
+            COMPOSE_FILE="$(find "$INFRA" -type f \( -name 'docker-compose.yml' -o -name 'docker-compose.yaml' -o -name 'compose.yml' -o -name 'compose.yaml' \) -print -quit)"
+          fi
+        fi
+        if [ -n "$COMPOSE_FILE" ]; then
+          echo "------ compose file: $COMPOSE_FILE ------"
+          if [ -n "$ENV_VALUES" ]; then
+            while IFS= read -r line || [ -n "$line" ]; do
+              [ -z "$line" ] && continue
+              case "$line" in \#*) continue ;; esac
+              KEY="${line%%=*}"
+              VALUE="${line#*=}"
+              case "$KEY" in *[!A-Za-z0-9_]*) continue ;; esac
+              export "$KEY=$VALUE"
+            done <<<"$ENV_VALUES"
+          fi
+          if CONFIG_JSON="$(docker compose -f "$COMPOSE_FILE" --project-directory "$(dirname "$COMPOSE_FILE")" config --format json 2>compose-config.err)"; then
+            DOCKER_VARS="$(printf '%s' "$CONFIG_JSON" | jq -c '
+              def secret_key: ascii_downcase | test("token|secret|password|passwd|private_key|access_key|credential|api_key");
+              def port_string:
+                if type == "string" then .
+                elif type == "object" then
+                  (
+                    (if .published != null and (.published|tostring) != "" then (.published|tostring) + ":" else "" end)
+                    + ((.target // "")|tostring)
+                    + (if .protocol != null and .protocol != "tcp" then "/" + .protocol else "" end)
+                  )
+                else tostring end;
+              def volume_string:
+                if type == "string" then .
+                elif type == "object" then
+                  (if .source != null and (.source|tostring) != "" then (.source|tostring) + ":" else "" end) + ((.target // "")|tostring)
+                else tostring end;
+              def env_object:
+                if type == "object" then with_entries(select(.key | secret_key | not))
+                elif type == "array" then
+                  map(select(((split("=")[0]) // .) | secret_key | not))
+                  | map(split("=") | {(.[0]): (.[1:] | join("="))})
+                  | add // {}
+                else {} end;
+              {
+                services: (
+                  (.services // {}) | to_entries | map(
+                    .key as $name | .value as $svc |
+                    {
+                      key: $name,
+                      value: (
+                        {
+                          image: $svc.image,
+                          container_name: ($svc.container_name // $name),
+                          ports: (($svc.ports // []) | map(port_string)),
+                          expose: $svc.expose,
+                          restart: $svc.restart,
+                          command: $svc.command,
+                          entrypoint: $svc.entrypoint,
+                          working_dir: $svc.working_dir,
+                          environment: ($svc.environment | env_object),
+                          volumes: (($svc.volumes // []) | map(volume_string)),
+                          networks: (
+                            if ($svc.networks|type) == "object" then ($svc.networks|keys)
+                            elif ($svc.networks|type) == "array" then $svc.networks
+                            else null end
+                          ),
+                          depends_on: (
+                            if ($svc.depends_on|type) == "object" then ($svc.depends_on|keys)
+                            elif ($svc.depends_on|type) == "array" then $svc.depends_on
+                            else null end
+                          )
+                        } | with_entries(select(.value != null and .value != [] and .value != {}))
+                      )
+                    }
+                  ) | from_entries
+                )
+              }
+            ')" || DOCKER_VARS='{}'
+          else
+            echo "------ compose config failed ------"
+            cat compose-config.err || true
+          fi
+        else
+          echo "------ no compose file under $INFRA ------"
+        fi
+        echo "------ docker vars ------"
+        echo "$DOCKER_VARS"
+        echo "docker_vars=$(jq -c . <<<"${DOCKER_VARS:-{}}")" >> $GITHUB_OUTPUT

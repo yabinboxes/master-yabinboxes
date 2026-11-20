@@ -1,0 +1,256 @@
+{
+  "info": {
+    "name": "Snow WebSocket Bun",
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "description": "WebSocket server built with Bun that polls an external API every 30 seconds and broadcasts results to all connected clients.\n\n**Base URL:** `ws://localhost:3000`\n\n## Message Flow\n- Connect → receive `welcome`\n- Send any JSON → receive `echo` (you) + `broadcast` (others)\n- Every 30s → receive `api_response` or `api_error`\n- Other clients joining/leaving → `client_joined` / `client_left`",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "localhost:3000",
+      "type": "string",
+      "description": "WebSocket server host and port"
+    },
+    {
+      "key": "api_url",
+      "value": "http://localhost:8080/connectors/get-snow-deployments?email=yabin.monroy@gmail.com&type=ALL",
+      "type": "string",
+      "description": "External API polled by the scheduler (override via API_URL env var)"
+    }
+  ],
+  "item": [
+    {
+      "name": "WebSocket",
+      "description": "All communication goes through a single WebSocket endpoint at ws://{{base_url}}. HTTP requests are rejected with 400.",
+      "item": [
+        {
+          "name": "Connect (basic)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "ws://{{base_url}}",
+              "protocol": "ws",
+              "host": ["{{base_url}}"]
+            },
+            "description": "Open a WebSocket connection. On connect the server immediately sends a `welcome` message:\n\n```json\n{\n  \"type\": \"welcome\",\n  \"clientId\": \"<uuid>\",\n  \"message\": \"Connected to WebSocket server\",\n  \"timestamp\": 1234567890123\n}\n```\n\nAll other connected clients receive a `client_joined` event."
+          },
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {}
+          },
+          "response": []
+        },
+        {
+          "name": "Send — Greeting",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "ws://{{base_url}}",
+              "protocol": "ws",
+              "host": ["{{base_url}}"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"greeting\",\n  \"message\": \"Hello from Postman!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Connect and send a greeting message.\n\n**You receive (echo):**\n```json\n{\n  \"type\": \"echo\",\n  \"original\": { \"type\": \"greeting\", \"message\": \"Hello from Postman!\" },\n  \"timestamp\": 1234567890123\n}\n```\n\n**Other clients receive (broadcast):**\n```json\n{\n  \"type\": \"broadcast\",\n  \"from\": \"<your-clientId>\",\n  \"message\": { \"type\": \"greeting\", \"message\": \"Hello from Postman!\" },\n  \"timestamp\": 1234567890123\n}\n```"
+          },
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {}
+          },
+          "response": []
+        },
+        {
+          "name": "Send — Ping",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "ws://{{base_url}}",
+              "protocol": "ws",
+              "host": ["{{base_url}}"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"ping\",\n  \"timestamp\": {{$timestamp}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Send a ping message. The server echoes it back with `type: \"echo\"`.\n\nUse `{{$timestamp}}` (Postman dynamic variable) to inject the current Unix epoch in seconds."
+          },
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {}
+          },
+          "response": []
+        },
+        {
+          "name": "Send — Custom JSON",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "ws://{{base_url}}",
+              "protocol": "ws",
+              "host": ["{{base_url}}"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"custom\",\n  \"payload\": {\n    \"key\": \"value\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "The server accepts any valid JSON object. No specific schema is required for client messages.\n\nNon-JSON strings are wrapped as `{ \"text\": \"<string>\" }` before echo/broadcast."
+          },
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {}
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Server → Client Messages (Reference)",
+      "description": "These are messages the server pushes to clients. They cannot be triggered via HTTP — they arrive as WebSocket frames. This folder documents their shapes for reference.",
+      "item": [
+        {
+          "name": "welcome (on connect)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "ws://{{base_url}}",
+              "protocol": "ws",
+              "host": ["{{base_url}}"]
+            },
+            "description": "Sent once to a client immediately after it connects.\n\n```json\n{\n  \"type\": \"welcome\",\n  \"clientId\": \"550e8400-e29b-41d4-a716-446655440000\",\n  \"message\": \"Connected to WebSocket server\",\n  \"timestamp\": 1714233600000\n}\n```"
+          },
+          "response": []
+        },
+        {
+          "name": "api_response (every 30s)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "ws://{{base_url}}",
+              "protocol": "ws",
+              "host": ["{{base_url}}"]
+            },
+            "description": "Broadcast to **all** connected clients after a successful API poll (every 30 seconds).\n\n```json\n{\n  \"type\": \"api_response\",\n  \"timestamp\": \"2026-04-27T00:00:00.000Z\",\n  \"url\": \"http://localhost:8080/connectors/get-snow-deployments?email=yabin.monroy@gmail.com&type=ALL\",\n  \"status\": 200,\n  \"statusText\": \"OK\",\n  \"data\": { }\n}\n```\n\nThe `data` field is the parsed JSON body of the external API response (or a string if not JSON)."
+          },
+          "response": []
+        },
+        {
+          "name": "api_error (every 30s on failure)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "ws://{{base_url}}",
+              "protocol": "ws",
+              "host": ["{{base_url}}"]
+            },
+            "description": "Broadcast to **all** connected clients when the API poll fails (network error or non-2xx HTTP status).\n\n```json\n{\n  \"type\": \"api_error\",\n  \"timestamp\": \"2026-04-27T00:00:00.000Z\",\n  \"url\": \"http://localhost:8080/connectors/get-snow-deployments?email=yabin.monroy@gmail.com&type=ALL\",\n  \"error\": \"HTTP error! status: 503\"\n}\n```"
+          },
+          "response": []
+        },
+        {
+          "name": "client_joined (on peer connect)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "ws://{{base_url}}",
+              "protocol": "ws",
+              "host": ["{{base_url}}"]
+            },
+            "description": "Sent to **all other** connected clients when a new client joins.\n\n```json\n{\n  \"type\": \"client_joined\",\n  \"clientId\": \"550e8400-e29b-41d4-a716-446655440000\",\n  \"totalClients\": 3\n}\n```"
+          },
+          "response": []
+        },
+        {
+          "name": "client_left (on peer disconnect)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "ws://{{base_url}}",
+              "protocol": "ws",
+              "host": ["{{base_url}}"]
+            },
+            "description": "Sent to **remaining** connected clients when a client disconnects.\n\n```json\n{\n  \"type\": \"client_left\",\n  \"clientId\": \"550e8400-e29b-41d4-a716-446655440000\",\n  \"totalClients\": 2\n}\n```"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "HTTP",
+      "item": [
+        {
+          "name": "GET /health",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{base_url}}/health",
+              "protocol": "http",
+              "host": ["{{base_url}}"],
+              "path": ["health"]
+            },
+            "description": "Returns server status as JSON.\n\n**Example response (`200 OK`):**\n```json\n{\n  \"status\": \"ok\",\n  \"connectedClients\": 2,\n  \"uptimeSeconds\": 142,\n  \"timestamp\": \"2026-04-27T00:02:22.000Z\"\n}\n```"
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{base_url}}/health",
+                  "protocol": "http",
+                  "host": ["{{base_url}}"],
+                  "path": ["health"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"status\": \"ok\",\n  \"connectedClients\": 2,\n  \"uptimeSeconds\": 142,\n  \"timestamp\": \"2026-04-27T00:02:22.000Z\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET / — non-WebSocket request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{base_url}}",
+              "protocol": "http",
+              "host": ["{{base_url}}"]
+            },
+            "description": "Plain HTTP requests (non-WebSocket, non-health) are rejected.\n\n**Expected response:** `400 Bad Request` — `Expected WebSocket connection`"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

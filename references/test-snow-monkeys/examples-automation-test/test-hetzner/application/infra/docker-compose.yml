@@ -1,0 +1,13 @@
+services:
+  growing-gravity:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: yabinm/growing-gravity:latest
+    container_name: growing-gravity
+    ports:
+      - "4321:4321"
+    environment:
+      HOST: 0.0.0.0
+      PORT: "4321"
+    restart: unless-stopped

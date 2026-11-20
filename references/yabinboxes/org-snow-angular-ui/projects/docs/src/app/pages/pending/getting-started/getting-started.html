@@ -1,0 +1,9 @@
+@if (markdownPath()) {
+  <docs-markdown [src]="markdownPath()" />
+} @else {
+  <div class="mx-auto max-w-3xl px-6 py-10">
+    <div class="alert alert-warning">
+      <span>Markdown file not found.</span>
+    </div>
+  </div>
+}

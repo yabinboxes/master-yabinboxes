@@ -1,0 +1,194 @@
+name: Build and push container image
+description: Build and push a container image to the specified registry
+author: Yabin Monroy
+
+inputs:
+    
+  registry:
+    required: false
+    description: 'The registry to push the image to'
+    default: 'docker.io'
+  name:
+    required: false
+    description: 'The name of the image to build'
+    default: ''
+  tag:
+    required: false
+    description: 'The tag for the image'
+    default: latest
+  platforms:
+    required: false
+    description: 'The platforms to build for'
+    default: linux/amd64,linux/arm64,linux/arm64/v8
+  test_container:
+    required: false
+    description: 'Whether to build a test container'
+    default: ''
+  enable_cloud_builder:
+    required: false
+    description: 'Whether to enable the cloud builder'
+    default: ''
+  endpoint:
+    required: false
+    description: 'The endpoint for the cloud builder'
+    default: ''
+  docker_file:
+    required: false
+    description: 'defaulth dockerfile'
+    default: 'Dockerfile'
+  infra:
+    required: false
+    description: 'Caller repo directory copied to the remote host'
+    default: ''
+  test_flag:
+    required: false
+    description: 'Test flag'
+    default: 'false'
+  registry_user:
+    required: false
+    description: 'The username for the registry'
+  registry_token:
+    required: false
+    description: 'The token for the registry'
+  snow_token:
+    required: false
+    description: 'The token for the Snow API'
+outputs:
+  container_name:
+    description: 'The name of the container image built and pushed'
+    value: ${{ steps.set_container_name.outputs.container_name }}
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v4
+
+    # pending... loging to different registries: 
+    # - GitHub (ghcr.io)
+    # - GitLab (registry.gitlab.com)
+    # - Azure (<registry-name>.azurecr.io)
+    # - AWS Public Elastic Container Registry (public.ecr.aws)
+    # - AWS Elastic Container Registry (<aws-account-number>.dkr.ecr.<region>.amazonaws.com)
+    # - Google Container Registry (gcr.io)  - need extra authentication
+    # - Google Artifact Registry (<location>-docker.pkg.dev)  - need extra authentication
+    # https://github.com/docker/login-action
+
+
+    # login to registry
+    - name: 1. Login to Docker Hub
+      shell: bash
+      run: |
+        echo "${{ inputs.registry_token }}" | docker login \
+          --username "${{ inputs.registry_user }}" \
+          --password-stdin
+
+    # setup Buildx
+    - name: setup BuildX
+      shell: bash
+      run: |
+        docker buildx create --name multi-builder --use --bootstrap
+        docker buildx ls
+
+    # setup QEMU
+#    - name: 5. Set up QEMU
+#      uses: docker/setup-qemu-action@v3
+
+    # setup Buildx
+#    - name: 6.1 Set up Docker Buildx
+#      uses: docker/setup-buildx-action@v3
+#      if: ${{ ! inputs.enable_cloud_builder }}
+#      with:
+#        platforms: ${{ inputs.platforms }}
+
+#    - name: 6.2 Set up Docker Buildx
+#      uses: docker/setup-buildx-action@v3
+#      if: ${{ inputs.enable_cloud_builder }}
+#      with:
+#        driver: cloud
+#        endpoint: ${{ inputs.endpoint }} # "yabinm/snow"
+#        install: true
+
+    # build dev image to ensure that the container is working properly
+      # in all platforms. condition: if the name input flag is empty string
+      # and if default name is the same as the repository name
+    - name: Build and push, if the name input flag is empty string
+      id: build
+      shell: bash
+      env:
+        INFRA: ${{ inputs.infra }}
+        DOCKER_FILE: ${{ inputs.docker_file }}
+        IMAGE_NAME: ${{ inputs.name }}
+      run: |
+        CONTEXT="${INFRA:-.}"
+        docker buildx build \
+          --platform linux/amd64,linux/arm64,linux/arm64/v8 \
+          -f $CONTEXT/$DOCKER_FILE \
+          -t $IMAGE_NAME:latest --push $CONTEXT 
+
+          
+    # build test image to ensure that the container is working properly
+    # in all platforms. condition: if the test_container input flag is true
+#    - name: 7.1 Build and push for test image
+#      uses: docker/build-push-action@v6
+#      if: ${{ inputs.test_container }}
+#      with:
+#        load: true
+#        tags: |
+#          ${{ inputs.user }}/test-${{ github.event.repository.name }}-img:latest
+      
+    # test image to ensure that the container is working properly
+    # in all platforms. condition: if the test_container input flag is true
+#    - name: 7.1 Test image
+#      shell: bash
+#      if: ${{ inputs.test_container }}
+#      run: |
+#        docker run --rm ${{ inputs.user }}/test-${{ github.event.repository.name }}-img:latest
+#        sleep 5
+
+      # echo message if the test_container input flag is false
+#    - name: 7.2 No testing action required
+#      shell: bash
+#      if: ${{ ! inputs.test_container }}
+#      run: |
+#        echo "no testing action required"
+
+    # build dev image to ensure that the container is working properly
+    # in all platforms. condition: if the name input flag is empty string
+    # and if default name is the same as the repository name
+#    - name: 8.1 Build and push
+#      uses: docker/build-push-action@v6
+#      if: ${{ inputs.name == '' }}
+#      with:
+#        push: true
+#        platforms: ${{ inputs.platforms }}
+#        tags: |
+#          ${{ inputs.user }}/${{ github.event.repository.name }}-img:${{ inputs.tag }}
+#          ${{ inputs.user }}/${{ github.event.repository.name }}-img:latest
+
+    - name: 8.1 Set container_name output
+      id: set_container_name
+      shell: bash
+      run: |
+        echo "container_name=${{ inputs.name }}:latest" >> $GITHUB_OUTPUT
+
+    # build dev image to ensure that the container is working properly
+    # in all platforms. condition: if the name input flag is not empty string
+    # and image name is the same as the input name
+#    - name: 8.2 Build and push
+#      uses: docker/build-push-action@v6
+#      if: ${{ inputs.name != '' }}
+#      with:
+#        push: true
+#        platforms: ${{ inputs.platforms }}
+#        tags: |
+#          ${{ inputs.name }}:${{ inputs.tag}}
+#          ${{ inputs.name }}:latest
+
+#    - name: 8.2 Set container_name output
+#      shell: bash
+#      if: ${{ inputs.name != '' }}
+#      run: |
+#        echo "container_name=${{ inputs.name }}:${{ inputs.tag }}" >> $GITHUB_OUTPUT
+
+      # pending send build to MacMini M4
+      # default setting in registry if you want the image public or private

@@ -1,0 +1,82 @@
+<nav class="flex h-full flex-col bg-base-200" aria-label="Documentation">
+  <a
+    routerLink="/docs/home"
+    class="flex h-14 shrink-0 items-center gap-2 border-b border-base-300/60 px-4"
+    (click)="onNavigate()"
+  >
+    <img
+      src="/images/icon-header.png"
+      alt=""
+      class="h-7 w-auto"
+      aria-hidden="true"
+    />
+    <span class="font-display text-base font-normal tracking-tight">SnowMonkeys</span>
+  </a>
+
+  <div class="shrink-0 border-b border-base-300/60 p-3">
+    <label class="sr-only" for="docs-nav-search">Search docs</label>
+    <input
+      id="docs-nav-search"
+      type="search"
+      class="input input-sm w-full rounded-lg border-base-300 bg-base-100 font-mono text-[13px] focus:outline-none focus:border-base-content/25"
+      placeholder="search docs…"
+      [ngModel]="search()"
+      (ngModelChange)="onSearchInput($event)"
+      autocomplete="off"
+    />
+  </div>
+
+  <div class="min-h-0 flex-1 overflow-y-auto p-3">
+    @if (filteredSections().length === 0) {
+      <p class="px-2 py-4 font-mono text-[11px] text-base-content/60">
+        No matching pages
+      </p>
+    } @else {
+      <ul class="flex flex-col gap-5">
+        @for (section of filteredSections(); track section.num) {
+          <li>
+            <div class="mb-1.5 flex items-baseline gap-2.5 px-1.5">
+              <span class="font-pixel text-[1.6rem] leading-none text-primary">{{
+                section.num
+              }}</span>
+              <span
+                class="font-mono text-[11px] font-medium uppercase tracking-[0.06em] text-base-content"
+              >
+                {{ section.title }}
+              </span>
+              <span class="ml-auto font-mono text-[11px] text-base-content/60">
+                {{ section.items.length }}
+              </span>
+            </div>
+
+            <ul class="flex flex-col gap-0.5">
+              @for (item of section.items; track item.path) {
+                <li>
+                  <a
+                    [routerLink]="item.path"
+                    routerLinkActive="bg-base-300/70 text-base-content"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    class="grid grid-cols-[16px_1fr] items-start gap-2.5 rounded-lg px-2 py-2.5 font-mono text-[13px] leading-[1.4] tracking-tight text-base-content/80 transition-colors hover:bg-base-300/40"
+                    (click)="onNavigate()"
+                  >
+                    <span
+                      class="mt-0.5 size-3.5 shrink-0 rounded-sm border border-base-content/25"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="min-w-0 truncate">{{ item.label }}</span>
+                  </a>
+                </li>
+              }
+            </ul>
+          </li>
+        }
+      </ul>
+    }
+  </div>
+
+  <p
+    class="shrink-0 border-t border-base-300/60 px-4 py-3 font-mono text-[10px] tracking-tight text-base-content/50"
+  >
+    Snow Monkeys docs
+  </p>
+</nav>

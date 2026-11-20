@@ -1,0 +1,85 @@
+name: Volume Attachment Statefull
+
+on:
+  push:
+    branches: [ "main" ]
+
+
+jobs:
+
+  checkout:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+  # create aws s3 to store terraform state for hetzner
+  create_s3_bucket:
+    needs: checkout
+    uses: snow-monkeys-modules/aws-iac/.github/workflows/main.yml@main
+    with:
+      type: aws_s3_bucket
+      type_values: |
+        bucket_name=s3-server-state
+        region=us-east-2
+        versioning=true
+        encrypt=false
+      name: s3-server-state
+    secrets:
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }} # TODO: add aws access key id
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # TODO: add aws secret access key
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }} # TODO: add snow token pipeline
+
+
+  # attach an existing volume to an existing server on hetzner
+  # volume_id and server_id have no module defaults; replace 0 with real ids
+  create_volume_attachment_on_hetzner:
+    needs: create_s3_bucket
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: hcloud_volume_attachment
+      name: volume-attachment-hetzner
+      type_values: |
+        volume_id=0
+        server_id=0
+        automount=false
+      s3_bucket_state: s3-server-state
+      state_values: |
+        bucket_name=s3-server-state
+        region=us-east-2
+        encrypt=true
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }} # TODO: add hcloud token
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }} # TODO: add aws access key id
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # TODO: add aws secret access key
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }} # TODO: add snow token pipeline
+
+  use-output-volume-attachment:
+    needs: create_volume_attachment_on_hetzner
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "Url is ${{ needs.create_volume_attachment_on_hetzner.outputs.server_ip }}"
+
+      - run: sleep 5
+
+  destroy_volume_attachment_on_hetzner:
+    needs: use-output-volume-attachment
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: hcloud_volume_attachment
+      name: volume-attachment-hetzner
+      type_values: |
+        volume_id=0
+        server_id=0
+        automount=false
+      s3_bucket_state: s3-server-state
+      state_values: |
+        bucket_name=s3-server-state
+        region=us-east-2
+        encrypt=true
+      destroy: true
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }} # TODO: add hcloud token
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }} # TODO: add aws access key id
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # TODO: add aws secret access key
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }} # TODO: add snow token pipeline

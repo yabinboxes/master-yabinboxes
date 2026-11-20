@@ -1,0 +1,34 @@
+name: Firewall Stateless
+
+on:
+  push:
+    branches: [ "main" ]
+
+
+jobs:
+
+  checkout:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+  # create firewall (resource) on hetzner
+  create_firewall_on_hetzner:
+    needs: checkout
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: hcloud_firewall
+      name: firewall-hetzner
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }} # TODO: add hcloud token
+      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }} # TODO: add snow token pipeline
+
+  use-output-firewall:
+    needs: create_firewall_on_hetzner
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "Url is ${{ needs.create_firewall_on_hetzner.outputs.server_ip }}"
+      
+      - run: sleep 5

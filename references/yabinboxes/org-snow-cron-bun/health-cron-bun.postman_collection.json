@@ -1,0 +1,565 @@
+{
+  "info": {
+    "name": "health-cron-bun",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Health-check relay service for the [Snow Monkeys](https://github.com/snow-monkeys-org) stack.\n\n**Repository:** [snow-monkeys-org/snow-cron-bun](https://github.com/snow-monkeys-org/snow-cron-bun)\n\n**API endpoints (7):**\n1. `POST /queue` — register or update a probe in `livenessprobe_records_{profileId}`\n2. `GET /queue` — list probes for a profile (`actorId` + `gitType` query params)\n3. `GET /profiles` — list all profiles with nested probe records\n4. `POST /delete-record-from-queue` — remove a probe from the main active queue\n5. `GET /failed-records` — list failed probes (`livenessprobe_failed_records`)\n6. `GET /deleted-records` — list deleted probes (`livenessprobe_deleted_records`)\n7. `GET /health` — service liveness\n\n**JSON format:** all request and response fields use **camelCase** (`snowName`, `healthUrl`, `actorId`, `gitType`, etc.).\n\n**Profile flow:** `POST /queue` and `GET /queue` resolve `livenessprobe_profiles` by `actorId` + `gitType`, then read/write `livenessprobe_records_{profileId}`. Probes registered only in profile tables are **not** polled by the cron until they exist in main `livenessprobe_records`.\n\n**Cron (every 10 min):** reads main `livenessprobe_records` only; GET each `healthUrl`, POST result to `snowHostUrl` (default `http://snow-monkeys.com:8080`).\n\n**Collection variables:** `baseUrl`, `snowName`, `healthUrl`, `snowHostUrl`, `actorId`, `gitType`\n\n**baseUrl:** `http://localhost:3000` for `bun run dev`. Use `http://localhost:4202` when running via Docker Compose."
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "snowName",
+      "value": "my-service",
+      "type": "string"
+    },
+    {
+      "key": "healthUrl",
+      "value": "https://my-service.example.com/health",
+      "type": "string"
+    },
+    {
+      "key": "snowHostUrl",
+      "value": "http://snow-monkeys.com:8080",
+      "type": "string"
+    },
+    {
+      "key": "actorId",
+      "value": "12345",
+      "type": "string"
+    },
+    {
+      "key": "gitType",
+      "value": "github",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "description": "Service liveness and unknown routes.",
+      "item": [
+        {
+          "name": "Health check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/health",
+            "description": "Returns this relay service's liveness status and process uptime in seconds.\n\n**Response `200`:**\n```json\n{ \"status\": \"ok\", \"uptime\": 42.3 }\n```"
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/health"
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"status\": \"ok\",\n  \"uptime\": 42.3\n}"
+            }
+          ]
+        },
+        {
+          "name": "Not found",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/unknown",
+            "description": "Any unrecognized route returns `404`.\n\n**Response `404`:**\n```json\n{ \"error\": \"Not found\" }\n```"
+          },
+          "response": [
+            {
+              "name": "404 Not Found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/unknown"
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"error\": \"Not found\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Queue",
+      "description": "Register and list probes in profile-scoped tables (`livenessprobe_records_{profileId}`).",
+      "item": [
+        {
+          "name": "Add or update record",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"snowName\": \"{{snowName}}\",\n  \"healthUrl\": \"{{healthUrl}}\",\n  \"snowHostUrl\": \"{{snowHostUrl}}\",\n  \"actorId\": \"{{actorId}}\",\n  \"gitType\": \"{{gitType}}\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "{{baseUrl}}/queue",
+            "description": "Upserts a probe in `connectors.livenessprobe_records_{profileId}`.\n\n**Required:** `snowName`, `healthUrl`, `actorId`, `gitType`\n**Optional:** `snowHostUrl` (defaults to `http://snow-monkeys.com:8080`)\n\nGets or creates the profile by `actorId` + `gitType`. Does **not** write to main `livenessprobe_records`.\n\n| Status | Meaning |\n|--------|---------|\n| `201` | Record inserted |\n| `200` | Record updated |\n| `400` | Invalid JSON |\n| `422` | Missing required fields |"
+          },
+          "response": [
+            {
+              "name": "201 Inserted",
+              "originalRequest": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"snowName\": \"my-service\",\n  \"healthUrl\": \"https://my-service.example.com/health\",\n  \"snowHostUrl\": \"http://snow-monkeys.com:8080\",\n  \"actorId\": \"12345\",\n  \"gitType\": \"github\"\n}",
+                  "options": { "raw": { "language": "json" } }
+                },
+                "url": "{{baseUrl}}/queue"
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"message\": \"Record inserted\",\n  \"snowName\": \"my-service\"\n}"
+            },
+            {
+              "name": "200 Updated",
+              "originalRequest": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"snowName\": \"my-service\",\n  \"healthUrl\": \"https://my-service.example.com/health\",\n  \"actorId\": \"12345\",\n  \"gitType\": \"github\"\n}",
+                  "options": { "raw": { "language": "json" } }
+                },
+                "url": "{{baseUrl}}/queue"
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"message\": \"Record updated\",\n  \"snowName\": \"my-service\"\n}"
+            },
+            {
+              "name": "400 Invalid JSON",
+              "originalRequest": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": { "mode": "raw", "raw": "not-json", "options": { "raw": { "language": "text" } } },
+                "url": "{{baseUrl}}/queue"
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"error\": \"Invalid JSON body\"\n}"
+            },
+            {
+              "name": "422 Missing fields",
+              "originalRequest": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"snowName\": \"my-service\"\n}",
+                  "options": { "raw": { "language": "json" } }
+                },
+                "url": "{{baseUrl}}/queue"
+              },
+              "status": "Unprocessable Entity",
+              "code": 422,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"error\": \"Missing required fields: snowName, healthUrl, actorId, gitType\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Add or update record (default snowHostUrl)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"snowName\": \"{{snowName}}\",\n  \"healthUrl\": \"{{healthUrl}}\",\n  \"actorId\": \"{{actorId}}\",\n  \"gitType\": \"{{gitType}}\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "{{baseUrl}}/queue",
+            "description": "Same as **Add or update record** but omits `snowHostUrl`. The server defaults it to `http://snow-monkeys.com:8080`."
+          },
+          "response": [
+            {
+              "name": "201 Inserted",
+              "originalRequest": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"snowName\": \"my-service\",\n  \"healthUrl\": \"https://my-service.example.com/health\",\n  \"actorId\": \"12345\",\n  \"gitType\": \"github\"\n}",
+                  "options": { "raw": { "language": "json" } }
+                },
+                "url": "{{baseUrl}}/queue"
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"message\": \"Record inserted\",\n  \"snowName\": \"my-service\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "List probes for profile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/queue?actorId={{actorId}}&gitType={{gitType}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["queue"],
+              "query": [
+                { "key": "actorId", "value": "{{actorId}}" },
+                { "key": "gitType", "value": "{{gitType}}" }
+              ]
+            },
+            "description": "Returns probes from `connectors.livenessprobe_records_{profileId}` for the profile matching `actorId` + `gitType`.\n\n**Required query params:** `actorId`, `gitType`\n\n| Status | Meaning |\n|--------|---------|\n| `200` | Probes returned (may be empty) |\n| `404` | Profile not found |\n| `422` | Missing query parameters |"
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/queue?actorId=12345&gitType=github",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["queue"],
+                  "query": [
+                    { "key": "actorId", "value": "12345" },
+                    { "key": "gitType", "value": "github" }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"records\": [\n    {\n      \"snowName\": \"my-service\",\n      \"healthUrl\": \"https://my-service.example.com/health\",\n      \"snowHostUrl\": \"http://snow-monkeys.com:8080\",\n      \"failureCount\": 0,\n      \"createdAt\": \"2026-07-13T22:00:00.000Z\",\n      \"updatedAt\": \"2026-07-13T22:00:00.000Z\"\n    }\n  ],\n  \"total\": 1\n}"
+            },
+            {
+              "name": "200 Empty",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/queue?actorId=12345&gitType=github",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["queue"],
+                  "query": [
+                    { "key": "actorId", "value": "12345" },
+                    { "key": "gitType", "value": "github" }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"records\": [],\n  \"total\": 0\n}"
+            },
+            {
+              "name": "422 Missing query params",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/queue"
+              },
+              "status": "Unprocessable Entity",
+              "code": 422,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"error\": \"Missing required query parameters: actorId, gitType\"\n}"
+            },
+            {
+              "name": "404 Profile not found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/queue?actorId=unknown&gitType=github",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["queue"],
+                  "query": [
+                    { "key": "actorId", "value": "unknown" },
+                    { "key": "gitType", "value": "github" }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"error\": \"Profile not found\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Profiles",
+      "description": "List all profiles and their nested probe records.",
+      "item": [
+        {
+          "name": "List all profiles with records",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/profiles",
+            "description": "Returns all rows from `connectors.livenessprobe_profiles`, each with probes from `connectors.livenessprobe_records_{profileId}`.\n\nIf a profile table does not exist yet, `records` is an empty array.\n\n**Response `200`:**\n```json\n{\n  \"profiles\": [\n    {\n      \"id\": 1,\n      \"snowName\": \"my-service\",\n      \"actorId\": \"12345\",\n      \"gitType\": \"github\",\n      \"records\": [],\n      \"total\": 0\n    }\n  ],\n  \"total\": 1\n}\n```"
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/profiles"
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"profiles\": [\n    {\n      \"id\": 1,\n      \"snowName\": \"my-service\",\n      \"actorId\": \"12345\",\n      \"gitType\": \"github\",\n      \"records\": [\n        {\n          \"snowName\": \"my-service\",\n          \"healthUrl\": \"https://my-service.example.com/health\",\n          \"snowHostUrl\": \"http://snow-monkeys.com:8080\",\n          \"failureCount\": 0,\n          \"createdAt\": \"2026-07-13T22:00:00.000Z\",\n          \"updatedAt\": \"2026-07-13T22:00:00.000Z\"\n        }\n      ],\n      \"total\": 1\n    }\n  ],\n  \"total\": 1\n}"
+            },
+            {
+              "name": "200 Empty",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/profiles"
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"profiles\": [],\n  \"total\": 0\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Archives",
+      "description": "Main queue delete and archive listing endpoints (`livenessprobe_records`, `livenessprobe_failed_records`, `livenessprobe_deleted_records`).",
+      "item": [
+        {
+          "name": "Delete record from queue",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"snowName\": \"{{snowName}}\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "{{baseUrl}}/delete-record-from-queue",
+            "description": "Removes a record from main `connectors.livenessprobe_records` and archives it in `livenessprobe_deleted_records`.\n\n**Note:** Probes in profile tables (`livenessprobe_records_{id}`) are not affected.\n\n**Required:** `snowName`\n\n| Status | Meaning |\n|--------|---------|\n| `200` | Deleted and archived |\n| `400` | Invalid JSON |\n| `404` | Not found in active queue |\n| `422` | Missing `snowName` |"
+          },
+          "response": [
+            {
+              "name": "200 Deleted",
+              "originalRequest": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"snowName\": \"my-service\"\n}",
+                  "options": { "raw": { "language": "json" } }
+                },
+                "url": "{{baseUrl}}/delete-record-from-queue"
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"message\": \"Record deleted\",\n  \"snowName\": \"my-service\",\n  \"record\": {\n    \"snowName\": \"my-service\",\n    \"healthUrl\": \"https://my-service.example.com/health\",\n    \"snowHostUrl\": \"http://snow-monkeys.com:8080\"\n  }\n}"
+            },
+            {
+              "name": "404 Not found",
+              "originalRequest": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"snowName\": \"unknown-service\"\n}",
+                  "options": { "raw": { "language": "json" } }
+                },
+                "url": "{{baseUrl}}/delete-record-from-queue"
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"error\": \"Record not found: unknown-service\"\n}"
+            },
+            {
+              "name": "400 Invalid JSON",
+              "originalRequest": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": { "mode": "raw", "raw": "not-json", "options": { "raw": { "language": "text" } } },
+                "url": "{{baseUrl}}/delete-record-from-queue"
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"error\": \"Invalid JSON body\"\n}"
+            },
+            {
+              "name": "422 Missing snowName",
+              "originalRequest": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": { "mode": "raw", "raw": "{}", "options": { "raw": { "language": "json" } } },
+                "url": "{{baseUrl}}/delete-record-from-queue"
+              },
+              "status": "Unprocessable Entity",
+              "code": 422,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"error\": \"Missing required field: snowName\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "List failed records",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/failed-records",
+            "description": "Returns all rows from `connectors.livenessprobe_failed_records`, ordered by most recent failure first.\n\nProbes appear here after more than 10 consecutive network failures on `healthUrl`.\n\n**Response `200`:**\n```json\n{\n  \"records\": [\n    {\n      \"snowName\": \"my-service\",\n      \"healthUrl\": \"https://my-service.example.com/health\",\n      \"snowHostUrl\": \"http://snow-monkeys.com:8080\",\n      \"failureCount\": 11,\n      \"lastError\": \"Unable to connect\",\n      \"failedAt\": \"2026-07-13T22:30:00.000Z\",\n      \"createdAt\": \"2026-07-13T22:00:00.000Z\",\n      \"updatedAt\": \"2026-07-13T22:30:00.000Z\"\n    }\n  ],\n  \"total\": 1\n}\n```"
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/failed-records"
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"records\": [\n    {\n      \"snowName\": \"my-service\",\n      \"healthUrl\": \"https://my-service.example.com/health\",\n      \"snowHostUrl\": \"http://snow-monkeys.com:8080\",\n      \"failureCount\": 11,\n      \"lastError\": \"Unable to connect\",\n      \"failedAt\": \"2026-07-13T22:30:00.000Z\",\n      \"createdAt\": \"2026-07-13T22:00:00.000Z\",\n      \"updatedAt\": \"2026-07-13T22:30:00.000Z\"\n    }\n  ],\n  \"total\": 1\n}"
+            },
+            {
+              "name": "200 Empty",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/failed-records"
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"records\": [],\n  \"total\": 0\n}"
+            }
+          ]
+        },
+        {
+          "name": "List deleted records",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/deleted-records",
+            "description": "Returns all rows from `connectors.livenessprobe_deleted_records`, ordered by most recent deletion first.\n\nProbes appear here after manual removal via `POST /delete-record-from-queue`.\n\n**Response `200`:**\n```json\n{\n  \"records\": [\n    {\n      \"snowName\": \"my-service\",\n      \"healthUrl\": \"https://my-service.example.com/health\",\n      \"snowHostUrl\": \"http://snow-monkeys.com:8080\",\n      \"failureCount\": 2,\n      \"deletedAt\": \"2026-07-13T22:45:00.000Z\",\n      \"createdAt\": \"2026-07-13T22:00:00.000Z\",\n      \"updatedAt\": \"2026-07-13T22:30:00.000Z\"\n    }\n  ],\n  \"total\": 1\n}\n```"
+          },
+          "response": [
+            {
+              "name": "200 OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/deleted-records"
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"records\": [\n    {\n      \"snowName\": \"my-service\",\n      \"healthUrl\": \"https://my-service.example.com/health\",\n      \"snowHostUrl\": \"http://snow-monkeys.com:8080\",\n      \"failureCount\": 2,\n      \"deletedAt\": \"2026-07-13T22:45:00.000Z\",\n      \"createdAt\": \"2026-07-13T22:00:00.000Z\",\n      \"updatedAt\": \"2026-07-13T22:30:00.000Z\"\n    }\n  ],\n  \"total\": 1\n}"
+            },
+            {
+              "name": "200 Empty",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/deleted-records"
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+              ],
+              "body": "{\n  \"records\": [],\n  \"total\": 0\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+name: Deploy application on Hetzner
+
+on:
+  workflow_run:
+    workflows: [ "Build and push image to registry" ]
+    types: [ completed ]
+    branches: [ "main" ]
+
+#on:
+#  push:
+#    branches: [ "main" ]
+
+jobs:
+
+  create-angular-app-on-hetzner:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      provider: hetzner
+      type: docker_compose_app
+      name: snow-angular-ui
+      host: snow-server
+      destroy: false
+    secrets:
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+        
+  use-output:
+    needs: create-angular-app-on-hetzner
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "Angular app connection address is ${{ needs.create-angular-app-on-hetzner.outputs.address }}"

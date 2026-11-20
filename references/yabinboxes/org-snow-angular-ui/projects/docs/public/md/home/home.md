@@ -1,0 +1,1 @@
+Infraestructure as code is a complicated topic and can be easily grouth in complexity and for that we need some extra eyes to see what is happening and for that we have Snow Monkeys dashboard, below we can search for the roadmap to understand setup and usage for the dashboard and how can be extended and used.

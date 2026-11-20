@@ -1,0 +1,192 @@
+name: Automation test AWS modules
+run-name: Automation test AWS modules
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [ automation-aws-test-event ]
+
+
+jobs:
+
+  checkout:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+  # create aws s3 to store terraform state
+  # only resource that has to be removed manually is this s3 bucket state storage
+  create_s3_bucket:
+    needs: checkout
+    uses: snow-monkeys-modules/aws-iac/.github/workflows/main.yml@main
+    with:
+      type: aws_s3_bucket
+      type_values: |
+        bucket_name=s3-test-snow-monkeys-20261
+        region=us-east-2
+        versioning=true
+        encrypt=false
+      name: s3-test-snow-monkeys-20261
+    secrets:
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+
+  # create and destroy lambda (resource) on aws
+  create_lambda_on_aws:
+    needs: create_s3_bucket
+    uses: snow-monkeys-modules/aws-iac/.github/workflows/main.yml@main
+    with:
+      type: resource
+      resource: aws_lambda_function
+      name: lambda-aws-test
+      s3_bucket_state: s3-test-snow-monkeys-20261
+      state_values: |
+        bucket_name=s3-test-snow-monkeys-20261
+        region=us-east-2
+        encrypt=false
+      test_flag: true    # test_flag is used to test the lambda resource, create and destroy in the same workflow
+    secrets:
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY_TEST }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_TEST }}
+      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+  use-output-lambda:
+    needs: create_lambda_on_aws
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "Url is ${{ needs.create_lambda_on_aws.outputs.server_ip }}"
+
+      - run: sleep 5
+
+
+  # create server (server) on aws
+  # ami is required by aws_instance; set ami=<us-east-2 id> in type_values before this job can apply
+  create_server_on_aws:
+    needs: create_lambda_on_aws
+    uses: snow-monkeys-modules/aws-iac/.github/workflows/main.yml@main
+    with:
+      type: server
+      resource: aws_instance
+      name: server-aws-test
+      type_values: |
+        region=us-east-2
+        server_type=t3.micro
+      infra: test-aws/server/infra
+      s3_bucket_state: s3-test-snow-monkeys-20261
+      state_values: |
+        bucket_name=s3-test-snow-monkeys-20261
+        region=us-east-2
+        encrypt=false
+    secrets:
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY_TEST }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_TEST }}
+      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+  use-output-server:
+    needs: create_server_on_aws
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "Url is ${{ needs.create_server_on_aws.outputs.server_ip }}"
+
+      - run: sleep 5
+
+  # create docker compose (service) on aws
+  # Downstream always() conditions keep app deploy and server cleanup running after failure.
+  deploy-service:
+    needs: use-output-server
+    uses: snow-monkeys-modules/aws-iac/.github/workflows/main.yml@main
+    with:
+      type: docker_compose
+      name: server-aws-test     # same name because is same repository
+      host: server-aws-test
+      infra: test-aws/service/infra
+    secrets:
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY_TEST }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_TEST }}
+      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+  use-output-deploy-service:
+    needs: deploy-service
+    if: always() && needs.deploy-service.result != 'skipped'
+    continue-on-error: true
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "Url is ${{ needs.deploy-service.outputs.address }}"
+
+      - run: sleep 5
+
+
+  # create docker compose app on aws
+  # Downstream always() conditions keep server cleanup running after failure.
+  deploy-application:
+    needs:
+      - create_server_on_aws
+      - use-output-deploy-service
+    if: always() && needs.create_server_on_aws.result == 'success'
+    uses: snow-monkeys-modules/aws-iac/.github/workflows/main.yml@main
+    with:
+      type: docker_compose_app
+      name: server-aws-test     # same name because is same repository
+      host: server-aws-test
+      infra: test-aws/application/infra
+    secrets:
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY_TEST }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_TEST }}
+      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+  use-output-deploy-app:
+    needs: deploy-application
+    if: always() && needs.deploy-application.result != 'skipped'
+    continue-on-error: true
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "App connection address is ${{ needs.deploy-application.outputs.address }}"
+
+      - run: sleep 5
+
+  # destroy server (server) on aws
+  # runs whenever the server was created, including after a failed service or app deploy
+  # no continue-on-error: a failed destroy must fail the workflow
+  destroy_server_on_aws:
+    needs:
+      - create_server_on_aws
+      - deploy-service
+      - deploy-application
+    if: always() && needs.create_server_on_aws.result == 'success'
+    uses: snow-monkeys-modules/aws-iac/.github/workflows/main.yml@main
+    with:
+      type: server
+      resource: aws_instance
+      name: server-aws-test
+      type_values: |
+        region=us-east-2
+        server_type=t3.micro
+      infra: test-aws/server/infra
+      s3_bucket_state: s3-test-snow-monkeys-20261
+      state_values: |
+        bucket_name=s3-test-snow-monkeys-20261
+        region=us-east-2
+        encrypt=false
+      destroy: true   # destroy is used to destroy the server in a separate workflow
+    secrets:
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY_TEST }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_TEST }}
+      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}

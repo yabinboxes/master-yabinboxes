@@ -1,0 +1,37 @@
+name: Create Hetzner Server with Terraform
+
+on:
+  push:
+    branches: [ "main" ]
+
+
+jobs:
+
+
+  create-postgres-db-on-hetzner:
+
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      snow_host_url: http://62.238.50.36
+      provider: hetzner
+      type: docker_compose
+      name: snow-postgres-db
+      host: 62.238.50.36  #snow-server
+      destroy: false
+      expected_url: jdbc:postgresql://localhost:5432/postgres
+    secrets:
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+      snow_token: "1234"
+      env_values: |
+        DB_USER=postgres
+        DB_PASSWORD=admin
+
+  use-output:
+    needs: create-postgres-db-on-hetzner
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "DB connection address is ${{ needs.create-postgres-db-on-hetzner.outputs.address }}"
+        

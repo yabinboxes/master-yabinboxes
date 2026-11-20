@@ -1,0 +1,54 @@
+name: Hetzner Service Stateless
+
+
+on:
+  push:
+    branches: [ "main" ]
+
+
+jobs:
+
+  checkout:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+  # create server (server) on hetzner
+  create_server_on_hetzner:
+    needs: checkout
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: hcloud_server
+      name: server-hetzner-stateless
+      type_values: |
+        server_type=cpx12
+        image=ubuntu-26.04
+        location=hel1
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }} # TODO: add hcloud token
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY_TEST }} # TODO: add ssh public key
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_TEST }} # TODO: add ssh private key
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }} # TODO: add snow token pipeline
+
+  # deploy service (docker compose) on the stateless hetzner server
+  # host is the Snow name of the server created above
+  deploy_service_on_hetzner:
+    needs: create_server_on_hetzner
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: docker_compose
+      name: service-hetzner-stateless
+      host: server-hetzner-stateless
+      expected_url: server-hetzner-stateless:8080
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }} # TODO: add hcloud token
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY_TEST }} # TODO: add ssh public key
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_TEST }} # TODO: add ssh private key
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }} # TODO: add snow token pipeline
+
+  use-output-service:
+    needs: deploy_service_on_hetzner
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "Url is ${{ needs.deploy_service_on_hetzner.outputs.address }}"

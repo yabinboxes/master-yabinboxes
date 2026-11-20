@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@import "@fontsource/fira-sans/latin-400.css";
+@import "@fontsource/fira-sans/latin-500.css";
+@import "@fontsource/fira-sans/latin-600.css";
+@import "@fontsource/fira-sans/latin-700.css";
+@import "@fontsource/fira-mono/latin-400.css";
+@import "@fontsource/fira-mono/latin-500.css";
+@import "@fontsource/alfa-slab-one/latin-400.css";
+@import "@fontsource/jersey-15/latin-400.css";
+
+@plugin "daisyui" {
+  themes: dracula --default;
+}
+
+@plugin "@tailwindcss/typography";
+
+/* Typography from aprenderust.dev: Fira Sans body, Alfa Slab One display, Fira Mono labels/code, Jersey 15 numerals */
+@theme {
+  --font-sans: "Fira Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Fira Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-display: "Alfa Slab One", Georgia, serif;
+  --font-pixel: "Jersey 15", var(--font-mono);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@layer base {
+  body {
+    @apply bg-base-200 font-sans text-base leading-6 antialiased;
+  }
+
+  /* Page titles only; dense cards keep explicit sans utilities */
+  h1 {
+    @apply font-display font-normal tracking-tight;
+  }
+
+  h3 {
+    @apply font-sans font-bold tracking-tight;
+  }
+
+  code,
+  kbd,
+  samp,
+  pre {
+    @apply font-mono;
+  }
+}
+
+app-root {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.router-container {
+  height: 100vh;
+  min-height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+
+/* Thin, low-contrast scrollbars keep dense panels calm */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-base-300) transparent;
+}
+
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+svg.my-icon {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1;
+}
+
+svg.my-icon-link {
+  width: 15px;
+  height: 15px;
+  stroke-width: 1;
+}
+
+snow-navbar {
+  .menu {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+}

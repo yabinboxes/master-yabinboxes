@@ -1,0 +1,34 @@
+# Stage 1: Build the Angular application (SSR)
+FROM node:20-slim AS build
+
+WORKDIR /app
+
+# Copy package files
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm ci --legacy-peer-deps
+
+# Copy project files
+COPY . .
+
+# Build the Angular docs application for production (SSR: browser + server bundles)
+RUN npm run build -- docs --configuration production
+
+# Stage 2: Run the SSR server with Node
+FROM node:20-slim AS runtime
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+# Port the Angular SSR Express server listens on (see projects/docs/src/server.ts)
+ENV PORT=4000
+
+# Copy the SSR build output (browser + server bundles)
+COPY --from=build /app/dist/docs ./dist/docs
+
+# Expose the SSR server port
+EXPOSE 4000
+
+# Start the Angular SSR Node server
+CMD ["node", "dist/docs/server/server.mjs"]

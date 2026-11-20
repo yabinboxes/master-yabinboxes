@@ -1,0 +1,17 @@
+name: Build and push image to registry
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-push-image:
+    uses: snow-monkeys-modules/docker-iac/.github/workflows/main.yml@main
+    with:
+      type: build_and_push_image
+      name: yabinm/health-cron-bun
+      tag: latest
+    secrets:
+      registry_user: ${{ secrets.GLOBAL_DOCKERHUB_USERNAME }}
+      registry_token: ${{ secrets.GLOBAL_DOCKERHUB_TOKEN }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}

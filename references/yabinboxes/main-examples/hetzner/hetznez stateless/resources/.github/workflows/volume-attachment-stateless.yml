@@ -1,0 +1,38 @@
+name: Volume Attachment Stateless
+
+on:
+  push:
+    branches: [ "main" ]
+
+
+jobs:
+
+  checkout:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+  # attach an existing volume to an existing server on hetzner
+  # volume_id and server_id have no module defaults; replace 0 with real ids
+  create_volume_attachment_on_hetzner:
+    needs: checkout
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: hcloud_volume_attachment
+      name: volume-attachment-hetzner
+      type_values: |
+        volume_id=0
+        server_id=0
+        automount=false
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }} # TODO: add hcloud token
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }} # TODO: add snow token pipeline
+
+  use-output-volume-attachment:
+    needs: create_volume_attachment_on_hetzner
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "Url is ${{ needs.create_volume_attachment_on_hetzner.outputs.server_ip }}"
+
+      - run: sleep 5

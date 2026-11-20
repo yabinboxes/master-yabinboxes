@@ -1,0 +1,403 @@
+# Reusable workflow: provision Cloudflare servers or deploy Docker Compose services/apps,
+# then notify Snow (CLUSTER / RESOURCE / SERVICE / APPLICATION). Consumed by caller repos via workflow_call.
+name: Cloudflare Snow Provider
+
+on:
+  workflow_call:
+    inputs:
+      # Snow platform
+      snow_host_url:
+        required: false
+        type: string
+        default: 'https://api.snow-monkeys.com'
+      provider:
+        required: false
+        type: string
+        default: 'cloudflare'
+      # Deployment type: cloudflare_pages_project | resource | docker_compose | docker_compose_app
+      type:
+        required: false
+        type: string
+        default: 'cloudflare_pages_project'
+      # type values, used to pass Terraform vars: name | server_type | image | location, etc...
+      type_values:
+        required: false
+        type: string
+        default: ''
+      # state aws s3 values
+      state_values:
+        required: false
+        type: string
+        default: ''
+      # Resource type: dns | tunnel | r2 | worker | zone | etc.
+      resource:
+        required: false
+        type: string
+        default: ''
+      # infra directory name, used to copy the infra directory to the remote host
+      infra:
+        required: false
+        type: string
+        default: 'infra'
+      # snow name, used to resolve the host via the Snow API
+      name:
+        required: false
+        type: string
+        default: 'snow-server'
+      # IP, hostname, or Snow service name (resolved via API when not an IP)
+      host:
+        required: false
+        type: string
+        default: 'snow-server'  
+      # Git type: github | gitlab
+      git_type:
+        required: false
+        type: string
+        default: 'github'
+      # Enable generate SSH key
+      enable_generate_ssh_key:
+        required: false
+        type: boolean
+        default: false
+      # Terraform destroy flag
+      destroy:
+        required: false
+        type: boolean
+        default: false
+      environment:
+        required: false
+        type: string
+        default: ''
+      expected_url:
+        required: false
+        type: string
+        default: ''  # hostname:port reported to Snow; hostname replaced with resolved host
+      health_url:
+        required: false
+        type: string
+        default: ''  # when set on docker_compose_app, queues a liveness probe after notify
+      s3_bucket_state:
+        required: false
+        type: string
+        default: ''
+      test_flag:
+        required: false
+        type: boolean
+        default: false
+    secrets:
+      cloudflare_token:        # required for terraform types
+        required: false
+      cloudflare_account_id:  # Cloudflare account ID for Terraform
+        required: false
+      aws_access_key_id:   # required when s3_bucket_state is set
+        required: false
+      aws_secret_access_key:
+        required: false
+      ssh_public_key:      # required for all deployment types
+        required: false
+      ssh_private_key:
+        required: false
+      snow_token:          # Snow API token
+        required: false
+      snow_token_pipeline: # Snow API Bearer token (host resolution + notify)
+        required: false
+      snow_github_token:   # GitHub token for cloning private repos on the remote host
+        required: false
+      env_values:          # .env contents written on the remote before init.sh runs
+        required: false
+    outputs:
+      server_ip:
+        description: 'Server IP address from Cloudflare'
+        value: ${{ jobs.implement_cloudflare_types.outputs.server_ip }}
+      address:
+        description: 'Host address from docker_compose or docker_compose_app deployment'
+        value: ${{ jobs.implement_cloudflare_types.outputs.address }}
+      container_name:
+        description: 'Container name returned by init.sh on the remote host'
+        value: ${{ jobs.implement_cloudflare_types.outputs.container_name }}
+      docker_output:
+        description: 'Docker logs from the deployed container, as JSON'
+        value: ${{ jobs.implement_cloudflare_types.outputs.docker_output }}
+      docker_vars:
+        description: 'Compose service fields (image, container_name, ports, and the rest) as JSON'
+        value: ${{ jobs.implement_cloudflare_types.outputs.docker_vars }}
+      terraform_output:
+        description: 'Terraform outputs as JSON'
+        value: ${{ jobs.implement_cloudflare_types.outputs.terraform_output }}
+      terraform_vars:
+        description: 'Non-secret Terraform variables as JSON'
+        value: ${{ jobs.implement_cloudflare_types.outputs.terraform_vars }}
+
+
+jobs:
+
+  # Resolves inputs.host via snow-iac before any deployment step runs.
+  # Three cases (handled by snow-iac get-resources):
+  #   1. inputs.host is empty       → job is skipped; downstream jobs fall back to inputs.host
+  #   2. inputs.host is an IP       → used directly, no API call needed
+  #   3. inputs.host is a name      → Snow API resolves the name to a real host/IP
+  # Output: needs.get_resource_name.outputs.response
+  get_resource_name:
+    uses: snow-monkeys-modules/snow-iac/.github/workflows/main.yml@main
+    if: ${{ (inputs.type == 'docker_compose' || inputs.type == 'docker_compose_app') && inputs.host != '' }}
+    with:
+      workflow_type: get_resources
+      snow_host_url: ${{ inputs.snow_host_url }}
+      resource_name: ${{ inputs.host }}
+      actor_id: ${{ github.actor_id }}
+      git_type: ${{ inputs.git_type }}
+    secrets:
+      snow_token: ${{ secrets.snow_token }}
+      snow_token_pipeline: ${{ secrets.snow_token_pipeline }}
+
+  # Single job for all deployment types. Exactly one action step runs per call based on inputs.type.
+  implement_cloudflare_types:
+    runs-on: ubuntu-22.04
+    needs: get_resource_name
+    if: ${{ always() && !cancelled() && needs.get_resource_name.result != 'failure' }}
+    outputs:
+      server_ip: ${{ steps.server_ip.outputs.server_ip }}
+      terraform_output: ${{ steps.server_ip.outputs.terraform_output }}
+      terraform_vars: ${{ steps.server_ip.outputs.terraform_vars }}
+      # only one docker_compose step runs per call, so || picks whichever produced output
+      address: ${{ steps.docker_compose.outputs.address || steps.docker_compose_app.outputs.address }}
+      container_name: ${{ steps.docker_compose.outputs.container_name || steps.docker_compose_app.outputs.container_name }}
+      docker_output: ${{ steps.docker_compose.outputs.docker_output || steps.docker_compose_app.outputs.docker_output }}
+      docker_vars: ${{ steps.docker_compose.outputs.docker_vars || steps.docker_compose_app.outputs.docker_vars }}
+
+    steps:
+      # checkout code in runner
+      - uses: actions/checkout@v4
+
+      # if inputs.resource is empty then assign inputs.type to inputs.resource
+      # so resource has the same value as type
+      - name: Assign resource if is empty
+        id: assign_resource
+        env:
+          RESOURCE: ${{ inputs.resource }}
+          TYPE: ${{ inputs.type }}
+        shell: bash
+        run: |
+          if [ -z "$RESOURCE" ]; then
+            RESOURCE="$TYPE"
+          fi
+          echo "resource=$RESOURCE" >> "$GITHUB_OUTPUT"
+
+      # If expected_url is empty then return host, if expected_url is not empty then return normalized expected_url.
+      # Two cases:
+      #   1. HOST_PART is an IP   → expected_url is left unchanged
+      #   2. HOST_PART is a name  → replaced with the resolved host from get_resource_name
+      #                             (falls back to inputs.host if get_resource_name was skipped)
+      # Skipped entirely when inputs.expected_url is empty.
+      # Output: steps.assign_host_to_expected_url.outputs.expected_url
+      - name: Assign host value to expected_url
+        id: assign_host_to_expected_url
+        if: ${{ inputs.expected_url != '' }}
+        env:
+          EXPECTED_URL: ${{ inputs.expected_url }}
+          HOST: ${{ inputs.host }}
+          RESOLVED_HOST: ${{ needs.get_resource_name.outputs.response }}
+        shell: bash
+        run: |
+          HOST_PART=$(echo "$EXPECTED_URL" | cut -d':' -f1)
+          PORT_PART=$(echo "$EXPECTED_URL" | cut -d':' -f2-)
+          if [[ "$HOST_PART" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            # IP in expected_url — nothing to replace
+            echo "expected_url=$EXPECTED_URL" >> "$GITHUB_OUTPUT"
+          else
+            # hostname in expected_url — substitute with the resolved host, keep the port
+            EFFECTIVE_HOST=${RESOLVED_HOST:-$HOST}
+            echo "expected_url=$EFFECTIVE_HOST:$PORT_PART" >> "$GITHUB_OUTPUT"
+          fi
+
+
+      # Provisions Server via Terraform (iac-terraform repo).
+      # Runs when type is not docker_compose / docker_compose_app. Cloudflare terraform types report RESOURCE. Wrangler pages deploy stays in server-resource.
+      - uses: snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource@main
+        id: server_ip
+        if: ${{ inputs.type != 'docker_compose' && inputs.type != 'docker_compose_app' }}
+        with:
+          provider: ${{ inputs.provider }}
+          type: ${{ inputs.type }}
+          type_values: ${{ inputs.type_values }}
+          state_values: ${{ inputs.state_values }}
+          resource: ${{ steps.assign_resource.outputs.resource }}
+          infra: ${{ inputs.infra }}
+          name: ${{ inputs.name }}
+          git_type: ${{ inputs.git_type }}
+          s3_bucket_state: ${{ inputs.s3_bucket_state }}
+          destroy: ${{ inputs.destroy }}
+          enable_generate_ssh_key: ${{ inputs.enable_generate_ssh_key }}
+          cloudflare_token: ${{ secrets.cloudflare_token }}
+          cloudflare_account_id: ${{ secrets.cloudflare_account_id }}
+          aws_access_key_id: ${{ secrets.aws_access_key_id }}
+          aws_secret_access_key: ${{ secrets.aws_secret_access_key }}
+          ssh_public_key: ${{ secrets.ssh_public_key }}
+          ssh_private_key: ${{ secrets.ssh_private_key }}
+          snow_github_token: ${{ secrets.snow_github_token }}
+          snow_token: ${{ secrets.snow_token }}
+          env_values: ${{ secrets.env_values }}
+          expected_url: ${{ inputs.expected_url }}
+          test_flag: ${{ inputs.test_flag }}
+
+      # Provision server output
+      - name: Use output
+        if: ${{ inputs.type != 'docker_compose' && inputs.type != 'docker_compose_app' }}
+        run: echo "ip ${{ steps.server_ip.outputs.server_ip }}"
+
+      # Provision Service - Docker Compose service to host.
+      # host is the resolved SSH target; expected_url is normalised before being passed in.
+      # Copies infra/ from the caller repo to the remote and runs init.sh.
+      - uses: snow-monkeys-modules/cloudflare-iac/.github/actions/docker-compose@main
+        id: docker_compose
+        if: ${{ inputs.type == 'docker_compose' }}
+        with:
+          provider: ${{ inputs.provider }}
+          type: ${{ inputs.type }}
+          name: ${{ inputs.name }}
+          host: ${{ needs.get_resource_name.outputs.response || inputs.host }}
+          infra: ${{ inputs.infra }}
+          ssh_public_key: ${{ secrets.ssh_public_key }}
+          ssh_private_key: ${{ secrets.ssh_private_key }}
+          snow_token: ${{ secrets.snow_token }}
+          env_values: ${{ secrets.env_values }}
+          expected_url: ${{ steps.assign_host_to_expected_url.outputs.expected_url || inputs.expected_url }}
+          test_flag: ${{ inputs.test_flag }}
+
+      # Provision service output
+      - name: Use output
+        if: ${{ inputs.type == 'docker_compose' }}
+        run: echo "ip ${{ steps.docker_compose.outputs.address }}"
+
+
+      # Provision Application - Docker Compose service to host.
+      # Same deployment flow as docker_compose but also cleans Docker space and rotates logs
+      # on the remote host before deploying (see docker-compose-app/action.yml for details).
+      - uses: snow-monkeys-modules/cloudflare-iac/.github/actions/docker-compose-app@main
+        id: docker_compose_app
+        if: ${{ inputs.type == 'docker_compose_app' }}
+        with:
+          provider: ${{ inputs.provider }}
+          type: ${{ inputs.type }}
+          name: ${{ inputs.name }}
+          host: ${{ needs.get_resource_name.outputs.response || inputs.host }}
+          infra: ${{ inputs.infra }}
+          ssh_public_key: ${{ secrets.ssh_public_key }}
+          ssh_private_key: ${{ secrets.ssh_private_key }}
+          snow_token: ${{ secrets.snow_token }}
+          env_values: ${{ secrets.env_values }}
+          expected_url: ${{ steps.assign_host_to_expected_url.outputs.expected_url || inputs.expected_url }}
+          test_flag: ${{ inputs.test_flag }}
+
+      # Provision application output
+      - name: Use output
+        if: ${{ inputs.type == 'docker_compose_app' }}
+        run: echo "ip ${{ steps.docker_compose_app.outputs.address }}"
+
+  # --- Snow notify jobs (call snow-iac reusable workflow) ---
+  # actor_id / actor_name come from github.actor_id and github.actor — not caller inputs.
+  # snow_token and snow_token_pipeline must be forwarded via secrets: (not with:) when calling a reusable workflow.
+
+  # Reports a CLUSTER resource to Snow API after a server is provisioned.
+  snow_notify_server:
+    uses: snow-monkeys-modules/snow-iac/.github/workflows/main.yml@main
+    if: ${{ always() && needs.implement_cloudflare_types.result == 'success' && false }}
+    needs: implement_cloudflare_types
+    with:
+      workflow_type: notify
+      snow_host_url: ${{ inputs.snow_host_url }}
+      actor_id: ${{ github.actor_id }}
+      actor_name: ${{ github.actor }}
+      git_type: ${{ inputs.git_type }}
+      provider: ${{ inputs.provider }}
+      name: ${{ inputs.name }}
+      type: CLUSTER
+      url: ${{ needs.implement_cloudflare_types.outputs.server_ip }}
+      terraform_output: ${{ needs.implement_cloudflare_types.outputs.terraform_output }}
+      terraform_vars: ${{ needs.implement_cloudflare_types.outputs.terraform_vars }}
+    secrets:
+      snow_token: ${{ secrets.snow_token }}
+      snow_token_pipeline: ${{ secrets.snow_token_pipeline }}
+
+  # Reports a CLUSTER resource to Snow API after a resource is provisioned.
+  snow_notify_resource:
+    uses: snow-monkeys-modules/snow-iac/.github/workflows/main.yml@main
+    if: ${{ always() && needs.implement_cloudflare_types.result == 'success' && inputs.type != 'docker_compose' && inputs.type != 'docker_compose_app' }}
+    needs: implement_cloudflare_types
+    with:
+      workflow_type: notify
+      snow_host_url: ${{ inputs.snow_host_url }}
+      actor_id: ${{ github.actor_id }}
+      actor_name: ${{ github.actor }}
+      git_type: ${{ inputs.git_type }}
+      provider: ${{ inputs.provider }}
+      name: ${{ inputs.name }}
+      type: RESOURCE
+      url: ${{ needs.implement_cloudflare_types.outputs.server_ip }}
+      terraform_output: ${{ needs.implement_cloudflare_types.outputs.terraform_output }}
+      terraform_vars: ${{ needs.implement_cloudflare_types.outputs.terraform_vars }}
+    secrets:
+      snow_token: ${{ secrets.snow_token }}
+      snow_token_pipeline: ${{ secrets.snow_token_pipeline }}
+
+  # Reports a SERVICE to Snow API after a docker_compose deployment.
+  # Uses the address output when available; falls back to expected_url.
+  snow_notify_service:
+    uses: snow-monkeys-modules/snow-iac/.github/workflows/main.yml@main
+    if: ${{ always() && needs.implement_cloudflare_types.result == 'success' && inputs.type == 'docker_compose' }}
+    needs: implement_cloudflare_types
+    with:
+      workflow_type: notify
+      snow_host_url: ${{ inputs.snow_host_url }}
+      actor_id: ${{ github.actor_id }}
+      actor_name: ${{ github.actor }}
+      git_type: ${{ inputs.git_type }}
+      provider: ${{ inputs.provider }}
+      name: ${{ inputs.name }}
+      type: SERVICE
+      url: ${{ needs.implement_cloudflare_types.outputs.address != '' && needs.implement_cloudflare_types.outputs.address || inputs.expected_url  }}
+      image: ${{ needs.implement_cloudflare_types.outputs.container_name }}
+      docker_output: ${{ needs.implement_cloudflare_types.outputs.docker_output }}
+      docker_vars: ${{ needs.implement_cloudflare_types.outputs.docker_vars }}
+    secrets:
+      snow_token: ${{ secrets.snow_token }}
+      snow_token_pipeline: ${{ secrets.snow_token_pipeline }}
+
+  # Reports an APPLICATION to Snow API after a docker_compose_app deployment.
+  # Uses the address output when available; falls back to expected_url.
+  snow_notify_application:
+    uses: snow-monkeys-modules/snow-iac/.github/workflows/main.yml@main
+    if: ${{ always() && needs.implement_cloudflare_types.result == 'success' && inputs.type == 'docker_compose_app' }}
+    needs: implement_cloudflare_types
+    with:
+      workflow_type: notify
+      snow_host_url: ${{ inputs.snow_host_url }}
+      name: ${{ inputs.name }}
+      actor_id: ${{ github.actor_id }}
+      actor_name: ${{ github.actor }}
+      git_type: ${{ inputs.git_type }}
+      type: APPLICATION
+      url: ${{ needs.implement_cloudflare_types.outputs.address != '' && needs.implement_cloudflare_types.outputs.address || inputs.expected_url}}
+      image: ${{ needs.implement_cloudflare_types.outputs.container_name }}
+      docker_output: ${{ needs.implement_cloudflare_types.outputs.docker_output }}
+      docker_vars: ${{ needs.implement_cloudflare_types.outputs.docker_vars }}
+    secrets:
+      snow_token: ${{ secrets.snow_token }}
+      snow_token_pipeline: ${{ secrets.snow_token_pipeline }}
+
+  # Queues a health check in Snow after APPLICATION notify. Skipped when health_url is empty.
+  snow_livenessprobe_application:
+    uses: snow-monkeys-modules/snow-iac/.github/workflows/main.yml@main
+    if: ${{ always() && needs.snow_notify_application.result == 'success' && inputs.type == 'docker_compose_app' && inputs.health_url != '' }}
+    needs: snow_notify_application
+    with:
+      workflow_type: health
+      snow_host_url: ${{ inputs.snow_host_url }}
+      actor_id: ${{ github.actor_id }}
+      actor_name: ${{ github.actor }}
+      git_type: ${{ inputs.git_type }}
+      name: ${{ inputs.name }}
+      health_url: ${{ inputs.health_url }}
+    secrets:
+      snow_token: ${{ secrets.snow_token }}
+      snow_token_pipeline: ${{ secrets.snow_token_pipeline }}

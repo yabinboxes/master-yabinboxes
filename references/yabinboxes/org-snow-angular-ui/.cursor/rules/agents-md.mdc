@@ -1,0 +1,14 @@
+---
+description: Follow AGENTS.md for project structure, conventions, and commands in this monorepo
+alwaysApply: true
+---
+
+# Apply AGENTS.md
+
+When working in this repository, **read and follow [AGENTS.md](AGENTS.md)** at the repo root.
+
+- **Project choice**: Decide whether the task targets **dashboard** (`projects/dashboard/`) or **docs** (`projects/docs/`). Use the key paths and commands from AGENTS.md for that project.
+- **Conventions**: Use standalone components, `inject()`, Angular Signals, Tailwind + DaisyUI, and the patterns described in AGENTS.md. Dashboard: keep `authGuard` on protected routes; use `FirebaseAuth` / `HandleProfiles` for auth-dependent logic. Docs: add markdown under `public/md/` and wire routes/params as in AGENTS.md.
+- **Before finishing**: Run `ng build dashboard` or `ng build docs` for the app you changed and fix any errors.
+
+Refer to AGENTS.md for exact paths, route lists, and command syntax.

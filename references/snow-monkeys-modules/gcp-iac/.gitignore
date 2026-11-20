@@ -1,0 +1,6 @@
+# mac and editor
+.idea
+.vscode
+.astro
+.DS_Store
+INTERNAL.md

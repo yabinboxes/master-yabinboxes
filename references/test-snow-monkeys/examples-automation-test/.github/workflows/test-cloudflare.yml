@@ -1,0 +1,184 @@
+name: Automation test Cloudflare modules
+run-name: Test Cloudflare
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [ automation-cloudflare-test-event ]
+
+
+jobs:
+
+  checkout:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+  # create aws s3 to store terraform state for cloudflare
+  # only resource that has to be removed manually is this s3 bucket state storage
+#  create_s3_bucket:
+#    needs: checkout
+#    uses: snow-monkeys-modules/aws-iac/.github/workflows/main.yml@main
+#    with:
+#      type: aws_s3_bucket
+#      type_values: |
+#        bucket_name=s3-test-snow-monkeys-20261
+#        region=us-east-2
+#        versioning=true
+#        encrypt=false
+#      name: s3-test-snow-monkeys-20261
+#    secrets:
+#      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+#      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+
+  # Create the Pages project with Terraform (iac-terraform cloudflare_pages_project),
+  # then deploy the static application in test-cloudflare/pages.
+  # test_flag destroys the project after that deploy.
+  create_pages_project_on_cloudflare:
+    uses: snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml@main
+    with:
+      type: cloudflare_pages_project
+      resource: cloudflare_pages_project
+      name: pages-cloudflare-test
+      infra: test-cloudflare/pages
+      type_values: |
+        production_branch=main
+    secrets:
+      cloudflare_token: ${{ secrets.CLOUDFLARE_TOKEN }}
+      cloudflare_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+  use-output-pages-project:
+    needs: create_pages_project_on_cloudflare
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "Pages URL is ${{ needs.create_pages_project_on_cloudflare.outputs.server_ip }}"
+
+      - run: sleep 5
+
+
+  # create server (server) on cloudflare
+  # the catalog has no type server; resource stays empty until a server module is listed
+#  create_server_on_cloudflare:
+#    needs: create_pages_project_on_cloudflare
+#    uses: snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml@main
+#    with:
+#      type: server
+#      name: server-cloudflare-test
+#      infra: test-cloudflare/server/infra
+#      s3_bucket_state: s3-test-snow-monkeys-20261
+#      state_values: |
+#        bucket_name=s3-test-snow-monkeys-20261
+#        region=us-east-2
+#        encrypt=false
+#    secrets:
+#      cloudflare_api_token: ${{ secrets.CLOUDFLARE_TOKEN }}
+#      account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+#      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY_TEST }}
+#      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_TEST }}
+#      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+#      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+#  use-output-server:
+#    needs: create_server_on_cloudflare
+#    runs-on: ubuntu-22.04
+#    steps:
+#      - name: Use output
+#        run: echo "Url is ${{ needs.create_server_on_cloudflare.outputs.server_ip }}"
+
+#      - run: sleep 5
+
+  # create docker compose (service) on cloudflare
+  # Downstream always() conditions keep app deploy and server cleanup running after failure.
+#  deploy-service:
+#    needs: use-output-server
+#    uses: snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml@main
+#    with:
+#      type: docker_compose
+#      name: server-cloudflare-test     # same name because is same repository
+#      host: server-cloudflare-test
+#      infra: test-cloudflare/service/infra
+#    secrets:
+#      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY_TEST }}
+#      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_TEST }}
+#      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+#      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+#  use-output-deploy-service:
+#    needs: deploy-service
+#    if: always() && needs.deploy-service.result != 'skipped'
+#    continue-on-error: true
+#    runs-on: ubuntu-22.04
+#    steps:
+#      - name: Use output
+#        run: echo "Url is ${{ needs.deploy-service.outputs.address }}"
+
+#      - run: sleep 5
+
+
+  # create docker compose app on cloudflare
+  # Downstream always() conditions keep server cleanup running after failure.
+#  deploy-application:
+#    needs:
+#      - create_server_on_cloudflare
+#      - use-output-deploy-service
+#    if: always() && needs.create_server_on_cloudflare.result == 'success'
+#    uses: snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml@main
+#    with:
+#      type: docker_compose_app
+#      name: server-cloudflare-test     # same name because is same repository
+#      host: server-cloudflare-test
+#      infra: test-cloudflare/application/infra
+#    secrets:
+#      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY_TEST }}
+#      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_TEST }}
+#      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+#      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+#  use-output-deploy-app:
+#    needs: deploy-application
+#    if: always() && needs.deploy-application.result != 'skipped'
+#    continue-on-error: true
+#    runs-on: ubuntu-22.04
+#    steps:
+#      - name: Use output
+#        run: echo "App connection address is ${{ needs.deploy-application.outputs.address }}"
+
+#      - run: sleep 5
+
+  # destroy server (server) on cloudflare
+  # runs whenever the server was created, including after a failed service or app deploy
+  # no continue-on-error: a failed destroy must fail the workflow
+#  destroy_server_on_cloudflare:
+#    needs:
+#      - create_server_on_cloudflare
+#      - deploy-service
+#      - deploy-application
+#    if: always() && needs.create_server_on_cloudflare.result == 'success'
+#    uses: snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml@main
+#    with:
+#      type: server
+#      name: server-cloudflare-test
+#      infra: test-cloudflare/server/infra
+#      s3_bucket_state: s3-test-snow-monkeys-20261
+#      state_values: |
+#        bucket_name=s3-test-snow-monkeys-20261
+#        region=us-east-2
+#        encrypt=false
+#      destroy: true   # destroy is used to destroy the server in a separate workflow
+#    secrets:
+#      cloudflare_api_token: ${{ secrets.CLOUDFLARE_TOKEN }}
+#      account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+#      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY_TEST }}
+#      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_TEST }}
+#      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+#      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}

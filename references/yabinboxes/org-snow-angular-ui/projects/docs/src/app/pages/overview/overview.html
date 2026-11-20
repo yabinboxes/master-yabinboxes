@@ -1,0 +1,54 @@
+<docs-page-header
+  eyebrow="Guide"
+  title="Overview"
+  lead="What Snow Monkeys is and where to go next."
+/>
+
+@if (markdownPath()) {
+  <docs-markdown [src]="markdownPath()" [showToc]="false" />
+} @else {
+  <div class="mx-auto max-w-3xl px-6 py-6">
+    <div class="alert alert-warning">
+      <span>Markdown file not found.</span>
+    </div>
+  </div>
+}
+
+<section class="mx-auto max-w-6xl border-t border-base-300/60 px-6 py-12">
+  <p class="mb-3 font-mono text-[11px] font-medium uppercase tracking-[0.08em] text-primary">
+    Continue reading
+  </p>
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+    <a
+      id="snow-monkeys-overview"
+      class="rounded-2xl border border-base-300 bg-base-100 p-[18px] no-underline transition-colors hover:border-base-content/20"
+      routerLink="/docs/snow-monkeys/intro"
+    >
+      <div
+        class="flex size-10 items-center justify-center rounded-xl bg-primary/10 ring-1 ring-inset ring-primary/30"
+      >
+        <lucide-angular [img]="book" class="h-5 w-5 text-primary"></lucide-angular>
+      </div>
+      <h2 class="mt-3 text-lg font-bold tracking-tight text-base-content">Snow Monkeys</h2>
+      <p class="mt-1.5 text-sm leading-relaxed text-base-content/70">
+        Learn what Snow Monkeys is for and how to use it.
+      </p>
+    </a>
+
+    <a
+      id="get-started-overview"
+      class="rounded-2xl border border-base-300 bg-base-100 p-[18px] no-underline transition-colors hover:border-base-content/20"
+      routerLink="/docs/get-started/web"
+    >
+      <div
+        class="flex size-10 items-center justify-center rounded-xl bg-primary/10 ring-1 ring-inset ring-primary/30"
+      >
+        <lucide-angular [img]="rocket" class="h-5 w-5 text-primary"></lucide-angular>
+      </div>
+      <h2 class="mt-3 text-lg font-bold tracking-tight text-base-content">Get Started</h2>
+      <p class="mt-1.5 text-sm leading-relaxed text-base-content/70">
+        Install and use the hosted dashboard.
+      </p>
+    </a>
+  </div>
+</section>

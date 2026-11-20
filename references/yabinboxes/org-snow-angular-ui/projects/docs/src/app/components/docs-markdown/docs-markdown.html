@@ -1,0 +1,71 @@
+<div
+  class="docs-reading mx-auto w-full max-w-6xl px-6 pb-10 md:pb-14"
+  [class.pt-6]="skipFirstH1()"
+  [class.pt-10]="!skipFirstH1()"
+  [class.md:pt-14]="!skipFirstH1()"
+>
+  <div class="flex items-start gap-10">
+    <article class="docs-article prose prose-invert min-w-0 max-w-3xl flex-1">
+      <markdown
+        [src]="src()"
+        [disableSanitizer]="true"
+        (ready)="onReady()"
+      ></markdown>
+    </article>
+
+    @if (showToc() && toc().length > 0) {
+      <aside class="not-prose hidden w-48 shrink-0 xl:block" aria-label="On this page">
+        <nav class="sticky top-6">
+          <p
+            class="mb-3 font-mono text-[11px] font-medium uppercase tracking-[0.08em] text-primary"
+          >
+            On this page
+          </p>
+          <ul class="flex flex-col gap-1 border-l border-base-300">
+            @for (item of toc(); track item.id) {
+              <li>
+                <a
+                  [href]="'#' + item.id"
+                  class="block border-l-2 border-transparent py-1 font-mono text-[12px] leading-snug text-base-content/60 transition-colors hover:border-primary hover:text-base-content"
+                  [class.pl-3]="item.level === 2"
+                  [class.pl-5]="item.level === 3"
+                  (click)="onTocClick($event, item.id)"
+                >
+                  {{ item.text }}
+                </a>
+              </li>
+            }
+          </ul>
+        </nav>
+      </aside>
+    }
+  </div>
+
+  @if (showToc() && toc().length > 1) {
+    <nav
+      class="not-prose mt-10 border-t border-base-300/60 pt-6 xl:hidden"
+      aria-label="On this page"
+    >
+      <p
+        class="mb-3 font-mono text-[11px] font-medium uppercase tracking-[0.08em] text-primary"
+      >
+        On this page
+      </p>
+      <ul class="flex flex-col gap-1">
+        @for (item of toc(); track item.id) {
+          <li>
+            <a
+              [href]="'#' + item.id"
+              class="block py-1 font-mono text-[12px] text-base-content/70 hover:text-base-content"
+              [class.pl-0]="item.level === 2"
+              [class.pl-3]="item.level === 3"
+              (click)="onTocClick($event, item.id)"
+            >
+              {{ item.text }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+  }
+</div>

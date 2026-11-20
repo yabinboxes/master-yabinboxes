@@ -1,0 +1,49 @@
+name: Deploy Application
+
+on:
+  workflow_dispatch:
+#  schedule:
+#    - cron: 0/15 * * * *
+#  push: 
+#    branches: [ "main" ]
+
+jobs:  
+
+# build - create image and push to registry
+#  build-and-push-image:
+  
+#    uses: snow-monkeys-org/build-and-push-image/.github/workflows/main.yml@main
+#    with:
+#      name: yabinm/hello-app-image
+#      tag: latest
+#    secrets:
+#      github_token: ${{ secrets.GLOBAL_GITHUB_TOKEN }}
+#      registry_user: ${{ secrets.DOCKERHUB_USERNAME }}
+#      registry_token: ${{ secrets.DOCKERHUB_TOKEN }}
+#      snow_token: "123"
+
+
+  # deploy app to kubernetes
+  health-check-tests:
+
+    uses: snow-monkeys-modules/health-check/.github/workflows/main.yml@main
+    with:
+      health_url: 89.167.54.89:4200
+      snow_dashboard_url: 89.167.54.89:8080/health/liveness-status
+    secrets:
+      snow_token: "1234"
+
+
+#  snow-notify-app:
+#    uses: snow-monkeys-modules/notify/.github/workflows/main.yml@main
+#    needs: deploy-image-civo-k8s
+#    with:
+#      provider: civo
+#      name: hello-world
+#      type: APPLICATION
+#      url: hello-app-image.connectorsapp.com
+#      port: 80
+#      image: yabinm/snow-hello-world-img
+
+
+      

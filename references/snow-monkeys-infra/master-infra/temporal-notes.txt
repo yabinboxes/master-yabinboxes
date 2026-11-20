@@ -1,0 +1,85 @@
+# ommit everything here
+
+Prerequisites:
+1. Configure GitHub MCP (pending...)
+2. Pass ${SNOW_GITHUB_TOKEN} to github mcp
+3. Create new branch in https://github.com/snow-monkeys-infra/iac-terraform with name "updates"
+4. terraform registry docs https://registry.terraform.io/browse/providers
+5. add to GitHub action "GitHub action export all the activity what is executed in cursor cli" (pending...)
+
+
+Peprare
+1. github schedule cron bot - now manually trigger
+2. add CURSOR API secret
+2. read snow-master repository and perform actions in github pipeline
+
+
+
+
+master.md
+
+
+
+Context:
+1. repositories in path https://github.com/snow-monkeys-infra/repositories  are considered as "seal 0" and is used to store terraform and pulumi projects.
+2. repositories in path https://github.com/snow-monkeys-modules/repositories  are considered as "seal 1" and is used to store reusable workflows.
+3. repositories in path https://github.com/orgs/test-snow-monkeys/repositories are considered as "seal 2" and is used to store examples of how to call and implement reusable workflows in "seal 1"
+
+
+Files with steps to implement:
+- @master-hetzner.md
+- @master-civo.md
+
+
+Conclusion:
+1. Export infraestructure report to report service in snow-monkeys
+2. Destroy everything after implemented
+
+
+
+
+list-of-reources.md
+
+Hetzner
+- hcloud_server (type -> server)
+- volume (type -> undefined)
+- object storage (type -> undefined)
+- deploy in server (type -> docker_compose)
+- deploy application (type -> docker_compose_app)
+
+
+Civo
+- object storage (type -> undefined)
+
+
+weekly-master.md
+ You are running non-interactively inside a GitHub Actions job on the
+            snow-monkeys-org/master repository. Read main.md and master.md in the
+            repository root and execute the plan they describe, including the
+            files they reference (master-hetzner.md, master-civo.md,
+            list-of-resources.md and the hetzner-iac-structure folder).
+            Only make changes where the plans say an update is required.
+
+            To read and write repositories in the snow-monkeys-infra,
+            snow-monkeys-modules and test-snow-monkeys organizations, use the
+            preinstalled `gh` CLI and `git` from your shell. Both are already
+            authenticated with the token in GITHUB_ACCESS_TOKEN (also exported as
+            GH_TOKEN), so no extra credentials are needed. There is no GitHub MCP
+            server available in this environment. Clone target repositories into
+            a temporary directory outside this checkout, commit on the branch the
+            plan specifies, and push. Git cannot track empty directories, so a
+            new module folder only exists once the files inside it are committed.
+
+
+
+
+
+            #master-hetzner.md
+
+             1.4 In list of resources "hetzner_resource_list_needs_updates" return the name of the resource and match with the folders in path https://github.com/snow-monkeys-infra/iac-terraform/tree/main/v1/modules/dev/hetzner/ , access the folder one by one and read the terraform code inside each folder and check if the terraform code needs to be updated in base of docs https://registry.terraform.io/providers/hetznercloud/hcloud/latest/docs and follow the next steps to update:
+        1. checkout https://github.com/snow-monkeys-infra/iac-terraform
+        2. point checkout code to branch "updates"
+        3. Read v1/modules/dev/hetzner/ checkout code
+        4. Update providers version in v1/modules/dev/hetzner/main.tf if required in base of docs https://registry.terraform.io/providers/hetznercloud/hcloud/latest/docs
+        5. In Terraform registry docs match hcloud resources with the name of the resource that needs to be updated (only if is required).
+        6. commit changes to "updates" branch 

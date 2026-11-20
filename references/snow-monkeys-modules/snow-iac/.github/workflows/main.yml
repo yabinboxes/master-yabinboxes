@@ -1,0 +1,193 @@
+name: Notify
+
+on:
+  workflow_call:
+    inputs:
+      workflow_type:
+        required: false
+        type: string
+        default: 'notify'
+      snow_host_url:
+        required: false
+        type: string
+        default: 'https://api.snow-monkeys.com'
+      provider:
+        required: false
+        type: string
+        default: 'local'
+      name:
+        required: false
+        type: string
+        default: ''
+      actor_id:
+        required: false
+        type: string
+        default: ''
+      actor_name:
+        required: false
+        type: string
+        default: ''
+      git_type:
+        required: false
+        type: string
+        default: 'github'
+      type:
+        required: false
+        type: string
+      extras:
+        required: false
+        type: string
+        default: ''
+      metadata:
+        required: false
+        type: string
+        default: "[ orphan ]"
+      url:
+        required: false
+        type: string
+        default: ''
+      terraform_output:
+        required: false
+        type: string
+        default: ''
+      terraform_vars:
+        required: false
+        type: string
+        default: ''
+      docker_output:
+        required: false
+        type: string
+        default: ''
+      docker_vars:
+        required: false
+        type: string
+        default: ''
+      url_path:
+        required: false
+        type: string
+        default: ''
+      port:
+        required: false
+        type: string
+        default: ''
+      image:
+        required: false
+        type: string
+        default: ''
+      image_tag:
+        required: false
+        type: string
+        default: ''
+      status:
+        required: false
+        type: string
+        default: ''
+      payload:
+        required: false
+        type: string
+        default: ''
+      environment:
+        required: false
+        type: string
+        default: ''
+      registry:
+        required: false
+        type: string
+        default: ''
+      notes:
+        required: false
+        type: string
+        default: ''
+      health_url:
+        required: false
+        type: string
+        default: ''
+      health_check_time:
+        required: false
+        type: string
+        default: ''
+      liveness_type:
+        required: false
+        type: string
+        default: ''
+      liveness_status:
+        required: false
+        type: string
+        default: ''
+      liveness_response:
+        required: false
+        type: string
+        default: ''
+      resource_name:
+        required: false
+        type: string
+        default: ''
+    secrets:
+      snow_token:
+        required: false
+      snow_token_pipeline:
+        required: true
+    outputs:
+      response:
+        description: 'Resolved host URL or IP from get_resources'
+        value: ${{ jobs.get_resources_snow.outputs.response }}
+
+jobs:
+  # Notify Snow
+  notify_snow:
+    if: ${{ inputs.workflow_type == 'notify' }}
+    runs-on: ubuntu-22.04
+
+    steps:
+
+      - uses: snow-monkeys-modules/snow-iac/.github/actions/notify@main
+        id: notify
+        with:
+          snow_host_url: ${{ inputs.snow_host_url }}
+          snow_token: ${{ secrets.snow_token }}
+          snow_token_pipeline: ${{ secrets.snow_token_pipeline }}
+          provider:  ${{ inputs.provider }}
+          name: ${{ inputs.name }}
+          type: ${{ inputs.type }}
+          actor_id: ${{ inputs.actor_id }}
+          actor_name: ${{ inputs.actor_name }}
+          git_type: ${{ inputs.git_type }}
+          extras: ${{ inputs.extras }}
+          metadata: ${{ inputs.metadata }}
+          url: ${{ inputs.url }}
+          terraform_output: ${{ inputs.terraform_output }}
+          terraform_vars: ${{ inputs.terraform_vars }}
+          docker_output: ${{ inputs.docker_output }}
+          docker_vars: ${{ inputs.docker_vars }}
+          url_path: ${{ inputs.url_path }}
+          port: ${{ inputs.port }}
+          image: ${{ inputs.image }}
+          image_tag: ${{ inputs.image_tag }}
+          status: ${{ inputs.status }}
+          payload: ${{ inputs.payload }}
+          environment: ${{ inputs.environment }}
+          registry: ${{ inputs.registry }}
+          notes: ${{ inputs.notes }}
+          health_url: ${{ inputs.health_url }}
+          health_check_time: ${{ inputs.health_check_time }}
+          liveness_type: ${{ inputs.liveness_type }}
+          liveness_status: ${{ inputs.liveness_status }}
+          liveness_response: ${{ inputs.liveness_response }}
+  
+  # Get Resources Snow
+  get_resources_snow:
+    if: ${{ inputs.workflow_type == 'get_resources' }}
+    runs-on: ubuntu-22.04
+    outputs:
+      response: ${{ steps.get_resources.outputs.response }}
+
+    steps:
+
+      - uses: snow-monkeys-modules/snow-iac/.github/actions/get-resources@main
+        id: get_resources
+        with:
+          resource_name: ${{ inputs.resource_name }}
+          snow_host_url: ${{ inputs.snow_host_url }}
+          actor_id: ${{ inputs.actor_id }}
+          git_type: ${{ inputs.git_type }}
+          snow_token_pipeline: ${{ secrets.snow_token_pipeline }}

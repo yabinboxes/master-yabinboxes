@@ -1,0 +1,112 @@
+<div class="container mx-auto p-6 max-w-4xl mt-5">
+    <div class="card rounded-xl border border-base-300/60 bg-base-100">
+      <div class="card-body">
+        <!-- Header -->
+        <div class="mb-8">
+          <h1 class="mb-2 font-display text-[clamp(2rem,4vw,2.5rem)] font-normal leading-[1.02] tracking-tight">License Terms</h1>
+          <p class="text-base-content/70">Self-Hosted License Agreement</p>
+          <div class="divider my-4"></div>
+        </div>
+  
+        <!-- License Information -->
+        <div class="alert alert-info mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <div>
+            <h3 class="font-bold">License Type: Self-Hosted</h3>
+            <div class="text-xs">This license allows you to use the software for personal or internal business purposes.</div>
+          </div>
+        </div>
+  
+        <!-- Terms Content -->
+        <div class="prose prose-lg max-w-none">
+          <section class="mb-8">
+            <h2 class="mb-4 font-display text-[1.8rem] font-normal leading-[1.12] tracking-tight">1. Grant of License</h2>
+            <p class="text-base-content/80 mb-4">
+              Subject to the terms and conditions of this Agreement, we grant you a non-exclusive, non-transferable license to use the Software for your personal or internal business purposes.
+            </p>
+          </section>
+  
+          <section class="mb-8">
+            <h2 class="mb-4 font-display text-[1.8rem] font-normal leading-[1.12] tracking-tight">2. Permitted Uses</h2>
+            <ul class="list-disc list-inside space-y-2 text-base-content/80">
+              <li>Install and use the Software on your own infrastructure</li>
+              <li>Use the Software for personal or internal business operations</li>
+              <li>Make reasonable backup copies of the Software</li>
+              <li>Modify the Software for your own use (subject to restrictions below)</li>
+            </ul>
+          </section>
+  
+          <section class="mb-8">
+            <h2 class="mb-4 font-display text-[1.8rem] font-normal leading-[1.12] tracking-tight">3. Restrictions</h2>
+            <ul class="list-disc list-inside space-y-2 text-base-content/80">
+              <li>You may not redistribute, sell, lease, or sublicense the Software</li>
+              <li>You may not use the Software to provide services to third parties</li>
+              <li>You may not remove or alter any proprietary notices or labels</li>
+              <li>You may not reverse engineer, decompile, or disassemble the Software</li>
+            </ul>
+          </section>
+  
+          <section class="mb-8">
+            <h2 class="mb-4 font-display text-[1.8rem] font-normal leading-[1.12] tracking-tight">4. Support and Updates</h2>
+            <p class="text-base-content/80 mb-4">
+              This self-hosted license includes access to community support and documentation. Premium support and updates may be available through separate agreements.
+            </p>
+          </section>
+  
+          <section class="mb-8">
+            <h2 class="mb-4 font-display text-[1.8rem] font-normal leading-[1.12] tracking-tight">5. Warranty Disclaimer</h2>
+            <p class="text-base-content/80 mb-4">
+              THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+            </p>
+          </section>
+  
+          <section class="mb-8">
+            <h2 class="mb-4 font-display text-[1.8rem] font-normal leading-[1.12] tracking-tight">6. Limitation of Liability</h2>
+            <p class="text-base-content/80 mb-4">
+              IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+            </p>
+          </section>
+  
+          <section class="mb-8">
+            <h2 class="mb-4 font-display text-[1.8rem] font-normal leading-[1.12] tracking-tight">7. Termination</h2>
+            <p class="text-base-content/80 mb-4">
+              This license is effective until terminated. Your rights under this license will terminate automatically without notice if you fail to comply with any of its terms. Upon termination, you must destroy all copies of the Software.
+            </p>
+          </section>
+  
+          <section class="mb-8">
+            <h2 class="mb-4 font-display text-[1.8rem] font-normal leading-[1.12] tracking-tight">8. Governing Law</h2>
+            <p class="text-base-content/80 mb-4">
+              This Agreement shall be governed by and construed in accordance with the laws of the jurisdiction in which the Software is provided, without regard to its conflict of law provisions.
+            </p>
+          </section>
+        </div>
+  
+        <!-- Acceptance Section -->
+        <div class="divider my-8"></div>
+        
+        <div class="card rounded-xl border border-base-300/60 bg-base-200">
+          <div class="card-body">
+            <h3 class="card-title mb-4">License Acceptance</h3>
+            <p class="text-sm text-base-content/70 mb-4">
+              By using this Software, you acknowledge that you have read this license agreement, understand it, and agree to be bound by its terms and conditions.
+            </p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary">I Accept</button>
+              <button class="btn btn-ghost">Decline</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Footer -->
+        <div class="mt-8 pt-6 border-t border-base-300">
+          <p class="text-xs text-base-content/50 text-center">
+            Last updated: {{ currentDate | date:'longDate' }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

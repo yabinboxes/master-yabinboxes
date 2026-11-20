@@ -1,0 +1,35 @@
+---
+description: GitHub Actions reusable workflow inputs use snake_case
+globs: .github/workflows/**/*
+alwaysApply: false
+---
+
+# GitHub workflows — snake_case inputs
+
+All keys passed to reusable workflows (`with:` and `secrets:`) must use **snake_case**.
+
+```yaml
+# Good
+with:
+  snow_host_url: "http://example.com"
+  expected_url: http://example.com:8080
+  server_type: cpx12
+secrets:
+  registry_user: ${{ secrets.GLOBAL_DOCKERHUB_USERNAME }}
+  ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+  snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+  env_values: |
+    KEY=value
+
+# Bad
+with:
+  snowHostUrl: "..."
+  expected-url: "..."
+secrets:
+  registryUser: ...
+  ssh-public-key: ...
+```
+
+Single-word keys (`type`, `name`, `tag`, `host`, `provider`, `destroy`) stay lowercase.
+
+Do not use `kebab-case` or `camelCase` for reusable workflow input/secret names.

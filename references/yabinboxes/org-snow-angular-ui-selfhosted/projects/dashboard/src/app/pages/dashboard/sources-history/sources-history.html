@@ -1,0 +1,280 @@
+<!-- card list, filters and search -->
+<section id="snow-body-card-list" class="mx-auto w-full max-w-[1600px] px-6 pb-16 pt-7">
+  <div class="flex flex-col items-start gap-8 lg:flex-row">
+    <!-- filters rail -->
+    <aside id="left-side-sources" class="w-full shrink-0 lg:sticky lg:top-20 lg:w-56">
+      <snow-filters />
+    </aside>
+
+    <!-- details + list -->
+    <div
+      id="right-side-sources"
+      class="grid min-w-0 flex-1 grid-cols-1 items-start gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,400px)]"
+    >
+      <div id="card-list-container" class="min-w-0 xl:order-2">
+        <header id="resources-header" class="mb-4">
+          <div id="resources-label" class="flex items-baseline justify-between gap-3">
+            <h1 class="font-display text-[1.8rem] font-normal leading-[1.12] tracking-tight">Resources</h1>
+            <p id="resources-list-count" class="shrink-0 text-sm opacity-50">
+              {{ sources.sourceDeployments().length }}
+              {{ sources.sourceDeployments().length === 1 ? 'deployment' : 'deployments' }}
+            </p>
+          </div>
+
+          <div id="search-input" class="mt-3">
+            <form autocomplete="off" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+              <label
+                class="input input-sm w-full rounded-lg border-base-300/60 bg-base-100 focus-within:border-base-content/25 focus-within:outline-none"
+              >
+                <svg
+                  class="h-[1em] opacity-40"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                  </g>
+                </svg>
+                <input type="search" placeholder="Search deployments" formControlName="search" />
+              </label>
+            </form>
+          </div>
+        </header>
+
+        @if (sources.sourceDeploymentLoading()) {
+          <div class="flex items-center gap-3 py-6">
+            <span class="loading loading-dots loading-sm opacity-60"></span>
+            <span class="text-sm opacity-50">Loading deployments</span>
+          </div>
+        } @else {
+          <snow-card-list
+            [deployments]="sources.sourceDeployments()"
+            (cardSelected)="onCardSelected($event)"
+            (cardRemoved)="onCardRemoved($event)"
+          ></snow-card-list>
+        }
+      </div>
+
+      <div id="card-details-container" class="min-w-0 xl:order-1">
+        @if (selectedDeployment()) {
+          <div
+            class="sticky top-20 overflow-hidden rounded-xl border border-base-300/60 bg-base-100"
+          >
+            <!-- header -->
+            <div class="flex items-start justify-between gap-3 p-5">
+              <div class="min-w-0">
+                <h2 class="truncate text-lg font-semibold leading-tight">
+                  {{ selectedDeployment()!.sourceName }}
+                </h2>
+                <p class="mt-1.5 text-[11px] uppercase tracking-wider opacity-45">
+                  {{ selectedDeployment()!.sourceType }}
+                </p>
+              </div>
+
+              <div class="color-palette-container relative flex-shrink-0">
+                <button
+                  type="button"
+                  class="btn btn-ghost btn-xs btn-circle"
+                  title="Color tag"
+                  (click)="toggleColorPalette($event)"
+                >
+                  <lucide-angular
+                    [img]="paintbrushIcon"
+                    class="h-4 w-4 {{ getIconColorClass() }}"
+                  ></lucide-angular>
+                </button>
+                @if (showColorPalette()) {
+                  <div
+                    class="absolute right-0 top-full z-50 mt-2 rounded-xl border border-base-300/60 bg-base-100 p-2 shadow-lg"
+                    (click)="$event.stopPropagation()"
+                  >
+                    <div class="flex gap-1.5">
+                      @for (colorOption of colors; track colorOption) {
+                        @if (colorOption === '') {
+                          <button
+                            type="button"
+                            class="flex h-6 w-6 items-center justify-center rounded-full border border-dashed transition-transform hover:scale-110 {{
+                              selectedColor() === colorOption
+                                ? 'border-base-content'
+                                : 'border-base-content/40'
+                            }}"
+                            title="No color"
+                            (click)="selectColor(colorOption, $event)"
+                          >
+                            <span class="text-xs opacity-50">×</span>
+                          </button>
+                        } @else {
+                          <button
+                            type="button"
+                            class="h-6 w-6 rounded-full transition-transform hover:scale-110 {{
+                              getColorClass(colorOption)
+                            }} ring-offset-2 ring-offset-base-100 {{
+                              selectedColor() === colorOption ? 'ring-2 ring-base-content' : ''
+                            }}"
+                            [title]="colorOption"
+                            (click)="selectColor(colorOption, $event)"
+                          ></button>
+                        }
+                      }
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+
+            @if (selectedDeployment()!.description) {
+              <p class="-mt-1 px-5 pb-5 text-sm leading-relaxed opacity-60">
+                {{ selectedDeployment()!.description }}
+              </p>
+            }
+
+            <!-- links -->
+            <div class="divide-y divide-base-300/50 border-y border-base-300/50">
+              <div class="flex items-center justify-between gap-3 px-5 py-3">
+                <div class="min-w-0">
+                  <p class="text-[11px] uppercase tracking-wider opacity-45">Repository</p>
+                  <p class="mt-0.5 truncate text-sm">
+                    {{ selectedDeployment()!.sourceCodeRepository }}
+                  </p>
+                </div>
+                <a
+                  class="btn btn-ghost btn-xs flex-shrink-0"
+                  href="https://github.com/{{ selectedDeployment()!.sourceCodeRepository }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open
+                </a>
+              </div>
+              @if (selectedDeployment()!.url) {
+                <div
+                  id="snow-url-container"
+                  class="flex items-center justify-between gap-3 px-5 py-3"
+                >
+                  <div class="min-w-0">
+                    <p class="text-[11px] uppercase tracking-wider opacity-45">Application URL</p>
+                    <p class="mt-0.5 truncate text-sm">{{ selectedDeployment()!.url }}</p>
+                  </div>
+                  <div class="flex flex-shrink-0 gap-1">
+                    <button
+                      type="button"
+                      class="btn btn-ghost btn-xs"
+                      [class.text-success]="urlCopied()"
+                      (click)="copyApplicationUrl()"
+                    >
+                      {{ urlCopied() ? 'Copied' : 'Copy' }}
+                    </button>
+                    <a
+                      class="btn btn-ghost btn-xs"
+                      href="{{ selectedDeployment()!.url }}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Open
+                    </a>
+                  </div>
+                </div>
+              }
+            </div>
+
+            <!-- metadata -->
+            <dl class="divide-y divide-base-300/50">
+              @if (selectedDeployment()!.providers) {
+                <div class="grid grid-cols-[9rem_minmax(0,1fr)] items-center gap-4 px-5 py-2.5">
+                  <dt class="text-xs opacity-45">Provider</dt>
+                  <dd class="truncate text-sm capitalize">
+                    {{ selectedDeployment()!.providers }}
+                  </dd>
+                </div>
+              }
+              @if (selectedDeployment()!.livenessStatus) {
+                <div class="grid grid-cols-[9rem_minmax(0,1fr)] items-center gap-4 px-5 py-2.5">
+                  <dt class="text-xs opacity-45">Status</dt>
+                  <dd class="truncate text-sm">{{ selectedDeployment()!.livenessStatus }}</dd>
+                </div>
+              }
+              @if (selectedDeployment()!.owner) {
+                <div class="grid grid-cols-[9rem_minmax(0,1fr)] items-center gap-4 px-5 py-2.5">
+                  <dt class="text-xs opacity-45">Owner</dt>
+                  <dd class="truncate text-sm">{{ selectedDeployment()!.owner }}</dd>
+                </div>
+              }
+              @if (selectedDeployment()!.iacExtra) {
+                <div class="grid grid-cols-[9rem_minmax(0,1fr)] items-center gap-4 px-5 py-2.5">
+                  <dt class="text-xs opacity-45">IaC tool</dt>
+                  <dd class="truncate text-sm">{{ selectedDeployment()!.iacExtra }}</dd>
+                </div>
+              }
+              <div class="grid grid-cols-[9rem_minmax(0,1fr)] items-center gap-4 px-5 py-2.5">
+                <dt class="text-xs opacity-45">Created</dt>
+                <dd class="truncate text-sm">{{ selectedDeployment()!.createdDate }}</dd>
+              </div>
+              <div class="grid grid-cols-[9rem_minmax(0,1fr)] items-center gap-4 px-5 py-2.5">
+                <dt class="text-xs opacity-45">Updated</dt>
+                <dd class="truncate text-sm">{{ selectedDeployment()!.updatedDate }}</dd>
+              </div>
+              @if (selectedDeployment()!.terraformOutput) {
+                <div class="px-5 py-2.5">
+                  <dt class="text-xs opacity-45">Terraform output</dt>
+                  <dd class="mt-1 whitespace-pre-wrap break-all text-sm">
+                    {{ selectedDeployment()!.terraformOutput }}
+                  </dd>
+                </div>
+              }
+              @if (selectedDeployment()!.terraformVars) {
+                <div class="px-5 py-2.5">
+                  <dt class="text-xs opacity-45">Terraform vars</dt>
+                  <dd class="mt-1 whitespace-pre-wrap break-all text-sm">
+                    {{ selectedDeployment()!.terraformVars }}
+                  </dd>
+                </div>
+              }
+              @if (selectedDeployment()!.dockerOutput) {
+                <div class="px-5 py-2.5">
+                  <dt class="text-xs opacity-45">Docker output</dt>
+                  <dd class="mt-1 whitespace-pre-wrap break-all text-sm">
+                    {{ selectedDeployment()!.dockerOutput }}
+                  </dd>
+                </div>
+              }
+              @if (selectedDeployment()!.dockerVars) {
+                <div class="px-5 py-2.5">
+                  <dt class="text-xs opacity-45">Docker vars</dt>
+                  <dd class="mt-1 whitespace-pre-wrap break-all text-sm">
+                    {{ selectedDeployment()!.dockerVars }}
+                  </dd>
+                </div>
+              }
+            </dl>
+          </div>
+        } @else if (sources.sourceDeploymentLoading()) {
+          <div class="rounded-xl border border-base-300/60 bg-base-100 p-5">
+            <span class="loading loading-dots loading-sm opacity-60"></span>
+          </div>
+        } @else if (sources.allSourceDeploymentsSignal().length === 0) {
+          <div class="rounded-xl border border-base-300/60 bg-base-100 p-6">
+            <p class="text-sm font-medium">No deployments yet</p>
+            <p class="mt-2 text-sm leading-relaxed opacity-60">
+              Follow the
+              <a
+                href="https://docs.snow-monkeys.com/docs/home"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link link-primary"
+                >getting started guide</a
+              >
+              to create your first one.
+            </p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

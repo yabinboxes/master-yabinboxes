@@ -1,0 +1,198 @@
+<div class="container mx-auto p-6 max-w-4xl">
+  <h1 class="mb-6 font-display text-[1.8rem] font-normal leading-[1.12] tracking-tight">First-time configuration</h1>
+
+  <section class="card mb-6 rounded-xl border border-base-300/60 bg-base-100">
+    <div class="card-body">
+      <h2 class="card-title text-base font-semibold mb-4">Authentication</h2>
+      <div class="flex flex-col gap-3">
+        <label class="flex items-center gap-3 cursor-pointer w-fit" for="first-time-auth-provider-github">
+          <input
+            id="first-time-auth-provider-github"
+            type="checkbox"
+            class="checkbox checkbox-primary"
+            [checked]="usesGithub()"
+            (click)="selectAuthProvider('github', $event)"
+          />
+          <span class="font-semibold">Github</span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer w-fit" for="first-time-auth-provider-gitlab">
+          <input
+            id="first-time-auth-provider-gitlab"
+            type="checkbox"
+            class="checkbox checkbox-primary"
+            [checked]="usesGitlab()"
+            (click)="selectAuthProvider('gitlab', $event)"
+          />
+          <span class="font-semibold">GitLab</span>
+        </label>
+      </div>
+      <p class="mt-2 text-sm opacity-70">
+        The login page shows one button for the checked provider, and this page shows that provider's settings.
+      </p>
+      @if (authProviderSaved()) {
+        <div class="alert alert-success mt-4">
+          <span>Authentication updated.</span>
+        </div>
+      }
+      @if (authProviderError()) {
+        <div class="alert alert-error mt-4">
+          <span>{{ authProviderError() }}</span>
+        </div>
+      }
+    </div>
+  </section>
+
+  @if (usesGitlab()) {
+  <section class="card mb-6 rounded-xl border border-base-300/60 bg-base-100">
+    <div class="card-body">
+      <h2 class="card-title text-base font-semibold mb-4">GitLab</h2>
+      <form class="space-y-4" [formGroup]="gitlabForm" (ngSubmit)="saveGitlab()">
+        <div class="form-control w-full">
+          <label class="label" for="first-time-gitlab-base-url">
+            <span class="label-text font-semibold">Base URL</span>
+          </label>
+          <input
+            id="first-time-gitlab-base-url"
+            type="url"
+            class="input input-bordered w-full"
+            formControlName="baseUrl"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="https://gitlab.com"
+          />
+        </div>
+        <div class="form-control w-full">
+          <label class="label" for="first-time-gitlab-client-id">
+            <span class="label-text font-semibold">Client ID</span>
+          </label>
+          <input
+            id="first-time-gitlab-client-id"
+            type="text"
+            class="input input-bordered w-full"
+            formControlName="clientId"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+        <div class="form-control w-full">
+          <label class="label" for="first-time-gitlab-redirect-uri">
+            <span class="label-text font-semibold">Redirect URI</span>
+          </label>
+          <input
+            id="first-time-gitlab-redirect-uri"
+            type="url"
+            class="input input-bordered w-full"
+            formControlName="redirectUri"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="http://localhost:4200/login"
+          />
+          <p class="mt-2 text-sm opacity-70">
+            Saved for this installation and used the next time you sign in with GitLab. Leave the redirect URI empty to use this site's /login address.
+          </p>
+        </div>
+        <div class="flex justify-end">
+          <button class="btn btn-primary" type="submit" [disabled]="gitlabForm.invalid || gitlabUnchanged()">
+            Save
+          </button>
+        </div>
+        @if (gitlabSaved()) {
+          <div class="alert alert-success">
+            <span>GitLab settings updated.</span>
+          </div>
+        }
+        @if (gitlabError()) {
+          <div class="alert alert-error">
+            <span>{{ gitlabError() }}</span>
+          </div>
+        }
+      </form>
+    </div>
+  </section>
+  }
+
+  @if (usesGithub()) {
+  <section class="card mb-6 rounded-xl border border-base-300/60 bg-base-100">
+    <div class="card-body">
+      <h2 class="card-title text-base font-semibold mb-4">GitHub</h2>
+      <form class="space-y-4" [formGroup]="githubForm" (ngSubmit)="saveGithub()">
+        <div class="form-control w-full">
+          <label class="label" for="first-time-github-base-url">
+            <span class="label-text font-semibold">Base URL</span>
+          </label>
+          <input
+            id="first-time-github-base-url"
+            type="url"
+            class="input input-bordered w-full"
+            formControlName="baseUrl"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="https://github.com"
+          />
+        </div>
+        <div class="form-control w-full">
+          <label class="label" for="first-time-github-client-id">
+            <span class="label-text font-semibold">Client ID</span>
+          </label>
+          <input
+            id="first-time-github-client-id"
+            type="text"
+            class="input input-bordered w-full"
+            formControlName="clientId"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+        <div class="form-control w-full">
+          <label class="label" for="first-time-github-redirect-uri">
+            <span class="label-text font-semibold">Redirect URI</span>
+          </label>
+          <input
+            id="first-time-github-redirect-uri"
+            type="url"
+            class="input input-bordered w-full"
+            formControlName="redirectUri"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="http://localhost:4200/login"
+          />
+          <p class="mt-2 text-sm opacity-70">
+            Saved for this installation and used the next time you sign in with GitHub. Leave the redirect URI empty to use this site's /login address.
+          </p>
+        </div>
+        <div class="flex justify-end">
+          <button class="btn btn-primary" type="submit" [disabled]="githubForm.invalid || githubUnchanged()">
+            Save
+          </button>
+        </div>
+        @if (githubSaved()) {
+          <div class="alert alert-success">
+            <span>GitHub settings updated.</span>
+          </div>
+        }
+        @if (githubError()) {
+          <div class="alert alert-error">
+            <span>{{ githubError() }}</span>
+          </div>
+        }
+      </form>
+    </div>
+  </section>
+  }
+
+  <div class="flex flex-col items-end gap-4">
+    <button class="btn btn-primary" type="button" (click)="finish()" [disabled]="isFinishing()">
+      @if (isFinishing()) {
+        <span class="loading loading-spinner loading-xs"></span>
+        Finishing...
+      } @else {
+        Finish
+      }
+    </button>
+    @if (finishError()) {
+      <div class="alert alert-error w-full">
+        <span>{{ finishError() }}</span>
+      </div>
+    }
+  </div>
+</div>

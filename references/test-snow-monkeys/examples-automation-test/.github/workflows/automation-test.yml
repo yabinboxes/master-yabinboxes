@@ -1,0 +1,115 @@
+# Collects results after a monitored test workflow finishes.
+name: Automation test snow modules
+
+on:
+  # Runs after a workflow whose name exactly matches one of the values below completes.
+  # The event is emitted for successful, failed, and cancelled runs.
+  workflow_run:
+    workflows:
+      - "Automation test Snow Monkeys modules"
+      - "Automation test Docker modules"
+      - "Automation test Hetzner modules"
+      - "Automation test Cloudflare modules"
+      - "Automation test AWS modules"
+      - "Automation test Azure modules"
+      - "Automation test GCP modules"
+      - "Automation test DigitalOcean modules"
+    types: [completed]
+
+jobs:
+  test-results:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks out the repository's default branch.
+      - uses: actions/checkout@v4
+
+      # This step runs regardless of the triggering workflow's conclusion.
+      - run: echo "Deploying now that tests have passed..."
+
+      # Snow Monkeys result notifications.
+      - name: Success - Notify Snow Monkeys
+        if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.name == 'Automation test Snow Monkeys modules'
+        run: |
+          echo "------ notify snow monkeys success ------"
+
+      - name: Error - Notify Snow Monkeys
+        if: github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.name == 'Automation test Snow Monkeys modules'
+        run: |
+          echo "------ notify snow monkeys failure ------"
+
+      # Docker result notifications.
+      - name: Success - Notify Docker
+        if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.name == 'Automation test Docker modules'
+        run: |
+          echo "------ notify docker success ------"
+
+      - name: Error - Notify Docker
+        if: github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.name == 'Automation test Docker modules'
+        run: |
+          echo "------ notify docker failure ------"
+
+      # Hetzner result notifications.
+      - name: Success - Notify Hetzner
+        if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.name == 'Automation test Hetzner modules'
+        run: |
+          echo "------ notify hetzner success ------"
+
+      - name: Error - Notify Hetzner
+        if: github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.name == 'Automation test Hetzner modules'
+        run: |
+          echo "------ notify hetzner failure ------"
+
+      # Cloudflare result notifications.
+      - name: Success - Notify Cloudflare
+        if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.name == 'Automation test Cloudflare modules'
+        run: |
+          echo "------ notify cloudflare success ------"
+
+      - name: Error - Notify Cloudflare
+        if: github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.name == 'Automation test Cloudflare modules'
+        run: |
+          echo "------ notify cloudflare failure ------"
+
+      # AWS result notifications.
+      - name: Success - Notify AWS
+        if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.name == 'Automation test AWS modules'
+        run: |
+          echo "------ notify hetzner success ------"
+
+      - name: Error - Notify AWS
+        if: github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.name == 'Automation test AWS modules'
+        run: |
+          echo "------ notify aws failure ------"
+
+      # Azure result notifications.
+      - name: Success - Notify Azure
+        if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.name == 'Automation test Azure modules'
+        run: |
+          echo "------ notify azure success ------"
+
+      - name: Error - Notify Azure
+        if: github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.name == 'Automation test Azure modules'
+        run: |
+          echo "------ notify azure failure ------"
+
+      # GCP result notifications.
+      - name: Success - Notify GCP
+        if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.name == 'Automation test GCP modules'
+        run: |
+          echo "------ notify gcp success ------"
+
+      - name: Error - Notify GCP
+        if: github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.name == 'Automation test GCP modules'
+        run: |
+          echo "------ notify gcp failure ------"
+
+      # DigitalOcean result notifications.
+      - name: Success - Notify DigitalOcean
+        if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.name == 'Automation test DigitalOcean modules'
+        run: |
+          echo "------ notify digitalocean success ------"
+
+      - name: Error - Notify DigitalOcean
+        if: github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.name == 'Automation test DigitalOcean modules'
+        run: |
+          echo "------ notify digitalocean failure ------"

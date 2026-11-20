@@ -1,0 +1,116 @@
+#
+# This workflow is used to test the statefull example 1
+# It creates a server and an application
+# It then destroys the server and the application
+# It uses the hetzner-iac module to create and destroy the resources
+# It uses the aws-iac module to create the s3 bucket
+# It uses the hetzner-iac module to create the server and the application
+# It uses the hetzner-iac module to destroy the server and the application
+#
+# Note: Is good practice to save each server, service, 
+#       resource, and application by separate in his own repository and not 
+#       combine them in the same repository like this example.
+#
+
+
+name: Example 1 Statefull
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [ automation-hetzner-test-event ]
+
+
+jobs:
+
+  checkout:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+  # create aws s3 to store terraform state for hetzner
+  # only resource that has to be removed manually is this s3 bucket state storage
+  create_s3_bucket:
+    needs: checkout
+    uses: snow-monkeys-modules/aws-iac/.github/workflows/main.yml@main
+    with:
+      type: aws_s3_bucket
+      type_values: |
+        bucket_name=s3-server-state
+        region=us-east-2
+        versioning=true
+        encrypt=true
+      name: s3-server-state
+    secrets:
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+
+  
+
+  # create server (server) on hetzner
+  create_server_on_hetzner:
+    needs: create_s3_bucket
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: hcloud_server
+      name: server-example-1-statefull
+      server_type: cpx12
+      image: ubuntu-26.04
+      location: hel1
+      type_values: |
+        server_type=cpx12
+        image=ubuntu-26.04
+        location=hel1
+      infra: server/infra
+      s3_bucket_state: s3-server-state
+      state_values: |
+        bucket_name=s3-server-state
+        region=us-east-2
+        encrypt=true
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }}
+      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY_TEST }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_TEST }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+  
+  use-output-server:
+    needs: create_server_on_hetzner
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "Url is ${{ needs.create_server_on_hetzner.outputs.server_ip }}"
+      
+      - run: sleep 5
+
+
+  # create postgres db (service) on hetzner
+  create-postgres-db-on-hetzner:
+    needs: create_server_on_hetzner
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: docker_compose
+      name: server-example-1-statefull
+      host: server-example-1-statefull
+      expected_url: jdbc:postgresql://localhost:5432/postgres
+      infra: service/infra
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }}
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY_TEST }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_TEST }}
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+      env_values: |
+        DB_USER=postgres
+        DB_PASSWORD=admin
+
+  use-output-postgres-db:
+    needs: create-postgres-db-on-hetzner
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "DB connection address is ${{ needs.create-postgres-db-on-hetzner.outputs.address }}"
+        

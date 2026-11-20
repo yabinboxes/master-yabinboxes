@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../master-org"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../snow-postgresdb-docker-compose"
+		},
+		{
+			"path": "../../../snow-server-hetzner"
+		}
+	]
+}

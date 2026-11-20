@@ -1,0 +1,50 @@
+---
+description: REST API uses camelCase for JSON and query parameters
+globs: src/main/java/com/snow/controller/**,src/main/java/com/snow/entity/**,snow-publish-java-selfhosted.postman_collection.json
+alwaysApply: false
+---
+
+# API JSON — camelCase only
+
+All HTTP API surfaces use **camelCase**. Database columns stay snake_case via JPA `@Column(name = "...")` only.
+
+## JSON request/response bodies
+
+- Use Java field names as JSON keys: `actorId`, `gitType`, `snowName`, `snowTokenPipeline`.
+- Do **not** add `@JsonAlias` or `@JsonProperty` for snake_case API aliases.
+- Prefer returning typed objects or `Map.of(...)` — not hand-built JSON strings with wrong key casing.
+
+```java
+// Good
+return ResponseEntity.ok(Map.of("url", url));
+return ResponseEntity.badRequest().body(Map.of("error", "actorId parameter is required"));
+
+// Bad
+@RequestParam("actor_id") String actorId
+@JsonAlias("git_type")
+return ResponseEntity.ok("{\"url\": \"" + url + "\"}");
+```
+
+## Query parameters
+
+Match the Java parameter name (camelCase). Omit explicit snake_case `@RequestParam` values.
+
+```java
+// Good
+@RequestParam String actorId
+@RequestParam(required = false) String gitType
+
+// Bad
+@RequestParam("actor_id") String actorId
+@RequestParam(value = "git_type", required = false) String gitType
+```
+
+## Postman / docs examples
+
+- Bodies and query strings: `actorId`, `gitType`, `snowName`, `tableName`.
+- Docs may mention DB column names (`actor_id`) when describing PostgreSQL tables — that is not the HTTP API.
+
+## Scope
+
+- **In scope:** controllers, DTOs/entities exposed on the wire, Postman collection, user-facing curl examples.
+- **Out of scope:** SQL, JPA column names, internal logs.

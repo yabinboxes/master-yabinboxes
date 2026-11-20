@@ -1,0 +1,226 @@
+<!-- Hero -->
+<section
+  id="docs-hero"
+  class="relative overflow-hidden border-b border-base-300/60 px-6 py-16 md:py-20"
+  aria-labelledby="docs-hero-title"
+>
+  <!-- faint grid -->
+  <div
+    class="pointer-events-none absolute inset-0 opacity-[0.35]"
+    aria-hidden="true"
+    style="
+      background-image:
+        linear-gradient(to right, var(--color-base-300) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--color-base-300) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+    "
+  ></div>
+
+  <div class="relative mx-auto flex max-w-3xl flex-col items-center text-center">
+    <!-- Window frame + mascot -->
+    <div class="relative mb-10 w-full max-w-md">
+      <img
+        src="/images/cluster.png"
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute -top-7 right-4 z-10 h-12 w-auto [image-rendering:pixelated] drop-shadow-md"
+      />
+      <div
+        class="overflow-hidden rounded-2xl border border-base-300 bg-base-100 shadow-[0_12px_40px_-12px] shadow-base-content/20"
+      >
+        <div
+          class="flex items-center gap-2 border-b border-base-300/60 bg-base-200/80 px-3 py-2"
+        >
+          <span class="size-2 rounded-full bg-base-content/25" aria-hidden="true"></span>
+          <span class="size-2 rounded-full bg-base-content/25" aria-hidden="true"></span>
+          <span class="size-2 rounded-full bg-base-content/25" aria-hidden="true"></span>
+          <span class="mx-auto font-mono text-[11px] text-base-content/50">snow-monkeys/README.md</span>
+        </div>
+        <pre
+          class="m-0 overflow-x-auto bg-neutral px-4 py-3 text-left font-mono text-[11.5px] leading-[1.6] text-neutral-content"
+        ><code><span class="text-success">$</span> snow status
+<span class="text-success">✓</span> dashboard   ready
+<span class="text-success">✓</span> modules     12 providers
+<span class="text-warning">→</span> docs        you are here<span class="animate-pulse text-primary">█</span></code></pre>
+      </div>
+    </div>
+
+    <p
+      class="font-mono text-[11px] font-medium uppercase tracking-[0.08em] text-primary"
+    >
+      Documentation
+    </p>
+
+    <h1
+      id="docs-hero-title"
+      class="mt-3 font-display text-[clamp(2.25rem,6vw,3.5rem)] font-normal leading-[1.02] tracking-tight"
+    >
+      Snow Monkeys
+    </h1>
+
+    <p
+      class="mt-4 max-w-[30rem] text-base leading-[1.65] text-base-content/70"
+    >
+      Infrastructure as code grows complex fast. Snow Monkeys is the dashboard and
+      docs to see what is deployed, set it up, and extend it.
+    </p>
+
+    <ul class="mt-5 flex flex-wrap items-center justify-center gap-1.5" role="list">
+      <li
+        class="rounded-full border border-base-300 bg-base-100 px-2.5 py-1 font-mono text-[11px] text-base-content/70"
+      >
+        IaC
+      </li>
+      <li
+        class="rounded-full border border-base-300 bg-base-100 px-2.5 py-1 font-mono text-[11px] text-base-content/70"
+      >
+        Modules
+      </li>
+      <li
+        class="rounded-full border border-base-300 bg-base-100 px-2.5 py-1 font-mono text-[11px] text-base-content/70"
+      >
+        Providers
+      </li>
+      <li
+        class="rounded-full border border-base-300 bg-base-100 px-2.5 py-1 font-mono text-[11px] text-base-content/70"
+      >
+        Dashboard
+      </li>
+    </ul>
+
+    <div class="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+      <a
+        routerLink="/docs/snow-monkeys/intro"
+        class="btn btn-primary rounded-[10px] px-6 text-[0.9rem] font-semibold shadow-[0_1px_10px] shadow-primary/25"
+      >
+        Get started →
+      </a>
+      <a
+        routerLink="/docs/get-started/web"
+        class="btn btn-ghost rounded-[10px] border border-base-300 px-6 text-[0.9rem] font-semibold"
+      >
+        View docs
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Markdown blurb -->
+@if (markdownPath()) {
+  <docs-markdown [src]="markdownPath()" [showToc]="false" />
+}
+
+<!-- Features Section -->
+<section id="section3" class="border-t border-base-300/60 px-6 py-16 md:py-20">
+  <div class="mx-auto max-w-6xl">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div
+        class="rounded-2xl border border-base-300 bg-base-100 p-[18px] transition-colors hover:border-base-content/20"
+      >
+        <div
+          class="flex size-10 items-center justify-center rounded-xl bg-primary/10 ring-1 ring-inset ring-primary/30"
+        >
+          <lucide-angular [img]="container" class="h-5 w-5 text-primary"></lucide-angular>
+        </div>
+        <p class="mt-3 font-mono text-[11px] text-base-content/60">01</p>
+        <h3 class="mt-1 text-lg font-bold tracking-tight">Service</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-base-content/70">
+          Deploy and manage individual services with ease. Streamline your service
+          lifecycle management.
+        </p>
+      </div>
+
+      <div
+        class="rounded-2xl border border-base-300 bg-base-100 p-[18px] transition-colors hover:border-base-content/20"
+      >
+        <div
+          class="flex size-10 items-center justify-center rounded-xl bg-primary/10 ring-1 ring-inset ring-primary/30"
+        >
+          <lucide-angular [img]="app" class="h-5 w-5 text-primary"></lucide-angular>
+        </div>
+        <p class="mt-3 font-mono text-[11px] text-base-content/60">02</p>
+        <h3 class="mt-1 text-lg font-bold tracking-tight">Applications</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-base-content/70">
+          Full-stack application deployment made simple. Manage complex applications
+          with declarative configurations.
+        </p>
+      </div>
+
+      <div
+        class="rounded-2xl border border-base-300 bg-base-100 p-[18px] transition-colors hover:border-base-content/20"
+      >
+        <div
+          class="flex size-10 items-center justify-center rounded-xl bg-primary/10 ring-1 ring-inset ring-primary/30"
+        >
+          <lucide-angular [img]="kluster" class="h-5 w-5 text-primary"></lucide-angular>
+        </div>
+        <p class="mt-3 font-mono text-[11px] text-base-content/60">03</p>
+        <h3 class="mt-1 text-lg font-bold tracking-tight">Clusters</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-base-content/70">
+          Orchestrate Kubernetes clusters efficiently. Scale and manage your
+          infrastructure declaratively.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Providers Section -->
+<section id="section4" class="border-t border-base-300/60 px-6 py-16 pb-20">
+  <div class="mx-auto max-w-6xl">
+    <p
+      class="mb-3 font-mono text-[11px] font-medium uppercase tracking-[0.08em] text-primary"
+    >
+      Providers
+    </p>
+    <h2 class="mb-6 font-display text-[1.8rem] font-normal leading-[1.12] tracking-tight">
+      Providers in modules
+    </h2>
+    <div class="grid grid-cols-2 gap-3 md:grid-cols-4">
+      <div
+        class="flex items-center gap-3 rounded-2xl border border-base-300 bg-base-100 p-4 transition-colors hover:border-base-content/20"
+      >
+        <div
+          class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 ring-1 ring-inset ring-primary/30"
+        >
+          <lucide-angular [img]="cloud" class="h-5 w-5 text-primary"></lucide-angular>
+        </div>
+        <h3 class="truncate text-sm font-medium">Civo</h3>
+      </div>
+
+      <div
+        class="flex items-center gap-3 rounded-2xl border border-base-300 bg-base-100 p-4 transition-colors hover:border-base-content/20"
+      >
+        <div
+          class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 ring-1 ring-inset ring-primary/30"
+        >
+          <img src="/icons/cloudflare.svg" alt="Cloudflare" class="h-5 w-5" />
+        </div>
+        <h3 class="truncate text-sm font-medium">Cloudflare</h3>
+      </div>
+
+      <div
+        class="flex items-center gap-3 rounded-2xl border border-base-300 bg-base-100 p-4 transition-colors hover:border-base-content/20"
+      >
+        <div
+          class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 ring-1 ring-inset ring-primary/30"
+        >
+          <img src="/icons/digitalocean.svg" alt="DigitalOcean" class="h-5 w-5" />
+        </div>
+        <h3 class="truncate text-sm font-medium">DigitalOcean</h3>
+      </div>
+
+      <div
+        class="flex items-center gap-3 rounded-2xl border border-base-300 bg-base-100 p-4 transition-colors hover:border-base-content/20"
+      >
+        <div
+          class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 ring-1 ring-inset ring-primary/30"
+        >
+          <img src="/icons/docker.svg" alt="Docker" class="h-5 w-5" />
+        </div>
+        <h3 class="truncate text-sm font-medium">Docker</h3>
+      </div>
+    </div>
+  </div>
+</section>

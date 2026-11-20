@@ -1,0 +1,36 @@
+name: Deploy application on Hetzner
+
+on:
+  workflow_run:
+    workflows: [ "Build and push image to registry" ]
+    types: [ completed ]
+    branches: [ "main" ]
+    
+
+jobs:
+  create-bun-app-on-hetzner:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      snow_host_url: "http://62.238.50.36"
+      provider: hetzner
+      type: docker_compose_app
+      name: health-cron-bun
+      host: 62.238.50.36
+      destroy: false
+      expected_url: http://62.238.50.36:4202
+    secrets:
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+      env_values: |
+        SERVER_ADDRESS=65.109.233.99
+
+
+  use-output:
+    needs: create-bun-app-on-hetzner
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "Bun app connection address is ${{ needs.create-bun-app-on-hetzner.outputs.address }}"

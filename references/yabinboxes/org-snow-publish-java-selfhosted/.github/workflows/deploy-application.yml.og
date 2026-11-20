@@ -1,0 +1,33 @@
+name: Deploy application on Hetzner
+
+on:
+  workflow_run:
+    workflows: [ "Build and push image to registry" ]
+    types: [ completed ]
+    branches: [ "main" ]
+
+
+jobs:
+  create-java-app-on-hetzner:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      snow_host_url: http://62.238.50.36
+      provider: hetzner
+      type: docker_compose_app
+      name: snow-publish-java-selfhosted
+      host: 62.238.50.36
+      destroy: false
+      expected_url: http://62.238.50.36:8080
+    secrets:
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+
+  use-output:
+    needs: create-java-app-on-hetzner
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "Java app connection address is ${{ needs.create-java-app-on-hetzner.outputs.address }}"

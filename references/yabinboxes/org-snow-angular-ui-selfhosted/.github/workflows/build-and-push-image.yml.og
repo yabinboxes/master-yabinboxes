@@ -1,0 +1,35 @@
+name: Build and push image to registry
+
+on:
+  push:
+    branches: [ "main" ]
+    
+# build - create image and push to registry
+jobs:
+
+  build-and-push-image-dashboard:
+    uses: snow-monkeys-modules/docker-iac/.github/workflows/main.yml@main
+    with:
+      type: build_and_push_image
+      name: yabinm/snow-ui-dashboard
+      tag: latest
+      docker_file: Dockerfile.dashboard
+    secrets:
+      registry_user: ${{ secrets.GLOBAL_DOCKERHUB_USERNAME }}
+      registry_token: ${{ secrets.GLOBAL_DOCKERHUB_TOKEN }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+  
+
+
+  build-and-push-image-docs:
+    uses: snow-monkeys-modules/docker-iac/.github/workflows/main.yml@main
+    with:
+      type: build_and_push_image
+      name: yabinm/snow-ui-docs
+      tag: latest
+      docker_file: Dockerfile.docs
+    secrets:
+      registry_user: ${{ secrets.GLOBAL_DOCKERHUB_USERNAME }}
+      registry_token: ${{ secrets.GLOBAL_DOCKERHUB_TOKEN }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+      

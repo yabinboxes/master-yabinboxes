@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "../../../../hetzner-iac"
+		},
+		{
+			"path": "../../../../master-modules"
+		},
+		{
+			"path": "../../../../docker-iac"
+		},
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../azure-iac"
+		},
+		{
+			"path": "../../../../gcp-iac"
+		},
+		{
+			"path": "../../../../digital-ocean-iac"
+		}
+	],
+	"settings": {
+		"js/ts.suggest.enabled": false
+	}
+}

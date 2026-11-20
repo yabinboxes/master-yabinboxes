@@ -1,0 +1,30 @@
+# Stage 1: Build the Angular application
+FROM node:20-slim AS build
+
+WORKDIR /app
+
+# Copy package files
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm ci --legacy-peer-deps
+
+# Copy project files
+COPY . .
+
+# Build the Angular dashboard application for production
+RUN npm run build -- dashboard --configuration production
+
+# Stage 2: Run the SSR server with Node
+FROM node:20-slim AS runtime
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV PORT=4000
+
+COPY --from=build /app/dist/dashboard ./dist/dashboard
+
+EXPOSE 4000
+
+CMD ["node", "dist/dashboard/server/server.mjs"]

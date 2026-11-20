@@ -1,0 +1,244 @@
+name: Notify
+description: Notify snow dashboard
+author: Yabin Monroy
+
+inputs:
+  snow_host_url:
+    required: false
+    description: 'Snow dashboard host URL'
+    default: 'https://api.snow-monkeys.com'
+  snow_token:
+    required: false
+    description: 'Snow authentication token'
+    default: 'snow-123'
+  snow_token_pipeline:
+    required: false
+    description: 'Snow pipeline authentication token'
+    default: ''
+  provider:
+    required: false
+    description: 'Cloud provider (e.g. local, aws, gcp)'
+    default: 'local'
+  name:
+    required: false
+    description: 'Deployment name'
+    default: ''
+  actor_id:
+    required: true
+    type: string
+  actor_name:
+    required: false
+    type: string
+    default: ''
+  git_type:
+    required: true
+    type: string
+  type:
+    required: false
+    description: 'Deployment type'
+    default: ''
+  extras:
+    required: false
+    description: 'Extra metadata as JSON string'
+    default: ''
+  metadata:
+    required: false
+    description: 'Deployment metadata tags'
+    default: "[ orphan ]"
+  url:
+    required: false
+    description: 'Deployment URL'
+    default: ''
+  terraform_output:
+    required: false
+    description: 'Terraform outputs as JSON'
+    default: ''
+  terraform_vars:
+    required: false
+    description: 'Terraform variables'
+    default: ''
+  docker_output:
+    required: false
+    description: 'Docker outputs as JSON'
+    default: ''
+  docker_vars:
+    required: false
+    description: 'Compose service fields as JSON'
+    default: ''
+  url_path:
+    required: false
+    description: 'URL path suffix'
+    default: ''
+  port:
+    required: false
+    description: 'Service port'
+    default: ''
+  image:
+    required: false
+    description: 'Docker image name'
+    default: ''
+  image_tag:
+    required: false
+    description: 'Docker image tag'
+    default: ''
+  status:
+    required: false
+    description: 'Deployment status'
+    default: ''
+  payload:
+    required: false
+    description: 'Additional payload data'
+    default: ''
+  environment:
+    required: false
+    description: 'Target environment (e.g. staging, production)'
+    default: ''
+  registry:
+    required: false
+    description: 'Container registry URL'
+    default: ''
+  notes:
+    required: false
+    description: 'Deployment notes'
+    default: ''
+  health_url:
+    required: false
+    description: 'Health check endpoint URL'
+    default: ''
+  health_check_time:
+    required: false
+    description: 'Health check timestamp'
+    default: ''
+  liveness_type:
+    required: false
+    description: 'Liveness probe type'
+    default: ''
+  liveness_status:
+    required: false
+    description: 'Liveness probe status'
+    default: ''
+  liveness_response:
+    required: false
+    description: 'Liveness probe response'
+    default: ''
+
+runs:
+  using: "composite"
+  steps:
+    - name: notify snow monkeys
+      shell: bash
+      run: |
+        echo "notify snow monkeys"
+
+    - name: Notify deployment
+      continue-on-error: true
+      shell: bash
+      env:
+        SNOW_TOKEN_PIPELINE: ${{ inputs.snow_token_pipeline }}
+        ACTOR_NAME: ${{ inputs.actor_name }}
+        ACTOR_ID: ${{ inputs.actor_id }}
+        GIT_TYPE: ${{ inputs.git_type }}
+        ACTOR_EMAIL: ${{ github.actor }}
+        SNOW_TYPE: ${{ inputs.type }}
+        SHA: ${{ github.sha }}
+        SNOW_NAME: ${{ inputs.name }}
+        PROVIDER: ${{ inputs.provider }}
+        REPOSITORY: ${{ github.repository }}
+        REPOSITORY_OWNER: ${{ github.repository_owner }}
+        STATUS: ${{ inputs.status }}
+        PAYLOAD: ${{ inputs.payload }}
+        ENVIRONMENT: ${{ inputs.environment }}
+        URL: ${{ inputs.url }}
+        URL_PATH: ${{ inputs.url_path }}
+        PORT: ${{ inputs.port }}
+        IMAGE: ${{ inputs.image }}
+        IMAGE_TAG: ${{ inputs.image_tag }}
+        REGISTRY: ${{ inputs.registry }}
+        NOTES: ${{ inputs.notes }}
+        EXTRAS: ${{ inputs.extras }}
+        HEALTH_URL: ${{ inputs.health_url }}
+        HEALTH_CHECK_TIME: ${{ inputs.health_check_time }}
+        LIVENESS_TYPE: ${{ inputs.liveness_type }}
+        LIVENESS_STATUS: ${{ inputs.liveness_status }}
+        LIVENESS_RESPONSE: ${{ inputs.liveness_response }}
+        TERRAFORM_OUTPUT: ${{ inputs.terraform_output }}
+        TERRAFORM_VARS: ${{ inputs.terraform_vars }}
+        DOCKER_OUTPUT: ${{ inputs.docker_output }}
+        DOCKER_VARS: ${{ inputs.docker_vars }}
+        SNOW_HOST_URL: ${{ inputs.snow_host_url }}
+      run: |
+        echo "------ create new deployment record ------"
+        BODY=$(jq -n \
+          --arg actor "$ACTOR_NAME" \
+          --arg actorId "$ACTOR_ID" \
+          --arg gitType "$GIT_TYPE" \
+          --arg email "${ACTOR_EMAIL}@users.noreply.github.com" \
+          --arg snowType "$SNOW_TYPE" \
+          --arg sha "$SHA" \
+          --arg snowName "$SNOW_NAME" \
+          --arg provider "$PROVIDER" \
+          --arg repository "$REPOSITORY" \
+          --arg repositoryOwner "$REPOSITORY_OWNER" \
+          --arg status "$STATUS" \
+          --arg payload "$PAYLOAD" \
+          --arg environment "$ENVIRONMENT" \
+          --arg url "$URL" \
+          --arg urlPath "$URL_PATH" \
+          --arg tabName "Main Tab" \
+          --arg tabId "1" \
+          --arg port "$PORT" \
+          --arg image "$IMAGE" \
+          --arg imageTag "$IMAGE_TAG" \
+          --arg registry "$REGISTRY" \
+          --arg notes "$NOTES" \
+          --arg extras "$EXTRAS" \
+          --arg description "" \
+          --arg healthCheckUrl "$HEALTH_URL" \
+          --arg healthCheckTime "$HEALTH_CHECK_TIME" \
+          --arg livenessType "$LIVENESS_TYPE" \
+          --arg livenessStatus "$LIVENESS_STATUS" \
+          --arg livenessResponse "$LIVENESS_RESPONSE" \
+          --arg terraformOutput "$TERRAFORM_OUTPUT" \
+          --arg terraformVars "$TERRAFORM_VARS" \
+          --arg dockerOutput "$DOCKER_OUTPUT" \
+          --arg dockerVars "$DOCKER_VARS" \
+          '{
+            actor: $actor,
+            actorId: $actorId,
+            gitType: $gitType,
+            email: $email,
+            snowType: $snowType,
+            sha: $sha,
+            snowName: $snowName,
+            provider: $provider,
+            repository: $repository,
+            repositoryOwner: $repositoryOwner,
+            status: $status,
+            payload: $payload,
+            environment: $environment,
+            url: $url,
+            urlPath: $urlPath,
+            tabName: $tabName,
+            tabId: $tabId,
+            port: $port,
+            image: $image,
+            imageTag: $imageTag,
+            registry: $registry,
+            notes: $notes,
+            extras: $extras,
+            description: $description,
+            healthCheckUrl: $healthCheckUrl,
+            healthCheckTime: $healthCheckTime,
+            livenessType: $livenessType,
+            livenessStatus: $livenessStatus,
+            livenessResponse: $livenessResponse
+          } + (if $terraformOutput == "" then {} else {terraformOutput: ($terraformOutput | fromjson)} end)
+            + (if $terraformVars == "" then {} else {terraformVars: $terraformVars} end)
+            + (if $dockerOutput == "" then {} else {dockerOutput: ($dockerOutput | fromjson)} end)
+            + (if $dockerVars == "" then {} else {dockerVars: ($dockerVars | fromjson)} end)')
+        RESPONSE=$(curl -s -X POST \
+          -H "Content-Type: application/json" \
+          -H "Authorization: Bearer ${SNOW_TOKEN_PIPELINE}" \
+          -d "$BODY" \
+          "${SNOW_HOST_URL}/connectors/publish-snow-deployment")
+        echo "$RESPONSE"

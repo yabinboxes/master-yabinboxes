@@ -1,0 +1,37 @@
+# create aws s3 to store terraform state for aws
+name: S3 Bucket Terraform State
+
+
+on:
+  push:
+    branches: [ "main" ]
+
+
+jobs:
+
+  # this is the only resource that has to be removed manually in AWS
+  create_s3_bucket_terraform_state:
+    uses: snow-monkeys-modules/aws-iac/.github/workflows/main.yml@main
+    with:
+      type: aws_s3_bucket
+      type_values: |
+        bucket_name=s3-terraform-state-snow-monkeys-20261
+        region=us-east-2
+        versioning=true
+        encrypt=true
+      name: s3-terraform-state-snow-monkeys-20261
+    secrets:
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }} # TODO: add aws access key id
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # TODO: add aws secret access key
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }} # TODO: add snow token pipeline
+
+
+
+  use-output-create_s3_bucket_terraform_state:
+    needs: create_s3_bucket_terraform_state
+    continue-on-error: true
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "S3 bucket terraform state is ${{ needs.create_s3_bucket_terraform_state.outputs.bucket_name }}"
+    

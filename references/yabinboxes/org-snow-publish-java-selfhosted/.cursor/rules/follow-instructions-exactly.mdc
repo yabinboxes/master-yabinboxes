@@ -1,0 +1,10 @@
+---
+description: Do exactly what the user asks
+alwaysApply: true
+---
+
+# Follow Instructions Exactly
+
+- Do only what the user asked. Nothing added, nothing skipped.
+- Do not lie about what was done.
+- Do the full request the first time so the user does not have to repeat themselves.

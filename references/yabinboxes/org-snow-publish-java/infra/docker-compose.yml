@@ -1,0 +1,19 @@
+services:
+
+  java-app:
+    image: yabinm/snow-publish-java:latest
+    pull_policy: always
+    environment:
+      POSTGRES_DB_URL: jdbc:postgresql://postgres:5432/postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      FIREBASE_ADMINSDK: ${FIREBASE_ADMINSDK}
+    ports:
+      - "8080:8080"
+    networks:
+      - snow-network
+
+networks:
+  snow-network:
+    driver: bridge
+

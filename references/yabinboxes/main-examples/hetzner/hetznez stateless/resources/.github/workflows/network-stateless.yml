@@ -1,0 +1,35 @@
+name: Network Stateless
+
+on:
+  push:
+    branches: [ "main" ]
+
+
+jobs:
+
+  checkout:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+  # create network (resource) on hetzner
+  create_network_on_hetzner:
+    needs: checkout
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: hcloud_network
+      name: network-hetzner
+      type_values: |
+        ip_range=10.0.0.0/16
+    secrets:
+      hcloud_token: ${{ secrets.HETZNER_CLOUD_TOKEN }} # TODO: add hcloud token
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }} # TODO: add snow token pipeline
+
+  use-output-network:
+    needs: create_network_on_hetzner
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Use output
+        run: echo "Url is ${{ needs.create_network_on_hetzner.outputs.server_ip }}"
+
+      - run: sleep 5

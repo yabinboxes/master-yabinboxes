@@ -1,0 +1,172 @@
+<section id="filters" class="pb-6">
+  <h2 class="mb-4 px-2 text-[11px] font-semibold uppercase tracking-wider opacity-45">Filters</h2>
+  <form autocomplete="off" [formGroup]="typesForm" class="space-y-6">
+    <fieldset class="fieldset gap-0 p-0">
+      <legend class="mb-1 px-2 text-xs font-medium opacity-70">Types</legend>
+      <label class="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm hover:bg-base-100">
+        <input
+          type="checkbox"
+          checked="checked"
+          class="checkbox checkbox-xs"
+          formControlName="applications"
+          (change)="onChangeFilter()"
+        />
+        Applications
+      </label>
+      <label class="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm hover:bg-base-100">
+        <input
+          type="checkbox"
+          checked="checked"
+          class="checkbox checkbox-xs"
+          formControlName="services"
+          (change)="onChangeFilter()"
+        />
+        Services
+      </label>
+      <label class="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm hover:bg-base-100">
+        <input
+          type="checkbox"
+          checked="checked"
+          class="checkbox checkbox-xs"
+          formControlName="cluster"
+          (change)="onChangeFilter()"
+        />
+        Clusters
+      </label>
+      <label class="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm hover:bg-base-100">
+        <input
+          type="checkbox"
+          checked="checked"
+          class="checkbox checkbox-xs"
+          formControlName="resources"
+          (change)="onChangeFilter()"
+        />
+        Resources
+      </label>
+    </fieldset>
+
+    <fieldset class="fieldset gap-0 p-0">
+      <legend class="mb-1 px-2 text-xs font-medium opacity-70">Providers</legend>
+      <label class="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm hover:bg-base-100">
+        <input
+          type="checkbox"
+          checked="checked"
+          class="checkbox checkbox-xs"
+          formControlName="civo"
+          (change)="onChangeFilter()"
+        />
+        Civo
+      </label>
+      <label class="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm hover:bg-base-100">
+        <input
+          type="checkbox"
+          checked="checked"
+          class="checkbox checkbox-xs"
+          formControlName="digitalocean"
+          (change)="onChangeFilter()"
+        />
+        DigitalOcean
+      </label>
+      <label class="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm hover:bg-base-100">
+        <input
+          type="checkbox"
+          checked="checked"
+          class="checkbox checkbox-xs"
+          formControlName="cloudflare"
+          (change)="onChangeFilter()"
+        />
+        Cloudflare
+      </label>
+      <label class="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm hover:bg-base-100">
+        <input
+          type="checkbox"
+          checked="checked"
+          class="checkbox checkbox-xs"
+          formControlName="azure"
+          (change)="onChangeFilter()"
+        />
+        Azure
+      </label>
+      <label class="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm hover:bg-base-100">
+        <input
+          type="checkbox"
+          checked="checked"
+          class="checkbox checkbox-xs"
+          formControlName="aws"
+          (change)="onChangeFilter()"
+        />
+        AWS
+      </label>
+    </fieldset>
+
+    <fieldset class="fieldset gap-0 p-0">
+      <legend class="mb-1 px-2 text-xs font-medium opacity-70">Colors</legend>
+      <label class="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm hover:bg-base-100">
+        <input
+          type="checkbox"
+          checked="checked"
+          class="checkbox checkbox-xs"
+          formControlName="nocolor"
+          (change)="onChangeFilter()"
+        />
+        <span class="h-2.5 w-2.5 rounded-full border border-dashed border-base-content/40"></span>
+        No-color
+      </label>
+      <label class="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm hover:bg-base-100">
+        <input
+          type="checkbox"
+          checked="checked"
+          class="checkbox checkbox-xs"
+          formControlName="blue"
+          (change)="onChangeFilter()"
+        />
+        <span class="h-2.5 w-2.5 rounded-full bg-blue-500"></span>
+        Blue
+      </label>
+      <label class="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm hover:bg-base-100">
+        <input
+          type="checkbox"
+          checked="checked"
+          class="checkbox checkbox-xs"
+          formControlName="green"
+          (change)="onChangeFilter()"
+        />
+        <span class="h-2.5 w-2.5 rounded-full bg-green-500"></span>
+        Green
+      </label>
+      <label class="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm hover:bg-base-100">
+        <input
+          type="checkbox"
+          checked="checked"
+          class="checkbox checkbox-xs"
+          formControlName="red"
+          (change)="onChangeFilter()"
+        />
+        <span class="h-2.5 w-2.5 rounded-full bg-red-500"></span>
+        Red
+      </label>
+      <label class="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm hover:bg-base-100">
+        <input
+          type="checkbox"
+          checked="checked"
+          class="checkbox checkbox-xs"
+          formControlName="yellow"
+          (change)="onChangeFilter()"
+        />
+        <span class="h-2.5 w-2.5 rounded-full bg-yellow-500"></span>
+        Yellow
+      </label>
+      <label class="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm hover:bg-base-100">
+        <input
+          type="checkbox"
+          checked="checked"
+          class="checkbox checkbox-xs"
+          formControlName="orange"
+          (change)="onChangeFilter()"
+        />
+        <span class="h-2.5 w-2.5 rounded-full bg-orange-500"></span>
+        Orange
+      </label>
+    </fieldset>
+  </form>
+</section>

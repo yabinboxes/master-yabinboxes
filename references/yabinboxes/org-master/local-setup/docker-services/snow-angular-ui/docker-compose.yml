@@ -1,0 +1,24 @@
+services:
+
+  snow-dashboard-ui:
+    image: yabinm/snow-ui-dashboard:latest
+    pull_policy: always
+    container_name: snow-ui-dashboard
+    ports:
+      - "4200:80"
+    networks:
+      - snow-network
+      
+  
+  snow-docs-ui:
+    image: yabinm/snow-ui-docs:latest
+    pull_policy: always
+    container_name: snow-ui-docs
+    ports:
+      - "4201:4000"
+    networks:
+      - snow-network
+
+networks:
+  snow-network:
+    driver: bridge

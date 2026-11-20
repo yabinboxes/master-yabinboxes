@@ -1,0 +1,47 @@
+name: Automation test Snow Monkeys modules
+run-name: Automation test Snow Monkeys modules
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [ automation-snow-monkey-test-event ]
+
+
+jobs:
+
+  checkout:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+  # Reports a SERVER/CLUSTER (server) to Snow API after a server/cluster is provisioned.
+  snow_notify_server:
+    uses: snow-monkeys-modules/snow-iac/.github/workflows/main.yml@main
+    needs: checkout
+    with:
+      workflow_type: notify
+      snow_host_url: 'https://api.snow-monkeys.com'
+      actor_id: ${{ github.actor_id }}
+      actor_name: ${{ github.actor }}
+      git_type: 'github'
+      provider: 'test-snowmonkeys-provider'
+      name: 'test-snowmonkeys-server'
+      type: CLUSTER
+      url: '127.0.0.1'
+    secrets:
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+  # Get url by snow-name
+  snow_get_url:
+    uses: snow-monkeys-modules/snow-iac/.github/workflows/main.yml@main
+    needs: snow_notify_server
+    with:
+      workflow_type: get_resources
+      snow_host_url: 'https://api.snow-monkeys.com'
+      resource_name: 'test-snowmonkeys-server'
+      actor_id: ${{ github.actor_id }}
+      git_type: 'github'
+    secrets:
+      snow_token_pipeline: ${{ secrets.SNOW_TOKEN_PIPELINE }}
+
+  # Get url by repository

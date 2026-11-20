@@ -1,0 +1,47 @@
+<div class="min-h-screen flex items-center justify-center bg-base-200">
+  <div class="text-center">
+    <!-- 404 Error Code -->
+    <h1 class="mb-4 font-pixel text-8xl font-normal leading-none text-primary">404</h1>
+    
+    <!-- Error Message -->
+    <h2 class="mb-4 font-display text-[clamp(1.8rem,4vw,2.5rem)] font-normal leading-[1.12] tracking-tight">Page Not Found</h2>
+    
+    <!-- Description -->
+    <p class="text-lg opacity-70 mb-8 max-w-md mx-auto">
+      Sorry, the page you are looking for doesn't exist or has been moved.
+    </p>
+    
+    <!-- Action Buttons -->
+    <div class="flex gap-4 justify-center">
+      <button 
+        class="btn btn-primary"
+        (click)="goHome()"
+      >
+        Go to Home
+      </button>
+      <button 
+        class="btn btn-outline"
+        (click)="goHome()"
+      >
+        Back to Dashboard
+      </button>
+    </div>
+    
+    <!-- Optional: Illustration or Icon -->
+    <div class="mt-12">
+      <svg 
+        class="w-64 h-64 mx-auto opacity-20" 
+        fill="none" 
+        stroke="currentColor" 
+        viewBox="0 0 24 24"
+      >
+        <path 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          stroke-width="1.5" 
+          d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    </div>
+  </div>
+</div>

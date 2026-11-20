@@ -1,0 +1,173 @@
+name: Cloudflare static webpage deployer
+
+on:
+  workflow_call:
+    inputs:
+      framework:
+        required: true
+        type: string
+        default: 'astro'
+      project-name:
+        required: true
+        type: string
+      build-directory:
+        required: false
+        type: string
+        default: 'dist'
+      build-command:
+        required: false
+        type: string
+        default: 'npm run build'
+      branch:
+        required: false
+        type: string
+        default: 'main'
+      destroy:
+        required: false
+        type: boolean
+        default: false
+      enable-testing:
+        required: false
+        type: boolean
+        default: false
+    secrets:
+      account-id:
+        required: true 
+      cloudflare-token:
+        required: true
+      snow-token: 
+        required: false
+      snow-token-pipeline:
+        required: false
+    outputs:
+      static_webpage_url:
+        description: 'The URL of the deployed static webpage'
+        value: ${{ jobs.deploy-static-webpage.outputs.static_webpage_url }}
+   
+jobs:
+
+  deploy-static-webpage: 
+    runs-on: ubuntu-22.04
+    outputs:
+      static_webpage_url: ${{ steps.cloud-flare.outputs.static_webpage_url }}
+    
+    steps:
+
+      # checkout app repository
+      - uses: actions/checkout@v4
+
+      - name: copy code to root for testing
+        if: ${{ inputs.enable-testing }}
+        run: |
+          cp -r ./cloudflare-static-webpage-react-vite/* .
+          echo "---- display files in root ----"
+          ls
+          echo "---- end display files in root ----"
+
+      # Set up Astro & Cloudflare Pages
+      - name: Setup project for astro
+        if: ${{ inputs.framework == 'astro' && inputs.destroy == false }}
+        run: |
+          npm install wrangler@latest --save-dev
+          npx astro add cloudflare
+          npm install
+
+
+      # Set up React & Cloudflare Pages
+      - name: Setup project for react
+        if: ${{ inputs.framework == 'react' && inputs.destroy == false  }}
+        run: |
+          npm install wrangler@latest --save-dev
+          npm install
+        
+      # Set up Angular & Cloudflare Pages
+      - name: Setup project for angular
+        if: ${{ inputs.framework == 'angular' && inputs.destroy == false  }}
+        run: |
+          npm install
+          
+      # Set up Next & Cloudflare Pages
+      - name: Setup project for next
+        if: ${{ inputs.framework == 'next' && inputs.destroy == false }}
+        run: |
+          npm install wrangler@latest --save-dev
+          npm install
+
+      # Set up Vue & Cloudflare Pages
+      - name: Setup project for vue
+        if: ${{ inputs.framework == 'vue' && inputs.destroy == false }}
+        run: |
+          npm install wrangler@latest --save-dev
+          npm install
+      
+      - name: Build project
+        if: ${{ inputs.destroy == false }}
+        run: |
+          echo "Building project with command: ${{ inputs.build-command }}"
+          ${{ inputs.build-command  }}
+          echo "---------------------"
+          ls
+          echo "---------------------"
+
+      # Create project
+      - name: Create project
+        continue-on-error: true
+        if: ${{ inputs.destroy == false }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.cloudflare-token }}
+          accountId: ${{ secrets.account-id }}
+          command: |
+            pages project create ${{ inputs.project-name }} --production-branch=${{ inputs.branch }}
+         
+
+      # Deploy
+      - name: Deploy
+        id: wrangler-action
+        if: ${{ inputs.destroy == false }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.cloudflare-token }}
+          accountId: ${{ secrets.account-id }}
+          command: |
+            pages deploy ./${{ inputs.build-directory }} --project-name ${{ inputs.project-name }} --branch ${{ inputs.branch }}
+          captureOutput: true
+
+      # Set output URL
+      - name: Set output URL
+        id: cloud-flare
+        if: ${{ inputs.destroy == false }}
+        run: |
+          urls=$(echo "${{ steps.wrangler-action.outputs.command-output }}" | grep -oP 'https?://[^\s]+')
+          echo "Extracted URLs: $urls"
+          url1=$(echo "$urls" | sed -n '1p')
+          echo "Extracted URL: $url1"
+          echo "static_webpage_url=$url1" >> "$GITHUB_OUTPUT"
+
+      # Destroy
+      - name: Destroy
+        id: wrangler-action-destroy
+        if: ${{ inputs.destroy == true }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.cloudflare-token }}
+          accountId: ${{ secrets.account-id }}
+          command: |
+            pages project delete ${{ inputs.project-name }}
+          captureOutput: true
+
+  snow_notify:
+    uses: snow-monkeys-modules/snow-iac/.github/workflows/main.yml@main
+    needs: deploy-static-webpage
+    if: ${{ always() && needs.deploy-static-webpage.result == 'success' && inputs.destroy == false }}
+    with:
+      workflow_type: notify
+      actor_id: ${{ github.actor_id }}
+      actor_name: ${{ github.actor }}
+      provider: cloudflare
+      name: ${{ inputs.project-name }}
+      type: APPLICATION
+      url: ${{ needs.deploy-static-webpage.outputs.static_webpage_url }}
+    secrets:
+      snow_token: ${{ secrets.snow-token }}
+      snow_token_pipeline: ${{ secrets.snow-token-pipeline }}

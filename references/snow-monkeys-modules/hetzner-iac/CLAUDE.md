@@ -1,0 +1,153 @@
+# hetzner-iac — Claude Code instructions
+
+This repository is a **reusable GitHub Actions workflow** for provisioning Hetzner Cloud servers and deploying Docker Compose services and applications. It is consumed by other repositories via `workflow_call`.
+
+External usage reference → [README.md](README.md)
+
+---
+
+## Repository structure
+
+```
+.github/
+  workflows/
+    main.yml                        # Reusable workflow — entry point for all callers
+  actions/
+    server-resource/action.yml      # Composite: provisions a Hetzner server/resource via Terraform
+    docker-compose/action.yml       # Composite: deploys a Docker Compose service
+    docker-compose-app/action.yml   # Composite: deploys a Docker Compose application
+docs/
+  EXAMPLES.md                       # Full workflow examples for all three deployment types
+  FLOW.md                           # Step-by-step logic flow for main.yml
+  INPUTS_OUTPUTS.md                 # Inputs, secrets, and outputs reference
+  INTERNAL.md                       # Implementation details and flow diagrams
+README.md                           # External usage docs
+```
+
+---
+
+## Naming conventions
+
+| Layer | Convention | Examples |
+|---|---|---|
+| Workflow inputs, outputs, secrets | snake_case | `type_values`, `server_ip`, `git_type`, `snow_host_url` |
+| Snow API query params and JSON bodies | camelCase | `snowName`, `actorId`, `gitType`, `healthCheckUrl` |
+| `snow-iac` workflow inputs (external) | snake_case | `workflow_type`, `snow_host_url`, `actor_name` — same as this repo |
+| Terraform env vars | snake_case (external) | `TF_VAR_server_type`, `server_ipv4` |
+
+Full reference → [docs/NAMING.md](docs/NAMING.md)
+
+Do not rename Terraform or SSH path conventions.
+
+---
+
+## Deployment types
+
+| `type` | Action used | What it does |
+|---|---|---|
+| `hcloud_server` | `actions/server-resource` | Provisions a Hetzner VM via Terraform; reports `CLUSTER` to Snow |
+| `resource` | `actions/server-resource` | Same Terraform path; reports `RESOURCE` to Snow |
+| other non-compose | `actions/server-resource` | Same as `resource` (empty `resource` → copies `type`) |
+| `docker_compose` | `actions/docker-compose` | Deploys a Docker Compose service to an existing host |
+| `docker_compose_app` | `actions/docker-compose-app` | Same as above + Docker cleanup and log rotation |
+
+After deploy, `main.yml` calls `snow-monkeys-modules/snow-iac` to notify Snow (`CLUSTER` / `RESOURCE` / `SERVICE` / `APPLICATION`). When `health_url` is non-empty on `docker_compose_app`, `snow_livenessprobe_application` queues a liveness probe after notify.
+
+---
+
+## Key rules when editing this repo
+
+- **Never use `docker system prune -af --volumes`** — `-a` removes tagged images needed by running services; `--volumes` destroys persistent data. Use `docker system prune -f` only.
+- **Never interpolate `${{ inputs.* }}` or `${{ secrets.* }}` inline inside `run:` blocks** — always move them into `env:` vars at the step level to prevent expression injection.
+- **`host` resolution lives in `get_resource_name`** — empty → skip, IP → pass through, name → Snow API with Bearer `snow_token` (`snowName`, `actorId` from `github.actor_id`, `gitType` query params). Do not duplicate elsewhere.
+- **`actor_name` and `actor_id` for Snow notify/liveness** come from `github.actor` and `github.actor_id`; do not add caller inputs for them.
+- **Bare IP `snow_host_url` values** get `https://` prepended in `get_resource_name` before the API call.
+- **`http://` / `https://` prefixes on `host`** are stripped in composite actions (`remove_http_https` step) before SSH.
+- **`expected_url` resolution lives in `assign_host_to_expected_url`** — IP host part → unchanged, name host part → replace with resolved host, keep port.
+- **Empty `resource` is filled in `assign_resource`** — copies `inputs.type` so they match. Workflow inputs cannot be mutated; use the step output.
+- Each deployment type runs in a single job (`implement_hetzner_types`). Only one action step runs per call — the `||` on job outputs is intentional.
+- **Terraform lives in `iac-terraform/v1/modules/dev/hetzner/$RESOURCE`**. Destroy and apply must use `$RESOURCE`, not a hardcoded `server` path.
+- **Hetzner module vars go through `type_values`**, not dedicated `server_type` / `image` / `location` workflow inputs.
+- **When calling `snow-iac`**, use snake_case inputs matching that repo (`workflow_type`, `snow_host_url`, `actor_name`, etc.) and forward `snow_token` via job `secrets:` (not `with:`).
+
+---
+
+## Workflow outputs
+
+Callers receive these outputs from `main.yml`:
+
+| Output | Set when |
+|---|---|
+| `server_ip` | `type: hcloud_server`, `resource`, or other non-compose |
+| `terraform_vars` | `type: hcloud_server`, `resource`, or other non-compose |
+| `address` | `type: docker_compose` or `docker_compose_app` |
+| `container_name` | `type: docker_compose` or `docker_compose_app` |
+| `docker_output` | `type: docker_compose` or `docker_compose_app` |
+| `docker_vars` | `type: docker_compose` or `docker_compose_app` |
+
+---
+
+## Minimal caller template
+
+```yaml
+jobs:
+  deploy:
+    uses: snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml@main
+    with:
+      type: docker_compose_app       # hcloud_server | resource | docker_compose | docker_compose_app
+      name: my-service               # Snow resource name
+      host: my-server                # IP, hostname, or Snow service name
+      snow_host_url: https://snow.internal
+      git_type: github
+    secrets:
+      ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      snow_github_token: ${{ secrets.SNOW_GITHUB_TOKEN }}
+      snow_token: ${{ secrets.SNOW_TOKEN }}
+      env_values: ${{ secrets.ENV_VALUES }}
+```
+
+For server provisioning, pass module fields in `type_values` and the Hetzner token as a secret. `hcloud_token` and `ssh_public_key` are the only values set directly as `TF_VAR_*`.
+
+```yaml
+    with:
+      type: hcloud_server
+      type_values: |
+        name=my-cluster
+        server_type=cx23             # cx22 cx32 cx42 cx52 | cpx11..cpx51 | ccx13..ccx63 | cax11..cax41
+        image=ubuntu-22.04           # ubuntu-22.04 ubuntu-24.04 | debian-11 debian-12 | rocky-8 rocky-9
+        location=hel1                # fsn1 nbg1 hel1 | ash hil | sin
+    secrets:
+      hcloud_token: ${{ secrets.HCLOUD_TOKEN }}
+```
+
+Optional on `docker_compose_app`:
+
+```yaml
+      health_url: https://my-app/health
+      expected_url: my-service:3000  # hostname replaced with resolved host; port kept
+```
+
+---
+
+## Caller repo requirements
+
+For `docker_compose` and `docker_compose_app`, the calling repository must have:
+
+```
+infra/
+  init.sh    # runs on the remote host; must print the container name to stdout
+```
+
+`infra/` is copied to `/tmp/` on the remote before `init.sh` runs. `mkdir -p /tmp` creates that directory when it does not already exist.
+
+---
+
+## Documentation
+
+- Full examples → [docs/EXAMPLES.md](docs/EXAMPLES.md)
+- Workflow logic flow → [docs/FLOW.md](docs/FLOW.md)
+- Inputs, secrets, outputs → [docs/INPUTS_OUTPUTS.md](docs/INPUTS_OUTPUTS.md)
+- Naming conventions → [docs/NAMING.md](docs/NAMING.md)
+- Implementation details and Mermaid flow diagrams → [docs/INTERNAL.md](docs/INTERNAL.md)
+- External usage reference → [README.md](README.md)

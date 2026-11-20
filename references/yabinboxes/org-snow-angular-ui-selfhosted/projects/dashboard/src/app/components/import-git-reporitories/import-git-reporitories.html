@@ -1,0 +1,130 @@
+<section id="tabs-publish-doc" class="flex flex-1">
+  <!-- name of each tab group should be unique -->
+
+  <div class="tabs tabs-lift w-full">
+    <input type="radio" name="my_tabs_3" class="tab flex-1" aria-label="Import Repos Automatically" checked="checked" />
+    <div class="tab-content bg-base-100 border-base-300 p-6">
+
+      <div class="max-w-2xl">
+        <div class="mb-4">
+          <h2 class="text-xl font-semibold">Import repositories</h2>
+          <p class="text-sm opacity-70">Provide a token and registry to list repositories.</p>
+        </div>
+        <form class="grid w-full gap-4" [formGroup]="importForm" (ngSubmit)="loadRepos()">
+          <label class="form-control w-full">
+            <div class="label">
+              <span class="label-text">Token</span>
+            </div>
+            <input type="text" placeholder="Paste your access token" class="input input-bordered w-full"
+              formControlName="token" />
+          </label>
+
+          <div class="grid gap-4 md:grid-cols-2">
+            <label class="form-control w-full">
+              <div class="label">
+                <span class="label-text">Select option</span>
+              </div>
+              <select id="selected-registry" class="select select-bordered w-full" formControlName="registry">
+                <option value="github" selected>Github</option>
+                <option value="gitlab">Gitlab</option>
+                <option value="argocd">ArgoCD</option>
+              </select>
+            </label>
+            <!-- TAB NAME DISABLED
+            <label class="form-control w-full">
+              <div class="label">
+                <span class="label-text">Tab name</span>
+              </div>
+              <select class="select select-bordered w-full" formControlName="tabId">
+                @for (tab of tabs(); track tab.tabId) {
+                <option [value]="tab.tabId">{{ tab.tabName }}</option>
+                }
+              </select>
+            </label>
+            -->
+            <div class="form-control w-full">
+              <div class="label">
+                <span class="label-text">&nbsp;</span>
+              </div>
+              <button class="btn btn-primary w-full" type="submit">
+                Fetch Repositories
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+      <hr class="mt-6" />
+
+      @if (hasImported()) {
+      <section class="mt-6">
+        @if (isLoading()) {
+        <div class="flex items-center gap-4">
+          <span class="loading loading-dots loading-xl"></span>
+          <span class="text-sm opacity-70">Loading repositories...</span>
+        </div>
+        } @else if (errorMessage()) {
+        } @else if (repos().length === 0) {
+        <div class="alert alert-neutral">
+          <span>No repositories found.</span>
+        </div>
+        } @else {
+        <ul class="grid gap-4 max-h-[480px] overflow-y-auto pr-2">
+          @for (repo of repos(); track repo.id) {
+          <li
+            class="rounded-box border border-base-300 bg-base-100 p-4 shadow-sm hover:shadow-md hover:bg-base-200/40 transition-all">
+            <div class="flex items-start gap-4">
+              <input type="checkbox" class="checkbox checkbox-sm mt-2" aria-label="Select repository"
+                [checked]="selectedRepoIds().has(repo.id)"
+                (change)="toggleRepo(repo.id, $any($event.target).checked)" />
+              <a class="flex-1" [href]="repo.html_url" target="_blank" rel="noreferrer">
+                <div class="flex flex-col gap-2">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <span class="font-medium">{{ repo.full_name }}</span>
+                    @if (repo.private) {
+                    <span class="badge badge-ghost">Private</span>
+                    } @else {
+                    <span class="badge badge-outline">Public</span>
+                    }
+                  </div>
+                  @if (repo.description) {
+                  <span class="text-sm opacity-70">{{ repo.description }}</span>
+                  }
+                  <div class="flex flex-wrap items-center gap-2 text-xs opacity-60">
+                    <span>{{ repo.language || 'Unknown language' }}</span>
+                    <span class="opacity-40">•</span>
+                    <span>{{ repo.private ? 'Private' : 'Public' }}</span>
+                  </div>
+                </div>
+              </a>
+              <div class="flex items-center gap-2">
+                @if (getDeployableStatus(repo.id) === 'active') {
+                  <lucide-icon [img]="activeIcon" class="h-4 w-4 text-sky-400"></lucide-icon>
+                }
+                <select
+                  class="select select-bordered select-sm w-40"
+                  [value]="getDeployableStatus(repo.id)"
+                  (change)="setDeployableStatus(repo.id, $any($event.target).value)">
+                  <option value="active">Active</option>
+                  <option value="not-deployable">Not deployable</option>
+                </select>
+              </div>
+              <select id="snow-type-{{ repo.id }}" class="select select-bordered select-sm w-40" [value]="getSnowType(repo.id)"
+                (change)="setSnowType(repo.id, $any($event.target).value)">
+                <option value="APPLICATION">Application</option>
+                <option value="SERVICE">Service</option>
+                <option value="CLUSTER">Cluster</option>
+              </select>
+            </div>
+          </li>
+          }
+        </ul>
+        }
+      </section>
+      }
+
+    </div>
+
+  </div>
+</section>
