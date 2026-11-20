@@ -54,13 +54,13 @@ Theme: infrastructure as code projects, reusable workflows, walkthrough, pitfall
 
 ## Part V — Maintenance and Scripts
 
-Theme: dashboard code, supporting services, tests, maintainer scripts, and wrap-up.
+Theme: dashboard code, supporting services, tests, how the masters are implemented, and wrap-up.
 
 - [Chapter 16 — Dashboard Code](./body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/)
 - [Chapter 17 — Dashboard Selfhosted Code](./body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/)
 - [Chapter 18 — Other services](./body/part-05-maintenance-and-scripts/chapter-18-other-services/)
 - [Chapter 19 — Test Modules](./body/part-05-maintenance-and-scripts/chapter-19-test-modules/)
-- [Chapter 20 — Maintainer Scripts](./body/part-05-maintenance-and-scripts/chapter-20-maintainer-scripts/)
+- [Chapter 20 — Masters](./body/part-05-maintenance-and-scripts/chapter-20-masters/)
 - [Chapter 21 — Script Summary and Reports](./body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/)
 - [Chapter 22 — Summary + Further Reading](./body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/)
 

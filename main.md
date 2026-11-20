@@ -44,14 +44,12 @@ Conventions used (code style, icons, notation).
 17. "Dashboard Selfhosted Code" - ui, backend, and service for dashboard code
 18. "Other services" - database backup, server.
 19. "Test Modules" - automated testing repositories
-20. "Maintainer Scripts" - scripts that should be executed to have the modules and docs updates
-  20.1 sync list-of-resources.md in @master-modules with the one in @master-infra
-  20.2. Update terraform IaC projects using github action pipeline in @master-infra
-  20.3. Update documentation for dashboard/dashboard selfhosted and other services using @org-master
-  20.4. Update reusable workflows modules using @snow-monkeys-modules and             @snow-monkeys-infra with manual in prompt in local
-  20.5. update docs project in @org-snow-angular-ui using @snow-monkeys-modules: filters and modules configuration files, and modules md files
-  20.6. updates main examples in @main-examples
-  20.7. update automation examples in @automation-test-snow & @examples-automation-test
+20. Masters — how each master is implemented
+  20.1 @snow-monkeys-modules/master-modules/ -> @snow-monkeys-modules/
+  20.2 @snow-monkeys-infra/master-infra/ -> @snow-monkeys-infra/
+  20.3 @test-snow-monkeys/master-test/ -> @test-snow-monkeys/
+  20.4 @yabinboxes/org-master/ -> @yabinboxes/
+  20.5 @yabinboxes/master-yabinboxes/ -> @yabinboxes/
 21. Script Summary and Reports
 22. "Summary" + "Further Reading"
 
@@ -78,7 +76,7 @@ Conventions used (code style, icons, notation).
 | 17 | Dashboard Selfhosted Code | pending |
 | 18 | Other services | pending |
 | 19 | Test Modules | pending |
-| 20 | Maintainer Scripts | pending |
+| 20 | Masters | implemented |
 | 21 | Script Summary and Reports | pending |
 | 22 | Summary + Further Reading | pending |
 

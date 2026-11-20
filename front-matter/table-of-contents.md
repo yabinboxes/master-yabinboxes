@@ -117,7 +117,7 @@ Theme: infrastructure as code projects, reusable workflows, walkthrough, pitfall
 
 ## Part V — Maintenance and Scripts
 
-Theme: dashboard code, supporting services, tests, maintainer scripts, and wrap-up.
+Theme: dashboard code, supporting services, tests, how the masters are implemented, and wrap-up.
 
 ### [Chapter 16 — Dashboard Code](../body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/)
 
@@ -143,16 +143,15 @@ Theme: dashboard code, supporting services, tests, maintainer scripts, and wrap-
 
 1. Conceptual explanation
 
-### [Chapter 20 — Maintainer Scripts](../body/part-05-maintenance-and-scripts/chapter-20-maintainer-scripts/)
+### [Chapter 20 — Masters](../body/part-05-maintenance-and-scripts/chapter-20-masters/)
 
 1. Conceptual explanation
-   - 20.1 Sync `list-of-resources.md` (`master-modules` with `master-infra`)
-   - 20.2 Update Terraform IaC projects (`master-infra`)
-   - 20.3 Update dashboard and other-services docs (`org-master`)
-   - 20.4 Update reusable workflow modules (`snow-monkeys-modules`, `snow-monkeys-infra`)
-   - 20.5 Update docs project (`org-snow-angular-ui`)
-   - 20.6 Update main examples (`main-examples`)
-   - 20.7 Update automation examples (`automation-test-snow`, `examples-automation-test`)
+   - master-modules → `snow-monkeys-modules`
+   - master-infra → `snow-monkeys-infra`
+   - master-test → `test-snow-monkeys`
+   - org-master → `yabinboxes`
+   - master-yabinboxes → `yabinboxes`
+2. Walkthrough
 
 ### [Chapter 21 — Script Summary and Reports](../body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/)
 
