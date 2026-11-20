@@ -1,6 +1,18 @@
 # 2. Walkthrough
 
-Paths below are from this file to the workspace. Chapter 3 states what each master is. The tables here are the file that implements each rule.
+## Navigation
+
+The file index for each master is in the [conceptual explanation](../01-conceptual-explanation/README.md#index).
+
+| Master | Implementation |
+| --- | --- |
+| [snow-monkeys-modules/master-modules](../01-conceptual-explanation/README.md#master-modules) | [snow-monkeys-modules](../../../../../../snow-monkeys-modules) |
+| [snow-monkeys-infra/master-infra](../01-conceptual-explanation/README.md#master-infra) | [snow-monkeys-infra](../../../../../../snow-monkeys-infra) |
+| [test-snow-monkeys/master-test](../01-conceptual-explanation/README.md#master-test) | [test-snow-monkeys](../../../../../../test-snow-monkeys) |
+| [yabinboxes/org-master](../01-conceptual-explanation/README.md#org-master) | [yabinboxes](../../../../../) |
+| [yabinboxes/master-yabinboxes](../01-conceptual-explanation/README.md#master-yabinboxes) | [yabinboxes](../../../../../) |
+
+Paths below are from this file to the workspace. The tables are the workflow or directory behind each index row.
 
 ## master-modules → snow-monkeys-modules
 
