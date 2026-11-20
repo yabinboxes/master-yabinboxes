@@ -33,26 +33,27 @@ Conventions used (code style, icons, notation).
 8. gitlab runners
 9. local runners
 ### Core Modules
-10. "Hands-on Reusable Workflows" — a runnable code module
-11. "Walkthrough" — line-by-line explanation of key parts
-12. "Common Pitfalls" — 2–3 mistakes and fixes
-13. "Exercises" — 3 graded (easy/medium/hard)
-14. Examples
+10. Infraestructure as Code projects for cloud resources
+11. "Hands-on Reusable Workflows" — a runnable code module
+12. "Walkthrough" — line-by-line explanation of key parts
+13. "Common Pitfalls" — 2–3 mistakes and fixes
+14. "Exercises" — 3 graded (easy/medium/hard)
+15. Examples
 ### Maintenance and Scripts
-15. "Dashboard Code" - ui, backend, and service for dashboard code
-16. "Dashboard Selfhosted Code" - ui, backend, and service for dashboard code
-17. "Other services" - database backup, server.
-18. "Test Modules" - automated testing repositories
-19. "Maintainer Scripts" - scripts that should be executed to have the modules and docs updates
-  19.1 sync list-of-resources.md in @master-modules with the one in @master-infra
-  19.2. Update terraform IaC projects using github action pipeline in @master-infra
-  19.3. Update documentation for dashboard/dashboard selfhosted and other services using @org-master
-  19.4. Update reusable workflows modules using @snow-monkeys-modules and             @snow-monkeys-infra with manual in prompt in local
-  19.5. update docs project in @org-snow-angular-ui using @snow-monkeys-modules: filters and modules configuration files, and modules md files
-  19.6. updates main examples in @main-examples
-  19.7. update automation examples in @automation-test-snow & @examples-automation-test
-20. Script Summary and Reports
-21. "Summary" + "Further Reading"
+16. "Dashboard Code" - ui, backend, and service for dashboard code
+17. "Dashboard Selfhosted Code" - ui, backend, and service for dashboard code
+18. "Other services" - database backup, server.
+19. "Test Modules" - automated testing repositories
+20. "Maintainer Scripts" - scripts that should be executed to have the modules and docs updates
+  20.1 sync list-of-resources.md in @master-modules with the one in @master-infra
+  20.2. Update terraform IaC projects using github action pipeline in @master-infra
+  20.3. Update documentation for dashboard/dashboard selfhosted and other services using @org-master
+  20.4. Update reusable workflows modules using @snow-monkeys-modules and             @snow-monkeys-infra with manual in prompt in local
+  20.5. update docs project in @org-snow-angular-ui using @snow-monkeys-modules: filters and modules configuration files, and modules md files
+  20.6. updates main examples in @main-examples
+  20.7. update automation examples in @automation-test-snow & @examples-automation-test
+21. Script Summary and Reports
+22. "Summary" + "Further Reading"
 
 ## CHAPTER STATUS
 
@@ -67,18 +68,19 @@ Conventions used (code style, icons, notation).
 | 7 | github runners | implemented |
 | 8 | gitlab runners | implemented |
 | 9 | local runners | implemented |
-| 10 | Hands-on Reusable Workflows | pending |
-| 11 | Walkthrough | pending |
-| 12 | Common Pitfalls | pending |
-| 13 | Exercises | pending |
-| 14 | Examples | implemented |
-| 15 | Dashboard Code | pending |
-| 16 | Dashboard Selfhosted Code | pending |
-| 17 | Other services | pending |
-| 18 | Test Modules | pending |
-| 19 | Maintainer Scripts | pending |
-| 20 | Script Summary and Reports | pending |
-| 21 | Summary + Further Reading | pending |
+| 10 | Infrastructure as Code projects for cloud resources | implemented |
+| 11 | Hands-on Reusable Workflows | pending |
+| 12 | Walkthrough | pending |
+| 13 | Common Pitfalls | pending |
+| 14 | Exercises | pending |
+| 15 | Examples | implemented |
+| 16 | Dashboard Code | pending |
+| 17 | Dashboard Selfhosted Code | pending |
+| 18 | Other services | pending |
+| 19 | Test Modules | pending |
+| 20 | Maintainer Scripts | pending |
+| 21 | Script Summary and Reports | pending |
+| 22 | Summary + Further Reading | pending |
 
 ## CODE MODULE REQUIREMENTS
 

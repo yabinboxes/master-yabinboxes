@@ -33,7 +33,7 @@ master-yabinboxes/
     └── index-of-code-examples.md
 ```
 
-Twenty-one chapters (from `main.md` **CHAPTERS**). Every chapter is copied from `_templates/chapter/` and uses this section tree. Omit a section when that chapter does not need it.
+Twenty-two chapters (from `main.md` **CHAPTERS**). Every chapter is copied from `_templates/chapter/` and uses this section tree. Omit a section when that chapter does not need it.
 
 ```
 chapter-NN-slug/
@@ -49,4 +49,4 @@ chapter-NN-slug/
 2. Write one chapter at a time, following `_templates/chapter/`.
 3. Fill the chapter checklist before moving on.
 
-Chapter 10 has been cleared. Listings are indexed in [back-matter/index-of-code-examples.md](./back-matter/index-of-code-examples.md).
+Chapter status is in [main.md](./main.md). Listings are indexed in [back-matter/index-of-code-examples.md](./back-matter/index-of-code-examples.md).

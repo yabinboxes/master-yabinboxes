@@ -1,3 +1,3 @@
 # Part IV — Core Modules
 
-Theme: reusable workflows, walkthrough, pitfalls, exercises, and examples.
+Theme: infrastructure as code projects, reusable workflows, walkthrough, pitfalls, exercises, and examples.

@@ -77,36 +77,41 @@ Theme: GitHub runners, GitLab runners, and local runners that execute the reusab
 
 ## Part IV — Core Modules
 
-Theme: reusable workflows, walkthrough, pitfalls, exercises, and examples.
+Theme: infrastructure as code projects, reusable workflows, walkthrough, pitfalls, exercises, and examples.
 
-### [Chapter 10 — Hands-on Reusable Workflows](../body/part-04-core-modules/chapter-10-hands-on-reusable-workflows/)
+### [Chapter 10 — Infrastructure as Code projects for cloud resources](../body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/)
 
-1. [Conceptual explanation](../body/part-04-core-modules/chapter-10-hands-on-reusable-workflows/01-conceptual-explanation/)
-2. [Walkthrough](../body/part-04-core-modules/chapter-10-hands-on-reusable-workflows/02-walkthrough/)
+1. [Conceptual explanation](../body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation/)
+2. [Walkthrough](../body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough/) — index of every Terraform project and its source
 
-### [Chapter 11 — Walkthrough](../body/part-04-core-modules/chapter-11-walkthrough/)
+### [Chapter 11 — Hands-on Reusable Workflows](../body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/)
+
+1. Conceptual explanation
+2. Walkthrough
+
+### [Chapter 12 — Walkthrough](../body/part-04-core-modules/chapter-12-walkthrough/)
 
 1. Conceptual explanation
 
-### [Chapter 12 — Common Pitfalls](../body/part-04-core-modules/chapter-12-common-pitfalls/)
+### [Chapter 13 — Common Pitfalls](../body/part-04-core-modules/chapter-13-common-pitfalls/)
 
 1. Conceptual explanation
    - Pitfall 1
    - Pitfall 2
    - Pitfall 3
 
-### [Chapter 13 — Exercises](../body/part-04-core-modules/chapter-13-exercises/)
+### [Chapter 14 — Exercises](../body/part-04-core-modules/chapter-14-exercises/)
 
 1. Conceptual explanation
 
-### [Chapter 14 — Examples](../body/part-04-core-modules/chapter-14-examples/)
+### [Chapter 15 — Examples](../body/part-04-core-modules/chapter-15-examples/)
 
 1. Conceptual explanation
    - Infrastructure
    - Services
    - Applications
    - Stateful create and destroy
-2. [Walkthrough](../body/part-04-core-modules/chapter-14-examples/02-walkthrough/) — index of every `main-examples` workflow and its implementation
+2. [Walkthrough](../body/part-04-core-modules/chapter-15-examples/02-walkthrough/) — index of every `main-examples` workflow and its implementation
 
 ---
 
@@ -114,46 +119,46 @@ Theme: reusable workflows, walkthrough, pitfalls, exercises, and examples.
 
 Theme: dashboard code, supporting services, tests, maintainer scripts, and wrap-up.
 
-### [Chapter 15 — Dashboard Code](../body/part-05-maintenance-and-scripts/chapter-15-dashboard-code/)
+### [Chapter 16 — Dashboard Code](../body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/)
 
 1. Conceptual explanation
    - UI
    - Backend
    - Service
 
-### [Chapter 16 — Dashboard Selfhosted Code](../body/part-05-maintenance-and-scripts/chapter-16-dashboard-selfhosted-code/)
+### [Chapter 17 — Dashboard Selfhosted Code](../body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/)
 
 1. Conceptual explanation
    - UI
    - Backend
    - Service
 
-### [Chapter 17 — Other services](../body/part-05-maintenance-and-scripts/chapter-17-other-services/)
+### [Chapter 18 — Other services](../body/part-05-maintenance-and-scripts/chapter-18-other-services/)
 
 1. Conceptual explanation
    - Database backup
    - Server
 
-### [Chapter 18 — Test Modules](../body/part-05-maintenance-and-scripts/chapter-18-test-modules/)
+### [Chapter 19 — Test Modules](../body/part-05-maintenance-and-scripts/chapter-19-test-modules/)
 
 1. Conceptual explanation
 
-### [Chapter 19 — Maintainer Scripts](../body/part-05-maintenance-and-scripts/chapter-19-maintainer-scripts/)
+### [Chapter 20 — Maintainer Scripts](../body/part-05-maintenance-and-scripts/chapter-20-maintainer-scripts/)
 
 1. Conceptual explanation
-   - 19.1 Sync `list-of-resources.md` (`master-modules` with `master-infra`)
-   - 19.2 Update Terraform IaC projects (`master-infra`)
-   - 19.3 Update dashboard and other-services docs (`org-master`)
-   - 19.4 Update reusable workflow modules (`snow-monkeys-modules`, `snow-monkeys-infra`)
-   - 19.5 Update docs project (`org-snow-angular-ui`)
-   - 19.6 Update main examples (`main-examples`)
-   - 19.7 Update automation examples (`automation-test-snow`, `examples-automation-test`)
+   - 20.1 Sync `list-of-resources.md` (`master-modules` with `master-infra`)
+   - 20.2 Update Terraform IaC projects (`master-infra`)
+   - 20.3 Update dashboard and other-services docs (`org-master`)
+   - 20.4 Update reusable workflow modules (`snow-monkeys-modules`, `snow-monkeys-infra`)
+   - 20.5 Update docs project (`org-snow-angular-ui`)
+   - 20.6 Update main examples (`main-examples`)
+   - 20.7 Update automation examples (`automation-test-snow`, `examples-automation-test`)
 
-### [Chapter 20 — Script Summary and Reports](../body/part-05-maintenance-and-scripts/chapter-20-script-summary-and-reports/)
+### [Chapter 21 — Script Summary and Reports](../body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/)
 
 1. Conceptual explanation
 
-### [Chapter 21 — Summary + Further Reading](../body/part-05-maintenance-and-scripts/chapter-21-summary-and-further-reading/)
+### [Chapter 22 — Summary + Further Reading](../body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/)
 
 1. Conceptual explanation
 
