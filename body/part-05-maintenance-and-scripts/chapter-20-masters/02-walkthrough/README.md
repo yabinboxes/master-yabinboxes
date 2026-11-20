@@ -6,29 +6,29 @@ The [conceptual explanation](../01-conceptual-explanation/README.md#index) maps 
 
 | Master | Copy in this chapter | Implementation |
 | --- | --- | --- |
-| [snow-monkeys-modules/master-modules](../01-conceptual-explanation/README.md#master-modules) | [masters/master-modules](../masters/master-modules) | [snow-monkeys-modules](../../../../../../snow-monkeys-modules) |
-| [snow-monkeys-infra/master-infra](../01-conceptual-explanation/README.md#master-infra) | [masters/master-infra](../masters/master-infra) | [snow-monkeys-infra](../../../../../../snow-monkeys-infra) |
-| [test-snow-monkeys/master-test](../01-conceptual-explanation/README.md#master-test) | [masters/master-test](../masters/master-test) | [test-snow-monkeys](../../../../../../test-snow-monkeys) |
-| [yabinboxes/org-master](../01-conceptual-explanation/README.md#org-master) | [masters/org-master](../masters/org-master) | [yabinboxes](../../../../../) |
-| [yabinboxes/master-yabinboxes](../01-conceptual-explanation/README.md#master-yabinboxes) | [masters/master-yabinboxes](../masters/master-yabinboxes) | [yabinboxes](../../../../../) |
+| [snow-monkeys-modules/master-modules](../01-conceptual-explanation/README.md#master-modules) | [masters/master-modules](../masters/master-modules) | [snow-monkeys-modules](../../../../references/snow-monkeys-modules) |
+| [snow-monkeys-infra/master-infra](../01-conceptual-explanation/README.md#master-infra) | [masters/master-infra](../masters/master-infra) | [snow-monkeys-infra](../../../../references/snow-monkeys-infra) |
+| [test-snow-monkeys/master-test](../01-conceptual-explanation/README.md#master-test) | [masters/master-test](../masters/master-test) | [test-snow-monkeys](../../../../references/test-snow-monkeys) |
+| [yabinboxes/org-master](../01-conceptual-explanation/README.md#org-master) | [masters/org-master](../masters/org-master) | [yabinboxes](../../../../references/yabinboxes) |
+| [yabinboxes/master-yabinboxes](../01-conceptual-explanation/README.md#master-yabinboxes) | [masters/master-yabinboxes](../masters/master-yabinboxes) | [yabinboxes](../../../../references/yabinboxes) |
 
-Paths below are from this file to the workspace. The tables are the workflow or directory behind each index row.
+The links below open the copies in this book. The tables are the workflow or directory behind each index row.
 
 ## master-modules → snow-monkeys-modules
 
-Rule index: [master-modules/main.md](../../../../../../snow-monkeys-modules/master-modules/main.md). Type catalog: [list-of-resources.md](../../../../../../snow-monkeys-modules/master-modules/list-of-resources.md). Output contract: [outputs.md](../../../../../../snow-monkeys-modules/master-modules/outputs.md).
+Rule index: [master-modules/main.md](../../../../references/snow-monkeys-modules/master-modules/main.md). Type catalog: [list-of-resources.md](../../../../references/snow-monkeys-modules/master-modules/list-of-resources.md). Output contract: [outputs.md](../../../../references/snow-monkeys-modules/master-modules/outputs.md).
 
 | Schema | Workflow | Actions | `CLUSTER` when `type` is |
 | --- | --- | --- | --- |
-| [master-hetzner.md](../../../../../../snow-monkeys-modules/master-modules/master-hetzner.md) | [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) | [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml), [docker-compose](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml), [docker-compose-app](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) | `hcloud_server` |
-| [master-aws.md](../../../../../../snow-monkeys-modules/master-modules/master-aws.md) | [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) | [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml), [docker-compose](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/docker-compose/action.yml), [docker-compose-app](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/docker-compose-app/action.yml) | `aws_instance` |
-| [master-gcp.md](../../../../../../snow-monkeys-modules/master-modules/master-gcp.md) | [gcp-iac main.yml](../../../../../../snow-monkeys-modules/gcp-iac/.github/workflows/main.yml) | [server-resource](../../../../../../snow-monkeys-modules/gcp-iac/.github/actions/server-resource/action.yml), [docker-compose](../../../../../../snow-monkeys-modules/gcp-iac/.github/actions/docker-compose/action.yml), [docker-compose-app](../../../../../../snow-monkeys-modules/gcp-iac/.github/actions/docker-compose-app/action.yml) | `google_compute_instance` |
-| [master-azure.md](../../../../../../snow-monkeys-modules/master-modules/master-azure.md) | [azure-iac main.yml](../../../../../../snow-monkeys-modules/azure-iac/.github/workflows/main.yml) | [server-resource](../../../../../../snow-monkeys-modules/azure-iac/.github/actions/server-resource/action.yml), [docker-compose](../../../../../../snow-monkeys-modules/azure-iac/.github/actions/docker-compose/action.yml), [docker-compose-app](../../../../../../snow-monkeys-modules/azure-iac/.github/actions/docker-compose-app/action.yml) | the server job condition is `false` |
-| [master-digital-ocean.md](../../../../../../snow-monkeys-modules/master-modules/master-digital-ocean.md) | [digital-ocean-iac main.yml](../../../../../../snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml) | [server-resource](../../../../../../snow-monkeys-modules/digital-ocean-iac/.github/actions/server-resource/action.yml), [docker-compose](../../../../../../snow-monkeys-modules/digital-ocean-iac/.github/actions/docker-compose/action.yml), [docker-compose-app](../../../../../../snow-monkeys-modules/digital-ocean-iac/.github/actions/docker-compose-app/action.yml) | `digitalocean_droplet` or `digitalocean_droplet_autoscale` |
-| [master-cloudflare.md](../../../../../../snow-monkeys-modules/master-modules/master-cloudflare.md) | [cloudflare-iac main.yml](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) | [server-resource](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource/action.yml), [docker-compose](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/actions/docker-compose/action.yml), [docker-compose-app](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/actions/docker-compose-app/action.yml) | the server job condition is `false` |
-| [master-civo.md](../../../../../../snow-monkeys-modules/master-modules/master-civo.md) | [civo-iac main.yml](../../../../../../snow-monkeys-modules/civo-iac/.github/workflows/main.yml) | [server-resource](../../../../../../snow-monkeys-modules/civo-iac/.github/actions/server-resource/action.yml), [docker-compose](../../../../../../snow-monkeys-modules/civo-iac/.github/actions/docker-compose/action.yml), [docker-compose-app](../../../../../../snow-monkeys-modules/civo-iac/.github/actions/docker-compose-app/action.yml). Empty `type` or `kubernetes` calls `snow-monkeys-modules/deployment-image/.github/actions/civo@main` | `compute` |
-| [master-docker.md](../../../../../../snow-monkeys-modules/master-modules/master-docker.md) | [docker-iac main.yml](../../../../../../snow-monkeys-modules/docker-iac/.github/workflows/main.yml) | [build-and-push-image-to-registry](../../../../../../snow-monkeys-modules/docker-iac/.github/actions/build-and-push-image-to-registry/action.yml) | none. Job `notify_snow_monkeys_dashboard` runs when `type` is `build_and_push_image` |
-| [master-snow.md](../../../../../../snow-monkeys-modules/master-modules/master-snow.md) | [snow-iac main.yml](../../../../../../snow-monkeys-modules/snow-iac/.github/workflows/main.yml) | [notify](../../../../../../snow-monkeys-modules/snow-iac/.github/actions/notify/action.yml) when `workflow_type` is `notify`. [get-resources](../../../../../../snow-monkeys-modules/snow-iac/.github/actions/get-resources/action.yml) when `workflow_type` is `get_resources` | none. This workflow is the notify the other modules call |
+| [master-hetzner.md](../../../../references/snow-monkeys-modules/master-modules/master-hetzner.md) | [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) | [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml), [docker-compose](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml), [docker-compose-app](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) | `hcloud_server` |
+| [master-aws.md](../../../../references/snow-monkeys-modules/master-modules/master-aws.md) | [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) | [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml), [docker-compose](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/docker-compose/action.yml), [docker-compose-app](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/docker-compose-app/action.yml) | `aws_instance` |
+| [master-gcp.md](../../../../references/snow-monkeys-modules/master-modules/master-gcp.md) | [gcp-iac main.yml](../../../../references/snow-monkeys-modules/gcp-iac/.github/workflows/main.yml) | [server-resource](../../../../references/snow-monkeys-modules/gcp-iac/.github/actions/server-resource/action.yml), [docker-compose](../../../../references/snow-monkeys-modules/gcp-iac/.github/actions/docker-compose/action.yml), [docker-compose-app](../../../../references/snow-monkeys-modules/gcp-iac/.github/actions/docker-compose-app/action.yml) | `google_compute_instance` |
+| [master-azure.md](../../../../references/snow-monkeys-modules/master-modules/master-azure.md) | [azure-iac main.yml](../../../../references/snow-monkeys-modules/azure-iac/.github/workflows/main.yml) | [server-resource](../../../../references/snow-monkeys-modules/azure-iac/.github/actions/server-resource/action.yml), [docker-compose](../../../../references/snow-monkeys-modules/azure-iac/.github/actions/docker-compose/action.yml), [docker-compose-app](../../../../references/snow-monkeys-modules/azure-iac/.github/actions/docker-compose-app/action.yml) | the server job condition is `false` |
+| [master-digital-ocean.md](../../../../references/snow-monkeys-modules/master-modules/master-digital-ocean.md) | [digital-ocean-iac main.yml](../../../../references/snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml) | [server-resource](../../../../references/snow-monkeys-modules/digital-ocean-iac/.github/actions/server-resource/action.yml), [docker-compose](../../../../references/snow-monkeys-modules/digital-ocean-iac/.github/actions/docker-compose/action.yml), [docker-compose-app](../../../../references/snow-monkeys-modules/digital-ocean-iac/.github/actions/docker-compose-app/action.yml) | `digitalocean_droplet` or `digitalocean_droplet_autoscale` |
+| [master-cloudflare.md](../../../../references/snow-monkeys-modules/master-modules/master-cloudflare.md) | [cloudflare-iac main.yml](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) | [server-resource](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource/action.yml), [docker-compose](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/actions/docker-compose/action.yml), [docker-compose-app](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/actions/docker-compose-app/action.yml) | the server job condition is `false` |
+| [master-civo.md](../../../../references/snow-monkeys-modules/master-modules/master-civo.md) | [civo-iac main.yml](../../../../references/snow-monkeys-modules/civo-iac/.github/workflows/main.yml) | [server-resource](../../../../references/snow-monkeys-modules/civo-iac/.github/actions/server-resource/action.yml), [docker-compose](../../../../references/snow-monkeys-modules/civo-iac/.github/actions/docker-compose/action.yml), [docker-compose-app](../../../../references/snow-monkeys-modules/civo-iac/.github/actions/docker-compose-app/action.yml). Empty `type` or `kubernetes` calls `snow-monkeys-modules/deployment-image/.github/actions/civo@main` | `compute` |
+| [master-docker.md](../../../../references/snow-monkeys-modules/master-modules/master-docker.md) | [docker-iac main.yml](../../../../references/snow-monkeys-modules/docker-iac/.github/workflows/main.yml) | [build-and-push-image-to-registry](../../../../references/snow-monkeys-modules/docker-iac/.github/actions/build-and-push-image-to-registry/action.yml) | none. Job `notify_snow_monkeys_dashboard` runs when `type` is `build_and_push_image` |
+| [master-snow.md](../../../../references/snow-monkeys-modules/master-modules/master-snow.md) | [snow-iac main.yml](../../../../references/snow-monkeys-modules/snow-iac/.github/workflows/main.yml) | [notify](../../../../references/snow-monkeys-modules/snow-iac/.github/actions/notify/action.yml) when `workflow_type` is `notify`. [get-resources](../../../../references/snow-monkeys-modules/snow-iac/.github/actions/get-resources/action.yml) when `workflow_type` is `get_resources` | none. This workflow is the notify the other modules call |
 
 `server-resource` enters `iac-terraform/v1/modules/dev/<provider>/<resource>`. Chapter 10 is that tree.
 
@@ -36,20 +36,20 @@ Rule index: [master-modules/main.md](../../../../../../snow-monkeys-modules/mast
 
 | Rule | Implementation |
 | --- | --- |
-| [main.md](../../../../../../snow-monkeys-infra/master-infra/main.md) | one task: implement [master.md](../../../../../../snow-monkeys-infra/master-infra/master.md) |
-| [monthly-master.yml](../../../../../../snow-monkeys-infra/master-infra/.github/workflows/monthly-master.yml) | `workflow_dispatch` job `master` runs `cursor-agent` with a prompt to read `main.md` and `master.md` |
-| [list-of-resources.md](../../../../../../snow-monkeys-infra/master-infra/list-of-resources.md) | the type names the provider plans match to folders |
-| [iac-structure](../../../../../../snow-monkeys-infra/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md) | `TERRAFORM_COMPLIANCE.md`, `FLOW.md`, `INPUTS_OUTPUTS.md`, `NAMING.md`, `INTERNAL.md`, `EXAMPLES.md` |
+| [main.md](../../../../references/snow-monkeys-infra/master-infra/main.md) | one task: implement [master.md](../../../../references/snow-monkeys-infra/master-infra/master.md) |
+| [monthly-master.yml](../../../../references/snow-monkeys-infra/master-infra/.github/workflows/monthly-master.yml) | `workflow_dispatch` job `master` runs `cursor-agent` with a prompt to read `main.md` and `master.md` |
+| [list-of-resources.md](../../../../references/snow-monkeys-infra/master-infra/list-of-resources.md) | the type names the provider plans match to folders |
+| [iac-structure](../../../../references/snow-monkeys-infra/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md) | `TERRAFORM_COMPLIANCE.md`, `FLOW.md`, `INPUTS_OUTPUTS.md`, `NAMING.md`, `INTERNAL.md`, `EXAMPLES.md` |
 
 | Plan | Directory the plan updates | Folders named by `list-of-resources.md` | Other folders in that directory |
 | --- | --- | --- | --- |
-| [master-hetzner.md](../../../../../../snow-monkeys-infra/master-infra/master-hetzner.md) | [hetzner](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner) | `hcloud_server`, `hcloud_firewall`, `hcloud_network`, `hcloud_volume`, `hcloud_volume_attachment`, `hcloud_floating_ip` | none |
-| [master-aws.md](../../../../../../snow-monkeys-infra/master-infra/master-aws.md) | [aws](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws) | `aws_instance`, `aws_s3_bucket`, `aws_lambda_function`, `aws_elastic_beanstalk_application`, `aws_ebs_volume`, `aws_db_instance` | none |
-| [master-azure.md](../../../../../../snow-monkeys-infra/master-infra/master-azure.md) | [azure](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure) | `azurerm_linux_web_app`, `azurerm_linux_function_app`, `azurerm_mssql_server`, `azurerm_mssql_database`, `azurerm_postgresql_server`, `azurerm_postgresql_database`, `azurerm_mysql_flexible_server`, `azurerm_mysql_flexible_database` | none |
-| [master-cloudflare.md](../../../../../../snow-monkeys-infra/master-infra/master-cloudflare.md) | [cloudflare](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare) | `cloudflare_pages_project`, `cloudflare_d1_database`, `cloudflare_r2_bucket`, `cloudflare_workers_script`, `cloudflare_pipeline_sink` | `dns` |
-| [master-digitalocean.md](../../../../../../snow-monkeys-infra/master-infra/master-digitalocean.md) | [digitalocean](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean) | `digitalocean_droplet`, `digitalocean_droplet_autoscale` | `droplet` |
-| [master-gcp.md](../../../../../../snow-monkeys-infra/master-infra/master-gcp.md) | [gcp](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp) | `google_compute_instance`, `google_storage_bucket`, `google_storage_bucket_object`, `google_sql_database_instance` | `compute` |
-| [master-civo.md](../../../../../../snow-monkeys-infra/master-infra/master-civo.md) | [civo](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo) | the plan says nothing to do. Folders present: `bucket`, `compute`, `observability`. `kubernetes` is not a folder | [v1/k8s/civo-traefik](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik) sits outside `v1/modules/dev/civo` |
+| [master-hetzner.md](../../../../references/snow-monkeys-infra/master-infra/master-hetzner.md) | [hetzner](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner) | `hcloud_server`, `hcloud_firewall`, `hcloud_network`, `hcloud_volume`, `hcloud_volume_attachment`, `hcloud_floating_ip` | none |
+| [master-aws.md](../../../../references/snow-monkeys-infra/master-infra/master-aws.md) | [aws](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws) | `aws_instance`, `aws_s3_bucket`, `aws_lambda_function`, `aws_elastic_beanstalk_application`, `aws_ebs_volume`, `aws_db_instance` | none |
+| [master-azure.md](../../../../references/snow-monkeys-infra/master-infra/master-azure.md) | [azure](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure) | `azurerm_linux_web_app`, `azurerm_linux_function_app`, `azurerm_mssql_server`, `azurerm_mssql_database`, `azurerm_postgresql_server`, `azurerm_postgresql_database`, `azurerm_mysql_flexible_server`, `azurerm_mysql_flexible_database` | none |
+| [master-cloudflare.md](../../../../references/snow-monkeys-infra/master-infra/master-cloudflare.md) | [cloudflare](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare) | `cloudflare_pages_project`, `cloudflare_d1_database`, `cloudflare_r2_bucket`, `cloudflare_workers_script`, `cloudflare_pipeline_sink` | `dns` |
+| [master-digitalocean.md](../../../../references/snow-monkeys-infra/master-infra/master-digitalocean.md) | [digitalocean](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean) | `digitalocean_droplet`, `digitalocean_droplet_autoscale` | `droplet` |
+| [master-gcp.md](../../../../references/snow-monkeys-infra/master-infra/master-gcp.md) | [gcp](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp) | `google_compute_instance`, `google_storage_bucket`, `google_storage_bucket_object`, `google_sql_database_instance` | `compute` |
+| [master-civo.md](../../../../references/snow-monkeys-infra/master-infra/master-civo.md) | [civo](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo) | the plan says nothing to do. Folders present: `bucket`, `compute`, `observability`. `kubernetes` is not a folder | [v1/k8s/civo-traefik](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik) sits outside `v1/modules/dev/civo` |
 
 `docker_compose` and `docker_compose_app` stay in the module actions from the master-modules table. They have no folder in this table.
 
@@ -57,39 +57,39 @@ Rule index: [master-modules/main.md](../../../../../../snow-monkeys-modules/mast
 
 | Rule | Implementation |
 | --- | --- |
-| [main.md](../../../../../../test-snow-monkeys/master-test/main.md) | [main-automation-test.yml](../../../../../../test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml) |
-| [testflow.md](../../../../../../test-snow-monkeys/master-test/testflow.md) | same workflow. `testflow.md` calls the file `main.yml` |
-| [test-suite-rules.md](../../../../../../test-snow-monkeys/master-test/test-suite-rules.md) | order implemented by the provider workflows below. The reference path in the rules file is `examples/.github/workflows/test-hetzner.yml` |
+| [main.md](../../../../references/test-snow-monkeys/master-test/main.md) | [main-automation-test.yml](../../../../references/test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml) |
+| [testflow.md](../../../../references/test-snow-monkeys/master-test/testflow.md) | same workflow. `testflow.md` calls the file `main.yml` |
+| [test-suite-rules.md](../../../../references/test-snow-monkeys/master-test/test-suite-rules.md) | order implemented by the provider workflows below. The reference path in the rules file is `examples/.github/workflows/test-hetzner.yml` |
 
 | Suite | Workflow | `repository_dispatch` type | Jobs that call a module |
 | --- | --- | --- | --- |
-| [snowmonkeys-test-suite.md](../../../../../../test-snow-monkeys/master-test/snowmonkeys-test-suite.md) | [test-snowmonkeys.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-snowmonkeys.yml) | `automation-snow-monkey-test-event` | `snow_notify_server` calls [snow-iac](../../../../../../snow-monkeys-modules/snow-iac/.github/workflows/main.yml) with `workflow_type: notify` and `type: CLUSTER`, name `test-snowmonkeys-server`. `snow_get_url` calls the same workflow with `workflow_type: get_resources` and `resource_name: test-snowmonkeys-server` |
-| [docker-test-suite.md](../../../../../../test-snow-monkeys/master-test/docker-test-suite.md) | [test-docker.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-docker.yml) | `automation-docker-test-event` | `build_and_push_image` calls [docker-iac](../../../../../../snow-monkeys-modules/docker-iac/.github/workflows/main.yml) with `type: build_and_push_image`. Fixture: [test-docker/growing-gravity](../../../../../../test-snow-monkeys/examples-automation-test/test-docker/growing-gravity) |
-| [hetzner-test-suite.md](../../../../../../test-snow-monkeys/master-test/hetzner-test-suite.md) | [test-hetzner.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml) | `automation-hetzner-test-event` | `create_s3_bucket` `type: aws_s3_bucket` on [aws-iac](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml). Then [hetzner-iac](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml): `hcloud_firewall`, `hcloud_server`, `docker_compose` with `infra: test-hetzner/service/infra`, `docker_compose_app`, and `hcloud_server` with `destroy: true`. Fixture: [test-hetzner](../../../../../../test-snow-monkeys/examples-automation-test/test-hetzner) |
-| `cloudflare-test-suite.md`, named in [main.md](../../../../../../test-snow-monkeys/master-test/main.md). That file is not in `master-test` | [test-cloudflare.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-cloudflare.yml) | `automation-cloudflare-test-event` | The live job is `create_pages_project_on_cloudflare`, `type: cloudflare_pages_project`, `infra: test-cloudflare/pages`. The S3, server, compose, application, and destroy jobs are comments. Fixture: [test-cloudflare/pages](../../../../../../test-snow-monkeys/examples-automation-test/test-cloudflare/pages) |
-| [aws-test-suite.md](../../../../../../test-snow-monkeys/master-test/aws-test-suite.md) | [test-aws.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-aws.yml) | `automation-aws-test-event` | `aws_s3_bucket`, then `type: resource` with `resource: aws_lambda_function`, then `type: server` with `resource: aws_instance`, then `docker_compose`, `docker_compose_app`, and destroy with `type: server` |
-| [azure-test-suite.md](../../../../../../test-snow-monkeys/master-test/azure-test-suite.md) | [test-azure.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-azure.yml) | `automation-azure-test-event` | `aws_s3_bucket`, then `type: resource` with `resource: azurerm_linux_web_app`, then `type: server` with no `resource` key, then compose, application, and destroy with `type: server` |
-| [gcp-test-suite.md](../../../../../../test-snow-monkeys/master-test/gcp-test-suite.md) | [test-gcp.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-gcp.yml) | `automation-gcp-test-event` | `aws_s3_bucket`, then `type: resource` with `resource: google_storage_bucket`, then `type: server` with `resource: google_compute_instance`, then compose, application, and destroy with `type: server` |
-| [digitalocean-test-suite.md](../../../../../../test-snow-monkeys/master-test/digitalocean-test-suite.md) | [test-digitalocean.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-digitalocean.yml) | `automation-digitalocean-test-event` | `aws_s3_bucket`, then `type: resource` with no `resource` key, then `type: server` with `resource: digitalocean_droplet` and the keys `server_type`, `image`, and `location`, then compose, application, and destroy with `type: server` |
-| result collector, named in [main.md](../../../../../../test-snow-monkeys/master-test/main.md) | [automation-test.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/automation-test.yml) | `workflow_run` on the eight workflow names | `test-results` echoes success or failure. The AWS success echo is `notify hetzner success` |
+| [snowmonkeys-test-suite.md](../../../../references/test-snow-monkeys/master-test/snowmonkeys-test-suite.md) | [test-snowmonkeys.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-snowmonkeys.yml) | `automation-snow-monkey-test-event` | `snow_notify_server` calls [snow-iac](../../../../references/snow-monkeys-modules/snow-iac/.github/workflows/main.yml) with `workflow_type: notify` and `type: CLUSTER`, name `test-snowmonkeys-server`. `snow_get_url` calls the same workflow with `workflow_type: get_resources` and `resource_name: test-snowmonkeys-server` |
+| [docker-test-suite.md](../../../../references/test-snow-monkeys/master-test/docker-test-suite.md) | [test-docker.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-docker.yml) | `automation-docker-test-event` | `build_and_push_image` calls [docker-iac](../../../../references/snow-monkeys-modules/docker-iac/.github/workflows/main.yml) with `type: build_and_push_image`. Fixture: [test-docker/growing-gravity](../../../../references/test-snow-monkeys/examples-automation-test/test-docker/growing-gravity) |
+| [hetzner-test-suite.md](../../../../references/test-snow-monkeys/master-test/hetzner-test-suite.md) | [test-hetzner.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml) | `automation-hetzner-test-event` | `create_s3_bucket` `type: aws_s3_bucket` on [aws-iac](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml). Then [hetzner-iac](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml): `hcloud_firewall`, `hcloud_server`, `docker_compose` with `infra: test-hetzner/service/infra`, `docker_compose_app`, and `hcloud_server` with `destroy: true`. Fixture: [test-hetzner](../../../../references/test-snow-monkeys/examples-automation-test/test-hetzner) |
+| `cloudflare-test-suite.md`, named in [main.md](../../../../references/test-snow-monkeys/master-test/main.md). That file is not in `master-test` | [test-cloudflare.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-cloudflare.yml) | `automation-cloudflare-test-event` | The live job is `create_pages_project_on_cloudflare`, `type: cloudflare_pages_project`, `infra: test-cloudflare/pages`. The S3, server, compose, application, and destroy jobs are comments. Fixture: [test-cloudflare/pages](../../../../references/test-snow-monkeys/examples-automation-test/test-cloudflare/pages) |
+| [aws-test-suite.md](../../../../references/test-snow-monkeys/master-test/aws-test-suite.md) | [test-aws.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-aws.yml) | `automation-aws-test-event` | `aws_s3_bucket`, then `type: resource` with `resource: aws_lambda_function`, then `type: server` with `resource: aws_instance`, then `docker_compose`, `docker_compose_app`, and destroy with `type: server` |
+| [azure-test-suite.md](../../../../references/test-snow-monkeys/master-test/azure-test-suite.md) | [test-azure.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-azure.yml) | `automation-azure-test-event` | `aws_s3_bucket`, then `type: resource` with `resource: azurerm_linux_web_app`, then `type: server` with no `resource` key, then compose, application, and destroy with `type: server` |
+| [gcp-test-suite.md](../../../../references/test-snow-monkeys/master-test/gcp-test-suite.md) | [test-gcp.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-gcp.yml) | `automation-gcp-test-event` | `aws_s3_bucket`, then `type: resource` with `resource: google_storage_bucket`, then `type: server` with `resource: google_compute_instance`, then compose, application, and destroy with `type: server` |
+| [digitalocean-test-suite.md](../../../../references/test-snow-monkeys/master-test/digitalocean-test-suite.md) | [test-digitalocean.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-digitalocean.yml) | `automation-digitalocean-test-event` | `aws_s3_bucket`, then `type: resource` with no `resource` key, then `type: server` with `resource: digitalocean_droplet` and the keys `server_type`, `image`, and `location`, then compose, application, and destroy with `type: server` |
+| result collector, named in [main.md](../../../../references/test-snow-monkeys/master-test/main.md) | [automation-test.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/automation-test.yml) | `workflow_run` on the eight workflow names | `test-results` echoes success or failure. The AWS success echo is `notify hetzner success` |
 
 `gcp-iac` notifies `CLUSTER` when `type` is `google_compute_instance`. The GCP test sends `type: server` and `resource: google_compute_instance`. `aws-iac` notifies `CLUSTER` when `type` is `aws_instance`. The AWS test sends `type: server` and `resource: aws_instance`. `digital-ocean-iac` notifies `CLUSTER` when `type` is `digitalocean_droplet` or `digitalocean_droplet_autoscale`. The DigitalOcean test sends `type: server` and `resource: digitalocean_droplet`. `digital-ocean-iac` does not declare inputs named `server_type`, `image`, or `location`.
 
 ## org-master → yabinboxes
 
-| Rule in [org-master/main.md](../../../../../org-master/main.md) | Implementation |
+| Rule in [org-master/main.md](../../../../references/yabinboxes/org-master/main.md) | Implementation |
 | --- | --- |
-| snow-monkeys-infra monthly run | [monthly-master.yml](../../../../../../snow-monkeys-infra/master-infra/.github/workflows/monthly-master.yml) |
+| snow-monkeys-infra monthly run | [monthly-master.yml](../../../../references/snow-monkeys-infra/master-infra/.github/workflows/monthly-master.yml) |
 | snow-monkeys-modules, one module per provider | the master-modules table |
-| test-snow-monkeys automation | [main-automation-test.yml](../../../../../../test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml) |
-| snow-angular-ui | [org-snow-angular-ui](../../../../../org-snow-angular-ui). Workflows on disk: [build-and-push-image.yml.og](../../../../../org-snow-angular-ui/.github/workflows/build-and-push-image.yml.og), [deploy-application.yml.og](../../../../../org-snow-angular-ui/.github/workflows/deploy-application.yml.og) |
-| snow-publish-java | [org-snow-publish-java](../../../../../org-snow-publish-java). [pom.xml](../../../../../org-snow-publish-java/pom.xml) sets Java 21. Workflows: [build-and-push-image.yml.og](../../../../../org-snow-publish-java/.github/workflows/build-and-push-image.yml.og), [deploy-application.yml.og](../../../../../org-snow-publish-java/.github/workflows/deploy-application.yml.og) |
-| snow-cron-bun | [org-snow-cron-bun](../../../../../org-snow-cron-bun). [build-and-push-image.yml](../../../../../org-snow-cron-bun/.github/workflows/build-and-push-image.yml), [deploy-application.yml](../../../../../org-snow-cron-bun/.github/workflows/deploy-application.yml) |
-| snow-postgresdb-docker-compose | [org-snow-postgresdb-docker-compose](../../../../../org-snow-postgresdb-docker-compose). [postgres-hetzner.yml](../../../../../org-snow-postgresdb-docker-compose/.github/workflows/postgres-hetzner.yml), compose under [infra](../../../../../org-snow-postgresdb-docker-compose/infra) |
-| snow-server-hetzner | [org-snow-server-hetzner](../../../../../org-snow-server-hetzner). [hetzner-server-dev.yml](../../../../../org-snow-server-hetzner/.github/workflows/hetzner-server-dev.yml) |
-| snow-websocket-bun | [org-snow-websocket-bun](../../../../../org-snow-websocket-bun). [build-and-push-image.yml.og](../../../../../org-snow-websocket-bun/.github/workflows/build-and-push-image.yml.og) |
-| snow-test-playwright | [org-snow-test-playwright](../../../../../org-snow-test-playwright). [playwright.yml](../../../../../org-snow-test-playwright/.github/workflows/playwright.yml) |
-| Local setup | [macmini.md](../../../../../org-master/local-setup/macmini.md), [postgres compose](../../../../../org-master/local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml), [angular compose](../../../../../org-master/local-setup/docker-services/snow-angular-ui/docker-compose.yml) |
+| test-snow-monkeys automation | [main-automation-test.yml](../../../../references/test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml) |
+| snow-angular-ui | [org-snow-angular-ui](../../../../references/yabinboxes/org-snow-angular-ui). Workflows on disk: [build-and-push-image.yml.og](../../../../references/yabinboxes/org-snow-angular-ui/.github/workflows/build-and-push-image.yml.og), [deploy-application.yml.og](../../../../references/yabinboxes/org-snow-angular-ui/.github/workflows/deploy-application.yml.og) |
+| snow-publish-java | [org-snow-publish-java](../../../../references/yabinboxes/org-snow-publish-java). [pom.xml](../../../../references/yabinboxes/org-snow-publish-java/pom.xml) sets Java 21. Workflows: [build-and-push-image.yml.og](../../../../references/yabinboxes/org-snow-publish-java/.github/workflows/build-and-push-image.yml.og), [deploy-application.yml.og](../../../../references/yabinboxes/org-snow-publish-java/.github/workflows/deploy-application.yml.og) |
+| snow-cron-bun | [org-snow-cron-bun](../../../../references/yabinboxes/org-snow-cron-bun). [build-and-push-image.yml](../../../../references/yabinboxes/org-snow-cron-bun/.github/workflows/build-and-push-image.yml), [deploy-application.yml](../../../../references/yabinboxes/org-snow-cron-bun/.github/workflows/deploy-application.yml) |
+| snow-postgresdb-docker-compose | [org-snow-postgresdb-docker-compose](../../../../references/yabinboxes/org-snow-postgresdb-docker-compose). [postgres-hetzner.yml](../../../../references/yabinboxes/org-snow-postgresdb-docker-compose/.github/workflows/postgres-hetzner.yml), compose under [infra](../../../../references/yabinboxes/org-snow-postgresdb-docker-compose/infra) |
+| snow-server-hetzner | [org-snow-server-hetzner](../../../../references/yabinboxes/org-snow-server-hetzner). [hetzner-server-dev.yml](../../../../references/yabinboxes/org-snow-server-hetzner/.github/workflows/hetzner-server-dev.yml) |
+| snow-websocket-bun | [org-snow-websocket-bun](../../../../references/yabinboxes/org-snow-websocket-bun). [build-and-push-image.yml.og](../../../../references/yabinboxes/org-snow-websocket-bun/.github/workflows/build-and-push-image.yml.og) |
+| snow-test-playwright | [org-snow-test-playwright](../../../../references/yabinboxes/org-snow-test-playwright). [playwright.yml](../../../../references/yabinboxes/org-snow-test-playwright/.github/workflows/playwright.yml) |
+| Local setup | [macmini.md](../../../../references/yabinboxes/org-master/local-setup/macmini.md), [postgres compose](../../../../references/yabinboxes/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml), [angular compose](../../../../references/yabinboxes/org-master/local-setup/docker-services/snow-angular-ui/docker-compose.yml) |
 
 ## master-yabinboxes → yabinboxes
 
@@ -98,20 +98,20 @@ The book spec is [main.md](../../../../main.md). The chapters that implement it 
 | Directory in `yabinboxes` | Entry |
 | --- | --- |
 | `master-yabinboxes` | [main.md](../../../../main.md) |
-| `org-master` | [main.md](../../../../../org-master/main.md) |
-| `org-snow-angular-ui` | [README.md](../../../../../org-snow-angular-ui/README.md) |
-| `org-snow-angular-ui-selfhosted` | [README.md](../../../../../org-snow-angular-ui-selfhosted/README.md) |
-| `org-snow-publish-java` | [pom.xml](../../../../../org-snow-publish-java/pom.xml) |
-| `org-snow-publish-java-selfhosted` | [pom.xml](../../../../../org-snow-publish-java-selfhosted/pom.xml) |
-| `org-snow-cron-bun` | [README.md](../../../../../org-snow-cron-bun/README.md) |
-| `org-snow-postgresdb-docker-compose` | [postgres-hetzner.yml](../../../../../org-snow-postgresdb-docker-compose/.github/workflows/postgres-hetzner.yml) |
-| `org-snow-server-hetzner` | [hetzner-server-dev.yml](../../../../../org-snow-server-hetzner/.github/workflows/hetzner-server-dev.yml) |
-| `org-snow-websocket-bun` | [README.md](../../../../../org-snow-websocket-bun/README.md) |
-| `org-snow-test-playwright` | [README.md](../../../../../org-snow-test-playwright/README.md) |
+| `org-master` | [main.md](../../../../references/yabinboxes/org-master/main.md) |
+| `org-snow-angular-ui` | [README.md](../../../../references/yabinboxes/org-snow-angular-ui/README.md) |
+| `org-snow-angular-ui-selfhosted` | [README.md](../../../../references/yabinboxes/org-snow-angular-ui-selfhosted/README.md) |
+| `org-snow-publish-java` | [pom.xml](../../../../references/yabinboxes/org-snow-publish-java/pom.xml) |
+| `org-snow-publish-java-selfhosted` | [pom.xml](../../../../references/yabinboxes/org-snow-publish-java-selfhosted/pom.xml) |
+| `org-snow-cron-bun` | [README.md](../../../../references/yabinboxes/org-snow-cron-bun/README.md) |
+| `org-snow-postgresdb-docker-compose` | [postgres-hetzner.yml](../../../../references/yabinboxes/org-snow-postgresdb-docker-compose/.github/workflows/postgres-hetzner.yml) |
+| `org-snow-server-hetzner` | [hetzner-server-dev.yml](../../../../references/yabinboxes/org-snow-server-hetzner/.github/workflows/hetzner-server-dev.yml) |
+| `org-snow-websocket-bun` | [README.md](../../../../references/yabinboxes/org-snow-websocket-bun/README.md) |
+| `org-snow-test-playwright` | [README.md](../../../../references/yabinboxes/org-snow-test-playwright/README.md) |
 | `main-examples` | [Chapter 15](../../../part-04-core-modules/chapter-15-examples/) |
-| `main-configure-secrets` | [configure-secrets.yml](../../../../../main-configure-secrets/.github/workflows/configure-secrets.yml) |
-| `helm-template-public-img-nginx` | [application.yaml](../../../../../helm-template-public-img-nginx/application.yaml) |
-| `helm-template-public-img-traefik` | [application.yaml](../../../../../helm-template-public-img-traefik/application.yaml) |
+| `main-configure-secrets` | [configure-secrets.yml](../../../../references/yabinboxes/main-configure-secrets/.github/workflows/configure-secrets.yml) |
+| `helm-template-public-img-nginx` | [application.yaml](../../../../references/yabinboxes/helm-template-public-img-nginx/application.yaml) |
+| `helm-template-public-img-traefik` | [application.yaml](../../../../references/yabinboxes/helm-template-public-img-traefik/application.yaml) |
 
 ## Masters
 
@@ -123,188 +123,188 @@ Each heading is one file from that master. The text below the heading is the fil
 
 | File | Copy | Text | Repository | Implementation |
 | --- | --- | --- | --- | --- |
-| `main.md` | [main.md](../masters/master-modules/main.md) | [main.md](#master-snow-monkeys-modules-master-modules-main-md) | [main.md](../../../../../../snow-monkeys-modules/master-modules/main.md) | [snow-monkeys-modules](../../../../../../snow-monkeys-modules) |
-| `list-of-resources.md` | [list-of-resources.md](../masters/master-modules/list-of-resources.md) | [list-of-resources.md](#master-snow-monkeys-modules-master-modules-list-of-resources-md) | [list-of-resources.md](../../../../../../snow-monkeys-modules/master-modules/list-of-resources.md) | [snow-monkeys-modules](../../../../../../snow-monkeys-modules) |
-| `master-aws.md` | [master-aws.md](../masters/master-modules/master-aws.md) | [master-aws.md](#master-snow-monkeys-modules-master-modules-master-aws-md) | [master-aws.md](../../../../../../snow-monkeys-modules/master-modules/master-aws.md) | [snow-monkeys-modules/aws-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) |
-| `master-azure.md` | [master-azure.md](../masters/master-modules/master-azure.md) | [master-azure.md](#master-snow-monkeys-modules-master-modules-master-azure-md) | [master-azure.md](../../../../../../snow-monkeys-modules/master-modules/master-azure.md) | [snow-monkeys-modules/azure-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/azure-iac/.github/workflows/main.yml) |
-| `master-civo.md` | [master-civo.md](../masters/master-modules/master-civo.md) | [master-civo.md](#master-snow-monkeys-modules-master-modules-master-civo-md) | [master-civo.md](../../../../../../snow-monkeys-modules/master-modules/master-civo.md) | [snow-monkeys-modules/civo-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/civo-iac/.github/workflows/main.yml) |
-| `master-cloudflare.md` | [master-cloudflare.md](../masters/master-modules/master-cloudflare.md) | [master-cloudflare.md](#master-snow-monkeys-modules-master-modules-master-cloudflare-md) | [master-cloudflare.md](../../../../../../snow-monkeys-modules/master-modules/master-cloudflare.md) | [snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) |
-| `master-digital-ocean.md` | [master-digital-ocean.md](../masters/master-modules/master-digital-ocean.md) | [master-digital-ocean.md](#master-snow-monkeys-modules-master-modules-master-digital-ocean-md) | [master-digital-ocean.md](../../../../../../snow-monkeys-modules/master-modules/master-digital-ocean.md) | [snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml) |
-| `master-docker.md` | [master-docker.md](../masters/master-modules/master-docker.md) | [master-docker.md](#master-snow-monkeys-modules-master-modules-master-docker-md) | [master-docker.md](../../../../../../snow-monkeys-modules/master-modules/master-docker.md) | [snow-monkeys-modules/docker-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/docker-iac/.github/workflows/main.yml) |
-| `master-gcp.md` | [master-gcp.md](../masters/master-modules/master-gcp.md) | [master-gcp.md](#master-snow-monkeys-modules-master-modules-master-gcp-md) | [master-gcp.md](../../../../../../snow-monkeys-modules/master-modules/master-gcp.md) | [snow-monkeys-modules/gcp-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/gcp-iac/.github/workflows/main.yml) |
-| `master-hetzner.md` | [master-hetzner.md](../masters/master-modules/master-hetzner.md) | [master-hetzner.md](#master-snow-monkeys-modules-master-modules-master-hetzner-md) | [master-hetzner.md](../../../../../../snow-monkeys-modules/master-modules/master-hetzner.md) | [snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) |
-| `master-snow.md` | [master-snow.md](../masters/master-modules/master-snow.md) | [master-snow.md](#master-snow-monkeys-modules-master-modules-master-snow-md) | [master-snow.md](../../../../../../snow-monkeys-modules/master-modules/master-snow.md) | [snow-monkeys-modules/snow-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/snow-iac/.github/workflows/main.yml) |
-| `outputs.md` | [outputs.md](../masters/master-modules/outputs.md) | [outputs.md](#master-snow-monkeys-modules-master-modules-outputs-md) | [outputs.md](../../../../../../snow-monkeys-modules/master-modules/outputs.md) | [snow-monkeys-modules](../../../../../../snow-monkeys-modules) |
-| `.gitignore` | [.gitignore](../masters/master-modules/.gitignore) | [.gitignore](#master-snow-monkeys-modules-master-modules-gitignore) | [.gitignore](../../../../../../snow-monkeys-modules/master-modules/.gitignore) | [snow-monkeys-modules](../../../../../../snow-monkeys-modules) |
+| `main.md` | [main.md](../masters/master-modules/main.md) | [main.md](#master-snow-monkeys-modules-master-modules-main-md) | [main.md](../../../../references/snow-monkeys-modules/master-modules/main.md) | [snow-monkeys-modules](../../../../references/snow-monkeys-modules) |
+| `list-of-resources.md` | [list-of-resources.md](../masters/master-modules/list-of-resources.md) | [list-of-resources.md](#master-snow-monkeys-modules-master-modules-list-of-resources-md) | [list-of-resources.md](../../../../references/snow-monkeys-modules/master-modules/list-of-resources.md) | [snow-monkeys-modules](../../../../references/snow-monkeys-modules) |
+| `master-aws.md` | [master-aws.md](../masters/master-modules/master-aws.md) | [master-aws.md](#master-snow-monkeys-modules-master-modules-master-aws-md) | [master-aws.md](../../../../references/snow-monkeys-modules/master-modules/master-aws.md) | [snow-monkeys-modules/aws-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) |
+| `master-azure.md` | [master-azure.md](../masters/master-modules/master-azure.md) | [master-azure.md](#master-snow-monkeys-modules-master-modules-master-azure-md) | [master-azure.md](../../../../references/snow-monkeys-modules/master-modules/master-azure.md) | [snow-monkeys-modules/azure-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/azure-iac/.github/workflows/main.yml) |
+| `master-civo.md` | [master-civo.md](../masters/master-modules/master-civo.md) | [master-civo.md](#master-snow-monkeys-modules-master-modules-master-civo-md) | [master-civo.md](../../../../references/snow-monkeys-modules/master-modules/master-civo.md) | [snow-monkeys-modules/civo-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/civo-iac/.github/workflows/main.yml) |
+| `master-cloudflare.md` | [master-cloudflare.md](../masters/master-modules/master-cloudflare.md) | [master-cloudflare.md](#master-snow-monkeys-modules-master-modules-master-cloudflare-md) | [master-cloudflare.md](../../../../references/snow-monkeys-modules/master-modules/master-cloudflare.md) | [snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) |
+| `master-digital-ocean.md` | [master-digital-ocean.md](../masters/master-modules/master-digital-ocean.md) | [master-digital-ocean.md](#master-snow-monkeys-modules-master-modules-master-digital-ocean-md) | [master-digital-ocean.md](../../../../references/snow-monkeys-modules/master-modules/master-digital-ocean.md) | [snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml) |
+| `master-docker.md` | [master-docker.md](../masters/master-modules/master-docker.md) | [master-docker.md](#master-snow-monkeys-modules-master-modules-master-docker-md) | [master-docker.md](../../../../references/snow-monkeys-modules/master-modules/master-docker.md) | [snow-monkeys-modules/docker-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/docker-iac/.github/workflows/main.yml) |
+| `master-gcp.md` | [master-gcp.md](../masters/master-modules/master-gcp.md) | [master-gcp.md](#master-snow-monkeys-modules-master-modules-master-gcp-md) | [master-gcp.md](../../../../references/snow-monkeys-modules/master-modules/master-gcp.md) | [snow-monkeys-modules/gcp-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/gcp-iac/.github/workflows/main.yml) |
+| `master-hetzner.md` | [master-hetzner.md](../masters/master-modules/master-hetzner.md) | [master-hetzner.md](#master-snow-monkeys-modules-master-modules-master-hetzner-md) | [master-hetzner.md](../../../../references/snow-monkeys-modules/master-modules/master-hetzner.md) | [snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) |
+| `master-snow.md` | [master-snow.md](../masters/master-modules/master-snow.md) | [master-snow.md](#master-snow-monkeys-modules-master-modules-master-snow-md) | [master-snow.md](../../../../references/snow-monkeys-modules/master-modules/master-snow.md) | [snow-monkeys-modules/snow-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/snow-iac/.github/workflows/main.yml) |
+| `outputs.md` | [outputs.md](../masters/master-modules/outputs.md) | [outputs.md](#master-snow-monkeys-modules-master-modules-outputs-md) | [outputs.md](../../../../references/snow-monkeys-modules/master-modules/outputs.md) | [snow-monkeys-modules](../../../../references/snow-monkeys-modules) |
+| `.gitignore` | [.gitignore](../masters/master-modules/.gitignore) | [.gitignore](#master-snow-monkeys-modules-master-modules-gitignore) | [.gitignore](../../../../references/snow-monkeys-modules/master-modules/.gitignore) | [snow-monkeys-modules](../../../../references/snow-monkeys-modules) |
 
 #### `snow-monkeys-infra/master-infra` → `snow-monkeys-infra`
 
 | File | Copy | Text | Repository | Implementation |
 | --- | --- | --- | --- | --- |
-| `main.md` | [main.md](../masters/master-infra/main.md) | [main.md](#master-snow-monkeys-infra-master-infra-main-md) | [main.md](../../../../../../snow-monkeys-infra/master-infra/main.md) | [snow-monkeys-infra/master-infra/master.md](../../../../../../snow-monkeys-infra/master-infra/master.md) |
-| `.github/workflows/monthly-master.yml` | [.github/workflows/monthly-master.yml](../masters/master-infra/.github/workflows/monthly-master.yml) | [.github/workflows/monthly-master.yml](#master-snow-monkeys-infra-master-infra-github-workflows-monthly-master-yml) | [.github/workflows/monthly-master.yml](../../../../../../snow-monkeys-infra/master-infra/.github/workflows/monthly-master.yml) | [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform) |
-| `iac-structure/EXAMPLES.md` | [iac-structure/EXAMPLES.md](../masters/master-infra/iac-structure/EXAMPLES.md) | [iac-structure/EXAMPLES.md](#master-snow-monkeys-infra-master-infra-iac-structure-examples-md) | [iac-structure/EXAMPLES.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/EXAMPLES.md) | [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform) |
-| `iac-structure/FLOW.md` | [iac-structure/FLOW.md](../masters/master-infra/iac-structure/FLOW.md) | [iac-structure/FLOW.md](#master-snow-monkeys-infra-master-infra-iac-structure-flow-md) | [iac-structure/FLOW.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/FLOW.md) | [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform) |
-| `iac-structure/iac-terraform.code-workspace` | [iac-structure/iac-terraform.code-workspace](../masters/master-infra/iac-structure/iac-terraform.code-workspace) | [iac-structure/iac-terraform.code-workspace](#master-snow-monkeys-infra-master-infra-iac-structure-iac-terraform-code-workspace) | [iac-structure/iac-terraform.code-workspace](../../../../../../snow-monkeys-infra/master-infra/iac-structure/iac-terraform.code-workspace) | [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform) |
-| `iac-structure/INPUTS_OUTPUTS.md` | [iac-structure/INPUTS_OUTPUTS.md](../masters/master-infra/iac-structure/INPUTS_OUTPUTS.md) | [iac-structure/INPUTS_OUTPUTS.md](#master-snow-monkeys-infra-master-infra-iac-structure-inputs-outputs-md) | [iac-structure/INPUTS_OUTPUTS.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md) | [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform) |
-| `iac-structure/INTERNAL.md` | [iac-structure/INTERNAL.md](../masters/master-infra/iac-structure/INTERNAL.md) | [iac-structure/INTERNAL.md](#master-snow-monkeys-infra-master-infra-iac-structure-internal-md) | [iac-structure/INTERNAL.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/INTERNAL.md) | [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform) |
-| `iac-structure/NAMING.md` | [iac-structure/NAMING.md](../masters/master-infra/iac-structure/NAMING.md) | [iac-structure/NAMING.md](#master-snow-monkeys-infra-master-infra-iac-structure-naming-md) | [iac-structure/NAMING.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/NAMING.md) | [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform) |
-| `iac-structure/TERRAFORM_COMPLIANCE.md` | [iac-structure/TERRAFORM_COMPLIANCE.md](../masters/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md) | [iac-structure/TERRAFORM_COMPLIANCE.md](#master-snow-monkeys-infra-master-infra-iac-structure-terraform-compliance-md) | [iac-structure/TERRAFORM_COMPLIANCE.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md) | [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform) |
-| `list-of-resources.md` | [list-of-resources.md](../masters/master-infra/list-of-resources.md) | [list-of-resources.md](#master-snow-monkeys-infra-master-infra-list-of-resources-md) | [list-of-resources.md](../../../../../../snow-monkeys-infra/master-infra/list-of-resources.md) | [snow-monkeys-infra/iac-terraform/v1/modules/dev](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev) |
-| `master-aws.md` | [master-aws.md](../masters/master-infra/master-aws.md) | [master-aws.md](#master-snow-monkeys-infra-master-infra-master-aws-md) | [master-aws.md](../../../../../../snow-monkeys-infra/master-infra/master-aws.md) | [snow-monkeys-infra/iac-terraform/v1/modules/dev/aws](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws) |
-| `master-azure.md` | [master-azure.md](../masters/master-infra/master-azure.md) | [master-azure.md](#master-snow-monkeys-infra-master-infra-master-azure-md) | [master-azure.md](../../../../../../snow-monkeys-infra/master-infra/master-azure.md) | [snow-monkeys-infra/iac-terraform/v1/modules/dev/azure](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure) |
-| `master-civo.md` | [master-civo.md](../masters/master-infra/master-civo.md) | [master-civo.md](#master-snow-monkeys-infra-master-infra-master-civo-md) | [master-civo.md](../../../../../../snow-monkeys-infra/master-infra/master-civo.md) | [snow-monkeys-infra/iac-terraform/v1/modules/dev/civo](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo) |
-| `master-cloudflare.md` | [master-cloudflare.md](../masters/master-infra/master-cloudflare.md) | [master-cloudflare.md](#master-snow-monkeys-infra-master-infra-master-cloudflare-md) | [master-cloudflare.md](../../../../../../snow-monkeys-infra/master-infra/master-cloudflare.md) | [snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare) |
-| `master-digitalocean.md` | [master-digitalocean.md](../masters/master-infra/master-digitalocean.md) | [master-digitalocean.md](#master-snow-monkeys-infra-master-infra-master-digitalocean-md) | [master-digitalocean.md](../../../../../../snow-monkeys-infra/master-infra/master-digitalocean.md) | [snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean) |
-| `master-gcp.md` | [master-gcp.md](../masters/master-infra/master-gcp.md) | [master-gcp.md](#master-snow-monkeys-infra-master-infra-master-gcp-md) | [master-gcp.md](../../../../../../snow-monkeys-infra/master-infra/master-gcp.md) | [snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp) |
-| `master-hetzner.md` | [master-hetzner.md](../masters/master-infra/master-hetzner.md) | [master-hetzner.md](#master-snow-monkeys-infra-master-infra-master-hetzner-md) | [master-hetzner.md](../../../../../../snow-monkeys-infra/master-infra/master-hetzner.md) | [snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner) |
-| `master.md` | [master.md](../masters/master-infra/master.md) | [master.md](#master-snow-monkeys-infra-master-infra-master-md) | [master.md](../../../../../../snow-monkeys-infra/master-infra/master.md) | [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform) |
-| `temporal-notes.txt` | [temporal-notes.txt](../masters/master-infra/temporal-notes.txt) | [temporal-notes.txt](#master-snow-monkeys-infra-master-infra-temporal-notes-txt) | [temporal-notes.txt](../../../../../../snow-monkeys-infra/master-infra/temporal-notes.txt) | [snow-monkeys-infra](../../../../../../snow-monkeys-infra) |
-| `.gitignore` | [.gitignore](../masters/master-infra/.gitignore) | [.gitignore](#master-snow-monkeys-infra-master-infra-gitignore) | [.gitignore](../../../../../../snow-monkeys-infra/master-infra/.gitignore) | [snow-monkeys-infra](../../../../../../snow-monkeys-infra) |
+| `main.md` | [main.md](../masters/master-infra/main.md) | [main.md](#master-snow-monkeys-infra-master-infra-main-md) | [main.md](../../../../references/snow-monkeys-infra/master-infra/main.md) | [snow-monkeys-infra/master-infra/master.md](../../../../references/snow-monkeys-infra/master-infra/master.md) |
+| `.github/workflows/monthly-master.yml` | [.github/workflows/monthly-master.yml](../masters/master-infra/.github/workflows/monthly-master.yml) | [.github/workflows/monthly-master.yml](#master-snow-monkeys-infra-master-infra-github-workflows-monthly-master-yml) | [.github/workflows/monthly-master.yml](../../../../references/snow-monkeys-infra/master-infra/.github/workflows/monthly-master.yml) | [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform) |
+| `iac-structure/EXAMPLES.md` | [iac-structure/EXAMPLES.md](../masters/master-infra/iac-structure/EXAMPLES.md) | [iac-structure/EXAMPLES.md](#master-snow-monkeys-infra-master-infra-iac-structure-examples-md) | [iac-structure/EXAMPLES.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/EXAMPLES.md) | [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform) |
+| `iac-structure/FLOW.md` | [iac-structure/FLOW.md](../masters/master-infra/iac-structure/FLOW.md) | [iac-structure/FLOW.md](#master-snow-monkeys-infra-master-infra-iac-structure-flow-md) | [iac-structure/FLOW.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/FLOW.md) | [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform) |
+| `iac-structure/iac-terraform.code-workspace` | [iac-structure/iac-terraform.code-workspace](../masters/master-infra/iac-structure/iac-terraform.code-workspace) | [iac-structure/iac-terraform.code-workspace](#master-snow-monkeys-infra-master-infra-iac-structure-iac-terraform-code-workspace) | [iac-structure/iac-terraform.code-workspace](../../../../references/snow-monkeys-infra/master-infra/iac-structure/iac-terraform.code-workspace) | [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform) |
+| `iac-structure/INPUTS_OUTPUTS.md` | [iac-structure/INPUTS_OUTPUTS.md](../masters/master-infra/iac-structure/INPUTS_OUTPUTS.md) | [iac-structure/INPUTS_OUTPUTS.md](#master-snow-monkeys-infra-master-infra-iac-structure-inputs-outputs-md) | [iac-structure/INPUTS_OUTPUTS.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md) | [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform) |
+| `iac-structure/INTERNAL.md` | [iac-structure/INTERNAL.md](../masters/master-infra/iac-structure/INTERNAL.md) | [iac-structure/INTERNAL.md](#master-snow-monkeys-infra-master-infra-iac-structure-internal-md) | [iac-structure/INTERNAL.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INTERNAL.md) | [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform) |
+| `iac-structure/NAMING.md` | [iac-structure/NAMING.md](../masters/master-infra/iac-structure/NAMING.md) | [iac-structure/NAMING.md](#master-snow-monkeys-infra-master-infra-iac-structure-naming-md) | [iac-structure/NAMING.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/NAMING.md) | [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform) |
+| `iac-structure/TERRAFORM_COMPLIANCE.md` | [iac-structure/TERRAFORM_COMPLIANCE.md](../masters/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md) | [iac-structure/TERRAFORM_COMPLIANCE.md](#master-snow-monkeys-infra-master-infra-iac-structure-terraform-compliance-md) | [iac-structure/TERRAFORM_COMPLIANCE.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md) | [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform) |
+| `list-of-resources.md` | [list-of-resources.md](../masters/master-infra/list-of-resources.md) | [list-of-resources.md](#master-snow-monkeys-infra-master-infra-list-of-resources-md) | [list-of-resources.md](../../../../references/snow-monkeys-infra/master-infra/list-of-resources.md) | [snow-monkeys-infra/iac-terraform/v1/modules/dev](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev) |
+| `master-aws.md` | [master-aws.md](../masters/master-infra/master-aws.md) | [master-aws.md](#master-snow-monkeys-infra-master-infra-master-aws-md) | [master-aws.md](../../../../references/snow-monkeys-infra/master-infra/master-aws.md) | [snow-monkeys-infra/iac-terraform/v1/modules/dev/aws](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws) |
+| `master-azure.md` | [master-azure.md](../masters/master-infra/master-azure.md) | [master-azure.md](#master-snow-monkeys-infra-master-infra-master-azure-md) | [master-azure.md](../../../../references/snow-monkeys-infra/master-infra/master-azure.md) | [snow-monkeys-infra/iac-terraform/v1/modules/dev/azure](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure) |
+| `master-civo.md` | [master-civo.md](../masters/master-infra/master-civo.md) | [master-civo.md](#master-snow-monkeys-infra-master-infra-master-civo-md) | [master-civo.md](../../../../references/snow-monkeys-infra/master-infra/master-civo.md) | [snow-monkeys-infra/iac-terraform/v1/modules/dev/civo](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo) |
+| `master-cloudflare.md` | [master-cloudflare.md](../masters/master-infra/master-cloudflare.md) | [master-cloudflare.md](#master-snow-monkeys-infra-master-infra-master-cloudflare-md) | [master-cloudflare.md](../../../../references/snow-monkeys-infra/master-infra/master-cloudflare.md) | [snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare) |
+| `master-digitalocean.md` | [master-digitalocean.md](../masters/master-infra/master-digitalocean.md) | [master-digitalocean.md](#master-snow-monkeys-infra-master-infra-master-digitalocean-md) | [master-digitalocean.md](../../../../references/snow-monkeys-infra/master-infra/master-digitalocean.md) | [snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean) |
+| `master-gcp.md` | [master-gcp.md](../masters/master-infra/master-gcp.md) | [master-gcp.md](#master-snow-monkeys-infra-master-infra-master-gcp-md) | [master-gcp.md](../../../../references/snow-monkeys-infra/master-infra/master-gcp.md) | [snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp) |
+| `master-hetzner.md` | [master-hetzner.md](../masters/master-infra/master-hetzner.md) | [master-hetzner.md](#master-snow-monkeys-infra-master-infra-master-hetzner-md) | [master-hetzner.md](../../../../references/snow-monkeys-infra/master-infra/master-hetzner.md) | [snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner) |
+| `master.md` | [master.md](../masters/master-infra/master.md) | [master.md](#master-snow-monkeys-infra-master-infra-master-md) | [master.md](../../../../references/snow-monkeys-infra/master-infra/master.md) | [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform) |
+| `temporal-notes.txt` | [temporal-notes.txt](../masters/master-infra/temporal-notes.txt) | [temporal-notes.txt](#master-snow-monkeys-infra-master-infra-temporal-notes-txt) | [temporal-notes.txt](../../../../references/snow-monkeys-infra/master-infra/temporal-notes.txt) | [snow-monkeys-infra](../../../../references/snow-monkeys-infra) |
+| `.gitignore` | [.gitignore](../masters/master-infra/.gitignore) | [.gitignore](#master-snow-monkeys-infra-master-infra-gitignore) | [.gitignore](../../../../references/snow-monkeys-infra/master-infra/.gitignore) | [snow-monkeys-infra](../../../../references/snow-monkeys-infra) |
 
 #### `test-snow-monkeys/master-test` → `test-snow-monkeys`
 
 | File | Copy | Text | Repository | Implementation |
 | --- | --- | --- | --- | --- |
-| `main.md` | [main.md](../masters/master-test/main.md) | [main.md](#master-test-snow-monkeys-master-test-main-md) | [main.md](../../../../../../test-snow-monkeys/master-test/main.md) | [test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml](../../../../../../test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml) |
-| `aws-test-suite.md` | [aws-test-suite.md](../masters/master-test/aws-test-suite.md) | [aws-test-suite.md](#master-test-snow-monkeys-master-test-aws-test-suite-md) | [aws-test-suite.md](../../../../../../test-snow-monkeys/master-test/aws-test-suite.md) | [test-snow-monkeys/examples-automation-test/.github/workflows/test-aws.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-aws.yml) |
-| `azure-test-suite.md` | [azure-test-suite.md](../masters/master-test/azure-test-suite.md) | [azure-test-suite.md](#master-test-snow-monkeys-master-test-azure-test-suite-md) | [azure-test-suite.md](../../../../../../test-snow-monkeys/master-test/azure-test-suite.md) | [test-snow-monkeys/examples-automation-test/.github/workflows/test-azure.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-azure.yml) |
-| `digitalocean-test-suite.md` | [digitalocean-test-suite.md](../masters/master-test/digitalocean-test-suite.md) | [digitalocean-test-suite.md](#master-test-snow-monkeys-master-test-digitalocean-test-suite-md) | [digitalocean-test-suite.md](../../../../../../test-snow-monkeys/master-test/digitalocean-test-suite.md) | [test-snow-monkeys/examples-automation-test/.github/workflows/test-digitalocean.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-digitalocean.yml) |
-| `docker-test-suite.md` | [docker-test-suite.md](../masters/master-test/docker-test-suite.md) | [docker-test-suite.md](#master-test-snow-monkeys-master-test-docker-test-suite-md) | [docker-test-suite.md](../../../../../../test-snow-monkeys/master-test/docker-test-suite.md) | [test-snow-monkeys/examples-automation-test/.github/workflows/test-docker.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-docker.yml) |
-| `gcp-test-suite.md` | [gcp-test-suite.md](../masters/master-test/gcp-test-suite.md) | [gcp-test-suite.md](#master-test-snow-monkeys-master-test-gcp-test-suite-md) | [gcp-test-suite.md](../../../../../../test-snow-monkeys/master-test/gcp-test-suite.md) | [test-snow-monkeys/examples-automation-test/.github/workflows/test-gcp.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-gcp.yml) |
-| `hetzner-test-suite.md` | [hetzner-test-suite.md](../masters/master-test/hetzner-test-suite.md) | [hetzner-test-suite.md](#master-test-snow-monkeys-master-test-hetzner-test-suite-md) | [hetzner-test-suite.md](../../../../../../test-snow-monkeys/master-test/hetzner-test-suite.md) | [test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml) |
-| `snowmonkeys-test-suite.md` | [snowmonkeys-test-suite.md](../masters/master-test/snowmonkeys-test-suite.md) | [snowmonkeys-test-suite.md](#master-test-snow-monkeys-master-test-snowmonkeys-test-suite-md) | [snowmonkeys-test-suite.md](../../../../../../test-snow-monkeys/master-test/snowmonkeys-test-suite.md) | [test-snow-monkeys/examples-automation-test/.github/workflows/test-snowmonkeys.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-snowmonkeys.yml) |
-| `test-suite-rules.md` | [test-suite-rules.md](../masters/master-test/test-suite-rules.md) | [test-suite-rules.md](#master-test-snow-monkeys-master-test-test-suite-rules-md) | [test-suite-rules.md](../../../../../../test-snow-monkeys/master-test/test-suite-rules.md) | [test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml) |
-| `testflow.md` | [testflow.md](../masters/master-test/testflow.md) | [testflow.md](#master-test-snow-monkeys-master-test-testflow-md) | [testflow.md](../../../../../../test-snow-monkeys/master-test/testflow.md) | [test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml](../../../../../../test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml) |
-| `.gitignore` | [.gitignore](../masters/master-test/.gitignore) | [.gitignore](#master-test-snow-monkeys-master-test-gitignore) | [.gitignore](../../../../../../test-snow-monkeys/master-test/.gitignore) | [test-snow-monkeys](../../../../../../test-snow-monkeys) |
+| `main.md` | [main.md](../masters/master-test/main.md) | [main.md](#master-test-snow-monkeys-master-test-main-md) | [main.md](../../../../references/test-snow-monkeys/master-test/main.md) | [test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml](../../../../references/test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml) |
+| `aws-test-suite.md` | [aws-test-suite.md](../masters/master-test/aws-test-suite.md) | [aws-test-suite.md](#master-test-snow-monkeys-master-test-aws-test-suite-md) | [aws-test-suite.md](../../../../references/test-snow-monkeys/master-test/aws-test-suite.md) | [test-snow-monkeys/examples-automation-test/.github/workflows/test-aws.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-aws.yml) |
+| `azure-test-suite.md` | [azure-test-suite.md](../masters/master-test/azure-test-suite.md) | [azure-test-suite.md](#master-test-snow-monkeys-master-test-azure-test-suite-md) | [azure-test-suite.md](../../../../references/test-snow-monkeys/master-test/azure-test-suite.md) | [test-snow-monkeys/examples-automation-test/.github/workflows/test-azure.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-azure.yml) |
+| `digitalocean-test-suite.md` | [digitalocean-test-suite.md](../masters/master-test/digitalocean-test-suite.md) | [digitalocean-test-suite.md](#master-test-snow-monkeys-master-test-digitalocean-test-suite-md) | [digitalocean-test-suite.md](../../../../references/test-snow-monkeys/master-test/digitalocean-test-suite.md) | [test-snow-monkeys/examples-automation-test/.github/workflows/test-digitalocean.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-digitalocean.yml) |
+| `docker-test-suite.md` | [docker-test-suite.md](../masters/master-test/docker-test-suite.md) | [docker-test-suite.md](#master-test-snow-monkeys-master-test-docker-test-suite-md) | [docker-test-suite.md](../../../../references/test-snow-monkeys/master-test/docker-test-suite.md) | [test-snow-monkeys/examples-automation-test/.github/workflows/test-docker.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-docker.yml) |
+| `gcp-test-suite.md` | [gcp-test-suite.md](../masters/master-test/gcp-test-suite.md) | [gcp-test-suite.md](#master-test-snow-monkeys-master-test-gcp-test-suite-md) | [gcp-test-suite.md](../../../../references/test-snow-monkeys/master-test/gcp-test-suite.md) | [test-snow-monkeys/examples-automation-test/.github/workflows/test-gcp.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-gcp.yml) |
+| `hetzner-test-suite.md` | [hetzner-test-suite.md](../masters/master-test/hetzner-test-suite.md) | [hetzner-test-suite.md](#master-test-snow-monkeys-master-test-hetzner-test-suite-md) | [hetzner-test-suite.md](../../../../references/test-snow-monkeys/master-test/hetzner-test-suite.md) | [test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml) |
+| `snowmonkeys-test-suite.md` | [snowmonkeys-test-suite.md](../masters/master-test/snowmonkeys-test-suite.md) | [snowmonkeys-test-suite.md](#master-test-snow-monkeys-master-test-snowmonkeys-test-suite-md) | [snowmonkeys-test-suite.md](../../../../references/test-snow-monkeys/master-test/snowmonkeys-test-suite.md) | [test-snow-monkeys/examples-automation-test/.github/workflows/test-snowmonkeys.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-snowmonkeys.yml) |
+| `test-suite-rules.md` | [test-suite-rules.md](../masters/master-test/test-suite-rules.md) | [test-suite-rules.md](#master-test-snow-monkeys-master-test-test-suite-rules-md) | [test-suite-rules.md](../../../../references/test-snow-monkeys/master-test/test-suite-rules.md) | [test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml) |
+| `testflow.md` | [testflow.md](../masters/master-test/testflow.md) | [testflow.md](#master-test-snow-monkeys-master-test-testflow-md) | [testflow.md](../../../../references/test-snow-monkeys/master-test/testflow.md) | [test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml](../../../../references/test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml) |
+| `.gitignore` | [.gitignore](../masters/master-test/.gitignore) | [.gitignore](#master-test-snow-monkeys-master-test-gitignore) | [.gitignore](../../../../references/test-snow-monkeys/master-test/.gitignore) | [test-snow-monkeys](../../../../references/test-snow-monkeys) |
 
 #### `yabinboxes/org-master` → `yabinboxes`
 
 | File | Copy | Text | Repository | Implementation |
 | --- | --- | --- | --- | --- |
-| `main.md` | [main.md](../masters/org-master/main.md) | [main.md](#master-yabinboxes-org-master-main-md) | [main.md](../../../../../org-master/main.md) | [yabinboxes](../../../../..) |
-| `local-setup/docker-services/snow-angular-ui/docker-compose.yml` | [local-setup/docker-services/snow-angular-ui/docker-compose.yml](../masters/org-master/local-setup/docker-services/snow-angular-ui/docker-compose.yml) | [local-setup/docker-services/snow-angular-ui/docker-compose.yml](#master-yabinboxes-org-master-local-setup-docker-services-snow-angular-ui-docker-compose-yml) | [local-setup/docker-services/snow-angular-ui/docker-compose.yml](../../../../../org-master/local-setup/docker-services/snow-angular-ui/docker-compose.yml) | [yabinboxes/org-snow-angular-ui](../../../../../org-snow-angular-ui) |
-| `local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml` | [local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml](../masters/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml) | [local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml](#master-yabinboxes-org-master-local-setup-docker-services-snow-postgresdb-docker-compose-docker-compose-yml) | [local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml](../../../../../org-master/local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml) | [yabinboxes/org-snow-postgresdb-docker-compose](../../../../../org-snow-postgresdb-docker-compose) |
-| `local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql` | [local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql](../masters/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql) | [local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql](#master-yabinboxes-org-master-local-setup-docker-services-snow-postgresdb-docker-compose-init-init-db-sql) | [local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql](../../../../../org-master/local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql) | [yabinboxes/org-snow-postgresdb-docker-compose](../../../../../org-snow-postgresdb-docker-compose) |
-| `local-setup/macmini.md` | [local-setup/macmini.md](../masters/org-master/local-setup/macmini.md) | [local-setup/macmini.md](#master-yabinboxes-org-master-local-setup-macmini-md) | [local-setup/macmini.md](../../../../../org-master/local-setup/macmini.md) | [yabinboxes/org-master/local-setup](../../../../../org-master/local-setup) |
-| `.gitignore` | [.gitignore](../masters/org-master/.gitignore) | [.gitignore](#master-yabinboxes-org-master-gitignore) | [.gitignore](../../../../../org-master/.gitignore) | [yabinboxes](../../../../..) |
+| `main.md` | [main.md](../masters/org-master/main.md) | [main.md](#master-yabinboxes-org-master-main-md) | [main.md](../../../../references/yabinboxes/org-master/main.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `local-setup/docker-services/snow-angular-ui/docker-compose.yml` | [local-setup/docker-services/snow-angular-ui/docker-compose.yml](../masters/org-master/local-setup/docker-services/snow-angular-ui/docker-compose.yml) | [local-setup/docker-services/snow-angular-ui/docker-compose.yml](#master-yabinboxes-org-master-local-setup-docker-services-snow-angular-ui-docker-compose-yml) | [local-setup/docker-services/snow-angular-ui/docker-compose.yml](../../../../references/yabinboxes/org-master/local-setup/docker-services/snow-angular-ui/docker-compose.yml) | [yabinboxes/org-snow-angular-ui](../../../../references/yabinboxes/org-snow-angular-ui) |
+| `local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml` | [local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml](../masters/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml) | [local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml](#master-yabinboxes-org-master-local-setup-docker-services-snow-postgresdb-docker-compose-docker-compose-yml) | [local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml](../../../../references/yabinboxes/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml) | [yabinboxes/org-snow-postgresdb-docker-compose](../../../../references/yabinboxes/org-snow-postgresdb-docker-compose) |
+| `local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql` | [local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql](../masters/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql) | [local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql](#master-yabinboxes-org-master-local-setup-docker-services-snow-postgresdb-docker-compose-init-init-db-sql) | [local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql](../../../../references/yabinboxes/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql) | [yabinboxes/org-snow-postgresdb-docker-compose](../../../../references/yabinboxes/org-snow-postgresdb-docker-compose) |
+| `local-setup/macmini.md` | [local-setup/macmini.md](../masters/org-master/local-setup/macmini.md) | [local-setup/macmini.md](#master-yabinboxes-org-master-local-setup-macmini-md) | [local-setup/macmini.md](../../../../references/yabinboxes/org-master/local-setup/macmini.md) | [yabinboxes/org-master/local-setup](../../../../references/yabinboxes/org-master/local-setup) |
+| `.gitignore` | [.gitignore](../masters/org-master/.gitignore) | [.gitignore](#master-yabinboxes-org-master-gitignore) | [.gitignore](../../../../references/yabinboxes/org-master/.gitignore) | [yabinboxes](../../../../references/yabinboxes) |
 
 #### `yabinboxes/master-yabinboxes` → `yabinboxes`
 
 | File | Copy | Text | Repository | Implementation |
 | --- | --- | --- | --- | --- |
-| `main.md` | [main.md](../masters/master-yabinboxes/main.md) | [main.md](#master-yabinboxes-master-yabinboxes-main-md) | [main.md](../../../../main.md) | [yabinboxes](../../../../..) |
-| `_templates/chapter/01-conceptual-explanation/README.md` | [_templates/chapter/01-conceptual-explanation/README.md](../masters/master-yabinboxes/_templates/chapter/01-conceptual-explanation/README.md) | [_templates/chapter/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-templates-chapter-01-conceptual-explanation-readme-md) | [_templates/chapter/01-conceptual-explanation/README.md](../../../../_templates/chapter/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `_templates/chapter/02-walkthrough/README.md` | [_templates/chapter/02-walkthrough/README.md](../masters/master-yabinboxes/_templates/chapter/02-walkthrough/README.md) | [_templates/chapter/02-walkthrough/README.md](#master-yabinboxes-master-yabinboxes-templates-chapter-02-walkthrough-readme-md) | [_templates/chapter/02-walkthrough/README.md](../../../../_templates/chapter/02-walkthrough/README.md) | [yabinboxes](../../../../..) |
-| `_templates/chapter/chapter-checklist.md` | [_templates/chapter/chapter-checklist.md](../masters/master-yabinboxes/_templates/chapter/chapter-checklist.md) | [_templates/chapter/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-templates-chapter-chapter-checklist-md) | [_templates/chapter/chapter-checklist.md](../../../../_templates/chapter/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `_templates/chapter/README.md` | [_templates/chapter/README.md](../masters/master-yabinboxes/_templates/chapter/README.md) | [_templates/chapter/README.md](#master-yabinboxes-master-yabinboxes-templates-chapter-readme-md) | [_templates/chapter/README.md](../../../../_templates/chapter/README.md) | [yabinboxes](../../../../..) |
-| `back-matter/appendix-setup-environment.md` | [back-matter/appendix-setup-environment.md](../masters/master-yabinboxes/back-matter/appendix-setup-environment.md) | [back-matter/appendix-setup-environment.md](#master-yabinboxes-master-yabinboxes-back-matter-appendix-setup-environment-md) | [back-matter/appendix-setup-environment.md](../../../../back-matter/appendix-setup-environment.md) | [yabinboxes](../../../../..) |
-| `back-matter/glossary.md` | [back-matter/glossary.md](../masters/master-yabinboxes/back-matter/glossary.md) | [back-matter/glossary.md](#master-yabinboxes-master-yabinboxes-back-matter-glossary-md) | [back-matter/glossary.md](../../../../back-matter/glossary.md) | [yabinboxes](../../../../..) |
-| `back-matter/index-of-code-examples.md` | [back-matter/index-of-code-examples.md](../masters/master-yabinboxes/back-matter/index-of-code-examples.md) | [back-matter/index-of-code-examples.md](#master-yabinboxes-master-yabinboxes-back-matter-index-of-code-examples-md) | [back-matter/index-of-code-examples.md](../../../../back-matter/index-of-code-examples.md) | [yabinboxes](../../../../..) |
-| `body/part-01-foundations/chapter-01-learning-objectives/01-conceptual-explanation/README.md` | [body/part-01-foundations/chapter-01-learning-objectives/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-01-learning-objectives/01-conceptual-explanation/README.md) | [body/part-01-foundations/chapter-01-learning-objectives/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-01-learning-objectives-01-conceptual-explanation-readme-md) | [body/part-01-foundations/chapter-01-learning-objectives/01-conceptual-explanation/README.md](../../../part-01-foundations/chapter-01-learning-objectives/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-01-foundations/chapter-01-learning-objectives/chapter-checklist.md` | [body/part-01-foundations/chapter-01-learning-objectives/chapter-checklist.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-01-learning-objectives/chapter-checklist.md) | [body/part-01-foundations/chapter-01-learning-objectives/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-01-learning-objectives-chapter-checklist-md) | [body/part-01-foundations/chapter-01-learning-objectives/chapter-checklist.md](../../../part-01-foundations/chapter-01-learning-objectives/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-01-foundations/chapter-01-learning-objectives/README.md` | [body/part-01-foundations/chapter-01-learning-objectives/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-01-learning-objectives/README.md) | [body/part-01-foundations/chapter-01-learning-objectives/README.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-01-learning-objectives-readme-md) | [body/part-01-foundations/chapter-01-learning-objectives/README.md](../../../part-01-foundations/chapter-01-learning-objectives/README.md) | [yabinboxes](../../../../..) |
-| `body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/concept.md` | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/concept.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/concept.md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/concept.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-02-conceptual-explanation-and-providers-01-conceptual-explanation-concept-md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/concept.md](../../../part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/concept.md) | [yabinboxes](../../../../..) |
-| `body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/providers.md` | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/providers.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/providers.md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/providers.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-02-conceptual-explanation-and-providers-01-conceptual-explanation-providers-md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/providers.md](../../../part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/providers.md) | [yabinboxes](../../../../..) |
-| `body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/README.md` | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/README.md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-02-conceptual-explanation-and-providers-01-conceptual-explanation-readme-md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/README.md](../../../part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/chapter-checklist.md` | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/chapter-checklist.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/chapter-checklist.md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-02-conceptual-explanation-and-providers-chapter-checklist-md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/chapter-checklist.md](../../../part-01-foundations/chapter-02-conceptual-explanation-and-providers/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/README.md` | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/README.md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/README.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-02-conceptual-explanation-and-providers-readme-md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/README.md](../../../part-01-foundations/chapter-02-conceptual-explanation-and-providers/README.md) | [yabinboxes](../../../../..) |
-| `body/part-01-foundations/chapter-03-masters/01-conceptual-explanation/README.md` | [body/part-01-foundations/chapter-03-masters/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-03-masters/01-conceptual-explanation/README.md) | [body/part-01-foundations/chapter-03-masters/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-03-masters-01-conceptual-explanation-readme-md) | [body/part-01-foundations/chapter-03-masters/01-conceptual-explanation/README.md](../../../part-01-foundations/chapter-03-masters/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-01-foundations/chapter-03-masters/chapter-checklist.md` | [body/part-01-foundations/chapter-03-masters/chapter-checklist.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-03-masters/chapter-checklist.md) | [body/part-01-foundations/chapter-03-masters/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-03-masters-chapter-checklist-md) | [body/part-01-foundations/chapter-03-masters/chapter-checklist.md](../../../part-01-foundations/chapter-03-masters/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-01-foundations/chapter-03-masters/README.md` | [body/part-01-foundations/chapter-03-masters/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-03-masters/README.md) | [body/part-01-foundations/chapter-03-masters/README.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-03-masters-readme-md) | [body/part-01-foundations/chapter-03-masters/README.md](../../../part-01-foundations/chapter-03-masters/README.md) | [yabinboxes](../../../../..) |
-| `body/part-01-foundations/README.md` | [body/part-01-foundations/README.md](../masters/master-yabinboxes/body/part-01-foundations/README.md) | [body/part-01-foundations/README.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-readme-md) | [body/part-01-foundations/README.md](../../../part-01-foundations/README.md) | [yabinboxes](../../../../..) |
-| `body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/01-conceptual-explanation/README.md` | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/01-conceptual-explanation/README.md) | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-04-snow-monkeys-dashboard-01-conceptual-explanation-readme-md) | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/01-conceptual-explanation/README.md](../../../part-02-dashboard/chapter-04-snow-monkeys-dashboard/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/chapter-checklist.md` | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/chapter-checklist.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/chapter-checklist.md) | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-04-snow-monkeys-dashboard-chapter-checklist-md) | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/chapter-checklist.md](../../../part-02-dashboard/chapter-04-snow-monkeys-dashboard/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/README.md` | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/README.md) | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/README.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-04-snow-monkeys-dashboard-readme-md) | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/README.md](../../../part-02-dashboard/chapter-04-snow-monkeys-dashboard/README.md) | [yabinboxes](../../../../..) |
-| `body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/01-conceptual-explanation/README.md` | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/01-conceptual-explanation/README.md) | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-05-snow-monkeys-dashboard-selfhosted-01-conceptual-explanation-readme-md) | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/01-conceptual-explanation/README.md](../../../part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/chapter-checklist.md` | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/chapter-checklist.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/chapter-checklist.md) | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-05-snow-monkeys-dashboard-selfhosted-chapter-checklist-md) | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/chapter-checklist.md](../../../part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/README.md` | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/README.md) | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/README.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-05-snow-monkeys-dashboard-selfhosted-readme-md) | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/README.md](../../../part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/README.md) | [yabinboxes](../../../../..) |
-| `body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/agent-prompts.md` | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/agent-prompts.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/agent-prompts.md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/agent-prompts.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-06-snow-monkeys-docs-01-conceptual-explanation-agent-prompts-md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/agent-prompts.md](../../../part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/agent-prompts.md) | [yabinboxes](../../../../..) |
-| `body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/README.md` | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/README.md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-06-snow-monkeys-docs-01-conceptual-explanation-readme-md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/README.md](../../../part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/user-examples.md` | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/user-examples.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/user-examples.md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/user-examples.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-06-snow-monkeys-docs-01-conceptual-explanation-user-examples-md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/user-examples.md](../../../part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/user-examples.md) | [yabinboxes](../../../../..) |
-| `body/part-02-dashboard/chapter-06-snow-monkeys-docs/chapter-checklist.md` | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/chapter-checklist.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-06-snow-monkeys-docs/chapter-checklist.md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-06-snow-monkeys-docs-chapter-checklist-md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/chapter-checklist.md](../../../part-02-dashboard/chapter-06-snow-monkeys-docs/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-02-dashboard/chapter-06-snow-monkeys-docs/README.md` | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-06-snow-monkeys-docs/README.md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/README.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-06-snow-monkeys-docs-readme-md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/README.md](../../../part-02-dashboard/chapter-06-snow-monkeys-docs/README.md) | [yabinboxes](../../../../..) |
-| `body/part-02-dashboard/README.md` | [body/part-02-dashboard/README.md](../masters/master-yabinboxes/body/part-02-dashboard/README.md) | [body/part-02-dashboard/README.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-readme-md) | [body/part-02-dashboard/README.md](../../../part-02-dashboard/README.md) | [yabinboxes](../../../../..) |
-| `body/part-03-runners/chapter-07-github-runners/01-conceptual-explanation/README.md` | [body/part-03-runners/chapter-07-github-runners/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-07-github-runners/01-conceptual-explanation/README.md) | [body/part-03-runners/chapter-07-github-runners/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-07-github-runners-01-conceptual-explanation-readme-md) | [body/part-03-runners/chapter-07-github-runners/01-conceptual-explanation/README.md](../../../part-03-runners/chapter-07-github-runners/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-03-runners/chapter-07-github-runners/chapter-checklist.md` | [body/part-03-runners/chapter-07-github-runners/chapter-checklist.md](../masters/master-yabinboxes/body/part-03-runners/chapter-07-github-runners/chapter-checklist.md) | [body/part-03-runners/chapter-07-github-runners/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-07-github-runners-chapter-checklist-md) | [body/part-03-runners/chapter-07-github-runners/chapter-checklist.md](../../../part-03-runners/chapter-07-github-runners/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-03-runners/chapter-07-github-runners/README.md` | [body/part-03-runners/chapter-07-github-runners/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-07-github-runners/README.md) | [body/part-03-runners/chapter-07-github-runners/README.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-07-github-runners-readme-md) | [body/part-03-runners/chapter-07-github-runners/README.md](../../../part-03-runners/chapter-07-github-runners/README.md) | [yabinboxes](../../../../..) |
-| `body/part-03-runners/chapter-08-gitlab-runners/01-conceptual-explanation/README.md` | [body/part-03-runners/chapter-08-gitlab-runners/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-08-gitlab-runners/01-conceptual-explanation/README.md) | [body/part-03-runners/chapter-08-gitlab-runners/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-08-gitlab-runners-01-conceptual-explanation-readme-md) | [body/part-03-runners/chapter-08-gitlab-runners/01-conceptual-explanation/README.md](../../../part-03-runners/chapter-08-gitlab-runners/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-03-runners/chapter-08-gitlab-runners/chapter-checklist.md` | [body/part-03-runners/chapter-08-gitlab-runners/chapter-checklist.md](../masters/master-yabinboxes/body/part-03-runners/chapter-08-gitlab-runners/chapter-checklist.md) | [body/part-03-runners/chapter-08-gitlab-runners/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-08-gitlab-runners-chapter-checklist-md) | [body/part-03-runners/chapter-08-gitlab-runners/chapter-checklist.md](../../../part-03-runners/chapter-08-gitlab-runners/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-03-runners/chapter-08-gitlab-runners/README.md` | [body/part-03-runners/chapter-08-gitlab-runners/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-08-gitlab-runners/README.md) | [body/part-03-runners/chapter-08-gitlab-runners/README.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-08-gitlab-runners-readme-md) | [body/part-03-runners/chapter-08-gitlab-runners/README.md](../../../part-03-runners/chapter-08-gitlab-runners/README.md) | [yabinboxes](../../../../..) |
-| `body/part-03-runners/chapter-09-local-runners/01-conceptual-explanation/README.md` | [body/part-03-runners/chapter-09-local-runners/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-09-local-runners/01-conceptual-explanation/README.md) | [body/part-03-runners/chapter-09-local-runners/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-09-local-runners-01-conceptual-explanation-readme-md) | [body/part-03-runners/chapter-09-local-runners/01-conceptual-explanation/README.md](../../../part-03-runners/chapter-09-local-runners/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-03-runners/chapter-09-local-runners/chapter-checklist.md` | [body/part-03-runners/chapter-09-local-runners/chapter-checklist.md](../masters/master-yabinboxes/body/part-03-runners/chapter-09-local-runners/chapter-checklist.md) | [body/part-03-runners/chapter-09-local-runners/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-09-local-runners-chapter-checklist-md) | [body/part-03-runners/chapter-09-local-runners/chapter-checklist.md](../../../part-03-runners/chapter-09-local-runners/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-03-runners/chapter-09-local-runners/README.md` | [body/part-03-runners/chapter-09-local-runners/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-09-local-runners/README.md) | [body/part-03-runners/chapter-09-local-runners/README.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-09-local-runners-readme-md) | [body/part-03-runners/chapter-09-local-runners/README.md](../../../part-03-runners/chapter-09-local-runners/README.md) | [yabinboxes](../../../../..) |
-| `body/part-03-runners/README.md` | [body/part-03-runners/README.md](../masters/master-yabinboxes/body/part-03-runners/README.md) | [body/part-03-runners/README.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-readme-md) | [body/part-03-runners/README.md](../../../part-03-runners/README.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation/README.md` | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation/README.md) | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-10-infrastructure-as-code-projects-01-conceptual-explanation-readme-md) | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation/README.md](../../../part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough/README.md` | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough/README.md) | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-10-infrastructure-as-code-projects-02-walkthrough-readme-md) | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough/README.md](../../../part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough/README.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/chapter-checklist.md` | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/chapter-checklist.md) | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-10-infrastructure-as-code-projects-chapter-checklist-md) | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/chapter-checklist.md](../../../part-04-core-modules/chapter-10-infrastructure-as-code-projects/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/README.md` | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/README.md) | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-10-infrastructure-as-code-projects-readme-md) | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/README.md](../../../part-04-core-modules/chapter-10-infrastructure-as-code-projects/README.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/01-conceptual-explanation/README.md` | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/01-conceptual-explanation/README.md) | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-11-hands-on-reusable-workflows-01-conceptual-explanation-readme-md) | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/01-conceptual-explanation/README.md](../../../part-04-core-modules/chapter-11-hands-on-reusable-workflows/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/02-walkthrough/README.md` | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/02-walkthrough/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/02-walkthrough/README.md) | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/02-walkthrough/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-11-hands-on-reusable-workflows-02-walkthrough-readme-md) | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/02-walkthrough/README.md](../../../part-04-core-modules/chapter-11-hands-on-reusable-workflows/02-walkthrough/README.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/chapter-checklist.md` | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/chapter-checklist.md) | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-11-hands-on-reusable-workflows-chapter-checklist-md) | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/chapter-checklist.md](../../../part-04-core-modules/chapter-11-hands-on-reusable-workflows/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/README.md` | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/README.md) | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-11-hands-on-reusable-workflows-readme-md) | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/README.md](../../../part-04-core-modules/chapter-11-hands-on-reusable-workflows/README.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-12-walkthrough/01-conceptual-explanation/README.md` | [body/part-04-core-modules/chapter-12-walkthrough/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-12-walkthrough/01-conceptual-explanation/README.md) | [body/part-04-core-modules/chapter-12-walkthrough/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-12-walkthrough-01-conceptual-explanation-readme-md) | [body/part-04-core-modules/chapter-12-walkthrough/01-conceptual-explanation/README.md](../../../part-04-core-modules/chapter-12-walkthrough/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-12-walkthrough/chapter-checklist.md` | [body/part-04-core-modules/chapter-12-walkthrough/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-12-walkthrough/chapter-checklist.md) | [body/part-04-core-modules/chapter-12-walkthrough/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-12-walkthrough-chapter-checklist-md) | [body/part-04-core-modules/chapter-12-walkthrough/chapter-checklist.md](../../../part-04-core-modules/chapter-12-walkthrough/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-12-walkthrough/README.md` | [body/part-04-core-modules/chapter-12-walkthrough/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-12-walkthrough/README.md) | [body/part-04-core-modules/chapter-12-walkthrough/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-12-walkthrough-readme-md) | [body/part-04-core-modules/chapter-12-walkthrough/README.md](../../../part-04-core-modules/chapter-12-walkthrough/README.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-01.md` | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-01.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-01.md) | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-01.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-13-common-pitfalls-01-conceptual-explanation-pitfall-01-md) | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-01.md](../../../part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-01.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-02.md` | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-02.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-02.md) | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-02.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-13-common-pitfalls-01-conceptual-explanation-pitfall-02-md) | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-02.md](../../../part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-02.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-03.md` | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-03.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-03.md) | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-03.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-13-common-pitfalls-01-conceptual-explanation-pitfall-03-md) | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-03.md](../../../part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-03.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/README.md` | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/README.md) | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-13-common-pitfalls-01-conceptual-explanation-readme-md) | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/README.md](../../../part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-13-common-pitfalls/chapter-checklist.md` | [body/part-04-core-modules/chapter-13-common-pitfalls/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/chapter-checklist.md) | [body/part-04-core-modules/chapter-13-common-pitfalls/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-13-common-pitfalls-chapter-checklist-md) | [body/part-04-core-modules/chapter-13-common-pitfalls/chapter-checklist.md](../../../part-04-core-modules/chapter-13-common-pitfalls/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-13-common-pitfalls/README.md` | [body/part-04-core-modules/chapter-13-common-pitfalls/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/README.md) | [body/part-04-core-modules/chapter-13-common-pitfalls/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-13-common-pitfalls-readme-md) | [body/part-04-core-modules/chapter-13-common-pitfalls/README.md](../../../part-04-core-modules/chapter-13-common-pitfalls/README.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-14-exercises/01-conceptual-explanation/README.md` | [body/part-04-core-modules/chapter-14-exercises/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-14-exercises/01-conceptual-explanation/README.md) | [body/part-04-core-modules/chapter-14-exercises/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-14-exercises-01-conceptual-explanation-readme-md) | [body/part-04-core-modules/chapter-14-exercises/01-conceptual-explanation/README.md](../../../part-04-core-modules/chapter-14-exercises/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-14-exercises/chapter-checklist.md` | [body/part-04-core-modules/chapter-14-exercises/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-14-exercises/chapter-checklist.md) | [body/part-04-core-modules/chapter-14-exercises/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-14-exercises-chapter-checklist-md) | [body/part-04-core-modules/chapter-14-exercises/chapter-checklist.md](../../../part-04-core-modules/chapter-14-exercises/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-14-exercises/README.md` | [body/part-04-core-modules/chapter-14-exercises/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-14-exercises/README.md) | [body/part-04-core-modules/chapter-14-exercises/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-14-exercises-readme-md) | [body/part-04-core-modules/chapter-14-exercises/README.md](../../../part-04-core-modules/chapter-14-exercises/README.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/applications.md` | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/applications.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/applications.md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/applications.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-01-conceptual-explanation-applications-md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/applications.md](../../../part-04-core-modules/chapter-15-examples/01-conceptual-explanation/applications.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/infrastructure.md` | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/infrastructure.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/infrastructure.md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/infrastructure.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-01-conceptual-explanation-infrastructure-md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/infrastructure.md](../../../part-04-core-modules/chapter-15-examples/01-conceptual-explanation/infrastructure.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/README.md` | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/README.md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-01-conceptual-explanation-readme-md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/README.md](../../../part-04-core-modules/chapter-15-examples/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/services.md` | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/services.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/services.md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/services.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-01-conceptual-explanation-services-md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/services.md](../../../part-04-core-modules/chapter-15-examples/01-conceptual-explanation/services.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/stateful.md` | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/stateful.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/stateful.md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/stateful.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-01-conceptual-explanation-stateful-md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/stateful.md](../../../part-04-core-modules/chapter-15-examples/01-conceptual-explanation/stateful.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-15-examples/02-walkthrough/README.md` | [body/part-04-core-modules/chapter-15-examples/02-walkthrough/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/02-walkthrough/README.md) | [body/part-04-core-modules/chapter-15-examples/02-walkthrough/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-02-walkthrough-readme-md) | [body/part-04-core-modules/chapter-15-examples/02-walkthrough/README.md](../../../part-04-core-modules/chapter-15-examples/02-walkthrough/README.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-15-examples/chapter-checklist.md` | [body/part-04-core-modules/chapter-15-examples/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/chapter-checklist.md) | [body/part-04-core-modules/chapter-15-examples/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-chapter-checklist-md) | [body/part-04-core-modules/chapter-15-examples/chapter-checklist.md](../../../part-04-core-modules/chapter-15-examples/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/chapter-15-examples/README.md` | [body/part-04-core-modules/chapter-15-examples/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/README.md) | [body/part-04-core-modules/chapter-15-examples/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-readme-md) | [body/part-04-core-modules/chapter-15-examples/README.md](../../../part-04-core-modules/chapter-15-examples/README.md) | [yabinboxes](../../../../..) |
-| `body/part-04-core-modules/README.md` | [body/part-04-core-modules/README.md](../masters/master-yabinboxes/body/part-04-core-modules/README.md) | [body/part-04-core-modules/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-readme-md) | [body/part-04-core-modules/README.md](../../../part-04-core-modules/README.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/backend.md` | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/backend.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/backend.md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/backend.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-16-dashboard-code-01-conceptual-explanation-backend-md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/backend.md](../../chapter-16-dashboard-code/01-conceptual-explanation/backend.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/README.md` | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/README.md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-16-dashboard-code-01-conceptual-explanation-readme-md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/README.md](../../chapter-16-dashboard-code/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/service.md` | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/service.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/service.md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/service.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-16-dashboard-code-01-conceptual-explanation-service-md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/service.md](../../chapter-16-dashboard-code/01-conceptual-explanation/service.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/ui.md` | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/ui.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/ui.md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/ui.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-16-dashboard-code-01-conceptual-explanation-ui-md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/ui.md](../../chapter-16-dashboard-code/01-conceptual-explanation/ui.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/chapter-checklist.md` | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/chapter-checklist.md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-16-dashboard-code-chapter-checklist-md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/chapter-checklist.md](../../chapter-16-dashboard-code/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/README.md` | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/README.md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-16-dashboard-code-readme-md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/README.md](../../chapter-16-dashboard-code/README.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/backend.md` | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/backend.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/backend.md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/backend.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-17-dashboard-selfhosted-code-01-conceptual-explanation-backend-md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/backend.md](../../chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/backend.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/README.md` | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/README.md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-17-dashboard-selfhosted-code-01-conceptual-explanation-readme-md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/README.md](../../chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/service.md` | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/service.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/service.md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/service.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-17-dashboard-selfhosted-code-01-conceptual-explanation-service-md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/service.md](../../chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/service.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/ui.md` | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/ui.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/ui.md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/ui.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-17-dashboard-selfhosted-code-01-conceptual-explanation-ui-md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/ui.md](../../chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/ui.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/chapter-checklist.md` | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/chapter-checklist.md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-17-dashboard-selfhosted-code-chapter-checklist-md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/chapter-checklist.md](../../chapter-17-dashboard-selfhosted-code/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/README.md` | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/README.md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-17-dashboard-selfhosted-code-readme-md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/README.md](../../chapter-17-dashboard-selfhosted-code/README.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/database-backup.md` | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/database-backup.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/database-backup.md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/database-backup.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-18-other-services-01-conceptual-explanation-database-backup-md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/database-backup.md](../../chapter-18-other-services/01-conceptual-explanation/database-backup.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/README.md` | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/README.md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-18-other-services-01-conceptual-explanation-readme-md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/README.md](../../chapter-18-other-services/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/server.md` | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/server.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/server.md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/server.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-18-other-services-01-conceptual-explanation-server-md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/server.md](../../chapter-18-other-services/01-conceptual-explanation/server.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-18-other-services/chapter-checklist.md` | [body/part-05-maintenance-and-scripts/chapter-18-other-services/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-18-other-services/chapter-checklist.md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-18-other-services-chapter-checklist-md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/chapter-checklist.md](../../chapter-18-other-services/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-18-other-services/README.md` | [body/part-05-maintenance-and-scripts/chapter-18-other-services/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-18-other-services/README.md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-18-other-services-readme-md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/README.md](../../chapter-18-other-services/README.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-19-test-modules/01-conceptual-explanation/README.md` | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-19-test-modules/01-conceptual-explanation/README.md) | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-19-test-modules-01-conceptual-explanation-readme-md) | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/01-conceptual-explanation/README.md](../../chapter-19-test-modules/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-19-test-modules/chapter-checklist.md` | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-19-test-modules/chapter-checklist.md) | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-19-test-modules-chapter-checklist-md) | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/chapter-checklist.md](../../chapter-19-test-modules/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-19-test-modules/README.md` | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-19-test-modules/README.md) | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-19-test-modules-readme-md) | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/README.md](../../chapter-19-test-modules/README.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-infra.md` | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-infra.md](../01-conceptual-explanation/master-infra.md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-infra.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-01-conceptual-explanation-master-infra-md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-infra.md](../01-conceptual-explanation/master-infra.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-modules.md` | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-modules.md](../01-conceptual-explanation/master-modules.md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-modules.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-01-conceptual-explanation-master-modules-md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-modules.md](../01-conceptual-explanation/master-modules.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-test.md` | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-test.md](../01-conceptual-explanation/master-test.md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-test.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-01-conceptual-explanation-master-test-md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-test.md](../01-conceptual-explanation/master-test.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-yabinboxes.md` | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-yabinboxes.md](../01-conceptual-explanation/master-yabinboxes.md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-yabinboxes.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-01-conceptual-explanation-master-yabinboxes-md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-yabinboxes.md](../01-conceptual-explanation/master-yabinboxes.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/org-master.md` | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/org-master.md](../01-conceptual-explanation/org-master.md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/org-master.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-01-conceptual-explanation-org-master-md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/org-master.md](../01-conceptual-explanation/org-master.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/README.md` | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/README.md](../01-conceptual-explanation/README.md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-01-conceptual-explanation-readme-md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/README.md](../01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-20-masters/chapter-checklist.md` | [body/part-05-maintenance-and-scripts/chapter-20-masters/chapter-checklist.md](../chapter-checklist.md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-chapter-checklist-md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/chapter-checklist.md](../chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-20-masters/README.md` | [body/part-05-maintenance-and-scripts/chapter-20-masters/README.md](../README.md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-readme-md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/README.md](../README.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/01-conceptual-explanation/README.md` | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/01-conceptual-explanation/README.md) | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-21-script-summary-and-reports-01-conceptual-explanation-readme-md) | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/01-conceptual-explanation/README.md](../../chapter-21-script-summary-and-reports/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/chapter-checklist.md` | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/chapter-checklist.md) | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-21-script-summary-and-reports-chapter-checklist-md) | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/chapter-checklist.md](../../chapter-21-script-summary-and-reports/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/README.md` | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/README.md) | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-21-script-summary-and-reports-readme-md) | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/README.md](../../chapter-21-script-summary-and-reports/README.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/01-conceptual-explanation/README.md` | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/01-conceptual-explanation/README.md) | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-22-summary-and-further-reading-01-conceptual-explanation-readme-md) | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/01-conceptual-explanation/README.md](../../chapter-22-summary-and-further-reading/01-conceptual-explanation/README.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/chapter-checklist.md` | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/chapter-checklist.md) | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-22-summary-and-further-reading-chapter-checklist-md) | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/chapter-checklist.md](../../chapter-22-summary-and-further-reading/chapter-checklist.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/README.md` | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/README.md) | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-22-summary-and-further-reading-readme-md) | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/README.md](../../chapter-22-summary-and-further-reading/README.md) | [yabinboxes](../../../../..) |
-| `body/part-05-maintenance-and-scripts/README.md` | [body/part-05-maintenance-and-scripts/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/README.md) | [body/part-05-maintenance-and-scripts/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-readme-md) | [body/part-05-maintenance-and-scripts/README.md](../../README.md) | [yabinboxes](../../../../..) |
-| `front-matter/conventions.md` | [front-matter/conventions.md](../masters/master-yabinboxes/front-matter/conventions.md) | [front-matter/conventions.md](#master-yabinboxes-master-yabinboxes-front-matter-conventions-md) | [front-matter/conventions.md](../../../../front-matter/conventions.md) | [yabinboxes](../../../../..) |
-| `front-matter/preface.md` | [front-matter/preface.md](../masters/master-yabinboxes/front-matter/preface.md) | [front-matter/preface.md](#master-yabinboxes-master-yabinboxes-front-matter-preface-md) | [front-matter/preface.md](../../../../front-matter/preface.md) | [yabinboxes](../../../../..) |
-| `front-matter/table-of-contents.md` | [front-matter/table-of-contents.md](../masters/master-yabinboxes/front-matter/table-of-contents.md) | [front-matter/table-of-contents.md](#master-yabinboxes-master-yabinboxes-front-matter-table-of-contents-md) | [front-matter/table-of-contents.md](../../../../front-matter/table-of-contents.md) | [yabinboxes](../../../../..) |
-| `README.md` | [README.md](../masters/master-yabinboxes/README.md) | [README.md](#master-yabinboxes-master-yabinboxes-readme-md) | [README.md](../../../../README.md) | [yabinboxes](../../../../..) |
-| `toc.md` | [toc.md](../masters/master-yabinboxes/toc.md) | [toc.md](#master-yabinboxes-master-yabinboxes-toc-md) | [toc.md](../../../../toc.md) | [yabinboxes](../../../../..) |
-| `.gitignore` | [.gitignore](../masters/master-yabinboxes/.gitignore) | [.gitignore](#master-yabinboxes-master-yabinboxes-gitignore) | [.gitignore](../../../../.gitignore) | [yabinboxes](../../../../..) |
+| `main.md` | [main.md](../masters/master-yabinboxes/main.md) | [main.md](#master-yabinboxes-master-yabinboxes-main-md) | [main.md](../../../../main.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `_templates/chapter/01-conceptual-explanation/README.md` | [_templates/chapter/01-conceptual-explanation/README.md](../masters/master-yabinboxes/_templates/chapter/01-conceptual-explanation/README.md) | [_templates/chapter/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-templates-chapter-01-conceptual-explanation-readme-md) | [_templates/chapter/01-conceptual-explanation/README.md](../../../../_templates/chapter/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `_templates/chapter/02-walkthrough/README.md` | [_templates/chapter/02-walkthrough/README.md](../masters/master-yabinboxes/_templates/chapter/02-walkthrough/README.md) | [_templates/chapter/02-walkthrough/README.md](#master-yabinboxes-master-yabinboxes-templates-chapter-02-walkthrough-readme-md) | [_templates/chapter/02-walkthrough/README.md](../../../../_templates/chapter/02-walkthrough/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `_templates/chapter/chapter-checklist.md` | [_templates/chapter/chapter-checklist.md](../masters/master-yabinboxes/_templates/chapter/chapter-checklist.md) | [_templates/chapter/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-templates-chapter-chapter-checklist-md) | [_templates/chapter/chapter-checklist.md](../../../../_templates/chapter/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `_templates/chapter/README.md` | [_templates/chapter/README.md](../masters/master-yabinboxes/_templates/chapter/README.md) | [_templates/chapter/README.md](#master-yabinboxes-master-yabinboxes-templates-chapter-readme-md) | [_templates/chapter/README.md](../../../../_templates/chapter/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `back-matter/appendix-setup-environment.md` | [back-matter/appendix-setup-environment.md](../masters/master-yabinboxes/back-matter/appendix-setup-environment.md) | [back-matter/appendix-setup-environment.md](#master-yabinboxes-master-yabinboxes-back-matter-appendix-setup-environment-md) | [back-matter/appendix-setup-environment.md](../../../../back-matter/appendix-setup-environment.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `back-matter/glossary.md` | [back-matter/glossary.md](../masters/master-yabinboxes/back-matter/glossary.md) | [back-matter/glossary.md](#master-yabinboxes-master-yabinboxes-back-matter-glossary-md) | [back-matter/glossary.md](../../../../back-matter/glossary.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `back-matter/index-of-code-examples.md` | [back-matter/index-of-code-examples.md](../masters/master-yabinboxes/back-matter/index-of-code-examples.md) | [back-matter/index-of-code-examples.md](#master-yabinboxes-master-yabinboxes-back-matter-index-of-code-examples-md) | [back-matter/index-of-code-examples.md](../../../../back-matter/index-of-code-examples.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-01-foundations/chapter-01-learning-objectives/01-conceptual-explanation/README.md` | [body/part-01-foundations/chapter-01-learning-objectives/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-01-learning-objectives/01-conceptual-explanation/README.md) | [body/part-01-foundations/chapter-01-learning-objectives/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-01-learning-objectives-01-conceptual-explanation-readme-md) | [body/part-01-foundations/chapter-01-learning-objectives/01-conceptual-explanation/README.md](../../../part-01-foundations/chapter-01-learning-objectives/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-01-foundations/chapter-01-learning-objectives/chapter-checklist.md` | [body/part-01-foundations/chapter-01-learning-objectives/chapter-checklist.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-01-learning-objectives/chapter-checklist.md) | [body/part-01-foundations/chapter-01-learning-objectives/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-01-learning-objectives-chapter-checklist-md) | [body/part-01-foundations/chapter-01-learning-objectives/chapter-checklist.md](../../../part-01-foundations/chapter-01-learning-objectives/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-01-foundations/chapter-01-learning-objectives/README.md` | [body/part-01-foundations/chapter-01-learning-objectives/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-01-learning-objectives/README.md) | [body/part-01-foundations/chapter-01-learning-objectives/README.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-01-learning-objectives-readme-md) | [body/part-01-foundations/chapter-01-learning-objectives/README.md](../../../part-01-foundations/chapter-01-learning-objectives/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/concept.md` | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/concept.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/concept.md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/concept.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-02-conceptual-explanation-and-providers-01-conceptual-explanation-concept-md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/concept.md](../../../part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/concept.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/providers.md` | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/providers.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/providers.md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/providers.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-02-conceptual-explanation-and-providers-01-conceptual-explanation-providers-md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/providers.md](../../../part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/providers.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/README.md` | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/README.md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-02-conceptual-explanation-and-providers-01-conceptual-explanation-readme-md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/README.md](../../../part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/chapter-checklist.md` | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/chapter-checklist.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/chapter-checklist.md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-02-conceptual-explanation-and-providers-chapter-checklist-md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/chapter-checklist.md](../../../part-01-foundations/chapter-02-conceptual-explanation-and-providers/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/README.md` | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/README.md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/README.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-02-conceptual-explanation-and-providers-readme-md) | [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/README.md](../../../part-01-foundations/chapter-02-conceptual-explanation-and-providers/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-01-foundations/chapter-03-masters/01-conceptual-explanation/README.md` | [body/part-01-foundations/chapter-03-masters/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-03-masters/01-conceptual-explanation/README.md) | [body/part-01-foundations/chapter-03-masters/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-03-masters-01-conceptual-explanation-readme-md) | [body/part-01-foundations/chapter-03-masters/01-conceptual-explanation/README.md](../../../part-01-foundations/chapter-03-masters/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-01-foundations/chapter-03-masters/chapter-checklist.md` | [body/part-01-foundations/chapter-03-masters/chapter-checklist.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-03-masters/chapter-checklist.md) | [body/part-01-foundations/chapter-03-masters/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-03-masters-chapter-checklist-md) | [body/part-01-foundations/chapter-03-masters/chapter-checklist.md](../../../part-01-foundations/chapter-03-masters/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-01-foundations/chapter-03-masters/README.md` | [body/part-01-foundations/chapter-03-masters/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-03-masters/README.md) | [body/part-01-foundations/chapter-03-masters/README.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-03-masters-readme-md) | [body/part-01-foundations/chapter-03-masters/README.md](../../../part-01-foundations/chapter-03-masters/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-01-foundations/README.md` | [body/part-01-foundations/README.md](../masters/master-yabinboxes/body/part-01-foundations/README.md) | [body/part-01-foundations/README.md](#master-yabinboxes-master-yabinboxes-body-part-01-foundations-readme-md) | [body/part-01-foundations/README.md](../../../part-01-foundations/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/01-conceptual-explanation/README.md` | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/01-conceptual-explanation/README.md) | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-04-snow-monkeys-dashboard-01-conceptual-explanation-readme-md) | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/01-conceptual-explanation/README.md](../../../part-02-dashboard/chapter-04-snow-monkeys-dashboard/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/chapter-checklist.md` | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/chapter-checklist.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/chapter-checklist.md) | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-04-snow-monkeys-dashboard-chapter-checklist-md) | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/chapter-checklist.md](../../../part-02-dashboard/chapter-04-snow-monkeys-dashboard/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/README.md` | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/README.md) | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/README.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-04-snow-monkeys-dashboard-readme-md) | [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/README.md](../../../part-02-dashboard/chapter-04-snow-monkeys-dashboard/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/01-conceptual-explanation/README.md` | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/01-conceptual-explanation/README.md) | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-05-snow-monkeys-dashboard-selfhosted-01-conceptual-explanation-readme-md) | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/01-conceptual-explanation/README.md](../../../part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/chapter-checklist.md` | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/chapter-checklist.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/chapter-checklist.md) | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-05-snow-monkeys-dashboard-selfhosted-chapter-checklist-md) | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/chapter-checklist.md](../../../part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/README.md` | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/README.md) | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/README.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-05-snow-monkeys-dashboard-selfhosted-readme-md) | [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/README.md](../../../part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/agent-prompts.md` | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/agent-prompts.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/agent-prompts.md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/agent-prompts.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-06-snow-monkeys-docs-01-conceptual-explanation-agent-prompts-md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/agent-prompts.md](../../../part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/agent-prompts.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/README.md` | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/README.md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-06-snow-monkeys-docs-01-conceptual-explanation-readme-md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/README.md](../../../part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/user-examples.md` | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/user-examples.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/user-examples.md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/user-examples.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-06-snow-monkeys-docs-01-conceptual-explanation-user-examples-md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/user-examples.md](../../../part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/user-examples.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-02-dashboard/chapter-06-snow-monkeys-docs/chapter-checklist.md` | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/chapter-checklist.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-06-snow-monkeys-docs/chapter-checklist.md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-06-snow-monkeys-docs-chapter-checklist-md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/chapter-checklist.md](../../../part-02-dashboard/chapter-06-snow-monkeys-docs/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-02-dashboard/chapter-06-snow-monkeys-docs/README.md` | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-06-snow-monkeys-docs/README.md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/README.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-06-snow-monkeys-docs-readme-md) | [body/part-02-dashboard/chapter-06-snow-monkeys-docs/README.md](../../../part-02-dashboard/chapter-06-snow-monkeys-docs/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-02-dashboard/README.md` | [body/part-02-dashboard/README.md](../masters/master-yabinboxes/body/part-02-dashboard/README.md) | [body/part-02-dashboard/README.md](#master-yabinboxes-master-yabinboxes-body-part-02-dashboard-readme-md) | [body/part-02-dashboard/README.md](../../../part-02-dashboard/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-03-runners/chapter-07-github-runners/01-conceptual-explanation/README.md` | [body/part-03-runners/chapter-07-github-runners/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-07-github-runners/01-conceptual-explanation/README.md) | [body/part-03-runners/chapter-07-github-runners/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-07-github-runners-01-conceptual-explanation-readme-md) | [body/part-03-runners/chapter-07-github-runners/01-conceptual-explanation/README.md](../../../part-03-runners/chapter-07-github-runners/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-03-runners/chapter-07-github-runners/chapter-checklist.md` | [body/part-03-runners/chapter-07-github-runners/chapter-checklist.md](../masters/master-yabinboxes/body/part-03-runners/chapter-07-github-runners/chapter-checklist.md) | [body/part-03-runners/chapter-07-github-runners/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-07-github-runners-chapter-checklist-md) | [body/part-03-runners/chapter-07-github-runners/chapter-checklist.md](../../../part-03-runners/chapter-07-github-runners/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-03-runners/chapter-07-github-runners/README.md` | [body/part-03-runners/chapter-07-github-runners/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-07-github-runners/README.md) | [body/part-03-runners/chapter-07-github-runners/README.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-07-github-runners-readme-md) | [body/part-03-runners/chapter-07-github-runners/README.md](../../../part-03-runners/chapter-07-github-runners/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-03-runners/chapter-08-gitlab-runners/01-conceptual-explanation/README.md` | [body/part-03-runners/chapter-08-gitlab-runners/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-08-gitlab-runners/01-conceptual-explanation/README.md) | [body/part-03-runners/chapter-08-gitlab-runners/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-08-gitlab-runners-01-conceptual-explanation-readme-md) | [body/part-03-runners/chapter-08-gitlab-runners/01-conceptual-explanation/README.md](../../../part-03-runners/chapter-08-gitlab-runners/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-03-runners/chapter-08-gitlab-runners/chapter-checklist.md` | [body/part-03-runners/chapter-08-gitlab-runners/chapter-checklist.md](../masters/master-yabinboxes/body/part-03-runners/chapter-08-gitlab-runners/chapter-checklist.md) | [body/part-03-runners/chapter-08-gitlab-runners/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-08-gitlab-runners-chapter-checklist-md) | [body/part-03-runners/chapter-08-gitlab-runners/chapter-checklist.md](../../../part-03-runners/chapter-08-gitlab-runners/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-03-runners/chapter-08-gitlab-runners/README.md` | [body/part-03-runners/chapter-08-gitlab-runners/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-08-gitlab-runners/README.md) | [body/part-03-runners/chapter-08-gitlab-runners/README.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-08-gitlab-runners-readme-md) | [body/part-03-runners/chapter-08-gitlab-runners/README.md](../../../part-03-runners/chapter-08-gitlab-runners/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-03-runners/chapter-09-local-runners/01-conceptual-explanation/README.md` | [body/part-03-runners/chapter-09-local-runners/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-09-local-runners/01-conceptual-explanation/README.md) | [body/part-03-runners/chapter-09-local-runners/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-09-local-runners-01-conceptual-explanation-readme-md) | [body/part-03-runners/chapter-09-local-runners/01-conceptual-explanation/README.md](../../../part-03-runners/chapter-09-local-runners/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-03-runners/chapter-09-local-runners/chapter-checklist.md` | [body/part-03-runners/chapter-09-local-runners/chapter-checklist.md](../masters/master-yabinboxes/body/part-03-runners/chapter-09-local-runners/chapter-checklist.md) | [body/part-03-runners/chapter-09-local-runners/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-09-local-runners-chapter-checklist-md) | [body/part-03-runners/chapter-09-local-runners/chapter-checklist.md](../../../part-03-runners/chapter-09-local-runners/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-03-runners/chapter-09-local-runners/README.md` | [body/part-03-runners/chapter-09-local-runners/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-09-local-runners/README.md) | [body/part-03-runners/chapter-09-local-runners/README.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-09-local-runners-readme-md) | [body/part-03-runners/chapter-09-local-runners/README.md](../../../part-03-runners/chapter-09-local-runners/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-03-runners/README.md` | [body/part-03-runners/README.md](../masters/master-yabinboxes/body/part-03-runners/README.md) | [body/part-03-runners/README.md](#master-yabinboxes-master-yabinboxes-body-part-03-runners-readme-md) | [body/part-03-runners/README.md](../../../part-03-runners/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation/README.md` | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation/README.md) | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-10-infrastructure-as-code-projects-01-conceptual-explanation-readme-md) | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation/README.md](../../../part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough/README.md` | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough/README.md) | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-10-infrastructure-as-code-projects-02-walkthrough-readme-md) | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough/README.md](../../../part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/chapter-checklist.md` | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/chapter-checklist.md) | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-10-infrastructure-as-code-projects-chapter-checklist-md) | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/chapter-checklist.md](../../../part-04-core-modules/chapter-10-infrastructure-as-code-projects/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/README.md` | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/README.md) | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-10-infrastructure-as-code-projects-readme-md) | [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/README.md](../../../part-04-core-modules/chapter-10-infrastructure-as-code-projects/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/01-conceptual-explanation/README.md` | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/01-conceptual-explanation/README.md) | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-11-hands-on-reusable-workflows-01-conceptual-explanation-readme-md) | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/01-conceptual-explanation/README.md](../../../part-04-core-modules/chapter-11-hands-on-reusable-workflows/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/02-walkthrough/README.md` | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/02-walkthrough/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/02-walkthrough/README.md) | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/02-walkthrough/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-11-hands-on-reusable-workflows-02-walkthrough-readme-md) | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/02-walkthrough/README.md](../../../part-04-core-modules/chapter-11-hands-on-reusable-workflows/02-walkthrough/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/chapter-checklist.md` | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/chapter-checklist.md) | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-11-hands-on-reusable-workflows-chapter-checklist-md) | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/chapter-checklist.md](../../../part-04-core-modules/chapter-11-hands-on-reusable-workflows/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/README.md` | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/README.md) | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-11-hands-on-reusable-workflows-readme-md) | [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/README.md](../../../part-04-core-modules/chapter-11-hands-on-reusable-workflows/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-12-walkthrough/01-conceptual-explanation/README.md` | [body/part-04-core-modules/chapter-12-walkthrough/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-12-walkthrough/01-conceptual-explanation/README.md) | [body/part-04-core-modules/chapter-12-walkthrough/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-12-walkthrough-01-conceptual-explanation-readme-md) | [body/part-04-core-modules/chapter-12-walkthrough/01-conceptual-explanation/README.md](../../../part-04-core-modules/chapter-12-walkthrough/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-12-walkthrough/chapter-checklist.md` | [body/part-04-core-modules/chapter-12-walkthrough/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-12-walkthrough/chapter-checklist.md) | [body/part-04-core-modules/chapter-12-walkthrough/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-12-walkthrough-chapter-checklist-md) | [body/part-04-core-modules/chapter-12-walkthrough/chapter-checklist.md](../../../part-04-core-modules/chapter-12-walkthrough/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-12-walkthrough/README.md` | [body/part-04-core-modules/chapter-12-walkthrough/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-12-walkthrough/README.md) | [body/part-04-core-modules/chapter-12-walkthrough/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-12-walkthrough-readme-md) | [body/part-04-core-modules/chapter-12-walkthrough/README.md](../../../part-04-core-modules/chapter-12-walkthrough/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-01.md` | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-01.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-01.md) | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-01.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-13-common-pitfalls-01-conceptual-explanation-pitfall-01-md) | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-01.md](../../../part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-01.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-02.md` | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-02.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-02.md) | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-02.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-13-common-pitfalls-01-conceptual-explanation-pitfall-02-md) | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-02.md](../../../part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-02.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-03.md` | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-03.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-03.md) | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-03.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-13-common-pitfalls-01-conceptual-explanation-pitfall-03-md) | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-03.md](../../../part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-03.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/README.md` | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/README.md) | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-13-common-pitfalls-01-conceptual-explanation-readme-md) | [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/README.md](../../../part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-13-common-pitfalls/chapter-checklist.md` | [body/part-04-core-modules/chapter-13-common-pitfalls/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/chapter-checklist.md) | [body/part-04-core-modules/chapter-13-common-pitfalls/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-13-common-pitfalls-chapter-checklist-md) | [body/part-04-core-modules/chapter-13-common-pitfalls/chapter-checklist.md](../../../part-04-core-modules/chapter-13-common-pitfalls/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-13-common-pitfalls/README.md` | [body/part-04-core-modules/chapter-13-common-pitfalls/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/README.md) | [body/part-04-core-modules/chapter-13-common-pitfalls/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-13-common-pitfalls-readme-md) | [body/part-04-core-modules/chapter-13-common-pitfalls/README.md](../../../part-04-core-modules/chapter-13-common-pitfalls/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-14-exercises/01-conceptual-explanation/README.md` | [body/part-04-core-modules/chapter-14-exercises/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-14-exercises/01-conceptual-explanation/README.md) | [body/part-04-core-modules/chapter-14-exercises/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-14-exercises-01-conceptual-explanation-readme-md) | [body/part-04-core-modules/chapter-14-exercises/01-conceptual-explanation/README.md](../../../part-04-core-modules/chapter-14-exercises/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-14-exercises/chapter-checklist.md` | [body/part-04-core-modules/chapter-14-exercises/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-14-exercises/chapter-checklist.md) | [body/part-04-core-modules/chapter-14-exercises/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-14-exercises-chapter-checklist-md) | [body/part-04-core-modules/chapter-14-exercises/chapter-checklist.md](../../../part-04-core-modules/chapter-14-exercises/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-14-exercises/README.md` | [body/part-04-core-modules/chapter-14-exercises/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-14-exercises/README.md) | [body/part-04-core-modules/chapter-14-exercises/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-14-exercises-readme-md) | [body/part-04-core-modules/chapter-14-exercises/README.md](../../../part-04-core-modules/chapter-14-exercises/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/applications.md` | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/applications.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/applications.md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/applications.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-01-conceptual-explanation-applications-md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/applications.md](../../../part-04-core-modules/chapter-15-examples/01-conceptual-explanation/applications.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/infrastructure.md` | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/infrastructure.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/infrastructure.md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/infrastructure.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-01-conceptual-explanation-infrastructure-md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/infrastructure.md](../../../part-04-core-modules/chapter-15-examples/01-conceptual-explanation/infrastructure.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/README.md` | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/README.md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-01-conceptual-explanation-readme-md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/README.md](../../../part-04-core-modules/chapter-15-examples/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/services.md` | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/services.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/services.md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/services.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-01-conceptual-explanation-services-md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/services.md](../../../part-04-core-modules/chapter-15-examples/01-conceptual-explanation/services.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/stateful.md` | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/stateful.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/stateful.md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/stateful.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-01-conceptual-explanation-stateful-md) | [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/stateful.md](../../../part-04-core-modules/chapter-15-examples/01-conceptual-explanation/stateful.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-15-examples/02-walkthrough/README.md` | [body/part-04-core-modules/chapter-15-examples/02-walkthrough/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/02-walkthrough/README.md) | [body/part-04-core-modules/chapter-15-examples/02-walkthrough/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-02-walkthrough-readme-md) | [body/part-04-core-modules/chapter-15-examples/02-walkthrough/README.md](../../../part-04-core-modules/chapter-15-examples/02-walkthrough/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-15-examples/chapter-checklist.md` | [body/part-04-core-modules/chapter-15-examples/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/chapter-checklist.md) | [body/part-04-core-modules/chapter-15-examples/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-chapter-checklist-md) | [body/part-04-core-modules/chapter-15-examples/chapter-checklist.md](../../../part-04-core-modules/chapter-15-examples/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/chapter-15-examples/README.md` | [body/part-04-core-modules/chapter-15-examples/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/README.md) | [body/part-04-core-modules/chapter-15-examples/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-readme-md) | [body/part-04-core-modules/chapter-15-examples/README.md](../../../part-04-core-modules/chapter-15-examples/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-04-core-modules/README.md` | [body/part-04-core-modules/README.md](../masters/master-yabinboxes/body/part-04-core-modules/README.md) | [body/part-04-core-modules/README.md](#master-yabinboxes-master-yabinboxes-body-part-04-core-modules-readme-md) | [body/part-04-core-modules/README.md](../../../part-04-core-modules/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/backend.md` | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/backend.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/backend.md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/backend.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-16-dashboard-code-01-conceptual-explanation-backend-md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/backend.md](../../chapter-16-dashboard-code/01-conceptual-explanation/backend.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/README.md` | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/README.md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-16-dashboard-code-01-conceptual-explanation-readme-md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/README.md](../../chapter-16-dashboard-code/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/service.md` | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/service.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/service.md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/service.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-16-dashboard-code-01-conceptual-explanation-service-md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/service.md](../../chapter-16-dashboard-code/01-conceptual-explanation/service.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/ui.md` | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/ui.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/ui.md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/ui.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-16-dashboard-code-01-conceptual-explanation-ui-md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/ui.md](../../chapter-16-dashboard-code/01-conceptual-explanation/ui.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/chapter-checklist.md` | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/chapter-checklist.md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-16-dashboard-code-chapter-checklist-md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/chapter-checklist.md](../../chapter-16-dashboard-code/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/README.md` | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/README.md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-16-dashboard-code-readme-md) | [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/README.md](../../chapter-16-dashboard-code/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/backend.md` | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/backend.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/backend.md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/backend.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-17-dashboard-selfhosted-code-01-conceptual-explanation-backend-md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/backend.md](../../chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/backend.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/README.md` | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/README.md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-17-dashboard-selfhosted-code-01-conceptual-explanation-readme-md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/README.md](../../chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/service.md` | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/service.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/service.md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/service.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-17-dashboard-selfhosted-code-01-conceptual-explanation-service-md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/service.md](../../chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/service.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/ui.md` | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/ui.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/ui.md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/ui.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-17-dashboard-selfhosted-code-01-conceptual-explanation-ui-md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/ui.md](../../chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/ui.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/chapter-checklist.md` | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/chapter-checklist.md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-17-dashboard-selfhosted-code-chapter-checklist-md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/chapter-checklist.md](../../chapter-17-dashboard-selfhosted-code/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/README.md` | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/README.md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-17-dashboard-selfhosted-code-readme-md) | [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/README.md](../../chapter-17-dashboard-selfhosted-code/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/database-backup.md` | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/database-backup.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/database-backup.md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/database-backup.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-18-other-services-01-conceptual-explanation-database-backup-md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/database-backup.md](../../chapter-18-other-services/01-conceptual-explanation/database-backup.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/README.md` | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/README.md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-18-other-services-01-conceptual-explanation-readme-md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/README.md](../../chapter-18-other-services/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/server.md` | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/server.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/server.md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/server.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-18-other-services-01-conceptual-explanation-server-md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/server.md](../../chapter-18-other-services/01-conceptual-explanation/server.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-18-other-services/chapter-checklist.md` | [body/part-05-maintenance-and-scripts/chapter-18-other-services/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-18-other-services/chapter-checklist.md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-18-other-services-chapter-checklist-md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/chapter-checklist.md](../../chapter-18-other-services/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-18-other-services/README.md` | [body/part-05-maintenance-and-scripts/chapter-18-other-services/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-18-other-services/README.md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-18-other-services-readme-md) | [body/part-05-maintenance-and-scripts/chapter-18-other-services/README.md](../../chapter-18-other-services/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-19-test-modules/01-conceptual-explanation/README.md` | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-19-test-modules/01-conceptual-explanation/README.md) | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-19-test-modules-01-conceptual-explanation-readme-md) | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/01-conceptual-explanation/README.md](../../chapter-19-test-modules/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-19-test-modules/chapter-checklist.md` | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-19-test-modules/chapter-checklist.md) | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-19-test-modules-chapter-checklist-md) | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/chapter-checklist.md](../../chapter-19-test-modules/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-19-test-modules/README.md` | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-19-test-modules/README.md) | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-19-test-modules-readme-md) | [body/part-05-maintenance-and-scripts/chapter-19-test-modules/README.md](../../chapter-19-test-modules/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-infra.md` | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-infra.md](../01-conceptual-explanation/master-infra.md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-infra.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-01-conceptual-explanation-master-infra-md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-infra.md](../01-conceptual-explanation/master-infra.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-modules.md` | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-modules.md](../01-conceptual-explanation/master-modules.md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-modules.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-01-conceptual-explanation-master-modules-md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-modules.md](../01-conceptual-explanation/master-modules.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-test.md` | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-test.md](../01-conceptual-explanation/master-test.md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-test.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-01-conceptual-explanation-master-test-md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-test.md](../01-conceptual-explanation/master-test.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-yabinboxes.md` | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-yabinboxes.md](../01-conceptual-explanation/master-yabinboxes.md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-yabinboxes.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-01-conceptual-explanation-master-yabinboxes-md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-yabinboxes.md](../01-conceptual-explanation/master-yabinboxes.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/org-master.md` | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/org-master.md](../01-conceptual-explanation/org-master.md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/org-master.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-01-conceptual-explanation-org-master-md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/org-master.md](../01-conceptual-explanation/org-master.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/README.md` | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/README.md](../01-conceptual-explanation/README.md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-01-conceptual-explanation-readme-md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/README.md](../01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-20-masters/chapter-checklist.md` | [body/part-05-maintenance-and-scripts/chapter-20-masters/chapter-checklist.md](../chapter-checklist.md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-chapter-checklist-md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/chapter-checklist.md](../chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-20-masters/README.md` | [body/part-05-maintenance-and-scripts/chapter-20-masters/README.md](../README.md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-readme-md) | [body/part-05-maintenance-and-scripts/chapter-20-masters/README.md](../README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/01-conceptual-explanation/README.md` | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/01-conceptual-explanation/README.md) | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-21-script-summary-and-reports-01-conceptual-explanation-readme-md) | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/01-conceptual-explanation/README.md](../../chapter-21-script-summary-and-reports/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/chapter-checklist.md` | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/chapter-checklist.md) | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-21-script-summary-and-reports-chapter-checklist-md) | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/chapter-checklist.md](../../chapter-21-script-summary-and-reports/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/README.md` | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/README.md) | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-21-script-summary-and-reports-readme-md) | [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/README.md](../../chapter-21-script-summary-and-reports/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/01-conceptual-explanation/README.md` | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/01-conceptual-explanation/README.md) | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/01-conceptual-explanation/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-22-summary-and-further-reading-01-conceptual-explanation-readme-md) | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/01-conceptual-explanation/README.md](../../chapter-22-summary-and-further-reading/01-conceptual-explanation/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/chapter-checklist.md` | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/chapter-checklist.md) | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/chapter-checklist.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-22-summary-and-further-reading-chapter-checklist-md) | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/chapter-checklist.md](../../chapter-22-summary-and-further-reading/chapter-checklist.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/README.md` | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/README.md) | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-22-summary-and-further-reading-readme-md) | [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/README.md](../../chapter-22-summary-and-further-reading/README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `body/part-05-maintenance-and-scripts/README.md` | [body/part-05-maintenance-and-scripts/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/README.md) | [body/part-05-maintenance-and-scripts/README.md](#master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-readme-md) | [body/part-05-maintenance-and-scripts/README.md](../../README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `front-matter/conventions.md` | [front-matter/conventions.md](../masters/master-yabinboxes/front-matter/conventions.md) | [front-matter/conventions.md](#master-yabinboxes-master-yabinboxes-front-matter-conventions-md) | [front-matter/conventions.md](../../../../front-matter/conventions.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `front-matter/preface.md` | [front-matter/preface.md](../masters/master-yabinboxes/front-matter/preface.md) | [front-matter/preface.md](#master-yabinboxes-master-yabinboxes-front-matter-preface-md) | [front-matter/preface.md](../../../../front-matter/preface.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `front-matter/table-of-contents.md` | [front-matter/table-of-contents.md](../masters/master-yabinboxes/front-matter/table-of-contents.md) | [front-matter/table-of-contents.md](#master-yabinboxes-master-yabinboxes-front-matter-table-of-contents-md) | [front-matter/table-of-contents.md](../../../../front-matter/table-of-contents.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `README.md` | [README.md](../masters/master-yabinboxes/README.md) | [README.md](#master-yabinboxes-master-yabinboxes-readme-md) | [README.md](../../../../README.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `toc.md` | [toc.md](../masters/master-yabinboxes/toc.md) | [toc.md](#master-yabinboxes-master-yabinboxes-toc-md) | [toc.md](../../../../toc.md) | [yabinboxes](../../../../references/yabinboxes) |
+| `.gitignore` | [.gitignore](../masters/master-yabinboxes/.gitignore) | [.gitignore](#master-yabinboxes-master-yabinboxes-gitignore) | [.gitignore](../../../../.gitignore) | [yabinboxes](../../../../references/yabinboxes) |
 
 ### Text
 
@@ -314,11 +314,11 @@ Each heading is one file from that master. The text below the heading is the fil
 
 ##### `main.md`
 
-Repository: [snow-monkeys-modules/master-modules/main.md](../../../../../../snow-monkeys-modules/master-modules/main.md)
+Repository: [snow-monkeys-modules/master-modules/main.md](../../../../references/snow-monkeys-modules/master-modules/main.md)
 Copy: [main.md](../masters/master-modules/main.md)
 
 
-Implementation: [snow-monkeys-modules](../../../../../../snow-monkeys-modules)
+Implementation: [snow-monkeys-modules](../../../../references/snow-monkeys-modules)
 
 ```markdown
 Author: Yabin Monroy Mendez
@@ -368,11 +368,11 @@ Description: Modules schema
 
 ##### `list-of-resources.md`
 
-Repository: [snow-monkeys-modules/master-modules/list-of-resources.md](../../../../../../snow-monkeys-modules/master-modules/list-of-resources.md)
+Repository: [snow-monkeys-modules/master-modules/list-of-resources.md](../../../../references/snow-monkeys-modules/master-modules/list-of-resources.md)
 Copy: [list-of-resources.md](../masters/master-modules/list-of-resources.md)
 
 
-Implementation: [snow-monkeys-modules](../../../../../../snow-monkeys-modules)
+Implementation: [snow-monkeys-modules](../../../../references/snow-monkeys-modules)
 
 ```markdown
 Hetzner
@@ -451,11 +451,11 @@ Reusable workflow: publish a deployment to the Snow API or resolve a Snow resour
 
 ##### `master-aws.md`
 
-Repository: [snow-monkeys-modules/master-modules/master-aws.md](../../../../../../snow-monkeys-modules/master-modules/master-aws.md)
+Repository: [snow-monkeys-modules/master-modules/master-aws.md](../../../../references/snow-monkeys-modules/master-modules/master-aws.md)
 Copy: [master-aws.md](../masters/master-modules/master-aws.md)
 
 
-Implementation: [snow-monkeys-modules/aws-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml)
+Implementation: [snow-monkeys-modules/aws-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml)
 
 ````markdown
 Author: Yabin Monroy Mendez
@@ -930,11 +930,11 @@ Queues a health check after APPLICATION notify. Skipped when `health_url` is emp
 
 ##### `master-azure.md`
 
-Repository: [snow-monkeys-modules/master-modules/master-azure.md](../../../../../../snow-monkeys-modules/master-modules/master-azure.md)
+Repository: [snow-monkeys-modules/master-modules/master-azure.md](../../../../references/snow-monkeys-modules/master-modules/master-azure.md)
 Copy: [master-azure.md](../masters/master-modules/master-azure.md)
 
 
-Implementation: [snow-monkeys-modules/azure-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/azure-iac/.github/workflows/main.yml)
+Implementation: [snow-monkeys-modules/azure-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/azure-iac/.github/workflows/main.yml)
 
 ````markdown
 Author: Yabin Monroy Mendez
@@ -1416,11 +1416,11 @@ Queues a health check after APPLICATION notify. Skipped when `health_url` is emp
 
 ##### `master-civo.md`
 
-Repository: [snow-monkeys-modules/master-modules/master-civo.md](../../../../../../snow-monkeys-modules/master-modules/master-civo.md)
+Repository: [snow-monkeys-modules/master-modules/master-civo.md](../../../../references/snow-monkeys-modules/master-modules/master-civo.md)
 Copy: [master-civo.md](../masters/master-modules/master-civo.md)
 
 
-Implementation: [snow-monkeys-modules/civo-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/civo-iac/.github/workflows/main.yml)
+Implementation: [snow-monkeys-modules/civo-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/civo-iac/.github/workflows/main.yml)
 
 ````markdown
 Author: Yabin Monroy Mendez
@@ -2038,11 +2038,11 @@ Reports an **APPLICATION**.
 
 ##### `master-cloudflare.md`
 
-Repository: [snow-monkeys-modules/master-modules/master-cloudflare.md](../../../../../../snow-monkeys-modules/master-modules/master-cloudflare.md)
+Repository: [snow-monkeys-modules/master-modules/master-cloudflare.md](../../../../references/snow-monkeys-modules/master-modules/master-cloudflare.md)
 Copy: [master-cloudflare.md](../masters/master-modules/master-cloudflare.md)
 
 
-Implementation: [snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml)
+Implementation: [snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml)
 
 ````markdown
 Author: Yabin Monroy Mendez
@@ -2516,11 +2516,11 @@ Queues a health check after APPLICATION notify. Skipped when `health_url` is emp
 
 ##### `master-digital-ocean.md`
 
-Repository: [snow-monkeys-modules/master-modules/master-digital-ocean.md](../../../../../../snow-monkeys-modules/master-modules/master-digital-ocean.md)
+Repository: [snow-monkeys-modules/master-modules/master-digital-ocean.md](../../../../references/snow-monkeys-modules/master-modules/master-digital-ocean.md)
 Copy: [master-digital-ocean.md](../masters/master-modules/master-digital-ocean.md)
 
 
-Implementation: [snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml)
+Implementation: [snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml)
 
 ````markdown
 Author: Yabin Monroy Mendez
@@ -2999,11 +2999,11 @@ Queues a health check after APPLICATION notify. Skipped when `health_url` is emp
 
 ##### `master-docker.md`
 
-Repository: [snow-monkeys-modules/master-modules/master-docker.md](../../../../../../snow-monkeys-modules/master-modules/master-docker.md)
+Repository: [snow-monkeys-modules/master-modules/master-docker.md](../../../../references/snow-monkeys-modules/master-modules/master-docker.md)
 Copy: [master-docker.md](../masters/master-modules/master-docker.md)
 
 
-Implementation: [snow-monkeys-modules/docker-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/docker-iac/.github/workflows/main.yml)
+Implementation: [snow-monkeys-modules/docker-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/docker-iac/.github/workflows/main.yml)
 
 ````markdown
 Author: Yabin Monroy Mendez
@@ -3205,11 +3205,11 @@ The workflow passes `type`. The action does not declare that input.
 
 ##### `master-gcp.md`
 
-Repository: [snow-monkeys-modules/master-modules/master-gcp.md](../../../../../../snow-monkeys-modules/master-modules/master-gcp.md)
+Repository: [snow-monkeys-modules/master-modules/master-gcp.md](../../../../references/snow-monkeys-modules/master-modules/master-gcp.md)
 Copy: [master-gcp.md](../masters/master-modules/master-gcp.md)
 
 
-Implementation: [snow-monkeys-modules/gcp-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/gcp-iac/.github/workflows/main.yml)
+Implementation: [snow-monkeys-modules/gcp-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/gcp-iac/.github/workflows/main.yml)
 
 ````markdown
 Author: Yabin Monroy Mendez
@@ -3686,11 +3686,11 @@ Queues a health check after APPLICATION notify. Skipped when `health_url` is emp
 
 ##### `master-hetzner.md`
 
-Repository: [snow-monkeys-modules/master-modules/master-hetzner.md](../../../../../../snow-monkeys-modules/master-modules/master-hetzner.md)
+Repository: [snow-monkeys-modules/master-modules/master-hetzner.md](../../../../references/snow-monkeys-modules/master-modules/master-hetzner.md)
 Copy: [master-hetzner.md](../masters/master-modules/master-hetzner.md)
 
 
-Implementation: [snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml)
+Implementation: [snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml)
 
 ````markdown
 Author: Yabin Monroy Mendez
@@ -4168,11 +4168,11 @@ Queues a health check after APPLICATION notify. Skipped when `health_url` is emp
 
 ##### `master-snow.md`
 
-Repository: [snow-monkeys-modules/master-modules/master-snow.md](../../../../../../snow-monkeys-modules/master-modules/master-snow.md)
+Repository: [snow-monkeys-modules/master-modules/master-snow.md](../../../../references/snow-monkeys-modules/master-modules/master-snow.md)
 Copy: [master-snow.md](../masters/master-modules/master-snow.md)
 
 
-Implementation: [snow-monkeys-modules/snow-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/snow-iac/.github/workflows/main.yml)
+Implementation: [snow-monkeys-modules/snow-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/snow-iac/.github/workflows/main.yml)
 
 ````markdown
 Author: Yabin Monroy Mendez
@@ -4367,11 +4367,11 @@ A bare IP `snow_host_url` with no `http://` or `https://` prefix gets `https://`
 
 ##### `outputs.md`
 
-Repository: [snow-monkeys-modules/master-modules/outputs.md](../../../../../../snow-monkeys-modules/master-modules/outputs.md)
+Repository: [snow-monkeys-modules/master-modules/outputs.md](../../../../references/snow-monkeys-modules/master-modules/outputs.md)
 Copy: [outputs.md](../masters/master-modules/outputs.md)
 
 
-Implementation: [snow-monkeys-modules](../../../../../../snow-monkeys-modules)
+Implementation: [snow-monkeys-modules](../../../../references/snow-monkeys-modules)
 
 ````markdown
 Author: Yabin Monroy Mendez
@@ -4547,11 +4547,11 @@ Kubernetes calls (`type` empty or `kubernetes`) leave every output empty. Terraf
 
 ##### `.gitignore`
 
-Repository: [snow-monkeys-modules/master-modules/.gitignore](../../../../../../snow-monkeys-modules/master-modules/.gitignore)
+Repository: [snow-monkeys-modules/master-modules/.gitignore](../../../../references/snow-monkeys-modules/master-modules/.gitignore)
 Copy: [.gitignore](../masters/master-modules/.gitignore)
 
 
-Implementation: [snow-monkeys-modules](../../../../../../snow-monkeys-modules)
+Implementation: [snow-monkeys-modules](../../../../references/snow-monkeys-modules)
 
 ```text
 # Local .terraform directories
@@ -4608,11 +4608,11 @@ terraform.rc
 
 ##### `main.md`
 
-Repository: [snow-monkeys-infra/master-infra/main.md](../../../../../../snow-monkeys-infra/master-infra/main.md)
+Repository: [snow-monkeys-infra/master-infra/main.md](../../../../references/snow-monkeys-infra/master-infra/main.md)
 Copy: [main.md](../masters/master-infra/main.md)
 
 
-Implementation: [snow-monkeys-infra/master-infra/master.md](../../../../../../snow-monkeys-infra/master-infra/master.md)
+Implementation: [snow-monkeys-infra/master-infra/master.md](../../../../references/snow-monkeys-infra/master-infra/master.md)
 
 ```markdown
 Author: Yabin Monroy Mendez
@@ -4626,11 +4626,11 @@ Tasks:
 
 ##### `.github/workflows/monthly-master.yml`
 
-Repository: [snow-monkeys-infra/master-infra/.github/workflows/monthly-master.yml](../../../../../../snow-monkeys-infra/master-infra/.github/workflows/monthly-master.yml)
+Repository: [snow-monkeys-infra/master-infra/.github/workflows/monthly-master.yml](../../../../references/snow-monkeys-infra/master-infra/.github/workflows/monthly-master.yml)
 Copy: [.github/workflows/monthly-master.yml](../masters/master-infra/.github/workflows/monthly-master.yml)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform)
+Implementation: [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform)
 
 ```yaml
 name: Weekly Master Run
@@ -4693,11 +4693,11 @@ jobs:
 
 ##### `iac-structure/EXAMPLES.md`
 
-Repository: [snow-monkeys-infra/master-infra/iac-structure/EXAMPLES.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/EXAMPLES.md)
+Repository: [snow-monkeys-infra/master-infra/iac-structure/EXAMPLES.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/EXAMPLES.md)
 Copy: [iac-structure/EXAMPLES.md](../masters/master-infra/iac-structure/EXAMPLES.md)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform)
+Implementation: [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform)
 
 ````markdown
 # Examples
@@ -5034,27 +5034,27 @@ Written to `/tmp/deployment-script/.env` (or `/tmp/initial-setup/.env` for `type
 
 ## Related docs
 
-- [FLOW.md](FLOW.md) — provider + type dispatch
-- [INPUTS_OUTPUTS.md](INPUTS_OUTPUTS.md) — workflow and module inputs/outputs
-- [INTERNAL.md](INTERNAL.md) — adding a provider or resource
-- [NAMING.md](NAMING.md) — string format conventions
-- [TERRAFORM_COMPLIANCE.md](TERRAFORM_COMPLIANCE.md) — checkout vs this spec
+- [FLOW.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/FLOW.md) — provider + type dispatch
+- [INPUTS_OUTPUTS.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md) — workflow and module inputs/outputs
+- [INTERNAL.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INTERNAL.md) — adding a provider or resource
+- [NAMING.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/NAMING.md) — string format conventions
+- [TERRAFORM_COMPLIANCE.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md) — checkout vs this spec
 ````
 
 <a id="master-snow-monkeys-infra-master-infra-iac-structure-flow-md"></a>
 
 ##### `iac-structure/FLOW.md`
 
-Repository: [snow-monkeys-infra/master-infra/iac-structure/FLOW.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/FLOW.md)
+Repository: [snow-monkeys-infra/master-infra/iac-structure/FLOW.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/FLOW.md)
 Copy: [iac-structure/FLOW.md](../masters/master-infra/iac-structure/FLOW.md)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform)
+Implementation: [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform)
 
 ````markdown
 # Workflow logic flow — `main.yml`
 
-Shared contract for every `*-iac` reusable workflow (`hetzner-iac`, future `aws-iac`, `cloudflare-iac`, …). Terraform lives in [snow-monkeys-infra/iac-terraform](https://github.com/snow-monkeys-infra/iac-terraform). For what the checkout actually contains see [TERRAFORM_COMPLIANCE.md](TERRAFORM_COMPLIANCE.md). For internals see [INTERNAL.md](INTERNAL.md). For the caller contract see [INPUTS_OUTPUTS.md](INPUTS_OUTPUTS.md). For examples see [EXAMPLES.md](EXAMPLES.md).
+Shared contract for every `*-iac` reusable workflow (`hetzner-iac`, future `aws-iac`, `cloudflare-iac`, …). Terraform lives in [snow-monkeys-infra/iac-terraform](https://github.com/snow-monkeys-infra/iac-terraform). For what the checkout actually contains see [TERRAFORM_COMPLIANCE.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md). For internals see [INTERNAL.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INTERNAL.md). For the caller contract see [INPUTS_OUTPUTS.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md). For examples see [EXAMPLES.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/EXAMPLES.md).
 
 ---
 
@@ -5436,22 +5436,22 @@ Unset outputs are empty strings. Extra Terraform outputs (`server_id`, `server_s
 
 ## Related docs
 
-- [TERRAFORM_COMPLIANCE.md](TERRAFORM_COMPLIANCE.md) — checkout vs this spec
-- [INTERNAL.md](INTERNAL.md) — actions, module layout, adding a provider
-- [INPUTS_OUTPUTS.md](INPUTS_OUTPUTS.md) — workflow and Terraform inputs/outputs
-- [NAMING.md](NAMING.md) — snake_case / camelCase conventions
-- [EXAMPLES.md](EXAMPLES.md) — caller workflow and local Terraform examples
+- [TERRAFORM_COMPLIANCE.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md) — checkout vs this spec
+- [INTERNAL.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INTERNAL.md) — actions, module layout, adding a provider
+- [INPUTS_OUTPUTS.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md) — workflow and Terraform inputs/outputs
+- [NAMING.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/NAMING.md) — snake_case / camelCase conventions
+- [EXAMPLES.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/EXAMPLES.md) — caller workflow and local Terraform examples
 ````
 
 <a id="master-snow-monkeys-infra-master-infra-iac-structure-iac-terraform-code-workspace"></a>
 
 ##### `iac-structure/iac-terraform.code-workspace`
 
-Repository: [snow-monkeys-infra/master-infra/iac-structure/iac-terraform.code-workspace](../../../../../../snow-monkeys-infra/master-infra/iac-structure/iac-terraform.code-workspace)
+Repository: [snow-monkeys-infra/master-infra/iac-structure/iac-terraform.code-workspace](../../../../references/snow-monkeys-infra/master-infra/iac-structure/iac-terraform.code-workspace)
 Copy: [iac-structure/iac-terraform.code-workspace](../masters/master-infra/iac-structure/iac-terraform.code-workspace)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform)
+Implementation: [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform)
 
 ```json
 {
@@ -5470,18 +5470,18 @@ Implementation: [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkey
 
 ##### `iac-structure/INPUTS_OUTPUTS.md`
 
-Repository: [snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md)
+Repository: [snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md)
 Copy: [iac-structure/INPUTS_OUTPUTS.md](../masters/master-infra/iac-structure/INPUTS_OUTPUTS.md)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform)
+Implementation: [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform)
 
 ````markdown
 # Inputs, secrets, and outputs
 
-Shared `workflow_call` contract for every `snow-monkeys-modules/<provider>-iac` workflow, plus the modules in [snow-monkeys-infra/iac-terraform](https://github.com/snow-monkeys-infra/iac-terraform). For logic flow see [FLOW.md](FLOW.md). For caller examples see [EXAMPLES.md](EXAMPLES.md).
+Shared `workflow_call` contract for every `snow-monkeys-modules/<provider>-iac` workflow, plus the modules in [snow-monkeys-infra/iac-terraform](https://github.com/snow-monkeys-infra/iac-terraform). For logic flow see [FLOW.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/FLOW.md). For caller examples see [EXAMPLES.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/EXAMPLES.md).
 
-All workflow keys use **snake_case**. See [NAMING.md](NAMING.md).
+All workflow keys use **snake_case**. See [NAMING.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/NAMING.md).
 
 ---
 
@@ -5815,27 +5815,27 @@ jobs:
 
 ## Related docs
 
-- [FLOW.md](FLOW.md) — how inputs drive workflow logic
-- [EXAMPLES.md](EXAMPLES.md) — caller workflow and local Terraform examples
-- [INTERNAL.md](INTERNAL.md) — module files and action internals
-- [NAMING.md](NAMING.md) — snake_case conventions
-- [TERRAFORM_COMPLIANCE.md](TERRAFORM_COMPLIANCE.md) — checkout vs this spec
+- [FLOW.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/FLOW.md) — how inputs drive workflow logic
+- [EXAMPLES.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/EXAMPLES.md) — caller workflow and local Terraform examples
+- [INTERNAL.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INTERNAL.md) — module files and action internals
+- [NAMING.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/NAMING.md) — snake_case conventions
+- [TERRAFORM_COMPLIANCE.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md) — checkout vs this spec
 ````
 
 <a id="master-snow-monkeys-infra-master-infra-iac-structure-internal-md"></a>
 
 ##### `iac-structure/INTERNAL.md`
 
-Repository: [snow-monkeys-infra/master-infra/iac-structure/INTERNAL.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/INTERNAL.md)
+Repository: [snow-monkeys-infra/master-infra/iac-structure/INTERNAL.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INTERNAL.md)
 Copy: [iac-structure/INTERNAL.md](../masters/master-infra/iac-structure/INTERNAL.md)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform)
+Implementation: [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform)
 
 ````markdown
 # Internal: multi-provider IaC implementation guide
 
-Spec for maintainers of `*-iac` reusable workflows and the modules in **iac-terraform**. For the caller contract see [INPUTS_OUTPUTS.md](INPUTS_OUTPUTS.md). For step-by-step logic see [FLOW.md](FLOW.md).
+Spec for maintainers of `*-iac` reusable workflows and the modules in **iac-terraform**. For the caller contract see [INPUTS_OUTPUTS.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md). For step-by-step logic see [FLOW.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/FLOW.md).
 
 Each reusable workflow in `snow-monkeys-modules/<provider>-iac` provisions cloud resources or deploys Docker Compose services/apps, then notifies Snow (`CLUSTER` / `SERVICE` / `APPLICATION`). Callers invoke it via `workflow_call`.
 
@@ -6206,7 +6206,7 @@ url: ${{ needs.implement_types.outputs.address != '' && needs.implement_types.ou
 2. Add `master-<provider>.md` that points at that provider’s Terraform Registry docs.
 3. Create `v1/modules/dev/<provider>/<resource>/` in `iac-terraform` (`main.tf`, `variables.tf`, `outputs.tf`).
 4. Reuse this contract in `snow-monkeys-modules/<provider>-iac` (same jobs, types, and output names).
-5. Map provider credentials in [INPUTS_OUTPUTS.md](INPUTS_OUTPUTS.md) and add a caller snippet in [EXAMPLES.md](EXAMPLES.md).
+5. Map provider credentials in [INPUTS_OUTPUTS.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md) and add a caller snippet in [EXAMPLES.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/EXAMPLES.md).
 
 ## Adding a resource under an existing provider
 
@@ -6214,7 +6214,7 @@ url: ${{ needs.implement_types.outputs.address != '' && needs.implement_types.ou
 2. Create `v1/modules/dev/<provider>/<resource>/`.
 3. Point the Terraform action at that directory when `inputs.resource` (or the type default) matches.
 4. Map the primary id to `server_ip` or `resource_id`.
-5. Update [INPUTS_OUTPUTS.md](INPUTS_OUTPUTS.md) and [EXAMPLES.md](EXAMPLES.md).
+5. Update [INPUTS_OUTPUTS.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md) and [EXAMPLES.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/EXAMPLES.md).
 
 ---
 
@@ -6229,7 +6229,7 @@ url: ${{ needs.implement_types.outputs.address != '' && needs.implement_types.ou
 | `host` | Compose only. IP, hostname, or Snow name. |
 | `expected_url` | `hostname:port` reported to Snow |
 | `health_url` | When set on `docker_compose_app`, queues liveness after notify |
-| Provider token(s) | Required for `server` and `resource` — see [INPUTS_OUTPUTS.md](INPUTS_OUTPUTS.md) |
+| Provider token(s) | Required for `server` and `resource` — see [INPUTS_OUTPUTS.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md) |
 | `ssh_public_key` / `ssh_private_key` | Required for `server` bootstrap and both compose types. Not required for resource-only apply. |
 | `snow_token` | Host resolution + snow-iac notify/health |
 | `snow_github_token` | Clone `iac-terraform` on the runner; clone private repos on the remote |
@@ -6250,11 +6250,11 @@ url: ${{ needs.implement_types.outputs.address != '' && needs.implement_types.ou
 
 ##### `iac-structure/NAMING.md`
 
-Repository: [snow-monkeys-infra/master-infra/iac-structure/NAMING.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/NAMING.md)
+Repository: [snow-monkeys-infra/master-infra/iac-structure/NAMING.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/NAMING.md)
 Copy: [iac-structure/NAMING.md](../masters/master-infra/iac-structure/NAMING.md)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform)
+Implementation: [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform)
 
 ````markdown
 # Naming conventions
@@ -6401,29 +6401,29 @@ Workflow `server_ip` is the module’s public address output. Workflow `resource
 
 ## Related docs
 
-- [FLOW.md](FLOW.md) — step-by-step logic flow
-- [EXAMPLES.md](EXAMPLES.md) — caller workflow and local Terraform examples
-- [INTERNAL.md](INTERNAL.md) — implementation details and module layout
-- [INPUTS_OUTPUTS.md](INPUTS_OUTPUTS.md) — workflow and Terraform inputs/outputs
-- [TERRAFORM_COMPLIANCE.md](TERRAFORM_COMPLIANCE.md) — checkout vs this spec
+- [FLOW.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/FLOW.md) — step-by-step logic flow
+- [EXAMPLES.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/EXAMPLES.md) — caller workflow and local Terraform examples
+- [INTERNAL.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INTERNAL.md) — implementation details and module layout
+- [INPUTS_OUTPUTS.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md) — workflow and Terraform inputs/outputs
+- [TERRAFORM_COMPLIANCE.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md) — checkout vs this spec
 ````
 
 <a id="master-snow-monkeys-infra-master-infra-iac-structure-terraform-compliance-md"></a>
 
 ##### `iac-structure/TERRAFORM_COMPLIANCE.md`
 
-Repository: [snow-monkeys-infra/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md)
+Repository: [snow-monkeys-infra/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md)
 Copy: [iac-structure/TERRAFORM_COMPLIANCE.md](../masters/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform)
+Implementation: [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform)
 
 ````markdown
 # Terraform compliance — `iac-terraform`
 
 How this spec maps to the checked-out code in [snow-monkeys-infra/iac-terraform](https://github.com/snow-monkeys-infra/iac-terraform). Source of truth is the Terraform tree, not `docs/project-structure.md` (that file is stale).
 
-For workflow dispatch see [FLOW.md](FLOW.md). For expected module files see [INTERNAL.md](INTERNAL.md). For mapped inputs/outputs see [INPUTS_OUTPUTS.md](INPUTS_OUTPUTS.md).
+For workflow dispatch see [FLOW.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/FLOW.md). For expected module files see [INTERNAL.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INTERNAL.md). For mapped inputs/outputs see [INPUTS_OUTPUTS.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md).
 
 Checked against local checkout: `v1/modules/dev/` and `v1/k8s/`.
 
@@ -6651,7 +6651,7 @@ Most `README_*.md` files outside Hetzner are empty stubs (one blank line).
 | GCP | none (hardcoded project) | — |
 | AWS | none | — |
 
-Hyphenated Terraform variables are an exception to [NAMING.md](NAMING.md) snake_case. Keep the name the module already uses.
+Hyphenated Terraform variables are an exception to [NAMING.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/NAMING.md) snake_case. Keep the name the module already uses.
 
 ---
 
@@ -6692,22 +6692,22 @@ Do **not** treat these as ready workflow targets until the gaps above are fixed:
 
 ## Related docs
 
-- [FLOW.md](FLOW.md) — `provider` + `type` → module path
-- [INTERNAL.md](INTERNAL.md) — expected files and how to add a provider
-- [INPUTS_OUTPUTS.md](INPUTS_OUTPUTS.md) — workflow vs Terraform variables
-- [EXAMPLES.md](EXAMPLES.md) — caller and local apply examples
-- [NAMING.md](NAMING.md) — path and `TF_VAR_*` conventions
+- [FLOW.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/FLOW.md) — `provider` + `type` → module path
+- [INTERNAL.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INTERNAL.md) — expected files and how to add a provider
+- [INPUTS_OUTPUTS.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md) — workflow vs Terraform variables
+- [EXAMPLES.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/EXAMPLES.md) — caller and local apply examples
+- [NAMING.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/NAMING.md) — path and `TF_VAR_*` conventions
 ````
 
 <a id="master-snow-monkeys-infra-master-infra-list-of-resources-md"></a>
 
 ##### `list-of-resources.md`
 
-Repository: [snow-monkeys-infra/master-infra/list-of-resources.md](../../../../../../snow-monkeys-infra/master-infra/list-of-resources.md)
+Repository: [snow-monkeys-infra/master-infra/list-of-resources.md](../../../../references/snow-monkeys-infra/master-infra/list-of-resources.md)
 Copy: [list-of-resources.md](../masters/master-infra/list-of-resources.md)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform/v1/modules/dev](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev)
+Implementation: [snow-monkeys-infra/iac-terraform/v1/modules/dev](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev)
 
 ```markdown
 Hetzner
@@ -6786,11 +6786,11 @@ Reusable workflow: publish a deployment to the Snow API or resolve a Snow resour
 
 ##### `master-aws.md`
 
-Repository: [snow-monkeys-infra/master-infra/master-aws.md](../../../../../../snow-monkeys-infra/master-infra/master-aws.md)
+Repository: [snow-monkeys-infra/master-infra/master-aws.md](../../../../references/snow-monkeys-infra/master-infra/master-aws.md)
 Copy: [master-aws.md](../masters/master-infra/master-aws.md)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform/v1/modules/dev/aws](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws)
+Implementation: [snow-monkeys-infra/iac-terraform/v1/modules/dev/aws](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws)
 
 ```markdown
 Author: Yabin Monroy Mendez
@@ -6847,11 +6847,11 @@ Tasks:
 
 ##### `master-azure.md`
 
-Repository: [snow-monkeys-infra/master-infra/master-azure.md](../../../../../../snow-monkeys-infra/master-infra/master-azure.md)
+Repository: [snow-monkeys-infra/master-infra/master-azure.md](../../../../references/snow-monkeys-infra/master-infra/master-azure.md)
 Copy: [master-azure.md](../masters/master-infra/master-azure.md)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform/v1/modules/dev/azure](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure)
+Implementation: [snow-monkeys-infra/iac-terraform/v1/modules/dev/azure](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure)
 
 ```markdown
 Author: Yabin Monroy Mendez
@@ -6906,11 +6906,11 @@ Tasks:
 
 ##### `master-civo.md`
 
-Repository: [snow-monkeys-infra/master-infra/master-civo.md](../../../../../../snow-monkeys-infra/master-infra/master-civo.md)
+Repository: [snow-monkeys-infra/master-infra/master-civo.md](../../../../references/snow-monkeys-infra/master-infra/master-civo.md)
 Copy: [master-civo.md](../masters/master-infra/master-civo.md)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform/v1/modules/dev/civo](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo)
+Implementation: [snow-monkeys-infra/iac-terraform/v1/modules/dev/civo](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo)
 
 ```markdown
 Author: Yabin Monroy Mendez
@@ -6923,11 +6923,11 @@ Tasks: Nothing to do...
 
 ##### `master-cloudflare.md`
 
-Repository: [snow-monkeys-infra/master-infra/master-cloudflare.md](../../../../../../snow-monkeys-infra/master-infra/master-cloudflare.md)
+Repository: [snow-monkeys-infra/master-infra/master-cloudflare.md](../../../../references/snow-monkeys-infra/master-infra/master-cloudflare.md)
 Copy: [master-cloudflare.md](../masters/master-infra/master-cloudflare.md)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare)
+Implementation: [snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare)
 
 ```markdown
 Author: Yabin Monroy Mendez
@@ -6978,11 +6978,11 @@ Tasks:
 
 ##### `master-digitalocean.md`
 
-Repository: [snow-monkeys-infra/master-infra/master-digitalocean.md](../../../../../../snow-monkeys-infra/master-infra/master-digitalocean.md)
+Repository: [snow-monkeys-infra/master-infra/master-digitalocean.md](../../../../references/snow-monkeys-infra/master-infra/master-digitalocean.md)
 Copy: [master-digitalocean.md](../masters/master-infra/master-digitalocean.md)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean)
+Implementation: [snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean)
 
 ```markdown
 Author: Yabin Monroy Mendez
@@ -7030,11 +7030,11 @@ Tasks:
 
 ##### `master-gcp.md`
 
-Repository: [snow-monkeys-infra/master-infra/master-gcp.md](../../../../../../snow-monkeys-infra/master-infra/master-gcp.md)
+Repository: [snow-monkeys-infra/master-infra/master-gcp.md](../../../../references/snow-monkeys-infra/master-infra/master-gcp.md)
 Copy: [master-gcp.md](../masters/master-infra/master-gcp.md)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp)
+Implementation: [snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp)
 
 ```markdown
 Author: Yabin Monroy Mendez
@@ -7088,11 +7088,11 @@ Tasks:
 
 ##### `master-hetzner.md`
 
-Repository: [snow-monkeys-infra/master-infra/master-hetzner.md](../../../../../../snow-monkeys-infra/master-infra/master-hetzner.md)
+Repository: [snow-monkeys-infra/master-infra/master-hetzner.md](../../../../references/snow-monkeys-infra/master-infra/master-hetzner.md)
 Copy: [master-hetzner.md](../masters/master-infra/master-hetzner.md)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner)
+Implementation: [snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner)
 
 ```markdown
 Author: Yabin Monroy Mendez
@@ -7142,11 +7142,11 @@ Tasks:
 
 ##### `master.md`
 
-Repository: [snow-monkeys-infra/master-infra/master.md](../../../../../../snow-monkeys-infra/master-infra/master.md)
+Repository: [snow-monkeys-infra/master-infra/master.md](../../../../references/snow-monkeys-infra/master-infra/master.md)
 Copy: [master.md](../masters/master-infra/master.md)
 
 
-Implementation: [snow-monkeys-infra/iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform)
+Implementation: [snow-monkeys-infra/iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform)
 
 ```markdown
 Author: Yabin Monroy Mendez
@@ -7176,11 +7176,11 @@ Tasks:
 
 ##### `temporal-notes.txt`
 
-Repository: [snow-monkeys-infra/master-infra/temporal-notes.txt](../../../../../../snow-monkeys-infra/master-infra/temporal-notes.txt)
+Repository: [snow-monkeys-infra/master-infra/temporal-notes.txt](../../../../references/snow-monkeys-infra/master-infra/temporal-notes.txt)
 Copy: [temporal-notes.txt](../masters/master-infra/temporal-notes.txt)
 
 
-Implementation: [snow-monkeys-infra](../../../../../../snow-monkeys-infra)
+Implementation: [snow-monkeys-infra](../../../../references/snow-monkeys-infra)
 
 ```text
 # ommit everything here
@@ -7274,11 +7274,11 @@ weekly-master.md
 
 ##### `.gitignore`
 
-Repository: [snow-monkeys-infra/master-infra/.gitignore](../../../../../../snow-monkeys-infra/master-infra/.gitignore)
+Repository: [snow-monkeys-infra/master-infra/.gitignore](../../../../references/snow-monkeys-infra/master-infra/.gitignore)
 Copy: [.gitignore](../masters/master-infra/.gitignore)
 
 
-Implementation: [snow-monkeys-infra](../../../../../../snow-monkeys-infra)
+Implementation: [snow-monkeys-infra](../../../../references/snow-monkeys-infra)
 
 ```text
 # Local .terraform directories
@@ -7335,11 +7335,11 @@ terraform.rc
 
 ##### `main.md`
 
-Repository: [test-snow-monkeys/master-test/main.md](../../../../../../test-snow-monkeys/master-test/main.md)
+Repository: [test-snow-monkeys/master-test/main.md](../../../../references/test-snow-monkeys/master-test/main.md)
 Copy: [main.md](../masters/master-test/main.md)
 
 
-Implementation: [test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml](../../../../../../test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml)
+Implementation: [test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml](../../../../references/test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml)
 
 ```markdown
 Author: Yabin Monroy Mendez
@@ -7452,11 +7452,11 @@ Description: Test Suite for modules
 
 ##### `aws-test-suite.md`
 
-Repository: [test-snow-monkeys/master-test/aws-test-suite.md](../../../../../../test-snow-monkeys/master-test/aws-test-suite.md)
+Repository: [test-snow-monkeys/master-test/aws-test-suite.md](../../../../references/test-snow-monkeys/master-test/aws-test-suite.md)
 Copy: [aws-test-suite.md](../masters/master-test/aws-test-suite.md)
 
 
-Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/test-aws.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-aws.yml)
+Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/test-aws.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-aws.yml)
 
 ````markdown
 # AWS Test Flow
@@ -7464,7 +7464,7 @@ Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/te
 **Author:** Yabin Monroy Mendez  
 **Description:** End-to-end flow for `examples/.github/workflows/test-aws.yml`.  
 **Workflow name:** `Automation test AWS modules` (`name` and `run-name`)  
-**Rules:** [test-suite-rules.md](test-suite-rules.md)
+**Rules:** [test-suite-rules.md](../../../../references/test-snow-monkeys/master-test/test-suite-rules.md)
 
 ## Purpose
 
@@ -7530,7 +7530,7 @@ The master orchestrator in `automation-test-snow` starts it by posting:
 event_type: automation-aws-test-event
 ```
 
-See [testflow.md](testflow.md) for the dispatch path.
+See [testflow.md](../../../../references/test-snow-monkeys/master-test/testflow.md) for the dispatch path.
 
 ## Components
 
@@ -7826,18 +7826,18 @@ It then prints an AWS success or failure notification from
 - If `destroy_server_on_aws` fails, the workflow fails.
 - `use-output-lambda` failing does not stop the server chain, because `create_server_on_aws` does not depend on it.
 - The S3 bucket stays, on success and on failure.
-- A failure here does not fail the master orchestrator. Dispatch is asynchronous. See [testflow.md](testflow.md).
+- A failure here does not fail the master orchestrator. Dispatch is asynchronous. See [testflow.md](../../../../references/test-snow-monkeys/master-test/testflow.md).
 ````
 
 <a id="master-test-snow-monkeys-master-test-azure-test-suite-md"></a>
 
 ##### `azure-test-suite.md`
 
-Repository: [test-snow-monkeys/master-test/azure-test-suite.md](../../../../../../test-snow-monkeys/master-test/azure-test-suite.md)
+Repository: [test-snow-monkeys/master-test/azure-test-suite.md](../../../../references/test-snow-monkeys/master-test/azure-test-suite.md)
 Copy: [azure-test-suite.md](../masters/master-test/azure-test-suite.md)
 
 
-Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/test-azure.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-azure.yml)
+Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/test-azure.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-azure.yml)
 
 ````markdown
 # Azure Test Flow
@@ -7850,7 +7850,7 @@ Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/te
 
 This workflow is the Azure test bed. The master orchestrator starts it
 with `automation-azure-test-event`. It follows
-[test-suite-rules.md](test-suite-rules.md) in this order:
+[test-suite-rules.md](../../../../references/test-snow-monkeys/master-test/test-suite-rules.md) in this order:
 
 1. Provision AWS S3 state storage.
 2. Create and destroy one catalog resource in one job.
@@ -7903,11 +7903,11 @@ Runs on `ubuntu-22.04` and checks out the `examples` repository with
 
 ##### `digitalocean-test-suite.md`
 
-Repository: [test-snow-monkeys/master-test/digitalocean-test-suite.md](../../../../../../test-snow-monkeys/master-test/digitalocean-test-suite.md)
+Repository: [test-snow-monkeys/master-test/digitalocean-test-suite.md](../../../../references/test-snow-monkeys/master-test/digitalocean-test-suite.md)
 Copy: [digitalocean-test-suite.md](../masters/master-test/digitalocean-test-suite.md)
 
 
-Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/test-digitalocean.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-digitalocean.yml)
+Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/test-digitalocean.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-digitalocean.yml)
 
 ````markdown
 # DigitalOcean Test Flow
@@ -7920,7 +7920,7 @@ Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/te
 
 This workflow is the DigitalOcean test bed. The master orchestrator
 starts it with `automation-digitalocean-test-event`. It follows
-[test-suite-rules.md](test-suite-rules.md) in this order:
+[test-suite-rules.md](../../../../references/test-snow-monkeys/master-test/test-suite-rules.md) in this order:
 
 1. Provision AWS S3 state storage.
 2. Create and destroy one catalog resource in one job.
@@ -7967,11 +7967,11 @@ Runs on `ubuntu-22.04` and checks out the `examples` repository with
 
 ##### `docker-test-suite.md`
 
-Repository: [test-snow-monkeys/master-test/docker-test-suite.md](../../../../../../test-snow-monkeys/master-test/docker-test-suite.md)
+Repository: [test-snow-monkeys/master-test/docker-test-suite.md](../../../../references/test-snow-monkeys/master-test/docker-test-suite.md)
 Copy: [docker-test-suite.md](../masters/master-test/docker-test-suite.md)
 
 
-Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/test-docker.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-docker.yml)
+Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/test-docker.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-docker.yml)
 
 ````markdown
 # Docker Test Flow
@@ -7982,7 +7982,7 @@ Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/te
 
 ## Exception
 
-This suite does not follow [test-suite-rules.md](test-suite-rules.md).
+This suite does not follow [test-suite-rules.md](../../../../references/test-snow-monkeys/master-test/test-suite-rules.md).
 It does not provision S3 state, a catalog resource, a server,
 `docker_compose`, or `docker_compose_app`, and it does not destroy a
 server.
@@ -8025,7 +8025,7 @@ The master orchestrator in `automation-test-snow` starts it by posting:
 event_type: automation-docker-test-event
 ```
 
-See [testflow.md](testflow.md) for the dispatch path.
+See [testflow.md](../../../../references/test-snow-monkeys/master-test/testflow.md) for the dispatch path.
 
 ## Components
 
@@ -8091,18 +8091,18 @@ It then prints a Docker success or failure notification from
 
 - If `build_and_push_image` fails, the workflow fails.
 - If `checkout` fails, `build_and_push_image` still runs.
-- A failure here does not fail the master orchestrator. Dispatch is asynchronous. See [testflow.md](testflow.md).
+- A failure here does not fail the master orchestrator. Dispatch is asynchronous. See [testflow.md](../../../../references/test-snow-monkeys/master-test/testflow.md).
 ````
 
 <a id="master-test-snow-monkeys-master-test-gcp-test-suite-md"></a>
 
 ##### `gcp-test-suite.md`
 
-Repository: [test-snow-monkeys/master-test/gcp-test-suite.md](../../../../../../test-snow-monkeys/master-test/gcp-test-suite.md)
+Repository: [test-snow-monkeys/master-test/gcp-test-suite.md](../../../../references/test-snow-monkeys/master-test/gcp-test-suite.md)
 Copy: [gcp-test-suite.md](../masters/master-test/gcp-test-suite.md)
 
 
-Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/test-gcp.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-gcp.yml)
+Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/test-gcp.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-gcp.yml)
 
 ````markdown
 # GCP Test Flow
@@ -8115,7 +8115,7 @@ Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/te
 
 This workflow is the GCP test bed. The master orchestrator starts it
 with `automation-gcp-test-event`. It follows
-[test-suite-rules.md](test-suite-rules.md) in this order:
+[test-suite-rules.md](../../../../references/test-snow-monkeys/master-test/test-suite-rules.md) in this order:
 
 1. Provision AWS S3 state storage.
 2. Create and destroy one catalog resource in one job.
@@ -8165,11 +8165,11 @@ Runs on `ubuntu-22.04` and checks out the `examples` repository with
 
 ##### `hetzner-test-suite.md`
 
-Repository: [test-snow-monkeys/master-test/hetzner-test-suite.md](../../../../../../test-snow-monkeys/master-test/hetzner-test-suite.md)
+Repository: [test-snow-monkeys/master-test/hetzner-test-suite.md](../../../../references/test-snow-monkeys/master-test/hetzner-test-suite.md)
 Copy: [hetzner-test-suite.md](../masters/master-test/hetzner-test-suite.md)
 
 
-Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml)
+Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml)
 
 ````markdown
 # Hetzner Test Flow
@@ -8236,7 +8236,7 @@ The master orchestrator in `automation-test-snow` starts it by posting:
 event_type: automation-hetzner-test-event
 ```
 
-See [testflow.md](testflow.md) for the dispatch path.
+See [testflow.md](../../../../references/test-snow-monkeys/master-test/testflow.md) for the dispatch path.
 
 ## Components
 
@@ -8550,18 +8550,18 @@ It then prints a Hetzner success or failure notification from
   `create_server_on_hetzner` does not depend on it.
 - The S3 bucket is never destroyed by this workflow, success or failure.
 - A failure here does not fail the master orchestrator. Dispatch is
-  asynchronous. See [testflow.md](testflow.md).
+  asynchronous. See [testflow.md](../../../../references/test-snow-monkeys/master-test/testflow.md).
 ````
 
 <a id="master-test-snow-monkeys-master-test-snowmonkeys-test-suite-md"></a>
 
 ##### `snowmonkeys-test-suite.md`
 
-Repository: [test-snow-monkeys/master-test/snowmonkeys-test-suite.md](../../../../../../test-snow-monkeys/master-test/snowmonkeys-test-suite.md)
+Repository: [test-snow-monkeys/master-test/snowmonkeys-test-suite.md](../../../../references/test-snow-monkeys/master-test/snowmonkeys-test-suite.md)
 Copy: [snowmonkeys-test-suite.md](../masters/master-test/snowmonkeys-test-suite.md)
 
 
-Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/test-snowmonkeys.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-snowmonkeys.yml)
+Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/test-snowmonkeys.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-snowmonkeys.yml)
 
 ````markdown
 # Snow Monkeys Test Flow
@@ -8572,7 +8572,7 @@ Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/te
 
 ## Exception
 
-This suite does not follow [test-suite-rules.md](test-suite-rules.md).
+This suite does not follow [test-suite-rules.md](../../../../references/test-snow-monkeys/master-test/test-suite-rules.md).
 It does not provision S3 state, a catalog resource, a server,
 `docker_compose`, or `docker_compose_app`, and it does not destroy a
 server.
@@ -8616,7 +8616,7 @@ The master orchestrator in `automation-test-snow` starts it by posting:
 event_type: automation-snow-monkey-test-event
 ```
 
-See [testflow.md](testflow.md) for the dispatch path.
+See [testflow.md](../../../../references/test-snow-monkeys/master-test/testflow.md) for the dispatch path.
 
 ## Components
 
@@ -8695,18 +8695,18 @@ It then prints a Snow Monkeys success or failure notification from
 - If `checkout` fails, `snow_notify_server` and `snow_get_url` are skipped.
 - If `snow_notify_server` fails, `snow_get_url` is skipped and the workflow fails.
 - If `snow_get_url` fails, the workflow fails.
-- A failure here does not fail the master orchestrator. Dispatch is asynchronous. See [testflow.md](testflow.md).
+- A failure here does not fail the master orchestrator. Dispatch is asynchronous. See [testflow.md](../../../../references/test-snow-monkeys/master-test/testflow.md).
 ````
 
 <a id="master-test-snow-monkeys-master-test-test-suite-rules-md"></a>
 
 ##### `test-suite-rules.md`
 
-Repository: [test-snow-monkeys/master-test/test-suite-rules.md](../../../../../../test-snow-monkeys/master-test/test-suite-rules.md)
+Repository: [test-snow-monkeys/master-test/test-suite-rules.md](../../../../references/test-snow-monkeys/master-test/test-suite-rules.md)
 Copy: [test-suite-rules.md](../masters/master-test/test-suite-rules.md)
 
 
-Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml)
+Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml)
 
 ````markdown
 # Test Suite Rules
@@ -8714,12 +8714,12 @@ Implementation: [test-snow-monkeys/examples-automation-test/.github/workflows/te
 **Author:** Yabin Monroy Mendez  
 **Description:** Required job order and failure policy for a provider test suite.  
 **Reference workflow:** `examples/.github/workflows/test-hetzner.yml`  
-**Reference suite:** [hetzner-test-suite.md](hetzner-test-suite.md)
+**Reference suite:** [hetzner-test-suite.md](../../../../references/test-snow-monkeys/master-test/hetzner-test-suite.md)
 
 Azure, Cloudflare, GCP, DigitalOcean, and AWS suites follow this order.
 Hetzner is the worked example. Docker and Snow Monkeys are the
-exceptions. See [docker-test-suite.md](docker-test-suite.md) and
-[snowmonkeys-test-suite.md](snowmonkeys-test-suite.md).
+exceptions. See [docker-test-suite.md](../../../../references/test-snow-monkeys/master-test/docker-test-suite.md) and
+[snowmonkeys-test-suite.md](../../../../references/test-snow-monkeys/master-test/snowmonkeys-test-suite.md).
 
 ## Order of execution
 
@@ -8839,7 +8839,7 @@ Each output job prints the upstream address and sleeps 5 seconds on
 - If destroy fails, the workflow fails.
 - A failed resource output job does not stop the server chain, because the server job does not depend on it.
 - The S3 bucket stays, on success and on failure.
-- A failure in the provider workflow does not fail the master orchestrator. Dispatch is asynchronous. See [testflow.md](testflow.md).
+- A failure in the provider workflow does not fail the master orchestrator. Dispatch is asynchronous. See [testflow.md](../../../../references/test-snow-monkeys/master-test/testflow.md).
 
 ## Inputs
 
@@ -8874,7 +8874,7 @@ Those two jobs do not pass provider or AWS credentials.
 
 Each suite accepts `workflow_dispatch` and `repository_dispatch` with
 `automation-<provider>-test-event`. The master orchestrator in
-`automation-test-snow` posts that event. See [testflow.md](testflow.md).
+`automation-test-snow` posts that event. See [testflow.md](../../../../references/test-snow-monkeys/master-test/testflow.md).
 
 When the workflow finishes, `examples/.github/workflows/automation-test.yml`
 runs because it listens for the workflow `name`, then prints success or
@@ -8885,11 +8885,11 @@ failure from `github.event.workflow_run.conclusion`.
 
 ##### `testflow.md`
 
-Repository: [test-snow-monkeys/master-test/testflow.md](../../../../../../test-snow-monkeys/master-test/testflow.md)
+Repository: [test-snow-monkeys/master-test/testflow.md](../../../../references/test-snow-monkeys/master-test/testflow.md)
 Copy: [testflow.md](../masters/master-test/testflow.md)
 
 
-Implementation: [test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml](../../../../../../test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml)
+Implementation: [test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml](../../../../references/test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml)
 
 ````markdown
 # Automation Test Flow
@@ -8919,15 +8919,15 @@ results.
 - **GCP test bed:** `examples/.github/workflows/test-gcp.yml`
 - **DigitalOcean test bed:** `examples/.github/workflows/test-digitalocean.yml`
 - **Result collector:** `examples/.github/workflows/automation-test.yml`
-- **Suite rules:** [test-suite-rules.md](test-suite-rules.md)
-- **Docker suite details:** [docker-test-suite.md](docker-test-suite.md)
-- **Snow Monkeys suite details:** [snowmonkeys-test-suite.md](snowmonkeys-test-suite.md)
-- **Hetzner suite details:** [hetzner-test-suite.md](hetzner-test-suite.md)
-- **AWS suite details:** [aws-test-suite.md](aws-test-suite.md)
+- **Suite rules:** [test-suite-rules.md](../../../../references/test-snow-monkeys/master-test/test-suite-rules.md)
+- **Docker suite details:** [docker-test-suite.md](../../../../references/test-snow-monkeys/master-test/docker-test-suite.md)
+- **Snow Monkeys suite details:** [snowmonkeys-test-suite.md](../../../../references/test-snow-monkeys/master-test/snowmonkeys-test-suite.md)
+- **Hetzner suite details:** [hetzner-test-suite.md](../../../../references/test-snow-monkeys/master-test/hetzner-test-suite.md)
+- **AWS suite details:** [aws-test-suite.md](../../../../references/test-snow-monkeys/master-test/aws-test-suite.md)
 - **Cloudflare suite details:** [cloudflare-test-suite.md](cloudflare-test-suite.md)
-- **Azure suite details:** [azure-test-suite.md](azure-test-suite.md)
-- **GCP suite details:** [gcp-test-suite.md](gcp-test-suite.md)
-- **DigitalOcean suite details:** [digitalocean-test-suite.md](digitalocean-test-suite.md)
+- **Azure suite details:** [azure-test-suite.md](../../../../references/test-snow-monkeys/master-test/azure-test-suite.md)
+- **GCP suite details:** [gcp-test-suite.md](../../../../references/test-snow-monkeys/master-test/gcp-test-suite.md)
+- **DigitalOcean suite details:** [digitalocean-test-suite.md](../../../../references/test-snow-monkeys/master-test/digitalocean-test-suite.md)
 
 ## Feature flags
 
@@ -8995,7 +8995,7 @@ event_type: automation-docker-test-event
 
 The event starts `examples/.github/workflows/test-docker.yml`, which runs
 the `build_and_push_image` test described in
-[docker-test-suite.md](docker-test-suite.md).
+[docker-test-suite.md](../../../../references/test-snow-monkeys/master-test/docker-test-suite.md).
 
 ### 3. Dispatch the provider tests
 
@@ -9023,7 +9023,7 @@ automation-digitalocean-test-event
 ```
 
 The Hetzner test bed runs the infrastructure tests described in
-[hetzner-test-suite.md](hetzner-test-suite.md): S3 state storage,
+[hetzner-test-suite.md](../../../../references/test-snow-monkeys/master-test/hetzner-test-suite.md): S3 state storage,
 firewall create/destroy, server create, service deploy, application
 deploy, and server destroy. S3, firewall, server create, and server
 destroy do not continue on fail. A failed service or application deploy
@@ -9031,9 +9031,9 @@ still destroys the server when the server was created.
 
 The Cloudflare, Azure, GCP, and DigitalOcean test beds currently perform
 checkout only. See [cloudflare-test-suite.md](cloudflare-test-suite.md),
-[azure-test-suite.md](azure-test-suite.md),
-[gcp-test-suite.md](gcp-test-suite.md), and
-[digitalocean-test-suite.md](digitalocean-test-suite.md).
+[azure-test-suite.md](../../../../references/test-snow-monkeys/master-test/azure-test-suite.md),
+[gcp-test-suite.md](../../../../references/test-snow-monkeys/master-test/gcp-test-suite.md), and
+[digitalocean-test-suite.md](../../../../references/test-snow-monkeys/master-test/digitalocean-test-suite.md).
 
 ## Dependency behavior
 
@@ -9092,11 +9092,11 @@ before the test workflows finish.
 
 ##### `.gitignore`
 
-Repository: [test-snow-monkeys/master-test/.gitignore](../../../../../../test-snow-monkeys/master-test/.gitignore)
+Repository: [test-snow-monkeys/master-test/.gitignore](../../../../references/test-snow-monkeys/master-test/.gitignore)
 Copy: [.gitignore](../masters/master-test/.gitignore)
 
 
-Implementation: [test-snow-monkeys](../../../../../../test-snow-monkeys)
+Implementation: [test-snow-monkeys](../../../../references/test-snow-monkeys)
 
 ```text
 # Local .terraform directories
@@ -9153,11 +9153,11 @@ terraform.rc
 
 ##### `main.md`
 
-Repository: [yabinboxes/org-master/main.md](../../../../../org-master/main.md)
+Repository: [yabinboxes/org-master/main.md](../../../../references/yabinboxes/org-master/main.md)
 Copy: [main.md](../masters/org-master/main.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 Author: Yabin Monroy Mendez
@@ -9223,11 +9223,11 @@ contains the docker compose services to run in local mac-mini
 
 ##### `local-setup/docker-services/snow-angular-ui/docker-compose.yml`
 
-Repository: [yabinboxes/org-master/local-setup/docker-services/snow-angular-ui/docker-compose.yml](../../../../../org-master/local-setup/docker-services/snow-angular-ui/docker-compose.yml)
+Repository: [yabinboxes/org-master/local-setup/docker-services/snow-angular-ui/docker-compose.yml](../../../../references/yabinboxes/org-master/local-setup/docker-services/snow-angular-ui/docker-compose.yml)
 Copy: [local-setup/docker-services/snow-angular-ui/docker-compose.yml](../masters/org-master/local-setup/docker-services/snow-angular-ui/docker-compose.yml)
 
 
-Implementation: [yabinboxes/org-snow-angular-ui](../../../../../org-snow-angular-ui)
+Implementation: [yabinboxes/org-snow-angular-ui](../../../../references/yabinboxes/org-snow-angular-ui)
 
 ```yaml
 services:
@@ -9260,11 +9260,11 @@ networks:
 
 ##### `local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml`
 
-Repository: [yabinboxes/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml](../../../../../org-master/local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml)
+Repository: [yabinboxes/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml](../../../../references/yabinboxes/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml)
 Copy: [local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml](../masters/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml)
 
 
-Implementation: [yabinboxes/org-snow-postgresdb-docker-compose](../../../../../org-snow-postgresdb-docker-compose)
+Implementation: [yabinboxes/org-snow-postgresdb-docker-compose](../../../../references/yabinboxes/org-snow-postgresdb-docker-compose)
 
 ```yaml
 services:
@@ -9296,11 +9296,11 @@ networks:
 
 ##### `local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql`
 
-Repository: [yabinboxes/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql](../../../../../org-master/local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql)
+Repository: [yabinboxes/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql](../../../../references/yabinboxes/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql)
 Copy: [local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql](../masters/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql)
 
 
-Implementation: [yabinboxes/org-snow-postgresdb-docker-compose](../../../../../org-snow-postgresdb-docker-compose)
+Implementation: [yabinboxes/org-snow-postgresdb-docker-compose](../../../../references/yabinboxes/org-snow-postgresdb-docker-compose)
 
 ```sql
 CREATE SCHEMA IF NOT EXISTS connectors;
@@ -9534,11 +9534,11 @@ WHERE NOT EXISTS (SELECT 1 FROM "connectors".self_hosted);
 
 ##### `local-setup/macmini.md`
 
-Repository: [yabinboxes/org-master/local-setup/macmini.md](../../../../../org-master/local-setup/macmini.md)
+Repository: [yabinboxes/org-master/local-setup/macmini.md](../../../../references/yabinboxes/org-master/local-setup/macmini.md)
 Copy: [local-setup/macmini.md](../masters/org-master/local-setup/macmini.md)
 
 
-Implementation: [yabinboxes/org-master/local-setup](../../../../../org-master/local-setup)
+Implementation: [yabinboxes/org-master/local-setup](../../../../references/yabinboxes/org-master/local-setup)
 
 ```markdown
 0. Docker, Cloudflare
@@ -9560,11 +9560,11 @@ Implementation: [yabinboxes/org-master/local-setup](../../../../../org-master/lo
 
 ##### `.gitignore`
 
-Repository: [yabinboxes/org-master/.gitignore](../../../../../org-master/.gitignore)
+Repository: [yabinboxes/org-master/.gitignore](../../../../references/yabinboxes/org-master/.gitignore)
 Copy: [.gitignore](../masters/org-master/.gitignore)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```text
 # mac and editor
@@ -9585,7 +9585,7 @@ Repository: [yabinboxes/master-yabinboxes/main.md](../../../../main.md)
 Copy: [main.md](../masters/master-yabinboxes/main.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 Author: Yabin Monroy Mendez
@@ -9716,7 +9716,7 @@ Repository: [yabinboxes/master-yabinboxes/_templates/chapter/01-conceptual-expla
 Copy: [_templates/chapter/01-conceptual-explanation/README.md](../masters/master-yabinboxes/_templates/chapter/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
@@ -9734,7 +9734,7 @@ Repository: [yabinboxes/master-yabinboxes/_templates/chapter/02-walkthrough/READ
 Copy: [_templates/chapter/02-walkthrough/README.md](../masters/master-yabinboxes/_templates/chapter/02-walkthrough/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 2. Walkthrough
@@ -9752,7 +9752,7 @@ Repository: [yabinboxes/master-yabinboxes/_templates/chapter/chapter-checklist.m
 Copy: [_templates/chapter/chapter-checklist.md](../masters/master-yabinboxes/_templates/chapter/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -9774,7 +9774,7 @@ Repository: [yabinboxes/master-yabinboxes/_templates/chapter/README.md](../../..
 Copy: [_templates/chapter/README.md](../masters/master-yabinboxes/_templates/chapter/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter {{CHAPTER_NUMBER}} — {{CHAPTER_TITLE}}
@@ -9795,7 +9795,7 @@ Repository: [yabinboxes/master-yabinboxes/back-matter/appendix-setup-environment
 Copy: [back-matter/appendix-setup-environment.md](../masters/master-yabinboxes/back-matter/appendix-setup-environment.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Appendix — Setup and environment
@@ -9829,7 +9829,7 @@ Repository: [yabinboxes/master-yabinboxes/back-matter/glossary.md](../../../../b
 Copy: [back-matter/glossary.md](../masters/master-yabinboxes/back-matter/glossary.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Glossary
@@ -9855,7 +9855,7 @@ Repository: [yabinboxes/master-yabinboxes/back-matter/index-of-code-examples.md]
 Copy: [back-matter/index-of-code-examples.md](../masters/master-yabinboxes/back-matter/index-of-code-examples.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Index of code examples
@@ -9873,7 +9873,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-01-foundations/chapter-01-le
 Copy: [body/part-01-foundations/chapter-01-learning-objectives/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-01-learning-objectives/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
@@ -9891,7 +9891,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-01-foundations/chapter-01-le
 Copy: [body/part-01-foundations/chapter-01-learning-objectives/chapter-checklist.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-01-learning-objectives/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -9913,7 +9913,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-01-foundations/chapter-01-le
 Copy: [body/part-01-foundations/chapter-01-learning-objectives/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-01-learning-objectives/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 01 — Learning objectives
@@ -9923,7 +9923,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part I — Foundations  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../../part-01-foundations/chapter-01-learning-objectives/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-02-conceptual-explanation-and-providers-01-conceptual-explanation-concept-md"></a>
@@ -9934,7 +9934,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-01-foundations/chapter-02-co
 Copy: [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/concept.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/concept.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Deployment Types
@@ -9965,7 +9965,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-01-foundations/chapter-02-co
 Copy: [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/providers.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/providers.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Supported Providers
@@ -9988,13 +9988,13 @@ Repository: [yabinboxes/master-yabinboxes/body/part-01-foundations/chapter-02-co
 Copy: [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
 
-- [Deployment Types](./concept.md)
-- [Supported Providers](./providers.md)
+- [Deployment Types](../../../part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/concept.md)
+- [Supported Providers](../../../part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation/providers.md)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-02-conceptual-explanation-and-providers-chapter-checklist-md"></a>
@@ -10005,7 +10005,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-01-foundations/chapter-02-co
 Copy: [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/chapter-checklist.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -10027,7 +10027,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-01-foundations/chapter-02-co
 Copy: [body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 02 — Conceptual explanation and providers
@@ -10037,7 +10037,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part I — Foundations  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../../part-01-foundations/chapter-02-conceptual-explanation-and-providers/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-01-foundations-chapter-03-masters-01-conceptual-explanation-readme-md"></a>
@@ -10048,7 +10048,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-01-foundations/chapter-03-ma
 Copy: [body/part-01-foundations/chapter-03-masters/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-03-masters/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
@@ -10101,7 +10101,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-01-foundations/chapter-03-ma
 Copy: [body/part-01-foundations/chapter-03-masters/chapter-checklist.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-03-masters/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -10123,7 +10123,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-01-foundations/chapter-03-ma
 Copy: [body/part-01-foundations/chapter-03-masters/README.md](../masters/master-yabinboxes/body/part-01-foundations/chapter-03-masters/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 03 — Masters
@@ -10133,7 +10133,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part I — Foundations  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../../part-01-foundations/chapter-03-masters/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-01-foundations-readme-md"></a>
@@ -10144,7 +10144,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-01-foundations/README.md](..
 Copy: [body/part-01-foundations/README.md](../masters/master-yabinboxes/body/part-01-foundations/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Part I — Foundations
@@ -10160,7 +10160,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-02-dashboard/chapter-04-snow
 Copy: [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
@@ -10178,7 +10178,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-02-dashboard/chapter-04-snow
 Copy: [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/chapter-checklist.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -10200,7 +10200,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-02-dashboard/chapter-04-snow
 Copy: [body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 04 — Snow Monkeys Dashboard
@@ -10210,7 +10210,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part II — Dashboard  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../../part-02-dashboard/chapter-04-snow-monkeys-dashboard/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-05-snow-monkeys-dashboard-selfhosted-01-conceptual-explanation-readme-md"></a>
@@ -10221,7 +10221,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-02-dashboard/chapter-05-snow
 Copy: [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
@@ -10239,7 +10239,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-02-dashboard/chapter-05-snow
 Copy: [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/chapter-checklist.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -10261,7 +10261,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-02-dashboard/chapter-05-snow
 Copy: [body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 05 — Snow Monkeys Dashboard Selfhosted
@@ -10271,7 +10271,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part II — Dashboard  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../../part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-06-snow-monkeys-docs-01-conceptual-explanation-agent-prompts-md"></a>
@@ -10282,7 +10282,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-02-dashboard/chapter-06-snow
 Copy: [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/agent-prompts.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/agent-prompts.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Agent prompts
@@ -10300,14 +10300,14 @@ Repository: [yabinboxes/master-yabinboxes/body/part-02-dashboard/chapter-06-snow
 Copy: [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
 
 > Status: stub — write after TOC approval.
 
-Docs entry point. Subsections: [user examples](./user-examples.md), [agent prompts](./agent-prompts.md).
+Docs entry point. Subsections: [user examples](../../../part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/user-examples.md), [agent prompts](../../../part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/agent-prompts.md).
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-02-dashboard-chapter-06-snow-monkeys-docs-01-conceptual-explanation-user-examples-md"></a>
@@ -10318,7 +10318,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-02-dashboard/chapter-06-snow
 Copy: [body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/user-examples.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation/user-examples.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # User examples
@@ -10336,7 +10336,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-02-dashboard/chapter-06-snow
 Copy: [body/part-02-dashboard/chapter-06-snow-monkeys-docs/chapter-checklist.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-06-snow-monkeys-docs/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -10358,7 +10358,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-02-dashboard/chapter-06-snow
 Copy: [body/part-02-dashboard/chapter-06-snow-monkeys-docs/README.md](../masters/master-yabinboxes/body/part-02-dashboard/chapter-06-snow-monkeys-docs/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 06 — Snow Monkeys Docs
@@ -10368,7 +10368,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part II — Dashboard  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../../part-02-dashboard/chapter-06-snow-monkeys-docs/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-02-dashboard-readme-md"></a>
@@ -10379,7 +10379,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-02-dashboard/README.md](../.
 Copy: [body/part-02-dashboard/README.md](../masters/master-yabinboxes/body/part-02-dashboard/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Part II — Dashboard
@@ -10395,7 +10395,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-03-runners/chapter-07-github
 Copy: [body/part-03-runners/chapter-07-github-runners/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-07-github-runners/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
@@ -10415,7 +10415,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-03-runners/chapter-07-github
 Copy: [body/part-03-runners/chapter-07-github-runners/chapter-checklist.md](../masters/master-yabinboxes/body/part-03-runners/chapter-07-github-runners/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -10437,7 +10437,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-03-runners/chapter-07-github
 Copy: [body/part-03-runners/chapter-07-github-runners/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-07-github-runners/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 07 — GitHub runners
@@ -10447,7 +10447,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part III — Runners  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../../part-03-runners/chapter-07-github-runners/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-08-gitlab-runners-01-conceptual-explanation-readme-md"></a>
@@ -10458,7 +10458,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-03-runners/chapter-08-gitlab
 Copy: [body/part-03-runners/chapter-08-gitlab-runners/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-08-gitlab-runners/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
@@ -10476,7 +10476,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-03-runners/chapter-08-gitlab
 Copy: [body/part-03-runners/chapter-08-gitlab-runners/chapter-checklist.md](../masters/master-yabinboxes/body/part-03-runners/chapter-08-gitlab-runners/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -10498,7 +10498,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-03-runners/chapter-08-gitlab
 Copy: [body/part-03-runners/chapter-08-gitlab-runners/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-08-gitlab-runners/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 08 — GitLab runners
@@ -10508,7 +10508,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part III — Runners  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../../part-03-runners/chapter-08-gitlab-runners/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-03-runners-chapter-09-local-runners-01-conceptual-explanation-readme-md"></a>
@@ -10519,7 +10519,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-03-runners/chapter-09-local-
 Copy: [body/part-03-runners/chapter-09-local-runners/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-09-local-runners/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
@@ -10541,7 +10541,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-03-runners/chapter-09-local-
 Copy: [body/part-03-runners/chapter-09-local-runners/chapter-checklist.md](../masters/master-yabinboxes/body/part-03-runners/chapter-09-local-runners/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -10563,7 +10563,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-03-runners/chapter-09-local-
 Copy: [body/part-03-runners/chapter-09-local-runners/README.md](../masters/master-yabinboxes/body/part-03-runners/chapter-09-local-runners/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 09 — Local runners
@@ -10573,7 +10573,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part III — Runners  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../../part-03-runners/chapter-09-local-runners/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-03-runners-readme-md"></a>
@@ -10584,7 +10584,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-03-runners/README.md](../../
 Copy: [body/part-03-runners/README.md](../masters/master-yabinboxes/body/part-03-runners/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Part III — Runners
@@ -10600,7 +10600,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-10-i
 Copy: [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ````markdown
 # 1. Conceptual explanation
@@ -10643,7 +10643,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-10-i
 Copy: [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 `````markdown
 # 2. Walkthrough
@@ -10654,97 +10654,97 @@ Each heading is one directory in `snow-monkeys-infra/iac-terraform`. The impleme
 
 ### aws
 
-Workflow: [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml).
+Workflow: [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml).
 
 | Project | In `list-of-resources.md` | Files |
 | --- | --- | --- |
-| `aws/aws_db_instance` | yes | [README_AWS_DB_INSTANCE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/README_AWS_DB_INSTANCE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/variables.tf) |
-| `aws/aws_ebs_volume` | yes | [README_AWS_EBS_VOLUME.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/README_AWS_EBS_VOLUME.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/variables.tf) |
-| `aws/aws_elastic_beanstalk_application` | yes | [README_AWS_ELASTIC_BEANSTALK_APPLICATION.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/README_AWS_ELASTIC_BEANSTALK_APPLICATION.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/variables.tf) |
-| `aws/aws_instance` | yes | [README_AWS_INSTANCE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/README_AWS_INSTANCE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/variables.tf) |
-| `aws/aws_lambda_function` | yes | [README_AWS_LAMBDA_FUNCTION.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/README_AWS_LAMBDA_FUNCTION.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/variables.tf) |
-| `aws/aws_s3_bucket` | yes | [README_AWS_S3_BUCKET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/README_AWS_S3_BUCKET.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/variables.tf) |
+| `aws/aws_db_instance` | yes | [README_AWS_DB_INSTANCE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/README_AWS_DB_INSTANCE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/variables.tf) |
+| `aws/aws_ebs_volume` | yes | [README_AWS_EBS_VOLUME.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/README_AWS_EBS_VOLUME.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/variables.tf) |
+| `aws/aws_elastic_beanstalk_application` | yes | [README_AWS_ELASTIC_BEANSTALK_APPLICATION.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/README_AWS_ELASTIC_BEANSTALK_APPLICATION.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/variables.tf) |
+| `aws/aws_instance` | yes | [README_AWS_INSTANCE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/README_AWS_INSTANCE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/variables.tf) |
+| `aws/aws_lambda_function` | yes | [README_AWS_LAMBDA_FUNCTION.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/README_AWS_LAMBDA_FUNCTION.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/variables.tf) |
+| `aws/aws_s3_bucket` | yes | [README_AWS_S3_BUCKET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/README_AWS_S3_BUCKET.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/variables.tf) |
 
 ### azure
 
-Workflow: [azure-iac main.yml](../../../../../../snow-monkeys-modules/azure-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../../../snow-monkeys-modules/azure-iac/.github/actions/server-resource/action.yml).
+Workflow: [azure-iac main.yml](../../../../references/snow-monkeys-modules/azure-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../references/snow-monkeys-modules/azure-iac/.github/actions/server-resource/action.yml).
 
 | Project | In `list-of-resources.md` | Files |
 | --- | --- | --- |
-| `azure/azurerm_linux_function_app` | yes | [README_AZURERM_LINUX_FUNCTION_APP.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/README_AZURERM_LINUX_FUNCTION_APP.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/variables.tf) |
-| `azure/azurerm_linux_web_app` | yes | [README_AZURERM_LINUX_WEB_APP.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/README_AZURERM_LINUX_WEB_APP.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/variables.tf) |
-| `azure/azurerm_mssql_database` | yes | [README_AZURERM_MSSQL_DATABASE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/README_AZURERM_MSSQL_DATABASE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/variables.tf) |
-| `azure/azurerm_mssql_server` | yes | [README_AZURERM_MSSQL_SERVER.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/README_AZURERM_MSSQL_SERVER.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/variables.tf) |
-| `azure/azurerm_mysql_flexible_database` | yes | [README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/variables.tf) |
-| `azure/azurerm_mysql_flexible_server` | yes | [README_AZURERM_MYSQL_FLEXIBLE_SERVER.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/README_AZURERM_MYSQL_FLEXIBLE_SERVER.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/variables.tf) |
-| `azure/azurerm_postgresql_database` | yes | [README_AZURERM_POSTGRESQL_DATABASE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/README_AZURERM_POSTGRESQL_DATABASE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/variables.tf) |
-| `azure/azurerm_postgresql_server` | yes | [README_AZURERM_POSTGRESQL_SERVER.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/README_AZURERM_POSTGRESQL_SERVER.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/variables.tf) |
+| `azure/azurerm_linux_function_app` | yes | [README_AZURERM_LINUX_FUNCTION_APP.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/README_AZURERM_LINUX_FUNCTION_APP.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/variables.tf) |
+| `azure/azurerm_linux_web_app` | yes | [README_AZURERM_LINUX_WEB_APP.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/README_AZURERM_LINUX_WEB_APP.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/variables.tf) |
+| `azure/azurerm_mssql_database` | yes | [README_AZURERM_MSSQL_DATABASE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/README_AZURERM_MSSQL_DATABASE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/variables.tf) |
+| `azure/azurerm_mssql_server` | yes | [README_AZURERM_MSSQL_SERVER.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/README_AZURERM_MSSQL_SERVER.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/variables.tf) |
+| `azure/azurerm_mysql_flexible_database` | yes | [README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/variables.tf) |
+| `azure/azurerm_mysql_flexible_server` | yes | [README_AZURERM_MYSQL_FLEXIBLE_SERVER.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/README_AZURERM_MYSQL_FLEXIBLE_SERVER.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/variables.tf) |
+| `azure/azurerm_postgresql_database` | yes | [README_AZURERM_POSTGRESQL_DATABASE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/README_AZURERM_POSTGRESQL_DATABASE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/variables.tf) |
+| `azure/azurerm_postgresql_server` | yes | [README_AZURERM_POSTGRESQL_SERVER.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/README_AZURERM_POSTGRESQL_SERVER.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/variables.tf) |
 
 ### civo
 
-Workflow: [civo-iac main.yml](../../../../../../snow-monkeys-modules/civo-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../../../snow-monkeys-modules/civo-iac/.github/actions/server-resource/action.yml).
+Workflow: [civo-iac main.yml](../../../../references/snow-monkeys-modules/civo-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../references/snow-monkeys-modules/civo-iac/.github/actions/server-resource/action.yml).
 
 | Project | In `list-of-resources.md` | Files |
 | --- | --- | --- |
-| `civo/bucket` | yes | [README_BUCKET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/README_BUCKET.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/backend.tf), [bucket.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/bucket.tf), [provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/provider.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/variables.tf) |
-| `civo/compute` | yes | [README_COMPUTE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/README_COMPUTE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/backend.tf), [provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/provider.tf) |
-| `civo/observability` | yes | [README_OBSERVABILITY.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/README_OBSERVABILITY.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/backend.tf), [grafana.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/grafana.tf), [opentelemetry.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/opentelemetry.tf), [prometheus.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/prometheus.tf), [provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/provider.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/variables.tf) |
+| `civo/bucket` | yes | [README_BUCKET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/README_BUCKET.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/backend.tf), [bucket.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/bucket.tf), [provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/provider.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/variables.tf) |
+| `civo/compute` | yes | [README_COMPUTE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/README_COMPUTE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/backend.tf), [provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/provider.tf) |
+| `civo/observability` | yes | [README_OBSERVABILITY.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/README_OBSERVABILITY.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/backend.tf), [grafana.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/grafana.tf), [opentelemetry.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/opentelemetry.tf), [prometheus.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/prometheus.tf), [provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/provider.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/variables.tf) |
 
 ### cloudflare
 
-Workflow: [cloudflare-iac main.yml](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource/action.yml).
+Workflow: [cloudflare-iac main.yml](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource/action.yml).
 
 | Project | In `list-of-resources.md` | Files |
 | --- | --- | --- |
-| `cloudflare/cloudflare_d1_database` | yes | [README_CLOUDFLARE_D1_DATABASE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/README_CLOUDFLARE_D1_DATABASE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/variables.tf) |
-| `cloudflare/cloudflare_pages_project` | yes | [README_CLOUDFLARE_PAGES_PROJECT.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/README_CLOUDFLARE_PAGES_PROJECT.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/variables.tf) |
-| `cloudflare/cloudflare_pipeline_sink` | yes | [README_CLOUDFLARE_PIPELINE_SINK.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/README_CLOUDFLARE_PIPELINE_SINK.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/variables.tf) |
-| `cloudflare/cloudflare_r2_bucket` | yes | [README_CLOUDFLARE_R2_BUCKET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/README_CLOUDFLARE_R2_BUCKET.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/variables.tf) |
-| `cloudflare/cloudflare_workers_script` | yes | [README_CLOUDFLARE_WORKERS_SCRIPT.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/README_CLOUDFLARE_WORKERS_SCRIPT.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/variables.tf) |
-| `cloudflare/dns` | no. Reached only if `resource` is this folder name | [README_DNS.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/README_DNS.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/backend.tf), [cloudflare.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/cloudflare.tf), [provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/provider.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/variables.tf) |
+| `cloudflare/cloudflare_d1_database` | yes | [README_CLOUDFLARE_D1_DATABASE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/README_CLOUDFLARE_D1_DATABASE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/variables.tf) |
+| `cloudflare/cloudflare_pages_project` | yes | [README_CLOUDFLARE_PAGES_PROJECT.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/README_CLOUDFLARE_PAGES_PROJECT.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/variables.tf) |
+| `cloudflare/cloudflare_pipeline_sink` | yes | [README_CLOUDFLARE_PIPELINE_SINK.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/README_CLOUDFLARE_PIPELINE_SINK.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/variables.tf) |
+| `cloudflare/cloudflare_r2_bucket` | yes | [README_CLOUDFLARE_R2_BUCKET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/README_CLOUDFLARE_R2_BUCKET.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/variables.tf) |
+| `cloudflare/cloudflare_workers_script` | yes | [README_CLOUDFLARE_WORKERS_SCRIPT.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/README_CLOUDFLARE_WORKERS_SCRIPT.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/variables.tf) |
+| `cloudflare/dns` | no. Reached only if `resource` is this folder name | [README_DNS.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/README_DNS.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/backend.tf), [cloudflare.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/cloudflare.tf), [provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/provider.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/variables.tf) |
 
 ### digitalocean
 
-Workflow: [digital-ocean-iac main.yml](../../../../../../snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../../../snow-monkeys-modules/digital-ocean-iac/.github/actions/server-resource/action.yml).
+Workflow: [digital-ocean-iac main.yml](../../../../references/snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../references/snow-monkeys-modules/digital-ocean-iac/.github/actions/server-resource/action.yml).
 
 | Project | In `list-of-resources.md` | Files |
 | --- | --- | --- |
-| `digitalocean/digitalocean_droplet` | yes | [README_DIGITALOCEAN_DROPLET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/README_DIGITALOCEAN_DROPLET.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/variables.tf) |
-| `digitalocean/digitalocean_droplet_autoscale` | yes | [README_DIGITALOCEAN_DROPLET_AUTOSCALE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/README_DIGITALOCEAN_DROPLET_AUTOSCALE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/variables.tf) |
-| `digitalocean/droplet` | no. Reached only if `resource` is this folder name | [README_DROPLET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/README_DROPLET.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/backend.tf), [droplet.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/droplet.tf), [output.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/output.tf), [provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/provider.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/variables.tf) |
+| `digitalocean/digitalocean_droplet` | yes | [README_DIGITALOCEAN_DROPLET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/README_DIGITALOCEAN_DROPLET.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/variables.tf) |
+| `digitalocean/digitalocean_droplet_autoscale` | yes | [README_DIGITALOCEAN_DROPLET_AUTOSCALE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/README_DIGITALOCEAN_DROPLET_AUTOSCALE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/variables.tf) |
+| `digitalocean/droplet` | no. Reached only if `resource` is this folder name | [README_DROPLET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/README_DROPLET.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/backend.tf), [droplet.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/droplet.tf), [output.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/output.tf), [provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/provider.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/variables.tf) |
 
 ### gcp
 
-Workflow: [gcp-iac main.yml](../../../../../../snow-monkeys-modules/gcp-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../../../snow-monkeys-modules/gcp-iac/.github/actions/server-resource/action.yml).
+Workflow: [gcp-iac main.yml](../../../../references/snow-monkeys-modules/gcp-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../references/snow-monkeys-modules/gcp-iac/.github/actions/server-resource/action.yml).
 
 | Project | In `list-of-resources.md` | Files |
 | --- | --- | --- |
-| `gcp/compute` | no. Reached only if `resource` is this folder name | [README_COMPUTE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/README_COMPUTE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/backend.tf), [compute-instance.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/compute-instance.tf), [provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/provider.tf) |
-| `gcp/google_compute_instance` | yes | [README_GOOGLE_COMPUTE_INSTANCE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/variables.tf) |
-| `gcp/google_sql_database_instance` | yes | [README_GOOGLE_SQL_DATABASE_INSTANCE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/README_GOOGLE_SQL_DATABASE_INSTANCE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/variables.tf) |
-| `gcp/google_storage_bucket` | yes | [README_GOOGLE_STORAGE_BUCKET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/README_GOOGLE_STORAGE_BUCKET.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/variables.tf) |
-| `gcp/google_storage_bucket_object` | yes | [README_GOOGLE_STORAGE_BUCKET_OBJECT.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/README_GOOGLE_STORAGE_BUCKET_OBJECT.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/variables.tf) |
+| `gcp/compute` | no. Reached only if `resource` is this folder name | [README_COMPUTE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/README_COMPUTE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/backend.tf), [compute-instance.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/compute-instance.tf), [provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/provider.tf) |
+| `gcp/google_compute_instance` | yes | [README_GOOGLE_COMPUTE_INSTANCE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/variables.tf) |
+| `gcp/google_sql_database_instance` | yes | [README_GOOGLE_SQL_DATABASE_INSTANCE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/README_GOOGLE_SQL_DATABASE_INSTANCE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/variables.tf) |
+| `gcp/google_storage_bucket` | yes | [README_GOOGLE_STORAGE_BUCKET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/README_GOOGLE_STORAGE_BUCKET.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/variables.tf) |
+| `gcp/google_storage_bucket_object` | yes | [README_GOOGLE_STORAGE_BUCKET_OBJECT.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/README_GOOGLE_STORAGE_BUCKET_OBJECT.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/variables.tf) |
 
 ### hetzner
 
-Workflow: [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml).
+Workflow: [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml).
 
 | Project | In `list-of-resources.md` | Files |
 | --- | --- | --- |
-| `hetzner/hcloud_firewall` | yes | [README_HCLOUD_FIREWALL.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/README_HCLOUD_FIREWALL.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/variables.tf) |
-| `hetzner/hcloud_floating_ip` | yes | [README_HCLOUD_FLOATING_IP.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/README_HCLOUD_FLOATING_IP.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/variables.tf) |
-| `hetzner/hcloud_network` | yes | [README_HCLOUD_NETWORK.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/README_HCLOUD_NETWORK.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/variables.tf) |
-| `hetzner/hcloud_server` | yes | [README_HCLOUD_SERVER.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/README_HCLOUD_SERVER.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/variables.tf) |
-| `hetzner/hcloud_volume` | yes | [README_HCLOUD_VOLUME.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/README_HCLOUD_VOLUME.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/variables.tf) |
-| `hetzner/hcloud_volume_attachment` | yes | [README_HCLOUD_VOLUME_ATTACHMENT.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/README_HCLOUD_VOLUME_ATTACHMENT.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/variables.tf) |
+| `hetzner/hcloud_firewall` | yes | [README_HCLOUD_FIREWALL.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/README_HCLOUD_FIREWALL.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/variables.tf) |
+| `hetzner/hcloud_floating_ip` | yes | [README_HCLOUD_FLOATING_IP.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/README_HCLOUD_FLOATING_IP.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/variables.tf) |
+| `hetzner/hcloud_network` | yes | [README_HCLOUD_NETWORK.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/README_HCLOUD_NETWORK.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/variables.tf) |
+| `hetzner/hcloud_server` | yes | [README_HCLOUD_SERVER.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/README_HCLOUD_SERVER.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/variables.tf) |
+| `hetzner/hcloud_volume` | yes | [README_HCLOUD_VOLUME.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/README_HCLOUD_VOLUME.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/variables.tf) |
+| `hetzner/hcloud_volume_attachment` | yes | [README_HCLOUD_VOLUME_ATTACHMENT.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/README_HCLOUD_VOLUME_ATTACHMENT.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/variables.tf) |
 
 ### v1/k8s
 
-Not selected by `server-resource`. Civo `type: kubernetes` uses [deploy-image](../../../../../../snow-monkeys-modules/civo-iac/.github/actions/deploy-image/action.yml).
+Not selected by `server-resource`. Civo `type: kubernetes` uses [deploy-image](../../../../references/snow-monkeys-modules/civo-iac/.github/actions/deploy-image/action.yml).
 
 | Project | Files |
 | --- | --- |
-| `v1/k8s/civo-traefik/dev` | [README_K8S.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/README_K8S.md), [cermanager.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/cermanager.tf), [civo.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/civo.tf), [data.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/data.tf), [output.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/output.tf), [provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/provider.tf), [traefik.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/traefik.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/variables.tf) |
+| `v1/k8s/civo-traefik/dev` | [README_K8S.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/README_K8S.md), [cermanager.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/cermanager.tf), [civo.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/civo.tf), [data.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/data.tf), [output.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/output.tf), [provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/provider.tf), [traefik.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/traefik.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/variables.tf) |
 
 ## Code
 
@@ -10754,7 +10754,7 @@ The source below is the file in `iac-terraform`, unchanged.
 
 #### `.gitignore`
 
-File: [.gitignore](../../../../../../snow-monkeys-infra/iac-terraform/.gitignore)
+File: [.gitignore](../../../../references/snow-monkeys-infra/iac-terraform/.gitignore)
 
 ```text
 # Local .terraform directories
@@ -10807,7 +10807,7 @@ terraform.rc
 
 #### `README.md`
 
-File: [README.md](../../../../../../snow-monkeys-infra/iac-terraform/README.md)
+File: [README.md](../../../../references/snow-monkeys-infra/iac-terraform/README.md)
 
 ````markdown
 # iac-terraform
@@ -10844,7 +10844,7 @@ v1/
 
 #### `aws.md`
 
-File: [docs/modules/aws.md](../../../../../../snow-monkeys-infra/iac-terraform/docs/modules/aws.md)
+File: [docs/modules/aws.md](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/aws.md)
 
 ```markdown
 
@@ -10854,7 +10854,7 @@ File: [docs/modules/aws.md](../../../../../../snow-monkeys-infra/iac-terraform/d
 
 #### `inputs.md`
 
-File: [docs/modules/hetzner-hcloud-server/inputs.md](../../../../../../snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/inputs.md)
+File: [docs/modules/hetzner-hcloud-server/inputs.md](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/inputs.md)
 
 ````markdown
 # Inputs — Hetzner server
@@ -10926,7 +10926,7 @@ module "hetzner_server" {
 
 #### `outputs.md`
 
-File: [docs/modules/hetzner-hcloud-server/outputs.md](../../../../../../snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/outputs.md)
+File: [docs/modules/hetzner-hcloud-server/outputs.md](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/outputs.md)
 
 ````markdown
 # Outputs — Hetzner server
@@ -10991,7 +10991,7 @@ output "hetzner_server_status" {
 
 #### `hetzner-hcloud-server.md`
 
-File: [docs/modules/hetzner-hcloud-server.md](../../../../../../snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server.md)
+File: [docs/modules/hetzner-hcloud-server.md](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server.md)
 
 ````markdown
 # Hetzner server module
@@ -11083,7 +11083,7 @@ v1/modules/dev/hetzner/hcloud_server/
 
 #### `project-structure.md`
 
-File: [docs/project-structure.md](../../../../../../snow-monkeys-infra/iac-terraform/docs/project-structure.md)
+File: [docs/project-structure.md](../../../../references/snow-monkeys-infra/iac-terraform/docs/project-structure.md)
 
 ````markdown
 # Project structure
@@ -11236,7 +11236,7 @@ Sensitive values (`*.tfvars`, tokens, keys) are gitignored. Every variable is se
 
 #### `README_K8S.md`
 
-File: [v1/k8s/civo-traefik/dev/README_K8S.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/README_K8S.md)
+File: [v1/k8s/civo-traefik/dev/README_K8S.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/README_K8S.md)
 
 ```markdown
 
@@ -11244,7 +11244,7 @@ File: [v1/k8s/civo-traefik/dev/README_K8S.md](../../../../../../snow-monkeys-inf
 
 #### `cermanager.tf`
 
-File: [v1/k8s/civo-traefik/dev/cermanager.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/cermanager.tf)
+File: [v1/k8s/civo-traefik/dev/cermanager.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/cermanager.tf)
 
 ```hcl
 resource "kubernetes_namespace" "certmanager" {
@@ -11330,7 +11330,7 @@ resource "time_sleep" "wait_for_clusterissuer" {
 
 #### `civo.tf`
 
-File: [v1/k8s/civo-traefik/dev/civo.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/civo.tf)
+File: [v1/k8s/civo-traefik/dev/civo.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/civo.tf)
 
 ```hcl
 # Kubernetes Cluster
@@ -11399,7 +11399,7 @@ resource "time_sleep" "wait_for_kubernetes" {
 
 #### `data.tf`
 
-File: [v1/k8s/civo-traefik/dev/data.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/data.tf)
+File: [v1/k8s/civo-traefik/dev/data.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/data.tf)
 
 ```hcl
 data "civo_loadbalancer" "traefik_lb" {
@@ -11414,7 +11414,7 @@ data "civo_loadbalancer" "traefik_lb" {
 
 #### `output.tf`
 
-File: [v1/k8s/civo-traefik/dev/output.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/output.tf)
+File: [v1/k8s/civo-traefik/dev/output.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/output.tf)
 
 ```hcl
 output "load_balancer_ip" {
@@ -11426,7 +11426,7 @@ output "load_balancer_ip" {
 
 #### `provider.tf`
 
-File: [v1/k8s/civo-traefik/dev/provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/provider.tf)
+File: [v1/k8s/civo-traefik/dev/provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/provider.tf)
 
 ```hcl
 terraform {
@@ -11493,7 +11493,7 @@ provider "kubectl" {
 
 #### `traefik.tf`
 
-File: [v1/k8s/civo-traefik/dev/traefik.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/traefik.tf)
+File: [v1/k8s/civo-traefik/dev/traefik.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/traefik.tf)
 
 ```hcl
 # Traefik Deployment
@@ -11546,7 +11546,7 @@ resource "helm_release" "traefik" {
 
 #### `variables.tf`
 
-File: [v1/k8s/civo-traefik/dev/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/variables.tf)
+File: [v1/k8s/civo-traefik/dev/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/variables.tf)
 
 ```hcl
 variable "civo-token" {
@@ -11589,7 +11589,7 @@ variable "region" {
 
 #### `BACKEND_S3.md`
 
-File: [v1/modules/dev/BACKEND_S3.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md)
+File: [v1/modules/dev/BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md)
 
 ````markdown
 # S3 remote state
@@ -11662,7 +11662,7 @@ If any of these env vars is unset, `terraform init` fails or prompts — there a
 
 #### `TERRAFORM_RULES.md`
 
-File: [v1/modules/dev/TERRAFORM_RULES.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md)
+File: [v1/modules/dev/TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md)
 
 ````markdown
 # Terraform rules
@@ -11723,7 +11723,7 @@ Do not commit `.terraform/`, `*.tfstate`, credentials, or `*.tfvars`.
 
 #### `README_AWS_DB_INSTANCE.md`
 
-File: [v1/modules/dev/aws/aws_db_instance/README_AWS_DB_INSTANCE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/README_AWS_DB_INSTANCE.md)
+File: [v1/modules/dev/aws/aws_db_instance/README_AWS_DB_INSTANCE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/README_AWS_DB_INSTANCE.md)
 
 ````markdown
 # AWS RDS instance
@@ -11827,7 +11827,7 @@ terraform output -raw db_instance_endpoint
 
 #### `backend.tf`
 
-File: [v1/modules/dev/aws/aws_db_instance/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/backend.tf)
+File: [v1/modules/dev/aws/aws_db_instance/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -11845,7 +11845,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/aws/aws_db_instance/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/main.tf)
+File: [v1/modules/dev/aws/aws_db_instance/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/main.tf)
 
 ```hcl
 terraform {
@@ -11898,7 +11898,7 @@ resource "aws_db_instance" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/aws/aws_db_instance/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/outputs.tf)
+File: [v1/modules/dev/aws/aws_db_instance/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/outputs.tf)
 
 ```hcl
 output "db_instance_id" {
@@ -11924,7 +11924,7 @@ output "db_instance_address" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/aws/aws_db_instance/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/variables.tf)
+File: [v1/modules/dev/aws/aws_db_instance/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/variables.tf)
 
 ```hcl
 variable "aws_access_key_id" {
@@ -12077,7 +12077,7 @@ variable "tags" {
 
 #### `README_AWS_EBS_VOLUME.md`
 
-File: [v1/modules/dev/aws/aws_ebs_volume/README_AWS_EBS_VOLUME.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/README_AWS_EBS_VOLUME.md)
+File: [v1/modules/dev/aws/aws_ebs_volume/README_AWS_EBS_VOLUME.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/README_AWS_EBS_VOLUME.md)
 
 ````markdown
 # AWS EBS volume
@@ -12166,7 +12166,7 @@ terraform output -raw volume_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/aws/aws_ebs_volume/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/backend.tf)
+File: [v1/modules/dev/aws/aws_ebs_volume/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -12184,7 +12184,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/aws/aws_ebs_volume/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/main.tf)
+File: [v1/modules/dev/aws/aws_ebs_volume/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/main.tf)
 
 ```hcl
 terraform {
@@ -12225,7 +12225,7 @@ resource "aws_ebs_volume" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/aws/aws_ebs_volume/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/outputs.tf)
+File: [v1/modules/dev/aws/aws_ebs_volume/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/outputs.tf)
 
 ```hcl
 output "volume_id" {
@@ -12246,7 +12246,7 @@ output "availability_zone" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/aws/aws_ebs_volume/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/variables.tf)
+File: [v1/modules/dev/aws/aws_ebs_volume/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/variables.tf)
 
 ```hcl
 variable "aws_access_key_id" {
@@ -12331,7 +12331,7 @@ variable "tags" {
 
 #### `README_AWS_ELASTIC_BEANSTALK_APPLICATION.md`
 
-File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/README_AWS_ELASTIC_BEANSTALK_APPLICATION.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/README_AWS_ELASTIC_BEANSTALK_APPLICATION.md)
+File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/README_AWS_ELASTIC_BEANSTALK_APPLICATION.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/README_AWS_ELASTIC_BEANSTALK_APPLICATION.md)
 
 ````markdown
 # AWS Elastic Beanstalk application
@@ -12411,7 +12411,7 @@ terraform output -raw application_name
 
 #### `backend.tf`
 
-File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/backend.tf)
+File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -12429,7 +12429,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/main.tf)
+File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/main.tf)
 
 ```hcl
 terraform {
@@ -12474,7 +12474,7 @@ resource "aws_elastic_beanstalk_application" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/outputs.tf)
+File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/outputs.tf)
 
 ```hcl
 output "application_name" {
@@ -12490,7 +12490,7 @@ output "application_arn" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/variables.tf)
+File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/variables.tf)
 
 ```hcl
 variable "aws_access_key_id" {
@@ -12558,7 +12558,7 @@ variable "tags" {
 
 #### `README_AWS_INSTANCE.md`
 
-File: [v1/modules/dev/aws/aws_instance/README_AWS_INSTANCE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/README_AWS_INSTANCE.md)
+File: [v1/modules/dev/aws/aws_instance/README_AWS_INSTANCE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/README_AWS_INSTANCE.md)
 
 ````markdown
 # AWS EC2 instance
@@ -12656,7 +12656,7 @@ Destroy with `terraform destroy` from this directory.
 
 #### `backend.tf`
 
-File: [v1/modules/dev/aws/aws_instance/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/backend.tf)
+File: [v1/modules/dev/aws/aws_instance/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -12674,7 +12674,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/aws/aws_instance/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/main.tf)
+File: [v1/modules/dev/aws/aws_instance/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/main.tf)
 
 ```hcl
 terraform {
@@ -12729,7 +12729,7 @@ resource "aws_instance" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/aws/aws_instance/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/outputs.tf)
+File: [v1/modules/dev/aws/aws_instance/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/outputs.tf)
 
 ```hcl
 output "instance_id" {
@@ -12760,7 +12760,7 @@ output "instance_state" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/aws/aws_instance/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/variables.tf)
+File: [v1/modules/dev/aws/aws_instance/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/variables.tf)
 
 ```hcl
 variable "aws_access_key_id" {
@@ -12852,7 +12852,7 @@ variable "tags" {
 
 #### `README_AWS_LAMBDA_FUNCTION.md`
 
-File: [v1/modules/dev/aws/aws_lambda_function/README_AWS_LAMBDA_FUNCTION.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/README_AWS_LAMBDA_FUNCTION.md)
+File: [v1/modules/dev/aws/aws_lambda_function/README_AWS_LAMBDA_FUNCTION.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/README_AWS_LAMBDA_FUNCTION.md)
 
 ````markdown
 # AWS Lambda function
@@ -12949,7 +12949,7 @@ terraform output -raw lambda_function_arn
 
 #### `backend.tf`
 
-File: [v1/modules/dev/aws/aws_lambda_function/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/backend.tf)
+File: [v1/modules/dev/aws/aws_lambda_function/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -12967,7 +12967,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/aws/aws_lambda_function/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/main.tf)
+File: [v1/modules/dev/aws/aws_lambda_function/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/main.tf)
 
 ```hcl
 terraform {
@@ -13056,7 +13056,7 @@ resource "aws_lambda_function" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/aws/aws_lambda_function/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/outputs.tf)
+File: [v1/modules/dev/aws/aws_lambda_function/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/outputs.tf)
 
 ```hcl
 output "lambda_function_id" {
@@ -13077,7 +13077,7 @@ output "invoke_arn" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/aws/aws_lambda_function/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/variables.tf)
+File: [v1/modules/dev/aws/aws_lambda_function/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/variables.tf)
 
 ```hcl
 variable "aws_access_key_id" {
@@ -13193,7 +13193,7 @@ variable "tags" {
 
 #### `README_AWS_S3_BUCKET.md`
 
-File: [v1/modules/dev/aws/aws_s3_bucket/README_AWS_S3_BUCKET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/README_AWS_S3_BUCKET.md)
+File: [v1/modules/dev/aws/aws_s3_bucket/README_AWS_S3_BUCKET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/README_AWS_S3_BUCKET.md)
 
 ````markdown
 # AWS S3 bucket
@@ -13282,7 +13282,7 @@ terraform output -raw bucket_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/aws/aws_s3_bucket/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/backend.tf)
+File: [v1/modules/dev/aws/aws_s3_bucket/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/backend.tf)
 
 ```hcl
 # Bootstrap: first apply this module with local state
@@ -13305,7 +13305,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/aws/aws_s3_bucket/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/main.tf)
+File: [v1/modules/dev/aws/aws_s3_bucket/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/main.tf)
 
 ```hcl
 terraform {
@@ -13367,7 +13367,7 @@ resource "aws_s3_bucket_public_access_block" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/aws/aws_s3_bucket/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/outputs.tf)
+File: [v1/modules/dev/aws/aws_s3_bucket/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/outputs.tf)
 
 ```hcl
 output "bucket_id" {
@@ -13388,7 +13388,7 @@ output "bucket_region" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/aws/aws_s3_bucket/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/variables.tf)
+File: [v1/modules/dev/aws/aws_s3_bucket/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/variables.tf)
 
 ```hcl
 variable "aws_access_key_id" {
@@ -13432,7 +13432,7 @@ variable "tags" {
 
 #### `README_AZURERM_LINUX_FUNCTION_APP.md`
 
-File: [v1/modules/dev/azure/azurerm_linux_function_app/README_AZURERM_LINUX_FUNCTION_APP.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/README_AZURERM_LINUX_FUNCTION_APP.md)
+File: [v1/modules/dev/azure/azurerm_linux_function_app/README_AZURERM_LINUX_FUNCTION_APP.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/README_AZURERM_LINUX_FUNCTION_APP.md)
 
 ````markdown
 # Azure Linux Function App
@@ -13521,7 +13521,7 @@ terraform output -raw default_hostname
 
 #### `backend.tf`
 
-File: [v1/modules/dev/azure/azurerm_linux_function_app/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/backend.tf)
+File: [v1/modules/dev/azure/azurerm_linux_function_app/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -13539,7 +13539,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/azure/azurerm_linux_function_app/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/main.tf)
+File: [v1/modules/dev/azure/azurerm_linux_function_app/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/main.tf)
 
 ```hcl
 terraform {
@@ -13582,7 +13582,7 @@ resource "azurerm_linux_function_app" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/azure/azurerm_linux_function_app/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/outputs.tf)
+File: [v1/modules/dev/azure/azurerm_linux_function_app/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/outputs.tf)
 
 ```hcl
 output "linux_function_app_id" {
@@ -13598,7 +13598,7 @@ output "default_hostname" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/azure/azurerm_linux_function_app/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/variables.tf)
+File: [v1/modules/dev/azure/azurerm_linux_function_app/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/variables.tf)
 
 ```hcl
 variable "subscription_id" {
@@ -13666,7 +13666,7 @@ variable "tags" {
 
 #### `README_AZURERM_LINUX_WEB_APP.md`
 
-File: [v1/modules/dev/azure/azurerm_linux_web_app/README_AZURERM_LINUX_WEB_APP.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/README_AZURERM_LINUX_WEB_APP.md)
+File: [v1/modules/dev/azure/azurerm_linux_web_app/README_AZURERM_LINUX_WEB_APP.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/README_AZURERM_LINUX_WEB_APP.md)
 
 ````markdown
 # Azure Linux Web App
@@ -13752,7 +13752,7 @@ terraform output -raw default_hostname
 
 #### `backend.tf`
 
-File: [v1/modules/dev/azure/azurerm_linux_web_app/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/backend.tf)
+File: [v1/modules/dev/azure/azurerm_linux_web_app/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -13770,7 +13770,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/azure/azurerm_linux_web_app/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/main.tf)
+File: [v1/modules/dev/azure/azurerm_linux_web_app/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/main.tf)
 
 ```hcl
 terraform {
@@ -13812,7 +13812,7 @@ resource "azurerm_linux_web_app" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/azure/azurerm_linux_web_app/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/outputs.tf)
+File: [v1/modules/dev/azure/azurerm_linux_web_app/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/outputs.tf)
 
 ```hcl
 output "linux_web_app_id" {
@@ -13828,7 +13828,7 @@ output "default_hostname" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/azure/azurerm_linux_web_app/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/variables.tf)
+File: [v1/modules/dev/azure/azurerm_linux_web_app/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/variables.tf)
 
 ```hcl
 variable "subscription_id" {
@@ -13891,7 +13891,7 @@ variable "tags" {
 
 #### `README_AZURERM_MSSQL_DATABASE.md`
 
-File: [v1/modules/dev/azure/azurerm_mssql_database/README_AZURERM_MSSQL_DATABASE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/README_AZURERM_MSSQL_DATABASE.md)
+File: [v1/modules/dev/azure/azurerm_mssql_database/README_AZURERM_MSSQL_DATABASE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/README_AZURERM_MSSQL_DATABASE.md)
 
 ````markdown
 # Azure SQL Database
@@ -13975,7 +13975,7 @@ terraform output -raw mssql_database_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/azure/azurerm_mssql_database/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/backend.tf)
+File: [v1/modules/dev/azure/azurerm_mssql_database/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -13993,7 +13993,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/azure/azurerm_mssql_database/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/main.tf)
+File: [v1/modules/dev/azure/azurerm_mssql_database/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/main.tf)
 
 ```hcl
 terraform {
@@ -14033,7 +14033,7 @@ resource "azurerm_mssql_database" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/azure/azurerm_mssql_database/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/outputs.tf)
+File: [v1/modules/dev/azure/azurerm_mssql_database/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/outputs.tf)
 
 ```hcl
 output "mssql_database_id" {
@@ -14049,7 +14049,7 @@ output "mssql_database_name" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/azure/azurerm_mssql_database/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/variables.tf)
+File: [v1/modules/dev/azure/azurerm_mssql_database/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/variables.tf)
 
 ```hcl
 variable "subscription_id" {
@@ -14119,7 +14119,7 @@ variable "tags" {
 
 #### `README_AZURERM_MSSQL_SERVER.md`
 
-File: [v1/modules/dev/azure/azurerm_mssql_server/README_AZURERM_MSSQL_SERVER.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/README_AZURERM_MSSQL_SERVER.md)
+File: [v1/modules/dev/azure/azurerm_mssql_server/README_AZURERM_MSSQL_SERVER.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/README_AZURERM_MSSQL_SERVER.md)
 
 ````markdown
 # Azure SQL Server
@@ -14206,7 +14206,7 @@ terraform output -raw mssql_server_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/azure/azurerm_mssql_server/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/backend.tf)
+File: [v1/modules/dev/azure/azurerm_mssql_server/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -14224,7 +14224,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/azure/azurerm_mssql_server/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/main.tf)
+File: [v1/modules/dev/azure/azurerm_mssql_server/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/main.tf)
 
 ```hcl
 terraform {
@@ -14265,7 +14265,7 @@ resource "azurerm_mssql_server" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/azure/azurerm_mssql_server/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/outputs.tf)
+File: [v1/modules/dev/azure/azurerm_mssql_server/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/outputs.tf)
 
 ```hcl
 output "mssql_server_id" {
@@ -14281,7 +14281,7 @@ output "fully_qualified_domain_name" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/azure/azurerm_mssql_server/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/variables.tf)
+File: [v1/modules/dev/azure/azurerm_mssql_server/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/variables.tf)
 
 ```hcl
 variable "subscription_id" {
@@ -14357,7 +14357,7 @@ variable "tags" {
 
 #### `README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md)
 
 ````markdown
 # Azure MySQL Flexible Database
@@ -14440,7 +14440,7 @@ terraform output -raw mysql_flexible_database_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/backend.tf)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -14458,7 +14458,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/main.tf)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/main.tf)
 
 ```hcl
 terraform {
@@ -14490,7 +14490,7 @@ resource "azurerm_mysql_flexible_database" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/outputs.tf)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/outputs.tf)
 
 ```hcl
 output "mysql_flexible_database_id" {
@@ -14506,7 +14506,7 @@ output "mysql_flexible_database_name" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/variables.tf)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/variables.tf)
 
 ```hcl
 variable "subscription_id" {
@@ -14563,7 +14563,7 @@ variable "collation" {
 
 #### `README_AZURERM_MYSQL_FLEXIBLE_SERVER.md`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/README_AZURERM_MYSQL_FLEXIBLE_SERVER.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/README_AZURERM_MYSQL_FLEXIBLE_SERVER.md)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/README_AZURERM_MYSQL_FLEXIBLE_SERVER.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/README_AZURERM_MYSQL_FLEXIBLE_SERVER.md)
 
 ````markdown
 # Azure MySQL Flexible Server
@@ -14651,7 +14651,7 @@ terraform output -raw fqdn
 
 #### `backend.tf`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/backend.tf)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -14669,7 +14669,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/main.tf)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/main.tf)
 
 ```hcl
 terraform {
@@ -14712,7 +14712,7 @@ resource "azurerm_mysql_flexible_server" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/outputs.tf)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/outputs.tf)
 
 ```hcl
 output "mysql_flexible_server_id" {
@@ -14728,7 +14728,7 @@ output "fqdn" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/variables.tf)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/variables.tf)
 
 ```hcl
 variable "subscription_id" {
@@ -14816,7 +14816,7 @@ variable "tags" {
 
 #### `README_AZURERM_POSTGRESQL_DATABASE.md`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_database/README_AZURERM_POSTGRESQL_DATABASE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/README_AZURERM_POSTGRESQL_DATABASE.md)
+File: [v1/modules/dev/azure/azurerm_postgresql_database/README_AZURERM_POSTGRESQL_DATABASE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/README_AZURERM_POSTGRESQL_DATABASE.md)
 
 ````markdown
 # Azure PostgreSQL Flexible Database
@@ -14897,7 +14897,7 @@ terraform output -raw postgresql_database_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_database/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/backend.tf)
+File: [v1/modules/dev/azure/azurerm_postgresql_database/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -14915,7 +14915,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_database/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/main.tf)
+File: [v1/modules/dev/azure/azurerm_postgresql_database/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/main.tf)
 
 ```hcl
 terraform {
@@ -14948,7 +14948,7 @@ resource "azurerm_postgresql_flexible_server_database" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_database/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/outputs.tf)
+File: [v1/modules/dev/azure/azurerm_postgresql_database/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/outputs.tf)
 
 ```hcl
 output "postgresql_database_id" {
@@ -14964,7 +14964,7 @@ output "postgresql_database_name" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_database/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/variables.tf)
+File: [v1/modules/dev/azure/azurerm_postgresql_database/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/variables.tf)
 
 ```hcl
 variable "subscription_id" {
@@ -15016,7 +15016,7 @@ variable "collation" {
 
 #### `README_AZURERM_POSTGRESQL_SERVER.md`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_server/README_AZURERM_POSTGRESQL_SERVER.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/README_AZURERM_POSTGRESQL_SERVER.md)
+File: [v1/modules/dev/azure/azurerm_postgresql_server/README_AZURERM_POSTGRESQL_SERVER.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/README_AZURERM_POSTGRESQL_SERVER.md)
 
 ````markdown
 # Azure PostgreSQL Flexible Server
@@ -15105,7 +15105,7 @@ terraform output -raw postgresql_server_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_server/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/backend.tf)
+File: [v1/modules/dev/azure/azurerm_postgresql_server/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -15123,7 +15123,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_server/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/main.tf)
+File: [v1/modules/dev/azure/azurerm_postgresql_server/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/main.tf)
 
 ```hcl
 terraform {
@@ -15168,7 +15168,7 @@ resource "azurerm_postgresql_flexible_server" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_server/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/outputs.tf)
+File: [v1/modules/dev/azure/azurerm_postgresql_server/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/outputs.tf)
 
 ```hcl
 output "postgresql_server_id" {
@@ -15184,7 +15184,7 @@ output "fqdn" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_server/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/variables.tf)
+File: [v1/modules/dev/azure/azurerm_postgresql_server/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/variables.tf)
 
 ```hcl
 variable "subscription_id" {
@@ -15272,7 +15272,7 @@ variable "tags" {
 
 #### `README_BUCKET.md`
 
-File: [v1/modules/dev/civo/bucket/README_BUCKET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/README_BUCKET.md)
+File: [v1/modules/dev/civo/bucket/README_BUCKET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/README_BUCKET.md)
 
 ````markdown
 # Civo object store
@@ -15351,7 +15351,7 @@ None.
 
 #### `backend.tf`
 
-File: [v1/modules/dev/civo/bucket/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/backend.tf)
+File: [v1/modules/dev/civo/bucket/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -15369,7 +15369,7 @@ terraform {
 
 #### `bucket.tf`
 
-File: [v1/modules/dev/civo/bucket/bucket.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/bucket.tf)
+File: [v1/modules/dev/civo/bucket/bucket.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/bucket.tf)
 
 ```hcl
 resource "civo_object_store" "snowmonkeysbackup" {
@@ -15386,7 +15386,7 @@ data "civo_object_store_credential" "snowmonkeysbackup" {
 
 #### `provider.tf`
 
-File: [v1/modules/dev/civo/bucket/provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/provider.tf)
+File: [v1/modules/dev/civo/bucket/provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/provider.tf)
 
 ```hcl
 terraform {
@@ -15410,7 +15410,7 @@ provider "civo" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/civo/bucket/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/variables.tf)
+File: [v1/modules/dev/civo/bucket/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/variables.tf)
 
 ```hcl
 variable "civo-token" {
@@ -15458,7 +15458,7 @@ variable "region" {
 
 #### `README_COMPUTE.md`
 
-File: [v1/modules/dev/civo/compute/README_COMPUTE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/README_COMPUTE.md)
+File: [v1/modules/dev/civo/compute/README_COMPUTE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/README_COMPUTE.md)
 
 ````markdown
 # Civo compute (stub)
@@ -15515,7 +15515,7 @@ None.
 
 #### `backend.tf`
 
-File: [v1/modules/dev/civo/compute/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/backend.tf)
+File: [v1/modules/dev/civo/compute/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -15533,7 +15533,7 @@ terraform {
 
 #### `provider.tf`
 
-File: [v1/modules/dev/civo/compute/provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/provider.tf)
+File: [v1/modules/dev/civo/compute/provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/provider.tf)
 
 ```hcl
 terraform {
@@ -15553,7 +15553,7 @@ terraform {
 
 #### `README_OBSERVABILITY.md`
 
-File: [v1/modules/dev/civo/observability/README_OBSERVABILITY.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/README_OBSERVABILITY.md)
+File: [v1/modules/dev/civo/observability/README_OBSERVABILITY.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/README_OBSERVABILITY.md)
 
 ````markdown
 # Civo observability (incomplete)
@@ -15632,7 +15632,7 @@ None.
 
 #### `backend.tf`
 
-File: [v1/modules/dev/civo/observability/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/backend.tf)
+File: [v1/modules/dev/civo/observability/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -15650,7 +15650,7 @@ terraform {
 
 #### `grafana.tf`
 
-File: [v1/modules/dev/civo/observability/grafana.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/grafana.tf)
+File: [v1/modules/dev/civo/observability/grafana.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/grafana.tf)
 
 ```hcl
 
@@ -15658,7 +15658,7 @@ File: [v1/modules/dev/civo/observability/grafana.tf](../../../../../../snow-monk
 
 #### `opentelemetry.tf`
 
-File: [v1/modules/dev/civo/observability/opentelemetry.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/opentelemetry.tf)
+File: [v1/modules/dev/civo/observability/opentelemetry.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/opentelemetry.tf)
 
 ```hcl
 resource "kubernetes_namespace" "helmnamespace" {
@@ -15687,7 +15687,7 @@ resource "helm_release" "helmrelease" {
 
 #### `prometheus.tf`
 
-File: [v1/modules/dev/civo/observability/prometheus.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/prometheus.tf)
+File: [v1/modules/dev/civo/observability/prometheus.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/prometheus.tf)
 
 ```hcl
 
@@ -15695,7 +15695,7 @@ File: [v1/modules/dev/civo/observability/prometheus.tf](../../../../../../snow-m
 
 #### `provider.tf`
 
-File: [v1/modules/dev/civo/observability/provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/provider.tf)
+File: [v1/modules/dev/civo/observability/provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/provider.tf)
 
 ```hcl
 terraform {
@@ -15765,7 +15765,7 @@ provider "kubectl" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/civo/observability/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/variables.tf)
+File: [v1/modules/dev/civo/observability/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/variables.tf)
 
 ```hcl
 variable "namespace" {
@@ -15804,7 +15804,7 @@ variable "civo_token" {
 
 #### `README_CLOUDFLARE_D1_DATABASE.md`
 
-File: [v1/modules/dev/cloudflare/cloudflare_d1_database/README_CLOUDFLARE_D1_DATABASE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/README_CLOUDFLARE_D1_DATABASE.md)
+File: [v1/modules/dev/cloudflare/cloudflare_d1_database/README_CLOUDFLARE_D1_DATABASE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/README_CLOUDFLARE_D1_DATABASE.md)
 
 ````markdown
 # Cloudflare D1 database
@@ -15879,7 +15879,7 @@ terraform output -raw d1_database_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_d1_database/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/backend.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_d1_database/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -15897,7 +15897,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_d1_database/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/main.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_d1_database/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/main.tf)
 
 ```hcl
 terraform {
@@ -15924,7 +15924,7 @@ resource "cloudflare_d1_database" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_d1_database/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/outputs.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_d1_database/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/outputs.tf)
 
 ```hcl
 output "d1_database_id" {
@@ -15940,7 +15940,7 @@ output "d1_database_name" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_d1_database/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/variables.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_d1_database/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/variables.tf)
 
 ```hcl
 variable "cloudflare_api_token" {
@@ -15977,7 +15977,7 @@ variable "primary_location_hint" {
 
 #### `README_CLOUDFLARE_PAGES_PROJECT.md`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pages_project/README_CLOUDFLARE_PAGES_PROJECT.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/README_CLOUDFLARE_PAGES_PROJECT.md)
+File: [v1/modules/dev/cloudflare/cloudflare_pages_project/README_CLOUDFLARE_PAGES_PROJECT.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/README_CLOUDFLARE_PAGES_PROJECT.md)
 
 ````markdown
 # Cloudflare Pages Project
@@ -16017,7 +16017,7 @@ terraform apply
 
 #### `backend.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pages_project/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/backend.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_pages_project/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -16035,7 +16035,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pages_project/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/main.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_pages_project/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/main.tf)
 
 ```hcl
 terraform {
@@ -16061,7 +16061,7 @@ resource "cloudflare_pages_project" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pages_project/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/outputs.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_pages_project/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/outputs.tf)
 
 ```hcl
 output "pages_project_id" {
@@ -16082,7 +16082,7 @@ output "pages_project_subdomain" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pages_project/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/variables.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_pages_project/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/variables.tf)
 
 ```hcl
 variable "cloudflare_api_token" {
@@ -16113,7 +16113,7 @@ variable "production_branch" {
 
 #### `README_CLOUDFLARE_PIPELINE_SINK.md`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/README_CLOUDFLARE_PIPELINE_SINK.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/README_CLOUDFLARE_PIPELINE_SINK.md)
+File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/README_CLOUDFLARE_PIPELINE_SINK.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/README_CLOUDFLARE_PIPELINE_SINK.md)
 
 ````markdown
 # Cloudflare Pipeline sink
@@ -16198,7 +16198,7 @@ terraform output -raw pipeline_sink_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/backend.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -16216,7 +16216,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/main.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/main.tf)
 
 ```hcl
 terraform {
@@ -16256,7 +16256,7 @@ resource "cloudflare_pipeline_sink" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/outputs.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/outputs.tf)
 
 ```hcl
 output "pipeline_sink_id" {
@@ -16272,7 +16272,7 @@ output "pipeline_sink_name" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/variables.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/variables.tf)
 
 ```hcl
 variable "cloudflare_api_token" {
@@ -16338,7 +16338,7 @@ variable "format_type" {
 
 #### `README_CLOUDFLARE_R2_BUCKET.md`
 
-File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/README_CLOUDFLARE_R2_BUCKET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/README_CLOUDFLARE_R2_BUCKET.md)
+File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/README_CLOUDFLARE_R2_BUCKET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/README_CLOUDFLARE_R2_BUCKET.md)
 
 ````markdown
 # Cloudflare R2 bucket
@@ -16413,7 +16413,7 @@ terraform output -raw r2_bucket_name
 
 #### `backend.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/backend.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -16431,7 +16431,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/main.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/main.tf)
 
 ```hcl
 terraform {
@@ -16458,7 +16458,7 @@ resource "cloudflare_r2_bucket" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/outputs.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/outputs.tf)
 
 ```hcl
 output "r2_bucket_id" {
@@ -16474,7 +16474,7 @@ output "r2_bucket_name" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/variables.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/variables.tf)
 
 ```hcl
 variable "cloudflare_api_token" {
@@ -16511,7 +16511,7 @@ variable "storage_class" {
 
 #### `README_CLOUDFLARE_WORKERS_SCRIPT.md`
 
-File: [v1/modules/dev/cloudflare/cloudflare_workers_script/README_CLOUDFLARE_WORKERS_SCRIPT.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/README_CLOUDFLARE_WORKERS_SCRIPT.md)
+File: [v1/modules/dev/cloudflare/cloudflare_workers_script/README_CLOUDFLARE_WORKERS_SCRIPT.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/README_CLOUDFLARE_WORKERS_SCRIPT.md)
 
 ````markdown
 # Cloudflare Workers script
@@ -16595,7 +16595,7 @@ terraform output -raw workers_script_name
 
 #### `backend.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_workers_script/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/backend.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_workers_script/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -16613,7 +16613,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_workers_script/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/main.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_workers_script/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/main.tf)
 
 ```hcl
 terraform {
@@ -16640,7 +16640,7 @@ resource "cloudflare_workers_script" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_workers_script/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/outputs.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_workers_script/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/outputs.tf)
 
 ```hcl
 output "workers_script_id" {
@@ -16656,7 +16656,7 @@ output "workers_script_name" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_workers_script/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/variables.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_workers_script/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/variables.tf)
 
 ```hcl
 variable "cloudflare_api_token" {
@@ -16699,7 +16699,7 @@ variable "main_module" {
 
 #### `README_DNS.md`
 
-File: [v1/modules/dev/cloudflare/dns/README_DNS.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/README_DNS.md)
+File: [v1/modules/dev/cloudflare/dns/README_DNS.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/README_DNS.md)
 
 ````markdown
 # Cloudflare DNS (incomplete)
@@ -16777,7 +16777,7 @@ None.
 
 #### `backend.tf`
 
-File: [v1/modules/dev/cloudflare/dns/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/backend.tf)
+File: [v1/modules/dev/cloudflare/dns/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -16795,7 +16795,7 @@ terraform {
 
 #### `cloudflare.tf`
 
-File: [v1/modules/dev/cloudflare/dns/cloudflare.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/cloudflare.tf)
+File: [v1/modules/dev/cloudflare/dns/cloudflare.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/cloudflare.tf)
 
 ```hcl
 # Cloudflare DNS records and API Secret
@@ -16830,7 +16830,7 @@ resource "cloudflare_record" "clcreative-all-cluster" {
 
 #### `provider.tf`
 
-File: [v1/modules/dev/cloudflare/dns/provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/provider.tf)
+File: [v1/modules/dev/cloudflare/dns/provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/provider.tf)
 
 ```hcl
 terraform {
@@ -16853,7 +16853,7 @@ provider "cloudflare" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/cloudflare/dns/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/variables.tf)
+File: [v1/modules/dev/cloudflare/dns/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/variables.tf)
 
 ```hcl
 variable "cloudflare_email" {
@@ -16880,7 +16880,7 @@ variable "cloudflare_record_name" {
 
 #### `README_DIGITALOCEAN_DROPLET.md`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet/README_DIGITALOCEAN_DROPLET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/README_DIGITALOCEAN_DROPLET.md)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet/README_DIGITALOCEAN_DROPLET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/README_DIGITALOCEAN_DROPLET.md)
 
 ````markdown
 # DigitalOcean droplet
@@ -16964,7 +16964,7 @@ ssh root@$(terraform output -raw droplet_ip)
 
 #### `backend.tf`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/backend.tf)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -16982,7 +16982,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/main.tf)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/main.tf)
 
 ```hcl
 terraform {
@@ -17020,7 +17020,7 @@ resource "digitalocean_droplet" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/outputs.tf)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/outputs.tf)
 
 ```hcl
 output "droplet_id" {
@@ -17046,7 +17046,7 @@ output "droplet_status" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/variables.tf)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/variables.tf)
 
 ```hcl
 variable "digitalocean_token" {
@@ -17115,7 +17115,7 @@ variable "tags" {
 
 #### `README_DIGITALOCEAN_DROPLET_AUTOSCALE.md`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/README_DIGITALOCEAN_DROPLET_AUTOSCALE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/README_DIGITALOCEAN_DROPLET_AUTOSCALE.md)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/README_DIGITALOCEAN_DROPLET_AUTOSCALE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/README_DIGITALOCEAN_DROPLET_AUTOSCALE.md)
 
 ````markdown
 # DigitalOcean droplet autoscale pool
@@ -17204,7 +17204,7 @@ terraform output droplet_autoscale_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/backend.tf)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -17222,7 +17222,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/main.tf)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/main.tf)
 
 ```hcl
 terraform {
@@ -17271,7 +17271,7 @@ resource "digitalocean_droplet_autoscale" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/outputs.tf)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/outputs.tf)
 
 ```hcl
 output "droplet_autoscale_id" {
@@ -17287,7 +17287,7 @@ output "droplet_autoscale_status" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/variables.tf)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/variables.tf)
 
 ```hcl
 variable "digitalocean_token" {
@@ -17392,7 +17392,7 @@ variable "user_data" {
 
 #### `README_DROPLET.md`
 
-File: [v1/modules/dev/digitalocean/droplet/README_DROPLET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/README_DROPLET.md)
+File: [v1/modules/dev/digitalocean/droplet/README_DROPLET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/README_DROPLET.md)
 
 ````markdown
 # DigitalOcean droplet (legacy)
@@ -17471,7 +17471,7 @@ Without an SSH key this Droplet is only reachable if you add a key in the Digita
 
 #### `backend.tf`
 
-File: [v1/modules/dev/digitalocean/droplet/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/backend.tf)
+File: [v1/modules/dev/digitalocean/droplet/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -17489,7 +17489,7 @@ terraform {
 
 #### `droplet.tf`
 
-File: [v1/modules/dev/digitalocean/droplet/droplet.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/droplet.tf)
+File: [v1/modules/dev/digitalocean/droplet/droplet.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/droplet.tf)
 
 ```hcl
 # Create a new Web Droplet in the nyc2 region
@@ -17503,7 +17503,7 @@ resource "digitalocean_droplet" "web" {
 
 #### `output.tf`
 
-File: [v1/modules/dev/digitalocean/droplet/output.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/output.tf)
+File: [v1/modules/dev/digitalocean/droplet/output.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/output.tf)
 
 ```hcl
 output "droplet_ip" {
@@ -17513,7 +17513,7 @@ output "droplet_ip" {
 
 #### `provider.tf`
 
-File: [v1/modules/dev/digitalocean/droplet/provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/provider.tf)
+File: [v1/modules/dev/digitalocean/droplet/provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/provider.tf)
 
 ```hcl
 terraform {
@@ -17538,7 +17538,7 @@ provider "digitalocean" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/digitalocean/droplet/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/variables.tf)
+File: [v1/modules/dev/digitalocean/droplet/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/variables.tf)
 
 ```hcl
 variable "digitalocean_token" {
@@ -17575,7 +17575,7 @@ variable "droplet_image" {
 
 #### `README_COMPUTE.md`
 
-File: [v1/modules/dev/gcp/compute/README_COMPUTE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/README_COMPUTE.md)
+File: [v1/modules/dev/gcp/compute/README_COMPUTE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/README_COMPUTE.md)
 
 ````markdown
 # GCP Compute Engine instance (legacy demo)
@@ -17643,7 +17643,7 @@ None.
 
 #### `backend.tf`
 
-File: [v1/modules/dev/gcp/compute/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/backend.tf)
+File: [v1/modules/dev/gcp/compute/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -17661,7 +17661,7 @@ terraform {
 
 #### `compute-instance.tf`
 
-File: [v1/modules/dev/gcp/compute/compute-instance.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/compute-instance.tf)
+File: [v1/modules/dev/gcp/compute/compute-instance.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/compute-instance.tf)
 
 ```hcl
 resource "google_compute_instance" "default" {
@@ -17688,7 +17688,7 @@ resource "google_compute_instance" "default" {
 
 #### `provider.tf`
 
-File: [v1/modules/dev/gcp/compute/provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/provider.tf)
+File: [v1/modules/dev/gcp/compute/provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/provider.tf)
 
 ```hcl
 terraform {
@@ -17714,7 +17714,7 @@ provider "google" {
 
 #### `README_GOOGLE_COMPUTE_INSTANCE.md`
 
-File: [v1/modules/dev/gcp/google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md)
+File: [v1/modules/dev/gcp/google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md)
 
 ````markdown
 # GCP Compute Engine instance
@@ -17806,7 +17806,7 @@ terraform output -raw public_ip
 
 #### `backend.tf`
 
-File: [v1/modules/dev/gcp/google_compute_instance/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/backend.tf)
+File: [v1/modules/dev/gcp/google_compute_instance/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -17824,7 +17824,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/gcp/google_compute_instance/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/main.tf)
+File: [v1/modules/dev/gcp/google_compute_instance/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/main.tf)
 
 ```hcl
 terraform {
@@ -17882,7 +17882,7 @@ resource "google_compute_instance" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/gcp/google_compute_instance/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/outputs.tf)
+File: [v1/modules/dev/gcp/google_compute_instance/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/outputs.tf)
 
 ```hcl
 output "instance_id" {
@@ -17919,7 +17919,7 @@ output "private_ip" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/gcp/google_compute_instance/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/variables.tf)
+File: [v1/modules/dev/gcp/google_compute_instance/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/variables.tf)
 
 ```hcl
 variable "project" {
@@ -18024,7 +18024,7 @@ variable "tags" {
 
 #### `README_GOOGLE_SQL_DATABASE_INSTANCE.md`
 
-File: [v1/modules/dev/gcp/google_sql_database_instance/README_GOOGLE_SQL_DATABASE_INSTANCE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/README_GOOGLE_SQL_DATABASE_INSTANCE.md)
+File: [v1/modules/dev/gcp/google_sql_database_instance/README_GOOGLE_SQL_DATABASE_INSTANCE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/README_GOOGLE_SQL_DATABASE_INSTANCE.md)
 
 ````markdown
 # GCP Cloud SQL instance
@@ -18108,7 +18108,7 @@ terraform output -raw connection_name
 
 #### `backend.tf`
 
-File: [v1/modules/dev/gcp/google_sql_database_instance/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/backend.tf)
+File: [v1/modules/dev/gcp/google_sql_database_instance/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -18126,7 +18126,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/gcp/google_sql_database_instance/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/main.tf)
+File: [v1/modules/dev/gcp/google_sql_database_instance/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/main.tf)
 
 ```hcl
 terraform {
@@ -18173,7 +18173,7 @@ resource "google_sql_database_instance" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/gcp/google_sql_database_instance/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/outputs.tf)
+File: [v1/modules/dev/gcp/google_sql_database_instance/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/outputs.tf)
 
 ```hcl
 output "sql_instance_id" {
@@ -18199,7 +18199,7 @@ output "private_ip_address" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/gcp/google_sql_database_instance/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/variables.tf)
+File: [v1/modules/dev/gcp/google_sql_database_instance/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/variables.tf)
 
 ```hcl
 variable "project" {
@@ -18279,7 +18279,7 @@ variable "labels" {
 
 #### `README_GOOGLE_STORAGE_BUCKET.md`
 
-File: [v1/modules/dev/gcp/google_storage_bucket/README_GOOGLE_STORAGE_BUCKET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/README_GOOGLE_STORAGE_BUCKET.md)
+File: [v1/modules/dev/gcp/google_storage_bucket/README_GOOGLE_STORAGE_BUCKET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/README_GOOGLE_STORAGE_BUCKET.md)
 
 ````markdown
 # GCP Cloud Storage bucket
@@ -18361,7 +18361,7 @@ terraform output -raw bucket_name
 
 #### `backend.tf`
 
-File: [v1/modules/dev/gcp/google_storage_bucket/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/backend.tf)
+File: [v1/modules/dev/gcp/google_storage_bucket/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -18379,7 +18379,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/gcp/google_storage_bucket/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/main.tf)
+File: [v1/modules/dev/gcp/google_storage_bucket/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/main.tf)
 
 ```hcl
 terraform {
@@ -18416,7 +18416,7 @@ resource "google_storage_bucket" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/gcp/google_storage_bucket/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/outputs.tf)
+File: [v1/modules/dev/gcp/google_storage_bucket/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/outputs.tf)
 
 ```hcl
 output "bucket_id" {
@@ -18437,7 +18437,7 @@ output "bucket_url" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/gcp/google_storage_bucket/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/variables.tf)
+File: [v1/modules/dev/gcp/google_storage_bucket/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/variables.tf)
 
 ```hcl
 variable "project" {
@@ -18499,7 +18499,7 @@ variable "labels" {
 
 #### `README_GOOGLE_STORAGE_BUCKET_OBJECT.md`
 
-File: [v1/modules/dev/gcp/google_storage_bucket_object/README_GOOGLE_STORAGE_BUCKET_OBJECT.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/README_GOOGLE_STORAGE_BUCKET_OBJECT.md)
+File: [v1/modules/dev/gcp/google_storage_bucket_object/README_GOOGLE_STORAGE_BUCKET_OBJECT.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/README_GOOGLE_STORAGE_BUCKET_OBJECT.md)
 
 ````markdown
 # GCP Cloud Storage object
@@ -18588,7 +18588,7 @@ terraform output -raw media_link
 
 #### `backend.tf`
 
-File: [v1/modules/dev/gcp/google_storage_bucket_object/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/backend.tf)
+File: [v1/modules/dev/gcp/google_storage_bucket_object/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -18606,7 +18606,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/gcp/google_storage_bucket_object/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/main.tf)
+File: [v1/modules/dev/gcp/google_storage_bucket_object/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/main.tf)
 
 ```hcl
 terraform {
@@ -18637,7 +18637,7 @@ resource "google_storage_bucket_object" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/gcp/google_storage_bucket_object/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/outputs.tf)
+File: [v1/modules/dev/gcp/google_storage_bucket_object/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/outputs.tf)
 
 ```hcl
 output "object_id" {
@@ -18658,7 +18658,7 @@ output "media_link" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/gcp/google_storage_bucket_object/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/variables.tf)
+File: [v1/modules/dev/gcp/google_storage_bucket_object/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/variables.tf)
 
 ```hcl
 variable "project" {
@@ -18719,7 +18719,7 @@ variable "cache_control" {
 
 #### `README_HCLOUD_FIREWALL.md`
 
-File: [v1/modules/dev/hetzner/hcloud_firewall/README_HCLOUD_FIREWALL.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/README_HCLOUD_FIREWALL.md)
+File: [v1/modules/dev/hetzner/hcloud_firewall/README_HCLOUD_FIREWALL.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/README_HCLOUD_FIREWALL.md)
 
 ````markdown
 # Hetzner Cloud firewall
@@ -18797,7 +18797,7 @@ terraform apply
 
 #### `backend.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_firewall/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/backend.tf)
+File: [v1/modules/dev/hetzner/hcloud_firewall/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -18815,7 +18815,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_firewall/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/main.tf)
+File: [v1/modules/dev/hetzner/hcloud_firewall/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/main.tf)
 
 ```hcl
 terraform {
@@ -18860,7 +18860,7 @@ resource "hcloud_firewall" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_firewall/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/outputs.tf)
+File: [v1/modules/dev/hetzner/hcloud_firewall/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/outputs.tf)
 
 ```hcl
 output "firewall_id" {
@@ -18881,7 +18881,7 @@ output "firewall_rules" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_firewall/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/variables.tf)
+File: [v1/modules/dev/hetzner/hcloud_firewall/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/variables.tf)
 
 ```hcl
 variable "hcloud_token" {
@@ -18971,7 +18971,7 @@ variable "apply_to" {
 
 #### `README_HCLOUD_FLOATING_IP.md`
 
-File: [v1/modules/dev/hetzner/hcloud_floating_ip/README_HCLOUD_FLOATING_IP.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/README_HCLOUD_FLOATING_IP.md)
+File: [v1/modules/dev/hetzner/hcloud_floating_ip/README_HCLOUD_FLOATING_IP.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/README_HCLOUD_FLOATING_IP.md)
 
 ````markdown
 # Hetzner Cloud floating IP
@@ -19054,7 +19054,7 @@ terraform output -raw ip_address
 
 #### `backend.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_floating_ip/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/backend.tf)
+File: [v1/modules/dev/hetzner/hcloud_floating_ip/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -19072,7 +19072,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_floating_ip/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/main.tf)
+File: [v1/modules/dev/hetzner/hcloud_floating_ip/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/main.tf)
 
 ```hcl
 terraform {
@@ -19102,7 +19102,7 @@ resource "hcloud_floating_ip" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_floating_ip/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/outputs.tf)
+File: [v1/modules/dev/hetzner/hcloud_floating_ip/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/outputs.tf)
 
 ```hcl
 output "floating_ip_id" {
@@ -19128,7 +19128,7 @@ output "home_location" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_floating_ip/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/variables.tf)
+File: [v1/modules/dev/hetzner/hcloud_floating_ip/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/variables.tf)
 
 ```hcl
 variable "hcloud_token" {
@@ -19186,7 +19186,7 @@ variable "delete_protection" {
 
 #### `README_HCLOUD_NETWORK.md`
 
-File: [v1/modules/dev/hetzner/hcloud_network/README_HCLOUD_NETWORK.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/README_HCLOUD_NETWORK.md)
+File: [v1/modules/dev/hetzner/hcloud_network/README_HCLOUD_NETWORK.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/README_HCLOUD_NETWORK.md)
 
 ````markdown
 # Hetzner Cloud network
@@ -19265,7 +19265,7 @@ terraform output -raw network_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_network/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/backend.tf)
+File: [v1/modules/dev/hetzner/hcloud_network/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -19283,7 +19283,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_network/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/main.tf)
+File: [v1/modules/dev/hetzner/hcloud_network/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/main.tf)
 
 ```hcl
 terraform {
@@ -19311,7 +19311,7 @@ resource "hcloud_network" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_network/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/outputs.tf)
+File: [v1/modules/dev/hetzner/hcloud_network/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/outputs.tf)
 
 ```hcl
 output "network_id" {
@@ -19332,7 +19332,7 @@ output "ip_range" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_network/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/variables.tf)
+File: [v1/modules/dev/hetzner/hcloud_network/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/variables.tf)
 
 ```hcl
 variable "hcloud_token" {
@@ -19378,7 +19378,7 @@ variable "expose_routes_to_vswitch" {
 
 #### `README_HCLOUD_SERVER.md`
 
-File: [v1/modules/dev/hetzner/hcloud_server/README_HCLOUD_SERVER.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/README_HCLOUD_SERVER.md)
+File: [v1/modules/dev/hetzner/hcloud_server/README_HCLOUD_SERVER.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/README_HCLOUD_SERVER.md)
 
 ````markdown
 # Hetzner Cloud server
@@ -19465,7 +19465,7 @@ ssh root@$(terraform output -raw server_ipv4)
 
 #### `backend.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_server/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/backend.tf)
+File: [v1/modules/dev/hetzner/hcloud_server/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -19483,7 +19483,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_server/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/main.tf)
+File: [v1/modules/dev/hetzner/hcloud_server/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/main.tf)
 
 ```hcl
 terraform {
@@ -19526,7 +19526,7 @@ resource "hcloud_server" "cx23" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_server/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/outputs.tf)
+File: [v1/modules/dev/hetzner/hcloud_server/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/outputs.tf)
 
 ```hcl
 output "server_id" {
@@ -19544,7 +19544,7 @@ output "server_status" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_server/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/variables.tf)
+File: [v1/modules/dev/hetzner/hcloud_server/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/variables.tf)
 
 ```hcl
 variable "hcloud_token" {
@@ -19606,7 +19606,7 @@ variable "ipv6_enabled" {
 
 #### `README_HCLOUD_VOLUME.md`
 
-File: [v1/modules/dev/hetzner/hcloud_volume/README_HCLOUD_VOLUME.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/README_HCLOUD_VOLUME.md)
+File: [v1/modules/dev/hetzner/hcloud_volume/README_HCLOUD_VOLUME.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/README_HCLOUD_VOLUME.md)
 
 ````markdown
 # Hetzner Cloud volume
@@ -19689,7 +19689,7 @@ terraform output -raw linux_device
 
 #### `backend.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_volume/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/backend.tf)
+File: [v1/modules/dev/hetzner/hcloud_volume/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -19707,7 +19707,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_volume/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/main.tf)
+File: [v1/modules/dev/hetzner/hcloud_volume/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/main.tf)
 
 ```hcl
 terraform {
@@ -19738,7 +19738,7 @@ resource "hcloud_volume" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_volume/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/outputs.tf)
+File: [v1/modules/dev/hetzner/hcloud_volume/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/outputs.tf)
 
 ```hcl
 output "volume_id" {
@@ -19764,7 +19764,7 @@ output "location" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_volume/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/variables.tf)
+File: [v1/modules/dev/hetzner/hcloud_volume/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/variables.tf)
 
 ```hcl
 variable "hcloud_token" {
@@ -19828,7 +19828,7 @@ variable "delete_protection" {
 
 #### `README_HCLOUD_VOLUME_ATTACHMENT.md`
 
-File: [v1/modules/dev/hetzner/hcloud_volume_attachment/README_HCLOUD_VOLUME_ATTACHMENT.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/README_HCLOUD_VOLUME_ATTACHMENT.md)
+File: [v1/modules/dev/hetzner/hcloud_volume_attachment/README_HCLOUD_VOLUME_ATTACHMENT.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/README_HCLOUD_VOLUME_ATTACHMENT.md)
 
 ````markdown
 # Hetzner Cloud volume attachment
@@ -19906,7 +19906,7 @@ terraform output volume_attachment_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_volume_attachment/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/backend.tf)
+File: [v1/modules/dev/hetzner/hcloud_volume_attachment/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -19924,7 +19924,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_volume_attachment/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/main.tf)
+File: [v1/modules/dev/hetzner/hcloud_volume_attachment/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/main.tf)
 
 ```hcl
 terraform {
@@ -19950,7 +19950,7 @@ resource "hcloud_volume_attachment" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_volume_attachment/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/outputs.tf)
+File: [v1/modules/dev/hetzner/hcloud_volume_attachment/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/outputs.tf)
 
 ```hcl
 output "volume_attachment_id" {
@@ -19971,7 +19971,7 @@ output "server_id" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_volume_attachment/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/variables.tf)
+File: [v1/modules/dev/hetzner/hcloud_volume_attachment/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/variables.tf)
 
 ```hcl
 variable "hcloud_token" {
@@ -20006,7 +20006,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-10-i
 Copy: [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -20028,7 +20028,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-10-i
 Copy: [body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 10 — Infrastructure as Code projects for cloud resources
@@ -20040,8 +20040,8 @@ Source repos: `snow-monkeys-infra/iac-terraform/`, `snow-monkeys-modules/`
 
 How a reusable workflow clones and applies one Terraform project. `master-infra` names the projects.
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
-2. [Walkthrough](./02-walkthrough/) — index of every Terraform project and its source
+1. [Conceptual explanation](../../../part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation)
+2. [Walkthrough](../../../part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough) — index of every Terraform project and its source
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-11-hands-on-reusable-workflows-01-conceptual-explanation-readme-md"></a>
@@ -20052,7 +20052,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-11-h
 Copy: [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
@@ -20070,7 +20070,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-11-h
 Copy: [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/02-walkthrough/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/02-walkthrough/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 2. Walkthrough
@@ -20088,7 +20088,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-11-h
 Copy: [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -20110,7 +20110,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-11-h
 Copy: [body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 11 — Hands-on Reusable Workflows
@@ -20120,8 +20120,8 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part IV — Core Modules  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
-2. [Walkthrough](./02-walkthrough/)
+1. [Conceptual explanation](../../../part-04-core-modules/chapter-11-hands-on-reusable-workflows/01-conceptual-explanation)
+2. [Walkthrough](../../../part-04-core-modules/chapter-11-hands-on-reusable-workflows/02-walkthrough)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-12-walkthrough-01-conceptual-explanation-readme-md"></a>
@@ -20132,7 +20132,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-12-w
 Copy: [body/part-04-core-modules/chapter-12-walkthrough/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-12-walkthrough/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
@@ -20150,7 +20150,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-12-w
 Copy: [body/part-04-core-modules/chapter-12-walkthrough/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-12-walkthrough/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -20172,7 +20172,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-12-w
 Copy: [body/part-04-core-modules/chapter-12-walkthrough/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-12-walkthrough/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 12 — Walkthrough
@@ -20182,7 +20182,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part IV — Core Modules  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../../part-04-core-modules/chapter-12-walkthrough/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-13-common-pitfalls-01-conceptual-explanation-pitfall-01-md"></a>
@@ -20193,7 +20193,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-13-c
 Copy: [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-01.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-01.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Pitfall 1
@@ -20211,7 +20211,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-13-c
 Copy: [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-02.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-02.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Pitfall 2
@@ -20229,7 +20229,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-13-c
 Copy: [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-03.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-03.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Pitfall 3
@@ -20247,14 +20247,14 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-13-c
 Copy: [body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
 
 > Status: stub — write after TOC approval.
 
-2–3 mistakes and fixes: [pitfall 1](./pitfall-01.md), [pitfall 2](./pitfall-02.md), [pitfall 3](./pitfall-03.md).
+2–3 mistakes and fixes: [pitfall 1](../../../part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-01.md), [pitfall 2](../../../part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-02.md), [pitfall 3](../../../part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation/pitfall-03.md).
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-13-common-pitfalls-chapter-checklist-md"></a>
@@ -20265,7 +20265,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-13-c
 Copy: [body/part-04-core-modules/chapter-13-common-pitfalls/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -20287,7 +20287,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-13-c
 Copy: [body/part-04-core-modules/chapter-13-common-pitfalls/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-13-common-pitfalls/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 13 — Common Pitfalls
@@ -20297,7 +20297,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part IV — Core Modules  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../../part-04-core-modules/chapter-13-common-pitfalls/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-14-exercises-01-conceptual-explanation-readme-md"></a>
@@ -20308,7 +20308,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-14-e
 Copy: [body/part-04-core-modules/chapter-14-exercises/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-14-exercises/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
@@ -20326,7 +20326,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-14-e
 Copy: [body/part-04-core-modules/chapter-14-exercises/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-14-exercises/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -20348,7 +20348,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-14-e
 Copy: [body/part-04-core-modules/chapter-14-exercises/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-14-exercises/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 14 — Exercises
@@ -20358,7 +20358,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part IV — Core Modules  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../../part-04-core-modules/chapter-14-exercises/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-01-conceptual-explanation-applications-md"></a>
@@ -20369,7 +20369,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-15-e
 Copy: [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/applications.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/applications.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ````markdown
 # Applications
@@ -20409,7 +20409,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-15-e
 Copy: [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/infrastructure.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/infrastructure.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ````markdown
 # Infrastructure
@@ -20502,7 +20502,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-15-e
 Copy: [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ````markdown
 # 1. Conceptual explanation
@@ -20528,10 +20528,10 @@ Chapter 1 states the goal: a dashboard to visualize deployment activity, and reu
 
 `main-examples` has callers for Hetzner, AWS, and Cloud Flare. Chapter 2 also lists Local Mac computer, Azure, Google Cloud, Digital Ocean, and Civo. Those providers are not given a caller workflow in `main-examples`. Their `type` names, where a module exists, are in `list-of-resources.md`.
 
-- [Infrastructure](./infrastructure.md)
-- [Services](./services.md)
-- [Applications](./applications.md)
-- [Stateful create and destroy](./stateful.md)
+- [Infrastructure](../../../part-04-core-modules/chapter-15-examples/01-conceptual-explanation/infrastructure.md)
+- [Services](../../../part-04-core-modules/chapter-15-examples/01-conceptual-explanation/services.md)
+- [Applications](../../../part-04-core-modules/chapter-15-examples/01-conceptual-explanation/applications.md)
+- [Stateful create and destroy](../../../part-04-core-modules/chapter-15-examples/01-conceptual-explanation/stateful.md)
 ````
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-04-core-modules-chapter-15-examples-01-conceptual-explanation-services-md"></a>
@@ -20542,7 +20542,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-15-e
 Copy: [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/services.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/services.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ````markdown
 # Services
@@ -20586,7 +20586,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-15-e
 Copy: [body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/stateful.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/01-conceptual-explanation/stateful.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ````markdown
 # Stateful create and destroy
@@ -20654,7 +20654,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-15-e
 Copy: [body/part-04-core-modules/chapter-15-examples/02-walkthrough/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/02-walkthrough/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ````markdown
 # 2. Walkthrough
@@ -20667,13 +20667,13 @@ Paths below are from this book file to the workspace.
 
 | `type` | Reusable workflow | Action | Terraform directory |
 | --- | --- | --- | --- |
-| `hcloud_server`, `hcloud_firewall`, `hcloud_network`, `hcloud_volume`, `hcloud_volume_attachment`, `hcloud_floating_ip` | [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) | [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) | `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/<type>` |
-| `docker_compose` | [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) | [docker-compose](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) | none |
-| `docker_compose_app` | [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) | [docker-compose-app](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) | none |
-| `aws_s3_bucket` | [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) | [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) | `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket` |
-| `cloudflare_pages_project` | [cloudflare-iac main.yml](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) | [server-resource](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource/action.yml) | `snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project` |
+| `hcloud_server`, `hcloud_firewall`, `hcloud_network`, `hcloud_volume`, `hcloud_volume_attachment`, `hcloud_floating_ip` | [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) | [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) | `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/<type>` |
+| `docker_compose` | [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) | [docker-compose](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) | none |
+| `docker_compose_app` | [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) | [docker-compose-app](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) | none |
+| `aws_s3_bucket` | [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) | [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) | `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket` |
+| `cloudflare_pages_project` | [cloudflare-iac main.yml](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) | [server-resource](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource/action.yml) | `snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project` |
 
-`list-of-resources.md` is the type list: [master-modules/list-of-resources.md](../../../../../../snow-monkeys-modules/master-modules/list-of-resources.md).
+`list-of-resources.md` is the type list: [master-modules/list-of-resources.md](../../../../references/snow-monkeys-modules/master-modules/list-of-resources.md).
 
 ## Index
 
@@ -20681,42 +20681,42 @@ Paths below are from this book file to the workspace.
 
 | Caller | Jobs | Implementation |
 | --- | --- | --- |
-| [server-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/server/.github/workflows/server-stateless.yml) | `hcloud_server` `server-hetzner-stateless` | [hetzner-iac](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [hcloud_server](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server) |
-| [firewall-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/firewall-stateless.yml) | `hcloud_firewall` `firewall-hetzner` | [hetzner-iac](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [hcloud_firewall](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall) |
-| [network-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/network-stateless.yml) | `hcloud_network` `network-hetzner`, `ip_range=10.0.0.0/16` | [hetzner-iac](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [hcloud_network](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network) |
-| [volume-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/volume-stateless.yml) | `hcloud_volume` `volume-hetzner`, `size=10`, `location=hel1` | [hetzner-iac](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [hcloud_volume](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume) |
-| [volume-attachment-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/volume-attachment-stateless.yml) | `hcloud_volume_attachment` `volume-attachment-hetzner`, `volume_id=0`, `server_id=0`, `automount=false` | [hetzner-iac](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [hcloud_volume_attachment](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment) |
-| [floating-ip-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/floating-ip-stateless.yml) | `hcloud_floating_ip` `floating-ip-hetzner`, `type=ipv4`, `home_location=hel1` | [hetzner-iac](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [hcloud_floating_ip](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip) |
-| [service-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/services/.github/workflows/service-stateless.yml) | `hcloud_server` `server-hetzner-stateless`, then `docker_compose` `service-hetzner-stateless` `host: server-hetzner-stateless` | [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml), then [docker-compose](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) |
-| [application-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/application/.github/workflows/application-stateless.yml) | `hcloud_server` `server-hetzner-stateless`, then `docker_compose_app` `application-hetzner-stateless` `host: server-hetzner-stateless` `expected_url` port `4321` | [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml), then [docker-compose-app](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) |
-| [example-1-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/combined/.github/workflows/example-1-stateless.yml) | `hcloud_server` `server-example-1-stateless` `infra: server/infra`, then `docker_compose_app` `host: server-example-1-stateless` `infra: application/infra` | same two Hetzner actions as the application example |
-| [example-2-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/combined/.github/workflows/example-2-stateless.yml) | `hcloud_server` `server-example-2-stateless`, then `docker_compose` `host: server-example-2-stateless` `infra: service/infra` `env_values` `DB_USER` and `DB_PASSWORD` | [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml), then [docker-compose](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) |
+| [server-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/server/.github/workflows/server-stateless.yml) | `hcloud_server` `server-hetzner-stateless` | [hetzner-iac](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [hcloud_server](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server) |
+| [firewall-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/firewall-stateless.yml) | `hcloud_firewall` `firewall-hetzner` | [hetzner-iac](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [hcloud_firewall](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall) |
+| [network-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/network-stateless.yml) | `hcloud_network` `network-hetzner`, `ip_range=10.0.0.0/16` | [hetzner-iac](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [hcloud_network](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network) |
+| [volume-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/volume-stateless.yml) | `hcloud_volume` `volume-hetzner`, `size=10`, `location=hel1` | [hetzner-iac](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [hcloud_volume](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume) |
+| [volume-attachment-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/volume-attachment-stateless.yml) | `hcloud_volume_attachment` `volume-attachment-hetzner`, `volume_id=0`, `server_id=0`, `automount=false` | [hetzner-iac](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [hcloud_volume_attachment](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment) |
+| [floating-ip-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/floating-ip-stateless.yml) | `hcloud_floating_ip` `floating-ip-hetzner`, `type=ipv4`, `home_location=hel1` | [hetzner-iac](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [hcloud_floating_ip](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip) |
+| [service-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/services/.github/workflows/service-stateless.yml) | `hcloud_server` `server-hetzner-stateless`, then `docker_compose` `service-hetzner-stateless` `host: server-hetzner-stateless` | [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml), then [docker-compose](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) |
+| [application-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/application/.github/workflows/application-stateless.yml) | `hcloud_server` `server-hetzner-stateless`, then `docker_compose_app` `application-hetzner-stateless` `host: server-hetzner-stateless` `expected_url` port `4321` | [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml), then [docker-compose-app](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) |
+| [example-1-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/combined/.github/workflows/example-1-stateless.yml) | `hcloud_server` `server-example-1-stateless` `infra: server/infra`, then `docker_compose_app` `host: server-example-1-stateless` `infra: application/infra` | same two Hetzner actions as the application example |
+| [example-2-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/combined/.github/workflows/example-2-stateless.yml) | `hcloud_server` `server-example-2-stateless`, then `docker_compose` `host: server-example-2-stateless` `infra: service/infra` `env_values` `DB_USER` and `DB_PASSWORD` | [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml), then [docker-compose](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) |
 
 ### Hetzner stateful
 
-Each create file calls [aws-iac](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) with `type: aws_s3_bucket` and `name: s3-server-state`, then [hetzner-iac](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) with `s3_bucket_state: s3-server-state`. The destroy file repeats that and adds one more Hetzner job with `destroy: true` on the `hcloud_*` type. `destroy` is ignored for `docker_compose` and `docker_compose_app`.
+Each create file calls [aws-iac](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) with `type: aws_s3_bucket` and `name: s3-server-state`, then [hetzner-iac](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) with `s3_bucket_state: s3-server-state`. The destroy file repeats that and adds one more Hetzner job with `destroy: true` on the `hcloud_*` type. `destroy` is ignored for `docker_compose` and `docker_compose_app`.
 
 | Create | Destroy | Hetzner `type` |
 | --- | --- | --- |
-| [server-statefull-s3.yml](../../../../../main-examples/hetzner/heztner%20statefull/server/.github/workflows/server-statefull-s3.yml) | [server-statefull-s3-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/server/.github/workflows/server-statefull-s3-destroy.yml) | `hcloud_server` `server-hetzner`. Create job id `create_server_on_hetzner` sets `needs: create_server_on_hetzner`. The bucket job id is `create_s3_bucket`. |
-| [firewall-statefull-s3.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/firewall-statefull-s3.yml) | [firewall-statefull-s3-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/firewall-statefull-s3-destroy.yml) | `hcloud_firewall` `firewall-hetzner` |
-| [network-statefull-s3.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/network-statefull-s3.yml) | [network-statefull-s3-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/network-statefull-s3-destroy.yml) | `hcloud_network` `network-hetzner` |
-| [volume-statefull-s3.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/volume-statefull-s3.yml) | [volume-statefull-s3-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/volume-statefull-s3-destroy.yml) | `hcloud_volume` `volume-hetzner` |
-| [volume-attachment-statefull-s3.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/volume-attachment-statefull-s3.yml) | [volume-attachment-statefull-s3-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/volume-attachment-statefull-s3-destroy.yml) | `hcloud_volume_attachment` `volume-attachment-hetzner` |
-| [floating-ip-statefull-s3.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/floating-ip-statefull-s3.yml) | [floating-ip-statefull-s3-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/floating-ip-statefull-s3-destroy.yml) | `hcloud_floating_ip` `floating-ip-hetzner` |
-| [service-statefull-s3.yml](../../../../../main-examples/hetzner/heztner%20statefull/services/.github/workflows/service-statefull-s3.yml) | [service-statefull-s3-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/services/.github/workflows/service-statefull-s3-destroy.yml) | `hcloud_server` `server-hetzner`, then `docker_compose` `service-hetzner` `host: server-hetzner`. Destroy sets `destroy: true` on `hcloud_server`. |
-| [application-statefull-s3.yml](../../../../../main-examples/hetzner/heztner%20statefull/application/.github/workflows/application-statefull-s3.yml) | [application-statefull-s3-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/application/.github/workflows/application-statefull-s3-destroy.yml) | `hcloud_server` `server-hetzner`, then `docker_compose_app` `application-hetzner` `host: server-hetzner`. Destroy sets `destroy: true` on `hcloud_server`. |
-| [example-1-statefull.yml](../../../../../main-examples/hetzner/heztner%20statefull/combined/.github/workflows/example-1-statefull.yml) | [example-1-statefull-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/combined/.github/workflows/example-1-statefull-destroy.yml) | `hcloud_server` then `docker_compose_app`, both named `server-example-1-statefull` |
-| [example-2-statefull.yml](../../../../../main-examples/hetzner/heztner%20statefull/combined/.github/workflows/example-2-statefull.yml) | [example-2-statefull-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/combined/.github/workflows/example-2-statefull-destroy.yml) | `hcloud_server` then `docker_compose`, name `server-example-1-statefull`, `expected_url: jdbc:postgresql://localhost:5432/postgres` |
+| [server-statefull-s3.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/server/.github/workflows/server-statefull-s3.yml) | [server-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/server/.github/workflows/server-statefull-s3-destroy.yml) | `hcloud_server` `server-hetzner`. Create job id `create_server_on_hetzner` sets `needs: create_server_on_hetzner`. The bucket job id is `create_s3_bucket`. |
+| [firewall-statefull-s3.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/firewall-statefull-s3.yml) | [firewall-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/firewall-statefull-s3-destroy.yml) | `hcloud_firewall` `firewall-hetzner` |
+| [network-statefull-s3.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/network-statefull-s3.yml) | [network-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/network-statefull-s3-destroy.yml) | `hcloud_network` `network-hetzner` |
+| [volume-statefull-s3.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/volume-statefull-s3.yml) | [volume-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/volume-statefull-s3-destroy.yml) | `hcloud_volume` `volume-hetzner` |
+| [volume-attachment-statefull-s3.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/volume-attachment-statefull-s3.yml) | [volume-attachment-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/volume-attachment-statefull-s3-destroy.yml) | `hcloud_volume_attachment` `volume-attachment-hetzner` |
+| [floating-ip-statefull-s3.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/floating-ip-statefull-s3.yml) | [floating-ip-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/floating-ip-statefull-s3-destroy.yml) | `hcloud_floating_ip` `floating-ip-hetzner` |
+| [service-statefull-s3.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/services/.github/workflows/service-statefull-s3.yml) | [service-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/services/.github/workflows/service-statefull-s3-destroy.yml) | `hcloud_server` `server-hetzner`, then `docker_compose` `service-hetzner` `host: server-hetzner`. Destroy sets `destroy: true` on `hcloud_server`. |
+| [application-statefull-s3.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/application/.github/workflows/application-statefull-s3.yml) | [application-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/application/.github/workflows/application-statefull-s3-destroy.yml) | `hcloud_server` `server-hetzner`, then `docker_compose_app` `application-hetzner` `host: server-hetzner`. Destroy sets `destroy: true` on `hcloud_server`. |
+| [example-1-statefull.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/combined/.github/workflows/example-1-statefull.yml) | [example-1-statefull-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/combined/.github/workflows/example-1-statefull-destroy.yml) | `hcloud_server` then `docker_compose_app`, both named `server-example-1-statefull` |
+| [example-2-statefull.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/combined/.github/workflows/example-2-statefull.yml) | [example-2-statefull-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/combined/.github/workflows/example-2-statefull-destroy.yml) | `hcloud_server` then `docker_compose`, name `server-example-1-statefull`, `expected_url: jdbc:postgresql://localhost:5432/postgres` |
 
-S3 backend implementation for every `s3_bucket_state` row: [aws `aws_s3_bucket`](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket) on create of the bucket, then the Hetzner [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) `terraform init -reconfigure` against that bucket.
+S3 backend implementation for every `s3_bucket_state` row: [aws `aws_s3_bucket`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket) on create of the bucket, then the Hetzner [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) `terraform init -reconfigure` against that bucket.
 
 ### AWS
 
 | Caller | `name` / `bucket_name` | Implementation |
 | --- | --- | --- |
-| [s3-bucket.yml](../../../../../main-examples/aws/aws%20stateless/resources/.github/workflows/s3-bucket.yml) | `s3-snow-monkeys-20261` | [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [aws_s3_bucket](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket) |
-| [s3-bucket-terraform-state.yml](../../../../../main-examples/aws/aws%20stateless/resources/.github/workflows/s3-bucket-terraform-state.yml) | `s3-terraform-state-snow-monkeys-20261` | same workflow and Terraform directory |
+| [s3-bucket.yml](../../../../references/yabinboxes/main-examples/aws/aws%20stateless/resources/.github/workflows/s3-bucket.yml) | `s3-snow-monkeys-20261` | [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [aws_s3_bucket](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket) |
+| [s3-bucket-terraform-state.yml](../../../../references/yabinboxes/main-examples/aws/aws%20stateless/resources/.github/workflows/s3-bucket-terraform-state.yml) | `s3-terraform-state-snow-monkeys-20261` | same workflow and Terraform directory |
 
 Both set `region=us-east-2`, `versioning=true`, `encrypt=true`. The follow-up job prints `outputs.bucket_name`. The comment in both files says this resource has to be removed manually in AWS.
 
@@ -20724,9 +20724,9 @@ Both set `region=us-east-2`, `versioning=true`, `encrypt=true`. The follow-up jo
 
 | Caller | Jobs | Implementation |
 | --- | --- | --- |
-| [pages-stateless.yml](../../../../../main-examples/cloudflare/cloudflare%20stateless/resources/.github/workflows/pages-stateless.yml) | `cloudflare_pages_project` `pages-cloudflare`, `resource: cloudflare_pages_project`, `production_branch=main`, `infra: infra` | [cloudflare-iac main.yml](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) → [cloudflare_pages_project](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project) |
-| [pages-statefull-s3.yml](../../../../../main-examples/cloudflare/cloudflare%20statefull/resources/.github/workflows/pages-statefull-s3.yml) | `aws_s3_bucket`, then `cloudflare_pages_project` with `s3_bucket_state` | [aws-iac](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml), then [cloudflare-iac](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) |
-| [pages-statefull-s3-destroy.yml](../../../../../main-examples/cloudflare/cloudflare%20statefull/resources/.github/workflows/pages-statefull-s3-destroy.yml) | same create jobs, then `cloudflare_pages_project` with `destroy: true` | same two workflows. Destroy is handled in [cloudflare server-resource](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource/action.yml) |
+| [pages-stateless.yml](../../../../references/yabinboxes/main-examples/cloudflare/cloudflare%20stateless/resources/.github/workflows/pages-stateless.yml) | `cloudflare_pages_project` `pages-cloudflare`, `resource: cloudflare_pages_project`, `production_branch=main`, `infra: infra` | [cloudflare-iac main.yml](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) → [cloudflare_pages_project](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project) |
+| [pages-statefull-s3.yml](../../../../references/yabinboxes/main-examples/cloudflare/cloudflare%20statefull/resources/.github/workflows/pages-statefull-s3.yml) | `aws_s3_bucket`, then `cloudflare_pages_project` with `s3_bucket_state` | [aws-iac](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml), then [cloudflare-iac](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) |
+| [pages-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/cloudflare/cloudflare%20statefull/resources/.github/workflows/pages-statefull-s3-destroy.yml) | same create jobs, then `cloudflare_pages_project` with `destroy: true` | same two workflows. Destroy is handled in [cloudflare server-resource](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource/action.yml) |
 
 ## What each caller job does
 
@@ -20741,11 +20741,11 @@ The workflow file is reproduced below the index entry. The implementation links 
 
 ### s3-bucket-terraform-state
 
-Caller: [s3-bucket-terraform-state.yml](../../../../../main-examples/aws/aws%20stateless/resources/.github/workflows/s3-bucket-terraform-state.yml)
+Caller: [s3-bucket-terraform-state.yml](../../../../references/yabinboxes/main-examples/aws/aws%20stateless/resources/.github/workflows/s3-bucket-terraform-state.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
 
 ```yaml
 # create aws s3 to store terraform state for aws
@@ -20789,11 +20789,11 @@ jobs:
 
 ### s3-bucket
 
-Caller: [s3-bucket.yml](../../../../../main-examples/aws/aws%20stateless/resources/.github/workflows/s3-bucket.yml)
+Caller: [s3-bucket.yml](../../../../references/yabinboxes/main-examples/aws/aws%20stateless/resources/.github/workflows/s3-bucket.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
 
 ```yaml
 # create aws s3 to store terraform state for aws
@@ -20837,12 +20837,12 @@ jobs:
 
 ### pages-statefull-s3-destroy
 
-Caller: [pages-statefull-s3-destroy.yml](../../../../../main-examples/cloudflare/cloudflare%20statefull/resources/.github/workflows/pages-statefull-s3-destroy.yml)
+Caller: [pages-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/cloudflare/cloudflare%20statefull/resources/.github/workflows/pages-statefull-s3-destroy.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [cloudflare-iac main.yml](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project`
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [cloudflare-iac main.yml](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project`
 
 ```yaml
 name: Pages Statefull
@@ -20932,12 +20932,12 @@ jobs:
 
 ### pages-statefull-s3
 
-Caller: [pages-statefull-s3.yml](../../../../../main-examples/cloudflare/cloudflare%20statefull/resources/.github/workflows/pages-statefull-s3.yml)
+Caller: [pages-statefull-s3.yml](../../../../references/yabinboxes/main-examples/cloudflare/cloudflare%20statefull/resources/.github/workflows/pages-statefull-s3.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [cloudflare-iac main.yml](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project`
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [cloudflare-iac main.yml](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project`
 
 ```yaml
 name: Pages Statefull
@@ -21005,11 +21005,11 @@ jobs:
 
 ### pages-stateless
 
-Caller: [pages-stateless.yml](../../../../../main-examples/cloudflare/cloudflare%20stateless/resources/.github/workflows/pages-stateless.yml)
+Caller: [pages-stateless.yml](../../../../references/yabinboxes/main-examples/cloudflare/cloudflare%20stateless/resources/.github/workflows/pages-stateless.yml)
 
 Implementation:
 
-- [cloudflare-iac main.yml](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project`
+- [cloudflare-iac main.yml](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project`
 
 ```yaml
 name: Pages Stateless
@@ -21055,12 +21055,12 @@ jobs:
 
 ### application-stateless
 
-Caller: [application-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/application/.github/workflows/application-stateless.yml)
+Caller: [application-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/application/.github/workflows/application-stateless.yml)
 
 Implementation:
 
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose-app](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) (`type: docker_compose_app`)
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose-app](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) (`type: docker_compose_app`)
 
 ```yaml
 name: Hetzner Application Stateless
@@ -21123,12 +21123,12 @@ jobs:
 
 ### example-1-stateless
 
-Caller: [example-1-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/combined/.github/workflows/example-1-stateless.yml)
+Caller: [example-1-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/combined/.github/workflows/example-1-stateless.yml)
 
 Implementation:
 
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose-app](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) (`type: docker_compose_app`)
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose-app](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) (`type: docker_compose_app`)
 
 ```yaml
 #
@@ -21217,12 +21217,12 @@ jobs:
 
 ### example-2-stateless
 
-Caller: [example-2-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/combined/.github/workflows/example-2-stateless.yml)
+Caller: [example-2-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/combined/.github/workflows/example-2-stateless.yml)
 
 Implementation:
 
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) (`type: docker_compose`)
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) (`type: docker_compose`)
 
 ```yaml
 #
@@ -21307,11 +21307,11 @@ jobs:
 
 ### firewall-stateless
 
-Caller: [firewall-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/firewall-stateless.yml)
+Caller: [firewall-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/firewall-stateless.yml)
 
 Implementation:
 
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall`
 
 ```yaml
 name: Firewall Stateless
@@ -21351,11 +21351,11 @@ jobs:
 
 ### floating-ip-stateless
 
-Caller: [floating-ip-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/floating-ip-stateless.yml)
+Caller: [floating-ip-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/floating-ip-stateless.yml)
 
 Implementation:
 
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip`
 
 ```yaml
 name: Floating IP Stateless
@@ -21398,11 +21398,11 @@ jobs:
 
 ### network-stateless
 
-Caller: [network-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/network-stateless.yml)
+Caller: [network-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/network-stateless.yml)
 
 Implementation:
 
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network`
 
 ```yaml
 name: Network Stateless
@@ -21444,11 +21444,11 @@ jobs:
 
 ### volume-attachment-stateless
 
-Caller: [volume-attachment-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/volume-attachment-stateless.yml)
+Caller: [volume-attachment-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/volume-attachment-stateless.yml)
 
 Implementation:
 
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment`
 
 ```yaml
 name: Volume Attachment Stateless
@@ -21493,11 +21493,11 @@ jobs:
 
 ### volume-stateless
 
-Caller: [volume-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/volume-stateless.yml)
+Caller: [volume-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/resources/.github/workflows/volume-stateless.yml)
 
 Implementation:
 
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume`
 
 ```yaml
 name: Volume Stateless
@@ -21540,11 +21540,11 @@ jobs:
 
 ### server-stateless
 
-Caller: [server-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/server/.github/workflows/server-stateless.yml)
+Caller: [server-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/server/.github/workflows/server-stateless.yml)
 
 Implementation:
 
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
 
 ```yaml
 name: Hetzner Server Stateless
@@ -21590,12 +21590,12 @@ jobs:
 
 ### service-stateless
 
-Caller: [service-stateless.yml](../../../../../main-examples/hetzner/hetznez%20stateless/services/.github/workflows/service-stateless.yml)
+Caller: [service-stateless.yml](../../../../references/yabinboxes/main-examples/hetzner/hetznez%20stateless/services/.github/workflows/service-stateless.yml)
 
 Implementation:
 
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) (`type: docker_compose`)
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) (`type: docker_compose`)
 
 ```yaml
 name: Hetzner Service Stateless
@@ -21656,13 +21656,13 @@ jobs:
 
 ### application-statefull-s3-destroy
 
-Caller: [application-statefull-s3-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/application/.github/workflows/application-statefull-s3-destroy.yml)
+Caller: [application-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/application/.github/workflows/application-statefull-s3-destroy.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose-app](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) (`type: docker_compose_app`)
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose-app](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) (`type: docker_compose_app`)
 
 ```yaml
 name: Hetzner Application Statefull with S3 and Destroy
@@ -21773,13 +21773,13 @@ jobs:
 
 ### application-statefull-s3
 
-Caller: [application-statefull-s3.yml](../../../../../main-examples/hetzner/heztner%20statefull/application/.github/workflows/application-statefull-s3.yml)
+Caller: [application-statefull-s3.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/application/.github/workflows/application-statefull-s3.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose-app](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) (`type: docker_compose_app`)
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose-app](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) (`type: docker_compose_app`)
 
 ```yaml
 name: Hetzner Application Statefull with S3
@@ -21866,13 +21866,13 @@ jobs:
 
 ### example-1-statefull-destroy
 
-Caller: [example-1-statefull-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/combined/.github/workflows/example-1-statefull-destroy.yml)
+Caller: [example-1-statefull-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/combined/.github/workflows/example-1-statefull-destroy.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose-app](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) (`type: docker_compose_app`)
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose-app](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) (`type: docker_compose_app`)
 
 ```yaml
 #
@@ -22020,13 +22020,13 @@ jobs:
 
 ### example-1-statefull
 
-Caller: [example-1-statefull.yml](../../../../../main-examples/hetzner/heztner%20statefull/combined/.github/workflows/example-1-statefull.yml)
+Caller: [example-1-statefull.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/combined/.github/workflows/example-1-statefull.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose-app](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) (`type: docker_compose_app`)
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose-app](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose-app/action.yml) (`type: docker_compose_app`)
 
 ```yaml
 #
@@ -22151,13 +22151,13 @@ jobs:
 
 ### example-2-statefull-destroy
 
-Caller: [example-2-statefull-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/combined/.github/workflows/example-2-statefull-destroy.yml)
+Caller: [example-2-statefull-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/combined/.github/workflows/example-2-statefull-destroy.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) (`type: docker_compose`)
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) (`type: docker_compose`)
 
 ```yaml
 #
@@ -22301,13 +22301,13 @@ jobs:
 
 ### example-2-statefull
 
-Caller: [example-2-statefull.yml](../../../../../main-examples/hetzner/heztner%20statefull/combined/.github/workflows/example-2-statefull.yml)
+Caller: [example-2-statefull.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/combined/.github/workflows/example-2-statefull.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) (`type: docker_compose`)
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) (`type: docker_compose`)
 
 ```yaml
 #
@@ -22426,12 +22426,12 @@ jobs:
 
 ### firewall-statefull-s3-destroy
 
-Caller: [firewall-statefull-s3-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/firewall-statefull-s3-destroy.yml)
+Caller: [firewall-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/firewall-statefull-s3-destroy.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall`
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall`
 
 ```yaml
 name: Firewall Stateless
@@ -22516,12 +22516,12 @@ jobs:
 
 ### firewall-statefull-s3
 
-Caller: [firewall-statefull-s3.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/firewall-statefull-s3.yml)
+Caller: [firewall-statefull-s3.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/firewall-statefull-s3.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall`
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall`
 
 ```yaml
 name: Firewall Stateless
@@ -22584,12 +22584,12 @@ jobs:
 
 ### floating-ip-statefull-s3-destroy
 
-Caller: [floating-ip-statefull-s3-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/floating-ip-statefull-s3-destroy.yml)
+Caller: [floating-ip-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/floating-ip-statefull-s3-destroy.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip`
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip`
 
 ```yaml
 name: Floating IP Statefull
@@ -22675,12 +22675,12 @@ jobs:
 
 ### floating-ip-statefull-s3
 
-Caller: [floating-ip-statefull-s3.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/floating-ip-statefull-s3.yml)
+Caller: [floating-ip-statefull-s3.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/floating-ip-statefull-s3.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip`
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip`
 
 ```yaml
 name: Floating IP Statefull
@@ -22746,12 +22746,12 @@ jobs:
 
 ### network-statefull-s3-destroy
 
-Caller: [network-statefull-s3-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/network-statefull-s3-destroy.yml)
+Caller: [network-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/network-statefull-s3-destroy.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network`
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network`
 
 ```yaml
 name: Network Statefull
@@ -22836,12 +22836,12 @@ jobs:
 
 ### network-statefull-s3
 
-Caller: [network-statefull-s3.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/network-statefull-s3.yml)
+Caller: [network-statefull-s3.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/network-statefull-s3.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network`
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network`
 
 ```yaml
 name: Network Statefull
@@ -22906,12 +22906,12 @@ jobs:
 
 ### volume-attachment-statefull-s3-destroy
 
-Caller: [volume-attachment-statefull-s3-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/volume-attachment-statefull-s3-destroy.yml)
+Caller: [volume-attachment-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/volume-attachment-statefull-s3-destroy.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment`
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment`
 
 ```yaml
 name: Volume Attachment Statefull
@@ -23003,12 +23003,12 @@ jobs:
 
 ### volume-attachment-statefull-s3
 
-Caller: [volume-attachment-statefull-s3.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/volume-attachment-statefull-s3.yml)
+Caller: [volume-attachment-statefull-s3.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/volume-attachment-statefull-s3.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment`
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment`
 
 ```yaml
 name: Volume Attachment Statefull
@@ -23076,12 +23076,12 @@ jobs:
 
 ### volume-statefull-s3-destroy
 
-Caller: [volume-statefull-s3-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/volume-statefull-s3-destroy.yml)
+Caller: [volume-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/volume-statefull-s3-destroy.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume`
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume`
 
 ```yaml
 name: Volume Statefull
@@ -23167,12 +23167,12 @@ jobs:
 
 ### volume-statefull-s3
 
-Caller: [volume-statefull-s3.yml](../../../../../main-examples/hetzner/heztner%20statefull/recources/.github/workflows/volume-statefull-s3.yml)
+Caller: [volume-statefull-s3.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/recources/.github/workflows/volume-statefull-s3.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume`
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume`
 
 ```yaml
 name: Volume Statefull
@@ -23238,12 +23238,12 @@ jobs:
 
 ### server-statefull-s3-destroy
 
-Caller: [server-statefull-s3-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/server/.github/workflows/server-statefull-s3-destroy.yml)
+Caller: [server-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/server/.github/workflows/server-statefull-s3-destroy.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
 
 ```yaml
 name: Hetzner Server Statefull
@@ -23337,12 +23337,12 @@ jobs:
 
 ### server-statefull-s3
 
-Caller: [server-statefull-s3.yml](../../../../../main-examples/hetzner/heztner%20statefull/server/.github/workflows/server-statefull-s3.yml)
+Caller: [server-statefull-s3.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/server/.github/workflows/server-statefull-s3.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
 
 ```yaml
 name: Hetzner Server Statefull
@@ -23415,13 +23415,13 @@ jobs:
 
 ### service-statefull-s3-destroy
 
-Caller: [service-statefull-s3-destroy.yml](../../../../../main-examples/hetzner/heztner%20statefull/services/.github/workflows/service-statefull-s3-destroy.yml)
+Caller: [service-statefull-s3-destroy.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/services/.github/workflows/service-statefull-s3-destroy.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) (`type: docker_compose`)
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) (`type: docker_compose`)
 
 ```yaml
 name: Hetzner Service Statefull with S3 and Destroy
@@ -23532,13 +23532,13 @@ jobs:
 
 ### service-statefull-s3
 
-Caller: [service-statefull-s3.yml](../../../../../main-examples/hetzner/heztner%20statefull/services/.github/workflows/service-statefull-s3.yml)
+Caller: [service-statefull-s3.yml](../../../../references/yabinboxes/main-examples/hetzner/heztner%20statefull/services/.github/workflows/service-statefull-s3.yml)
 
 Implementation:
 
-- [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
-- [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) (`type: docker_compose`)
+- [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml) → `snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server`
+- [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) → [docker-compose](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/docker-compose/action.yml) (`type: docker_compose`)
 
 ```yaml
 name: Hetzner Service Statefull with S3
@@ -23632,7 +23632,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-15-e
 Copy: [body/part-04-core-modules/chapter-15-examples/chapter-checklist.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -23654,7 +23654,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/chapter-15-e
 Copy: [body/part-04-core-modules/chapter-15-examples/README.md](../masters/master-yabinboxes/body/part-04-core-modules/chapter-15-examples/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 15 — Examples
@@ -23666,8 +23666,8 @@ Source repos: `yabinboxes/main-examples/`, `snow-monkeys-modules/`
 
 How the caller workflows in `main-examples` use the reusable workflows. Deployment types are Chapter 2. The module rules are `master-modules` (Chapter 3).
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
-2. [Walkthrough](./02-walkthrough/) — index of every example and the implementation it calls
+1. [Conceptual explanation](../../../part-04-core-modules/chapter-15-examples/01-conceptual-explanation)
+2. [Walkthrough](../../../part-04-core-modules/chapter-15-examples/02-walkthrough) — index of every example and the implementation it calls
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-04-core-modules-readme-md"></a>
@@ -23678,7 +23678,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-04-core-modules/README.md](.
 Copy: [body/part-04-core-modules/README.md](../masters/master-yabinboxes/body/part-04-core-modules/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Part IV — Core Modules
@@ -23694,7 +23694,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/backend.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/backend.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Backend
@@ -23712,14 +23712,14 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
 
 > Status: stub — write after TOC approval.
 
-Subsections: [ui](./ui.md), [backend](./backend.md), [service](./service.md).
+Subsections: [ui](../../chapter-16-dashboard-code/01-conceptual-explanation/ui.md), [backend](../../chapter-16-dashboard-code/01-conceptual-explanation/backend.md), [service](../../chapter-16-dashboard-code/01-conceptual-explanation/service.md).
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-16-dashboard-code-01-conceptual-explanation-service-md"></a>
@@ -23730,7 +23730,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/service.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/service.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Service
@@ -23748,7 +23748,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/ui.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/01-conceptual-explanation/ui.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Ui
@@ -23766,7 +23766,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -23788,7 +23788,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 16 — Dashboard Code
@@ -23798,7 +23798,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part V — Maintenance and Scripts  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../chapter-16-dashboard-code/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-17-dashboard-selfhosted-code-01-conceptual-explanation-backend-md"></a>
@@ -23809,7 +23809,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/backend.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/backend.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Backend
@@ -23827,14 +23827,14 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
 
 > Status: stub — write after TOC approval.
 
-Subsections: [ui](./ui.md), [backend](./backend.md), [service](./service.md).
+Subsections: [ui](../../chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/ui.md), [backend](../../chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/backend.md), [service](../../chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/service.md).
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-17-dashboard-selfhosted-code-01-conceptual-explanation-service-md"></a>
@@ -23845,7 +23845,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/service.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/service.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Service
@@ -23863,7 +23863,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/ui.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/01-conceptual-explanation/ui.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Ui
@@ -23881,7 +23881,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -23903,7 +23903,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 17 — Dashboard Selfhosted Code
@@ -23913,7 +23913,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part V — Maintenance and Scripts  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../chapter-17-dashboard-selfhosted-code/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-18-other-services-01-conceptual-explanation-database-backup-md"></a>
@@ -23924,7 +23924,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/database-backup.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/database-backup.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Database backup
@@ -23942,14 +23942,14 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
 
 > Status: stub — write after TOC approval.
 
-Subsections: [database backup](./database-backup.md), [server](./server.md).
+Subsections: [database backup](../../chapter-18-other-services/01-conceptual-explanation/database-backup.md), [server](../../chapter-18-other-services/01-conceptual-explanation/server.md).
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-18-other-services-01-conceptual-explanation-server-md"></a>
@@ -23960,7 +23960,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/server.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-18-other-services/01-conceptual-explanation/server.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Server
@@ -23978,7 +23978,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-18-other-services/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-18-other-services/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -24000,7 +24000,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-18-other-services/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-18-other-services/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 18 — Other services
@@ -24010,7 +24010,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part V — Maintenance and Scripts  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../chapter-18-other-services/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-19-test-modules-01-conceptual-explanation-readme-md"></a>
@@ -24021,7 +24021,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-19-test-modules/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-19-test-modules/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
@@ -24039,7 +24039,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-19-test-modules/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-19-test-modules/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -24061,7 +24061,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-19-test-modules/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-19-test-modules/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 19 — Test Modules
@@ -24071,7 +24071,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part V — Maintenance and Scripts  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../chapter-19-test-modules/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-20-masters-01-conceptual-explanation-master-infra-md"></a>
@@ -24082,7 +24082,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-infra.md](../01-conceptual-explanation/master-infra.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # master-infra
@@ -24100,7 +24100,7 @@ Implementation: [yabinboxes](../../../../..)
 
 Each of those plans reads the server and resource rows of `list-of-resources.md`, matches them to folders under `iac-terraform/v1/modules/dev/<provider>`, updates a folder that already exists, creates a folder that does not, and commits on the local `iac-terraform` checkout. Each plan points at `iac-structure/TERRAFORM_COMPLIANCE.md`. The other files in `iac-structure` are `FLOW.md`, `INPUTS_OUTPUTS.md`, `NAMING.md`, `INTERNAL.md`, and `EXAMPLES.md`.
 
-`master-civo.md` says `Tasks: Nothing to do...`. The monthly plan does not update Civo from that file. The directories `v1/modules/dev/civo/bucket`, `compute`, and `observability` are already in `iac-terraform`. `kubernetes` is a `type` in `list-of-resources.md` and is not a directory there. Civo Kubernetes is implemented in `civo-iac`, described in [master-modules](./master-modules.md).
+`master-civo.md` says `Tasks: Nothing to do...`. The monthly plan does not update Civo from that file. The directories `v1/modules/dev/civo/bucket`, `compute`, and `observability` are already in `iac-terraform`. `kubernetes` is a `type` in `list-of-resources.md` and is not a directory there. Civo Kubernetes is implemented in `civo-iac`, described in [master-modules](../01-conceptual-explanation/master-modules.md).
 
 `docker_compose` and `docker_compose_app` are types in `list-of-resources.md`. They are not Terraform directories. Their implementation is the compose actions in `snow-monkeys-modules`.
 
@@ -24123,7 +24123,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-modules.md](../01-conceptual-explanation/master-modules.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # master-modules
@@ -24192,7 +24192,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-test.md](../01-conceptual-explanation/master-test.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # master-test
@@ -24247,7 +24247,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/master-yabinboxes.md](../01-conceptual-explanation/master-yabinboxes.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # master-yabinboxes
@@ -24258,16 +24258,16 @@ Chapter 3 says `master-yabinboxes` is the book, and that the book includes every
 
 The other three organizations are implemented by their own masters:
 
-- [master-modules](./master-modules.md) for `snow-monkeys-modules`
-- [master-infra](./master-infra.md) for `snow-monkeys-infra`
-- [master-test](./master-test.md) for `test-snow-monkeys`
+- [master-modules](../01-conceptual-explanation/master-modules.md) for `snow-monkeys-modules`
+- [master-infra](../01-conceptual-explanation/master-infra.md) for `snow-monkeys-infra`
+- [master-test](../01-conceptual-explanation/master-test.md) for `test-snow-monkeys`
 
 Inside `yabinboxes`, the repositories next to the book are the implementation of "all repositories in yabinboxes".
 
 | Directory | What it implements |
 | --- | --- |
 | `master-yabinboxes` | This book, from `main.md` |
-| `org-master` | The service list and the Mac mini local setup. See [org-master](./org-master.md) |
+| `org-master` | The service list and the Mac mini local setup. See [org-master](../01-conceptual-explanation/org-master.md) |
 | `org-snow-angular-ui` | Dashboard and docs UI |
 | `org-snow-angular-ui-selfhosted` | Angular workspace. The README title is Snow Angular UI, same words as `org-snow-angular-ui` |
 | `org-snow-publish-java` | Publish API, Java 21 |
@@ -24293,7 +24293,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/org-master.md](../01-conceptual-explanation/org-master.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # org-master
@@ -24304,9 +24304,9 @@ Implementation: [yabinboxes](../../../../..)
 
 The file lists three steps.
 
-1. `snow-monkeys-infra` runs `monthly-master.yml`. That implementation is [master-infra](./master-infra.md). The file says the output is Terraform for `iac-terraform` on branch `updates`, and that `master-modules` describes the flow. The provider plans that perform the update live in `master-infra`, and they read `list-of-resources.md`. The reusable workflows that call those Terraform projects live in `snow-monkeys-modules`, which is [master-modules](./master-modules.md).
+1. `snow-monkeys-infra` runs `monthly-master.yml`. That implementation is [master-infra](../01-conceptual-explanation/master-infra.md). The file says the output is Terraform for `iac-terraform` on branch `updates`, and that `master-modules` describes the flow. The provider plans that perform the update live in `master-infra`, and they read `list-of-resources.md`. The reusable workflows that call those Terraform projects live in `snow-monkeys-modules`, which is [master-modules](../01-conceptual-explanation/master-modules.md).
 2. `snow-monkeys-modules` adds one module repository per provider. `master-modules/main.md` is the list of those modules.
-3. `test-snow-monkeys` runs `automation-test-snow`, and the feature flags select which example workflows run. That implementation is [master-test](./master-test.md). The sentence in `org-master/main.md` stops at "master-test describe the flow in how".
+3. `test-snow-monkeys` runs `automation-test-snow`, and the feature flags select which example workflows run. That implementation is [master-test](../01-conceptual-explanation/master-test.md). The sentence in `org-master/main.md` stops at "master-test describe the flow in how".
 
 ## Services
 
@@ -24352,7 +24352,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-20-masters/01-conceptual-explanation/README.md](../01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
@@ -24361,94 +24361,94 @@ A master file states the rule. The repository named after the arrow is the imple
 
 ## Index
 
-### [master-modules](./master-modules.md)
+### [master-modules](../01-conceptual-explanation/master-modules.md)
 
 `snow-monkeys-modules/master-modules` → `snow-monkeys-modules`
 
 | Master file | Implementation |
 | --- | --- |
-| [main.md](../../../../../../snow-monkeys-modules/master-modules/main.md) | The module repositories in this table |
-| [master-hetzner.md](../../../../../../snow-monkeys-modules/master-modules/master-hetzner.md) | [hetzner-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) |
-| [master-aws.md](../../../../../../snow-monkeys-modules/master-modules/master-aws.md) | [aws-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml) |
-| [master-gcp.md](../../../../../../snow-monkeys-modules/master-modules/master-gcp.md) | [gcp-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/gcp-iac/.github/workflows/main.yml) |
-| [master-azure.md](../../../../../../snow-monkeys-modules/master-modules/master-azure.md) | [azure-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/azure-iac/.github/workflows/main.yml) |
-| [master-digital-ocean.md](../../../../../../snow-monkeys-modules/master-modules/master-digital-ocean.md) | [digital-ocean-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml) |
-| [master-cloudflare.md](../../../../../../snow-monkeys-modules/master-modules/master-cloudflare.md) | [cloudflare-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) |
-| [master-civo.md](../../../../../../snow-monkeys-modules/master-modules/master-civo.md) | [civo-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/civo-iac/.github/workflows/main.yml) |
-| [master-docker.md](../../../../../../snow-monkeys-modules/master-modules/master-docker.md) | [docker-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/docker-iac/.github/workflows/main.yml) |
-| [master-snow.md](../../../../../../snow-monkeys-modules/master-modules/master-snow.md) | [snow-iac/.github/workflows/main.yml](../../../../../../snow-monkeys-modules/snow-iac/.github/workflows/main.yml) |
-| [list-of-resources.md](../../../../../../snow-monkeys-modules/master-modules/list-of-resources.md) | `type` selected by the workflows in the rows above |
-| [outputs.md](../../../../../../snow-monkeys-modules/master-modules/outputs.md) | `on.workflow_call.outputs` in those same workflows |
-| [.gitignore](../../../../../../snow-monkeys-modules/master-modules/.gitignore) | Ignore list for `master-modules` |
+| [main.md](../../../../references/snow-monkeys-modules/master-modules/main.md) | The module repositories in this table |
+| [master-hetzner.md](../../../../references/snow-monkeys-modules/master-modules/master-hetzner.md) | [hetzner-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml) |
+| [master-aws.md](../../../../references/snow-monkeys-modules/master-modules/master-aws.md) | [aws-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml) |
+| [master-gcp.md](../../../../references/snow-monkeys-modules/master-modules/master-gcp.md) | [gcp-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/gcp-iac/.github/workflows/main.yml) |
+| [master-azure.md](../../../../references/snow-monkeys-modules/master-modules/master-azure.md) | [azure-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/azure-iac/.github/workflows/main.yml) |
+| [master-digital-ocean.md](../../../../references/snow-monkeys-modules/master-modules/master-digital-ocean.md) | [digital-ocean-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml) |
+| [master-cloudflare.md](../../../../references/snow-monkeys-modules/master-modules/master-cloudflare.md) | [cloudflare-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml) |
+| [master-civo.md](../../../../references/snow-monkeys-modules/master-modules/master-civo.md) | [civo-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/civo-iac/.github/workflows/main.yml) |
+| [master-docker.md](../../../../references/snow-monkeys-modules/master-modules/master-docker.md) | [docker-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/docker-iac/.github/workflows/main.yml) |
+| [master-snow.md](../../../../references/snow-monkeys-modules/master-modules/master-snow.md) | [snow-iac/.github/workflows/main.yml](../../../../references/snow-monkeys-modules/snow-iac/.github/workflows/main.yml) |
+| [list-of-resources.md](../../../../references/snow-monkeys-modules/master-modules/list-of-resources.md) | `type` selected by the workflows in the rows above |
+| [outputs.md](../../../../references/snow-monkeys-modules/master-modules/outputs.md) | `on.workflow_call.outputs` in those same workflows |
+| [.gitignore](../../../../references/snow-monkeys-modules/master-modules/.gitignore) | Ignore list for `master-modules` |
 
-### [master-infra](./master-infra.md)
+### [master-infra](../01-conceptual-explanation/master-infra.md)
 
 `snow-monkeys-infra/master-infra` → `snow-monkeys-infra`
 
 | Master file | Implementation |
 | --- | --- |
-| [main.md](../../../../../../snow-monkeys-infra/master-infra/main.md) | [master.md](../../../../../../snow-monkeys-infra/master-infra/master.md) |
-| [master.md](../../../../../../snow-monkeys-infra/master-infra/master.md) | [monthly-master.yml](../../../../../../snow-monkeys-infra/master-infra/.github/workflows/monthly-master.yml) runs that plan against [iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform) |
-| [master-hetzner.md](../../../../../../snow-monkeys-infra/master-infra/master-hetzner.md) | [iac-terraform/v1/modules/dev/hetzner](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner) |
-| [master-aws.md](../../../../../../snow-monkeys-infra/master-infra/master-aws.md) | [iac-terraform/v1/modules/dev/aws](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws) |
-| [master-azure.md](../../../../../../snow-monkeys-infra/master-infra/master-azure.md) | [iac-terraform/v1/modules/dev/azure](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure) |
-| [master-cloudflare.md](../../../../../../snow-monkeys-infra/master-infra/master-cloudflare.md) | [iac-terraform/v1/modules/dev/cloudflare](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare) |
-| [master-digitalocean.md](../../../../../../snow-monkeys-infra/master-infra/master-digitalocean.md) | [iac-terraform/v1/modules/dev/digitalocean](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean) |
-| [master-gcp.md](../../../../../../snow-monkeys-infra/master-infra/master-gcp.md) | [iac-terraform/v1/modules/dev/gcp](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp) |
-| [master-civo.md](../../../../../../snow-monkeys-infra/master-infra/master-civo.md) | [iac-terraform/v1/modules/dev/civo](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo). The plan text is `Tasks: Nothing to do...` |
-| [list-of-resources.md](../../../../../../snow-monkeys-infra/master-infra/list-of-resources.md) | Folder names the provider plans match under `iac-terraform/v1/modules/dev` |
-| [iac-structure/TERRAFORM_COMPLIANCE.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md) | Rules the provider plans apply to [iac-terraform](../../../../../../snow-monkeys-infra/iac-terraform) |
-| [iac-structure/FLOW.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/FLOW.md) | Same tree |
-| [iac-structure/INPUTS_OUTPUTS.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md) | Same tree |
-| [iac-structure/NAMING.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/NAMING.md) | Same tree |
-| [iac-structure/INTERNAL.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/INTERNAL.md) | Same tree |
-| [iac-structure/EXAMPLES.md](../../../../../../snow-monkeys-infra/master-infra/iac-structure/EXAMPLES.md) | Same tree |
-| [iac-structure/iac-terraform.code-workspace](../../../../../../snow-monkeys-infra/master-infra/iac-structure/iac-terraform.code-workspace) | Workspace file for `iac-terraform` |
-| [temporal-notes.txt](../../../../../../snow-monkeys-infra/master-infra/temporal-notes.txt) | Notes file in `master-infra`. `monthly-master.yml` reads `main.md` and `master.md` |
-| [.github/workflows/monthly-master.yml](../../../../../../snow-monkeys-infra/master-infra/.github/workflows/monthly-master.yml) | The workflow that executes the plan. Trigger is `workflow_dispatch` |
-| [.gitignore](../../../../../../snow-monkeys-infra/master-infra/.gitignore) | Ignore list for `master-infra` |
+| [main.md](../../../../references/snow-monkeys-infra/master-infra/main.md) | [master.md](../../../../references/snow-monkeys-infra/master-infra/master.md) |
+| [master.md](../../../../references/snow-monkeys-infra/master-infra/master.md) | [monthly-master.yml](../../../../references/snow-monkeys-infra/master-infra/.github/workflows/monthly-master.yml) runs that plan against [iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform) |
+| [master-hetzner.md](../../../../references/snow-monkeys-infra/master-infra/master-hetzner.md) | [iac-terraform/v1/modules/dev/hetzner](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner) |
+| [master-aws.md](../../../../references/snow-monkeys-infra/master-infra/master-aws.md) | [iac-terraform/v1/modules/dev/aws](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws) |
+| [master-azure.md](../../../../references/snow-monkeys-infra/master-infra/master-azure.md) | [iac-terraform/v1/modules/dev/azure](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure) |
+| [master-cloudflare.md](../../../../references/snow-monkeys-infra/master-infra/master-cloudflare.md) | [iac-terraform/v1/modules/dev/cloudflare](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare) |
+| [master-digitalocean.md](../../../../references/snow-monkeys-infra/master-infra/master-digitalocean.md) | [iac-terraform/v1/modules/dev/digitalocean](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean) |
+| [master-gcp.md](../../../../references/snow-monkeys-infra/master-infra/master-gcp.md) | [iac-terraform/v1/modules/dev/gcp](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp) |
+| [master-civo.md](../../../../references/snow-monkeys-infra/master-infra/master-civo.md) | [iac-terraform/v1/modules/dev/civo](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo). The plan text is `Tasks: Nothing to do...` |
+| [list-of-resources.md](../../../../references/snow-monkeys-infra/master-infra/list-of-resources.md) | Folder names the provider plans match under `iac-terraform/v1/modules/dev` |
+| [iac-structure/TERRAFORM_COMPLIANCE.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/TERRAFORM_COMPLIANCE.md) | Rules the provider plans apply to [iac-terraform](../../../../references/snow-monkeys-infra/iac-terraform) |
+| [iac-structure/FLOW.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/FLOW.md) | Same tree |
+| [iac-structure/INPUTS_OUTPUTS.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INPUTS_OUTPUTS.md) | Same tree |
+| [iac-structure/NAMING.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/NAMING.md) | Same tree |
+| [iac-structure/INTERNAL.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/INTERNAL.md) | Same tree |
+| [iac-structure/EXAMPLES.md](../../../../references/snow-monkeys-infra/master-infra/iac-structure/EXAMPLES.md) | Same tree |
+| [iac-structure/iac-terraform.code-workspace](../../../../references/snow-monkeys-infra/master-infra/iac-structure/iac-terraform.code-workspace) | Workspace file for `iac-terraform` |
+| [temporal-notes.txt](../../../../references/snow-monkeys-infra/master-infra/temporal-notes.txt) | Notes file in `master-infra`. `monthly-master.yml` reads `main.md` and `master.md` |
+| [.github/workflows/monthly-master.yml](../../../../references/snow-monkeys-infra/master-infra/.github/workflows/monthly-master.yml) | The workflow that executes the plan. Trigger is `workflow_dispatch` |
+| [.gitignore](../../../../references/snow-monkeys-infra/master-infra/.gitignore) | Ignore list for `master-infra` |
 
-### [master-test](./master-test.md)
+### [master-test](../01-conceptual-explanation/master-test.md)
 
 `test-snow-monkeys/master-test` → `test-snow-monkeys`
 
 | Master file | Implementation |
 | --- | --- |
-| [main.md](../../../../../../test-snow-monkeys/master-test/main.md) | [automation-test-snow/.github/workflows/main-automation-test.yml](../../../../../../test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml) |
-| [testflow.md](../../../../../../test-snow-monkeys/master-test/testflow.md) | Same dispatcher. `testflow.md` calls that file `main.yml` |
-| [test-suite-rules.md](../../../../../../test-snow-monkeys/master-test/test-suite-rules.md) | [test-hetzner.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml). The rules file writes the path as `examples/.github/workflows/test-hetzner.yml` |
-| [snowmonkeys-test-suite.md](../../../../../../test-snow-monkeys/master-test/snowmonkeys-test-suite.md) | [test-snowmonkeys.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-snowmonkeys.yml) |
-| [docker-test-suite.md](../../../../../../test-snow-monkeys/master-test/docker-test-suite.md) | [test-docker.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-docker.yml) |
-| [hetzner-test-suite.md](../../../../../../test-snow-monkeys/master-test/hetzner-test-suite.md) | [test-hetzner.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml) |
-| [aws-test-suite.md](../../../../../../test-snow-monkeys/master-test/aws-test-suite.md) | [test-aws.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-aws.yml) |
-| [azure-test-suite.md](../../../../../../test-snow-monkeys/master-test/azure-test-suite.md) | [test-azure.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-azure.yml) |
-| [gcp-test-suite.md](../../../../../../test-snow-monkeys/master-test/gcp-test-suite.md) | [test-gcp.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-gcp.yml) |
-| [digitalocean-test-suite.md](../../../../../../test-snow-monkeys/master-test/digitalocean-test-suite.md) | [test-digitalocean.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-digitalocean.yml) |
-| `cloudflare-test-suite.md`, named from [main.md](../../../../../../test-snow-monkeys/master-test/main.md) | [test-cloudflare.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/test-cloudflare.yml). `master-test` has no `cloudflare-test-suite.md` |
-| Result collector named in [main.md](../../../../../../test-snow-monkeys/master-test/main.md) | [automation-test.yml](../../../../../../test-snow-monkeys/examples-automation-test/.github/workflows/automation-test.yml) |
-| [.gitignore](../../../../../../test-snow-monkeys/master-test/.gitignore) | Ignore list for `master-test` |
+| [main.md](../../../../references/test-snow-monkeys/master-test/main.md) | [automation-test-snow/.github/workflows/main-automation-test.yml](../../../../references/test-snow-monkeys/automation-test-snow/.github/workflows/main-automation-test.yml) |
+| [testflow.md](../../../../references/test-snow-monkeys/master-test/testflow.md) | Same dispatcher. `testflow.md` calls that file `main.yml` |
+| [test-suite-rules.md](../../../../references/test-snow-monkeys/master-test/test-suite-rules.md) | [test-hetzner.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml). The rules file writes the path as `examples/.github/workflows/test-hetzner.yml` |
+| [snowmonkeys-test-suite.md](../../../../references/test-snow-monkeys/master-test/snowmonkeys-test-suite.md) | [test-snowmonkeys.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-snowmonkeys.yml) |
+| [docker-test-suite.md](../../../../references/test-snow-monkeys/master-test/docker-test-suite.md) | [test-docker.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-docker.yml) |
+| [hetzner-test-suite.md](../../../../references/test-snow-monkeys/master-test/hetzner-test-suite.md) | [test-hetzner.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-hetzner.yml) |
+| [aws-test-suite.md](../../../../references/test-snow-monkeys/master-test/aws-test-suite.md) | [test-aws.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-aws.yml) |
+| [azure-test-suite.md](../../../../references/test-snow-monkeys/master-test/azure-test-suite.md) | [test-azure.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-azure.yml) |
+| [gcp-test-suite.md](../../../../references/test-snow-monkeys/master-test/gcp-test-suite.md) | [test-gcp.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-gcp.yml) |
+| [digitalocean-test-suite.md](../../../../references/test-snow-monkeys/master-test/digitalocean-test-suite.md) | [test-digitalocean.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-digitalocean.yml) |
+| `cloudflare-test-suite.md`, named from [main.md](../../../../references/test-snow-monkeys/master-test/main.md) | [test-cloudflare.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/test-cloudflare.yml). `master-test` has no `cloudflare-test-suite.md` |
+| Result collector named in [main.md](../../../../references/test-snow-monkeys/master-test/main.md) | [automation-test.yml](../../../../references/test-snow-monkeys/examples-automation-test/.github/workflows/automation-test.yml) |
+| [.gitignore](../../../../references/test-snow-monkeys/master-test/.gitignore) | Ignore list for `master-test` |
 
-### [org-master](./org-master.md)
+### [org-master](../01-conceptual-explanation/org-master.md)
 
 `yabinboxes/org-master` → `yabinboxes`
 
 | Master file | Implementation |
 | --- | --- |
-| [main.md](../../../../../org-master/main.md) | The service directories below, plus the runs described in [master-infra](./master-infra.md), [master-modules](./master-modules.md), and [master-test](./master-test.md) |
-| snow-angular-ui | [org-snow-angular-ui](../../../../../org-snow-angular-ui) |
-| snow-publish-java | [org-snow-publish-java](../../../../../org-snow-publish-java) |
-| snow-cron-bun | [org-snow-cron-bun](../../../../../org-snow-cron-bun) |
-| snow-postgresdb-docker-compose | [org-snow-postgresdb-docker-compose](../../../../../org-snow-postgresdb-docker-compose) |
-| snow-server-hetzner | [org-snow-server-hetzner](../../../../../org-snow-server-hetzner) |
-| snow-websocket-bun | [org-snow-websocket-bun](../../../../../org-snow-websocket-bun) |
-| snow-test-playwright | [org-snow-test-playwright](../../../../../org-snow-test-playwright) |
-| [local-setup/macmini.md](../../../../../org-master/local-setup/macmini.md) | Local order: postgres compose, `snow-publish-java`, angular compose, Cloudflare tunnels |
-| [local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml](../../../../../org-master/local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml) | Local Postgres. Service repo: [org-snow-postgresdb-docker-compose](../../../../../org-snow-postgresdb-docker-compose) |
-| [local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql](../../../../../org-master/local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql) | Init SQL for that local compose |
-| [local-setup/docker-services/snow-angular-ui/docker-compose.yml](../../../../../org-master/local-setup/docker-services/snow-angular-ui/docker-compose.yml) | Local dashboard compose. Service repo: [org-snow-angular-ui](../../../../../org-snow-angular-ui) |
-| [.gitignore](../../../../../org-master/.gitignore) | Ignore list for `org-master` |
+| [main.md](../../../../references/yabinboxes/org-master/main.md) | The service directories below, plus the runs described in [master-infra](../01-conceptual-explanation/master-infra.md), [master-modules](../01-conceptual-explanation/master-modules.md), and [master-test](../01-conceptual-explanation/master-test.md) |
+| snow-angular-ui | [org-snow-angular-ui](../../../../references/yabinboxes/org-snow-angular-ui) |
+| snow-publish-java | [org-snow-publish-java](../../../../references/yabinboxes/org-snow-publish-java) |
+| snow-cron-bun | [org-snow-cron-bun](../../../../references/yabinboxes/org-snow-cron-bun) |
+| snow-postgresdb-docker-compose | [org-snow-postgresdb-docker-compose](../../../../references/yabinboxes/org-snow-postgresdb-docker-compose) |
+| snow-server-hetzner | [org-snow-server-hetzner](../../../../references/yabinboxes/org-snow-server-hetzner) |
+| snow-websocket-bun | [org-snow-websocket-bun](../../../../references/yabinboxes/org-snow-websocket-bun) |
+| snow-test-playwright | [org-snow-test-playwright](../../../../references/yabinboxes/org-snow-test-playwright) |
+| [local-setup/macmini.md](../../../../references/yabinboxes/org-master/local-setup/macmini.md) | Local order: postgres compose, `snow-publish-java`, angular compose, Cloudflare tunnels |
+| [local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml](../../../../references/yabinboxes/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/docker-compose.yml) | Local Postgres. Service repo: [org-snow-postgresdb-docker-compose](../../../../references/yabinboxes/org-snow-postgresdb-docker-compose) |
+| [local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql](../../../../references/yabinboxes/org-master/local-setup/docker-services/snow-postgresdb-docker-compose/init/init-db.sql) | Init SQL for that local compose |
+| [local-setup/docker-services/snow-angular-ui/docker-compose.yml](../../../../references/yabinboxes/org-master/local-setup/docker-services/snow-angular-ui/docker-compose.yml) | Local dashboard compose. Service repo: [org-snow-angular-ui](../../../../references/yabinboxes/org-snow-angular-ui) |
+| [.gitignore](../../../../references/yabinboxes/org-master/.gitignore) | Ignore list for `org-master` |
 
-### [master-yabinboxes](./master-yabinboxes.md)
+### [master-yabinboxes](../01-conceptual-explanation/master-yabinboxes.md)
 
 `yabinboxes/master-yabinboxes` → `yabinboxes`
 
@@ -24457,20 +24457,20 @@ A master file states the rule. The repository named after the arrow is the imple
 | [main.md](../../../../main.md) | This book, and every repository in `yabinboxes` listed below |
 | [README.md](../../../../README.md) | Book workspace layout |
 | [toc.md](../../../../toc.md) | [front-matter/table-of-contents.md](../../../../front-matter/table-of-contents.md) |
-| [org-master](../../../../../org-master) | Service list and local setup |
-| [org-snow-angular-ui](../../../../../org-snow-angular-ui) | Dashboard and docs UI |
-| [org-snow-angular-ui-selfhosted](../../../../../org-snow-angular-ui-selfhosted) | Angular workspace beside the hosted UI |
-| [org-snow-publish-java](../../../../../org-snow-publish-java) | Publish API, Java 21 |
-| [org-snow-publish-java-selfhosted](../../../../../org-snow-publish-java-selfhosted) | Publish API artifact `snow-publish-java-selfhosted` |
-| [org-snow-cron-bun](../../../../../org-snow-cron-bun) | Liveness probe service |
-| [org-snow-postgresdb-docker-compose](../../../../../org-snow-postgresdb-docker-compose) | Postgres compose |
-| [org-snow-server-hetzner](../../../../../org-snow-server-hetzner) | Hetzner workflow for the Snow host |
-| [org-snow-websocket-bun](../../../../../org-snow-websocket-bun) | WebSocket service |
-| [org-snow-test-playwright](../../../../../org-snow-test-playwright) | Playwright tests |
-| [main-examples](../../../../../main-examples) | Caller workflows. Chapter 15 |
-| [main-configure-secrets](../../../../../main-configure-secrets) | [configure-secrets.yml](../../../../../main-configure-secrets/.github/workflows/configure-secrets.yml) |
-| [helm-template-public-img-nginx](../../../../../helm-template-public-img-nginx) | [application.yaml](../../../../../helm-template-public-img-nginx/application.yaml) |
-| [helm-template-public-img-traefik](../../../../../helm-template-public-img-traefik) | [application.yaml](../../../../../helm-template-public-img-traefik/application.yaml) |
+| [org-master](../../../../references/yabinboxes/org-master) | Service list and local setup |
+| [org-snow-angular-ui](../../../../references/yabinboxes/org-snow-angular-ui) | Dashboard and docs UI |
+| [org-snow-angular-ui-selfhosted](../../../../references/yabinboxes/org-snow-angular-ui-selfhosted) | Angular workspace beside the hosted UI |
+| [org-snow-publish-java](../../../../references/yabinboxes/org-snow-publish-java) | Publish API, Java 21 |
+| [org-snow-publish-java-selfhosted](../../../../references/yabinboxes/org-snow-publish-java-selfhosted) | Publish API artifact `snow-publish-java-selfhosted` |
+| [org-snow-cron-bun](../../../../references/yabinboxes/org-snow-cron-bun) | Liveness probe service |
+| [org-snow-postgresdb-docker-compose](../../../../references/yabinboxes/org-snow-postgresdb-docker-compose) | Postgres compose |
+| [org-snow-server-hetzner](../../../../references/yabinboxes/org-snow-server-hetzner) | Hetzner workflow for the Snow host |
+| [org-snow-websocket-bun](../../../../references/yabinboxes/org-snow-websocket-bun) | WebSocket service |
+| [org-snow-test-playwright](../../../../references/yabinboxes/org-snow-test-playwright) | Playwright tests |
+| [main-examples](../../../../references/yabinboxes/main-examples) | Caller workflows. Chapter 15 |
+| [main-configure-secrets](../../../../references/yabinboxes/main-configure-secrets) | [configure-secrets.yml](../../../../references/yabinboxes/main-configure-secrets/.github/workflows/configure-secrets.yml) |
+| [helm-template-public-img-nginx](../../../../references/yabinboxes/helm-template-public-img-nginx) | [application.yaml](../../../../references/yabinboxes/helm-template-public-img-nginx/application.yaml) |
+| [helm-template-public-img-traefik](../../../../references/yabinboxes/helm-template-public-img-traefik) | [application.yaml](../../../../references/yabinboxes/helm-template-public-img-traefik/application.yaml) |
 
 `org-master` and `master-yabinboxes` both point at `yabinboxes`. `org-master` is the service list. `master-yabinboxes` is this book, and Chapter 3 says the book includes every repository in `yabinboxes`.
 
@@ -24485,7 +24485,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-20-masters/chapter-checklist.md](../chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -24507,7 +24507,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-20-masters/README.md](../README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 20 — Masters
@@ -24519,8 +24519,8 @@ Source repos: `snow-monkeys-modules/`, `snow-monkeys-infra/`, `test-snow-monkeys
 
 Chapter 3 names each master. This chapter follows that master file into the repository that implements it.
 
-1. [Conceptual explanation](./01-conceptual-explanation/) — index of each master and the repository that implements it
-2. [Walkthrough](./02-walkthrough/) — the workflow or directory behind each index row
+1. [Conceptual explanation](../01-conceptual-explanation) — index of each master and the repository that implements it
+2. [Walkthrough](.) — the workflow or directory behind each index row
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-21-script-summary-and-reports-01-conceptual-explanation-readme-md"></a>
@@ -24531,7 +24531,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
@@ -24549,7 +24549,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -24571,7 +24571,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 21 — Script Summary and Reports
@@ -24581,7 +24581,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part V — Maintenance and Scripts  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../chapter-21-script-summary-and-reports/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-chapter-22-summary-and-further-reading-01-conceptual-explanation-readme-md"></a>
@@ -24592,7 +24592,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/01-conceptual-explanation/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/01-conceptual-explanation/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # 1. Conceptual explanation
@@ -24610,7 +24610,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/chapter-checklist.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/chapter-checklist.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter checklist
@@ -24632,7 +24632,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/c
 Copy: [body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Chapter 22 — Summary + Further Reading
@@ -24642,7 +24642,7 @@ Implementation: [yabinboxes](../../../../..)
 Part: Part V — Maintenance and Scripts  
 Source repos: TBD
 
-1. [Conceptual explanation](./01-conceptual-explanation/)
+1. [Conceptual explanation](../../chapter-22-summary-and-further-reading/01-conceptual-explanation)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-body-part-05-maintenance-and-scripts-readme-md"></a>
@@ -24653,7 +24653,7 @@ Repository: [yabinboxes/master-yabinboxes/body/part-05-maintenance-and-scripts/R
 Copy: [body/part-05-maintenance-and-scripts/README.md](../masters/master-yabinboxes/body/part-05-maintenance-and-scripts/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Part V — Maintenance and Scripts
@@ -24669,7 +24669,7 @@ Repository: [yabinboxes/master-yabinboxes/front-matter/conventions.md](../../../
 Copy: [front-matter/conventions.md](../masters/master-yabinboxes/front-matter/conventions.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Conventions used in this book
@@ -24678,7 +24678,7 @@ Implementation: [yabinboxes](../../../../..)
 
 ## Chapter shape
 
-The body is five parts, from `main.md` **CHAPTERS**: Foundations, Dashboard, Runners, Core Modules, Maintenance and Scripts. Every chapter has, in order, a conceptual explanation (if needed) and a walkthrough (if needed). The twenty-two chapter titles are listed in [table-of-contents.md](./table-of-contents.md).
+The body is five parts, from `main.md` **CHAPTERS**: Foundations, Dashboard, Runners, Core Modules, Maintenance and Scripts. Every chapter has, in order, a conceptual explanation (if needed) and a walkthrough (if needed). The twenty-two chapter titles are listed in [table-of-contents.md](../../../../front-matter/table-of-contents.md).
 
 ## Code style
 
@@ -24720,7 +24720,7 @@ Repository: [yabinboxes/master-yabinboxes/front-matter/preface.md](../../../../f
 Copy: [front-matter/preface.md](../masters/master-yabinboxes/front-matter/preface.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Preface
@@ -24741,7 +24741,7 @@ Snow Monkeys is a set of reusable workflows, IaC modules, and a dashboard that s
 
 Read Part I for the mental model. Use Part II for the dashboard and docs. Use Part III for runners. Work Part IV hands-on, one provider at a time. Use Part V for dashboard code, tests, and maintainer scripts.
 
-See [conventions.md](./conventions.md) for code style, callouts, and listing numbers.
+See [conventions.md](../../../../front-matter/conventions.md) for code style, callouts, and listing numbers.
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-front-matter-table-of-contents-md"></a>
@@ -24752,12 +24752,12 @@ Repository: [yabinboxes/master-yabinboxes/front-matter/table-of-contents.md](../
 Copy: [front-matter/table-of-contents.md](../masters/master-yabinboxes/front-matter/table-of-contents.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Table of Contents
 
-Status: **awaiting approval**. Canonical workspace outline: [../toc.md](../toc.md)
+Status: **awaiting approval**. Canonical workspace outline: [../toc.md](../../../../toc.md)
 
 Book: **Snow Monkeys**  
 Subtitle: Reusable workflows using infrastructure as code with Snow Monkeys Modules and Dashboard
@@ -24768,9 +24768,9 @@ Every chapter uses these sections, in order, and omits a section it does not nee
 
 ## Front matter
 
-- [Preface](./preface.md)
+- [Preface](../../../../front-matter/preface.md)
 - Table of Contents
-- [Conventions](./conventions.md)
+- [Conventions](../../../../front-matter/conventions.md)
 
 ---
 
@@ -24778,17 +24778,17 @@ Every chapter uses these sections, in order, and omits a section it does not nee
 
 Theme: how to read this book, how providers and modules fit together, and the master catalogs.
 
-### [Chapter 1 — Learning objectives](../body/part-01-foundations/chapter-01-learning-objectives/)
+### [Chapter 1 — Learning objectives](../../../part-01-foundations/chapter-01-learning-objectives)
 
 1. Conceptual explanation
 
-### [Chapter 2 — Conceptual explanation and providers](../body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/)
+### [Chapter 2 — Conceptual explanation and providers](../../../part-01-foundations/chapter-02-conceptual-explanation-and-providers)
 
 1. Conceptual explanation
    - Concept
    - Providers
 
-### [Chapter 3 — Masters](../body/part-01-foundations/chapter-03-masters/)
+### [Chapter 3 — Masters](../../../part-01-foundations/chapter-03-masters)
 
 1. Conceptual explanation
 
@@ -24798,15 +24798,15 @@ Theme: how to read this book, how providers and modules fit together, and the ma
 
 Theme: hosted dashboard, selfhosted dashboard, and docs.
 
-### [Chapter 4 — Snow Monkeys Dashboard](../body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/)
+### [Chapter 4 — Snow Monkeys Dashboard](../../../part-02-dashboard/chapter-04-snow-monkeys-dashboard)
 
 1. Conceptual explanation
 
-### [Chapter 5 — Snow Monkeys Dashboard Selfhosted](../body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/)
+### [Chapter 5 — Snow Monkeys Dashboard Selfhosted](../../../part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted)
 
 1. Conceptual explanation
 
-### [Chapter 6 — Snow Monkeys Docs](../body/part-02-dashboard/chapter-06-snow-monkeys-docs/)
+### [Chapter 6 — Snow Monkeys Docs](../../../part-02-dashboard/chapter-06-snow-monkeys-docs)
 
 1. Conceptual explanation
    - User examples
@@ -24818,15 +24818,15 @@ Theme: hosted dashboard, selfhosted dashboard, and docs.
 
 Theme: GitHub runners, GitLab runners, and local runners that execute the reusable workflows.
 
-### [Chapter 7 — GitHub runners](../body/part-03-runners/chapter-07-github-runners/)
+### [Chapter 7 — GitHub runners](../../../part-03-runners/chapter-07-github-runners)
 
 1. Conceptual explanation
 
-### [Chapter 8 — GitLab runners](../body/part-03-runners/chapter-08-gitlab-runners/)
+### [Chapter 8 — GitLab runners](../../../part-03-runners/chapter-08-gitlab-runners)
 
 1. Conceptual explanation
 
-### [Chapter 9 — Local runners](../body/part-03-runners/chapter-09-local-runners/)
+### [Chapter 9 — Local runners](../../../part-03-runners/chapter-09-local-runners)
 
 1. Conceptual explanation
 
@@ -24836,39 +24836,39 @@ Theme: GitHub runners, GitLab runners, and local runners that execute the reusab
 
 Theme: infrastructure as code projects, reusable workflows, walkthrough, pitfalls, exercises, and examples.
 
-### [Chapter 10 — Infrastructure as Code projects for cloud resources](../body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/)
+### [Chapter 10 — Infrastructure as Code projects for cloud resources](../../../part-04-core-modules/chapter-10-infrastructure-as-code-projects)
 
-1. [Conceptual explanation](../body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation/)
-2. [Walkthrough](../body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough/) — index of every Terraform project and its source
+1. [Conceptual explanation](../../../part-04-core-modules/chapter-10-infrastructure-as-code-projects/01-conceptual-explanation)
+2. [Walkthrough](../../../part-04-core-modules/chapter-10-infrastructure-as-code-projects/02-walkthrough) — index of every Terraform project and its source
 
-### [Chapter 11 — Hands-on Reusable Workflows](../body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/)
+### [Chapter 11 — Hands-on Reusable Workflows](../../../part-04-core-modules/chapter-11-hands-on-reusable-workflows)
 
 1. Conceptual explanation
 2. Walkthrough
 
-### [Chapter 12 — Walkthrough](../body/part-04-core-modules/chapter-12-walkthrough/)
+### [Chapter 12 — Walkthrough](../../../part-04-core-modules/chapter-12-walkthrough)
 
 1. Conceptual explanation
 
-### [Chapter 13 — Common Pitfalls](../body/part-04-core-modules/chapter-13-common-pitfalls/)
+### [Chapter 13 — Common Pitfalls](../../../part-04-core-modules/chapter-13-common-pitfalls)
 
 1. Conceptual explanation
    - Pitfall 1
    - Pitfall 2
    - Pitfall 3
 
-### [Chapter 14 — Exercises](../body/part-04-core-modules/chapter-14-exercises/)
+### [Chapter 14 — Exercises](../../../part-04-core-modules/chapter-14-exercises)
 
 1. Conceptual explanation
 
-### [Chapter 15 — Examples](../body/part-04-core-modules/chapter-15-examples/)
+### [Chapter 15 — Examples](../../../part-04-core-modules/chapter-15-examples)
 
 1. Conceptual explanation
    - Infrastructure
    - Services
    - Applications
    - Stateful create and destroy
-2. [Walkthrough](../body/part-04-core-modules/chapter-15-examples/02-walkthrough/) — index of every `main-examples` workflow and its implementation
+2. [Walkthrough](../../../part-04-core-modules/chapter-15-examples/02-walkthrough) — index of every `main-examples` workflow and its implementation
 
 ---
 
@@ -24876,31 +24876,31 @@ Theme: infrastructure as code projects, reusable workflows, walkthrough, pitfall
 
 Theme: dashboard code, supporting services, tests, how the masters are implemented, and wrap-up.
 
-### [Chapter 16 — Dashboard Code](../body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/)
+### [Chapter 16 — Dashboard Code](../../chapter-16-dashboard-code)
 
 1. Conceptual explanation
    - UI
    - Backend
    - Service
 
-### [Chapter 17 — Dashboard Selfhosted Code](../body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/)
+### [Chapter 17 — Dashboard Selfhosted Code](../../chapter-17-dashboard-selfhosted-code)
 
 1. Conceptual explanation
    - UI
    - Backend
    - Service
 
-### [Chapter 18 — Other services](../body/part-05-maintenance-and-scripts/chapter-18-other-services/)
+### [Chapter 18 — Other services](../../chapter-18-other-services)
 
 1. Conceptual explanation
    - Database backup
    - Server
 
-### [Chapter 19 — Test Modules](../body/part-05-maintenance-and-scripts/chapter-19-test-modules/)
+### [Chapter 19 — Test Modules](../../chapter-19-test-modules)
 
 1. Conceptual explanation
 
-### [Chapter 20 — Masters](../body/part-05-maintenance-and-scripts/chapter-20-masters/)
+### [Chapter 20 — Masters](..)
 
 1. Conceptual explanation
    - master-modules → `snow-monkeys-modules`
@@ -24910,11 +24910,11 @@ Theme: dashboard code, supporting services, tests, how the masters are implement
    - master-yabinboxes → `yabinboxes`
 2. Walkthrough
 
-### [Chapter 21 — Script Summary and Reports](../body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/)
+### [Chapter 21 — Script Summary and Reports](../../chapter-21-script-summary-and-reports)
 
 1. Conceptual explanation
 
-### [Chapter 22 — Summary + Further Reading](../body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/)
+### [Chapter 22 — Summary + Further Reading](../../chapter-22-summary-and-further-reading)
 
 1. Conceptual explanation
 
@@ -24922,9 +24922,9 @@ Theme: dashboard code, supporting services, tests, how the masters are implement
 
 ## Back matter
 
-- [Glossary](../back-matter/glossary.md)
-- [Appendix — Setup and environment](../back-matter/appendix-setup-environment.md)
-- [Index of code examples](../back-matter/index-of-code-examples.md)
+- [Glossary](../../../../back-matter/glossary.md)
+- [Appendix — Setup and environment](../../../../back-matter/appendix-setup-environment.md)
+- [Index of code examples](../../../../back-matter/index-of-code-examples.md)
 ```
 
 <a id="master-yabinboxes-master-yabinboxes-readme-md"></a>
@@ -24935,7 +24935,7 @@ Repository: [yabinboxes/master-yabinboxes/README.md](../../../../README.md)
 Copy: [README.md](../masters/master-yabinboxes/README.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ````markdown
 # Snow Monkeys — Book workspace
@@ -24944,9 +24944,9 @@ Writing workspace for **Snow Monkeys**: reusable workflows using infrastructure 
 
 Audience: Developers, DevOps, and System Engineers.
 
-- Authoring spec: [main.md](./main.md)
-- Proposed table of contents: [toc.md](./toc.md)
-- Front-matter TOC: [front-matter/table-of-contents.md](./front-matter/table-of-contents.md)
+- Authoring spec: [main.md](../../../../main.md)
+- Proposed table of contents: [toc.md](../../../../toc.md)
+- Front-matter TOC: [front-matter/table-of-contents.md](../../../../front-matter/table-of-contents.md)
 
 ## Layout
 
@@ -24985,11 +24985,11 @@ chapter-NN-slug/
 
 ## Writing process
 
-1. Review and approve [toc.md](./toc.md).
+1. Review and approve [toc.md](../../../../toc.md).
 2. Write one chapter at a time, following `_templates/chapter/`.
 3. Fill the chapter checklist before moving on.
 
-Chapter status is in [main.md](./main.md). Listings are indexed in [back-matter/index-of-code-examples.md](./back-matter/index-of-code-examples.md).
+Chapter status is in [main.md](../../../../main.md). Listings are indexed in [back-matter/index-of-code-examples.md](../../../../back-matter/index-of-code-examples.md).
 ````
 
 <a id="master-yabinboxes-master-yabinboxes-toc-md"></a>
@@ -25000,7 +25000,7 @@ Repository: [yabinboxes/master-yabinboxes/toc.md](../../../../toc.md)
 Copy: [toc.md](../masters/master-yabinboxes/toc.md)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```markdown
 # Table of Contents (proposed)
@@ -25016,9 +25016,9 @@ Chapters follow `main.md` **CHAPTERS**. Each chapter uses the contract in `main.
 
 ## Front matter
 
-- [Preface](./front-matter/preface.md) — why this book, who it is for
-- [Table of Contents](./front-matter/table-of-contents.md)
-- [Conventions](./front-matter/conventions.md) — code style, icons, notation
+- [Preface](../../../../front-matter/preface.md) — why this book, who it is for
+- [Table of Contents](../../../../front-matter/table-of-contents.md)
+- [Conventions](../../../../front-matter/conventions.md) — code style, icons, notation
 
 ---
 
@@ -25026,56 +25026,56 @@ Chapters follow `main.md` **CHAPTERS**. Each chapter uses the contract in `main.
 
 Theme: how to read this book, how providers and modules fit together, and the master catalogs.
 
-- [Chapter 1 — Learning objectives](./body/part-01-foundations/chapter-01-learning-objectives/)
-- [Chapter 2 — Conceptual explanation and providers](./body/part-01-foundations/chapter-02-conceptual-explanation-and-providers/)
-- [Chapter 3 — Masters](./body/part-01-foundations/chapter-03-masters/)
+- [Chapter 1 — Learning objectives](../../../part-01-foundations/chapter-01-learning-objectives)
+- [Chapter 2 — Conceptual explanation and providers](../../../part-01-foundations/chapter-02-conceptual-explanation-and-providers)
+- [Chapter 3 — Masters](../../../part-01-foundations/chapter-03-masters)
 
 ## Part II — Dashboard
 
 Theme: hosted dashboard, selfhosted dashboard, and docs.
 
-- [Chapter 4 — Snow Monkeys Dashboard](./body/part-02-dashboard/chapter-04-snow-monkeys-dashboard/)
-- [Chapter 5 — Snow Monkeys Dashboard Selfhosted](./body/part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted/)
-- [Chapter 6 — Snow Monkeys Docs](./body/part-02-dashboard/chapter-06-snow-monkeys-docs/)
+- [Chapter 4 — Snow Monkeys Dashboard](../../../part-02-dashboard/chapter-04-snow-monkeys-dashboard)
+- [Chapter 5 — Snow Monkeys Dashboard Selfhosted](../../../part-02-dashboard/chapter-05-snow-monkeys-dashboard-selfhosted)
+- [Chapter 6 — Snow Monkeys Docs](../../../part-02-dashboard/chapter-06-snow-monkeys-docs)
 
 ## Part III — Runners
 
 Theme: GitHub runners, GitLab runners, and local runners that execute the reusable workflows.
 
-- [Chapter 7 — GitHub runners](./body/part-03-runners/chapter-07-github-runners/)
-- [Chapter 8 — GitLab runners](./body/part-03-runners/chapter-08-gitlab-runners/)
-- [Chapter 9 — Local runners](./body/part-03-runners/chapter-09-local-runners/)
+- [Chapter 7 — GitHub runners](../../../part-03-runners/chapter-07-github-runners)
+- [Chapter 8 — GitLab runners](../../../part-03-runners/chapter-08-gitlab-runners)
+- [Chapter 9 — Local runners](../../../part-03-runners/chapter-09-local-runners)
 
 ## Part IV — Core Modules
 
 Theme: infrastructure as code projects, reusable workflows, walkthrough, pitfalls, exercises, and examples.
 
-- [Chapter 10 — Infrastructure as Code projects for cloud resources](./body/part-04-core-modules/chapter-10-infrastructure-as-code-projects/)
-- [Chapter 11 — Hands-on Reusable Workflows](./body/part-04-core-modules/chapter-11-hands-on-reusable-workflows/)
-- [Chapter 12 — Walkthrough](./body/part-04-core-modules/chapter-12-walkthrough/)
-- [Chapter 13 — Common Pitfalls](./body/part-04-core-modules/chapter-13-common-pitfalls/)
-- [Chapter 14 — Exercises](./body/part-04-core-modules/chapter-14-exercises/)
-- [Chapter 15 — Examples](./body/part-04-core-modules/chapter-15-examples/)
+- [Chapter 10 — Infrastructure as Code projects for cloud resources](../../../part-04-core-modules/chapter-10-infrastructure-as-code-projects)
+- [Chapter 11 — Hands-on Reusable Workflows](../../../part-04-core-modules/chapter-11-hands-on-reusable-workflows)
+- [Chapter 12 — Walkthrough](../../../part-04-core-modules/chapter-12-walkthrough)
+- [Chapter 13 — Common Pitfalls](../../../part-04-core-modules/chapter-13-common-pitfalls)
+- [Chapter 14 — Exercises](../../../part-04-core-modules/chapter-14-exercises)
+- [Chapter 15 — Examples](../../../part-04-core-modules/chapter-15-examples)
 
 ## Part V — Maintenance and Scripts
 
 Theme: dashboard code, supporting services, tests, how the masters are implemented, and wrap-up.
 
-- [Chapter 16 — Dashboard Code](./body/part-05-maintenance-and-scripts/chapter-16-dashboard-code/)
-- [Chapter 17 — Dashboard Selfhosted Code](./body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/)
-- [Chapter 18 — Other services](./body/part-05-maintenance-and-scripts/chapter-18-other-services/)
-- [Chapter 19 — Test Modules](./body/part-05-maintenance-and-scripts/chapter-19-test-modules/)
-- [Chapter 20 — Masters](./body/part-05-maintenance-and-scripts/chapter-20-masters/)
-- [Chapter 21 — Script Summary and Reports](./body/part-05-maintenance-and-scripts/chapter-21-script-summary-and-reports/)
-- [Chapter 22 — Summary + Further Reading](./body/part-05-maintenance-and-scripts/chapter-22-summary-and-further-reading/)
+- [Chapter 16 — Dashboard Code](../../chapter-16-dashboard-code)
+- [Chapter 17 — Dashboard Selfhosted Code](../../chapter-17-dashboard-selfhosted-code)
+- [Chapter 18 — Other services](../../chapter-18-other-services)
+- [Chapter 19 — Test Modules](../../chapter-19-test-modules)
+- [Chapter 20 — Masters](..)
+- [Chapter 21 — Script Summary and Reports](../../chapter-21-script-summary-and-reports)
+- [Chapter 22 — Summary + Further Reading](../../chapter-22-summary-and-further-reading)
 
 ---
 
 ## Back matter
 
-- [Glossary](./back-matter/glossary.md)
-- [Appendix — Setup and environment](./back-matter/appendix-setup-environment.md)
-- [Index of code examples](./back-matter/index-of-code-examples.md)
+- [Glossary](../../../../back-matter/glossary.md)
+- [Appendix — Setup and environment](../../../../back-matter/appendix-setup-environment.md)
+- [Index of code examples](../../../../back-matter/index-of-code-examples.md)
 
 ---
 
@@ -25096,7 +25096,7 @@ Repository: [yabinboxes/master-yabinboxes/.gitignore](../../../../.gitignore)
 Copy: [.gitignore](../masters/master-yabinboxes/.gitignore)
 
 
-Implementation: [yabinboxes](../../../../..)
+Implementation: [yabinboxes](../../../../references/yabinboxes)
 
 ```text
 # Local .terraform directories

@@ -4,8 +4,8 @@ Dashboard code is three parts. The UI is the Angular workspace. The backend is t
 
 | Part | Repository | Entry |
 | --- | --- | --- |
-| UI | [org-snow-angular-ui](../../../../../org-snow-angular-ui/README.md) | [Ui](./ui.md) |
-| Backend | [org-snow-publish-java](../../../../../org-snow-publish-java/docs/README.md) | [Backend](./backend.md) |
-| Service | [docs/SERVICES.md](../../../../../org-snow-angular-ui/docs/SERVICES.md) | [Service](./service.md) |
+| UI | [org-snow-angular-ui](../copies/org-snow-angular-ui/README.md) | [Ui](./ui.md) |
+| Backend | [org-snow-publish-java](../copies/org-snow-publish-java/docs/README.md) | [Backend](./backend.md) |
+| Service | [docs/SERVICES.md](../copies/org-snow-angular-ui/docs/SERVICES.md) | [Service](./service.md) |
 
-`environment.ts` sets `api.baseUrl` to `https://api.snow-monkeys.com/connectors`. Every connectors call from the dashboard sends `Authorization: Bearer` with a Firebase ID token, except the publish POST and `GET /connectors/get-snow-url`, which the backend accepts with the pipeline token. That split is in [api-authentication-and-security.md](../../../../../org-snow-publish-java/docs/api-authentication-and-security.md).
+`environment.ts` sets `api.baseUrl` to `https://api.snow-monkeys.com/connectors`. Every connectors call from the dashboard sends `Authorization: Bearer` with a Firebase ID token, except the publish POST and `GET /connectors/get-snow-url`, which the backend accepts with the pipeline token. That split is in [api-authentication-and-security.md](../copies/org-snow-publish-java/docs/api-authentication-and-security.md).

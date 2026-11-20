@@ -6,97 +6,97 @@ Each heading is one directory in `snow-monkeys-infra/iac-terraform`. The impleme
 
 ### aws
 
-Workflow: [aws-iac main.yml](../../../../../../snow-monkeys-modules/aws-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../../../snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml).
+Workflow: [aws-iac main.yml](../../../../references/snow-monkeys-modules/aws-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../references/snow-monkeys-modules/aws-iac/.github/actions/server-resource/action.yml).
 
 | Project | In `list-of-resources.md` | Files |
 | --- | --- | --- |
-| `aws/aws_db_instance` | yes | [README_AWS_DB_INSTANCE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/README_AWS_DB_INSTANCE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/variables.tf) |
-| `aws/aws_ebs_volume` | yes | [README_AWS_EBS_VOLUME.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/README_AWS_EBS_VOLUME.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/variables.tf) |
-| `aws/aws_elastic_beanstalk_application` | yes | [README_AWS_ELASTIC_BEANSTALK_APPLICATION.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/README_AWS_ELASTIC_BEANSTALK_APPLICATION.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/variables.tf) |
-| `aws/aws_instance` | yes | [README_AWS_INSTANCE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/README_AWS_INSTANCE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/variables.tf) |
-| `aws/aws_lambda_function` | yes | [README_AWS_LAMBDA_FUNCTION.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/README_AWS_LAMBDA_FUNCTION.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/variables.tf) |
-| `aws/aws_s3_bucket` | yes | [README_AWS_S3_BUCKET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/README_AWS_S3_BUCKET.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/variables.tf) |
+| `aws/aws_db_instance` | yes | [README_AWS_DB_INSTANCE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/README_AWS_DB_INSTANCE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/variables.tf) |
+| `aws/aws_ebs_volume` | yes | [README_AWS_EBS_VOLUME.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/README_AWS_EBS_VOLUME.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/variables.tf) |
+| `aws/aws_elastic_beanstalk_application` | yes | [README_AWS_ELASTIC_BEANSTALK_APPLICATION.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/README_AWS_ELASTIC_BEANSTALK_APPLICATION.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/variables.tf) |
+| `aws/aws_instance` | yes | [README_AWS_INSTANCE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/README_AWS_INSTANCE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/variables.tf) |
+| `aws/aws_lambda_function` | yes | [README_AWS_LAMBDA_FUNCTION.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/README_AWS_LAMBDA_FUNCTION.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/variables.tf) |
+| `aws/aws_s3_bucket` | yes | [README_AWS_S3_BUCKET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/README_AWS_S3_BUCKET.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/variables.tf) |
 
 ### azure
 
-Workflow: [azure-iac main.yml](../../../../../../snow-monkeys-modules/azure-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../../../snow-monkeys-modules/azure-iac/.github/actions/server-resource/action.yml).
+Workflow: [azure-iac main.yml](../../../../references/snow-monkeys-modules/azure-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../references/snow-monkeys-modules/azure-iac/.github/actions/server-resource/action.yml).
 
 | Project | In `list-of-resources.md` | Files |
 | --- | --- | --- |
-| `azure/azurerm_linux_function_app` | yes | [README_AZURERM_LINUX_FUNCTION_APP.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/README_AZURERM_LINUX_FUNCTION_APP.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/variables.tf) |
-| `azure/azurerm_linux_web_app` | yes | [README_AZURERM_LINUX_WEB_APP.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/README_AZURERM_LINUX_WEB_APP.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/variables.tf) |
-| `azure/azurerm_mssql_database` | yes | [README_AZURERM_MSSQL_DATABASE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/README_AZURERM_MSSQL_DATABASE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/variables.tf) |
-| `azure/azurerm_mssql_server` | yes | [README_AZURERM_MSSQL_SERVER.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/README_AZURERM_MSSQL_SERVER.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/variables.tf) |
-| `azure/azurerm_mysql_flexible_database` | yes | [README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/variables.tf) |
-| `azure/azurerm_mysql_flexible_server` | yes | [README_AZURERM_MYSQL_FLEXIBLE_SERVER.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/README_AZURERM_MYSQL_FLEXIBLE_SERVER.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/variables.tf) |
-| `azure/azurerm_postgresql_database` | yes | [README_AZURERM_POSTGRESQL_DATABASE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/README_AZURERM_POSTGRESQL_DATABASE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/variables.tf) |
-| `azure/azurerm_postgresql_server` | yes | [README_AZURERM_POSTGRESQL_SERVER.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/README_AZURERM_POSTGRESQL_SERVER.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/variables.tf) |
+| `azure/azurerm_linux_function_app` | yes | [README_AZURERM_LINUX_FUNCTION_APP.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/README_AZURERM_LINUX_FUNCTION_APP.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/variables.tf) |
+| `azure/azurerm_linux_web_app` | yes | [README_AZURERM_LINUX_WEB_APP.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/README_AZURERM_LINUX_WEB_APP.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/variables.tf) |
+| `azure/azurerm_mssql_database` | yes | [README_AZURERM_MSSQL_DATABASE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/README_AZURERM_MSSQL_DATABASE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/variables.tf) |
+| `azure/azurerm_mssql_server` | yes | [README_AZURERM_MSSQL_SERVER.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/README_AZURERM_MSSQL_SERVER.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/variables.tf) |
+| `azure/azurerm_mysql_flexible_database` | yes | [README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/variables.tf) |
+| `azure/azurerm_mysql_flexible_server` | yes | [README_AZURERM_MYSQL_FLEXIBLE_SERVER.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/README_AZURERM_MYSQL_FLEXIBLE_SERVER.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/variables.tf) |
+| `azure/azurerm_postgresql_database` | yes | [README_AZURERM_POSTGRESQL_DATABASE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/README_AZURERM_POSTGRESQL_DATABASE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/variables.tf) |
+| `azure/azurerm_postgresql_server` | yes | [README_AZURERM_POSTGRESQL_SERVER.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/README_AZURERM_POSTGRESQL_SERVER.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/variables.tf) |
 
 ### civo
 
-Workflow: [civo-iac main.yml](../../../../../../snow-monkeys-modules/civo-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../../../snow-monkeys-modules/civo-iac/.github/actions/server-resource/action.yml).
+Workflow: [civo-iac main.yml](../../../../references/snow-monkeys-modules/civo-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../references/snow-monkeys-modules/civo-iac/.github/actions/server-resource/action.yml).
 
 | Project | In `list-of-resources.md` | Files |
 | --- | --- | --- |
-| `civo/bucket` | yes | [README_BUCKET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/README_BUCKET.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/backend.tf), [bucket.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/bucket.tf), [provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/provider.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/variables.tf) |
-| `civo/compute` | yes | [README_COMPUTE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/README_COMPUTE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/backend.tf), [provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/provider.tf) |
-| `civo/observability` | yes | [README_OBSERVABILITY.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/README_OBSERVABILITY.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/backend.tf), [grafana.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/grafana.tf), [opentelemetry.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/opentelemetry.tf), [prometheus.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/prometheus.tf), [provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/provider.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/variables.tf) |
+| `civo/bucket` | yes | [README_BUCKET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/README_BUCKET.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/backend.tf), [bucket.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/bucket.tf), [provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/provider.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/variables.tf) |
+| `civo/compute` | yes | [README_COMPUTE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/README_COMPUTE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/backend.tf), [provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/provider.tf) |
+| `civo/observability` | yes | [README_OBSERVABILITY.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/README_OBSERVABILITY.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/backend.tf), [grafana.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/grafana.tf), [opentelemetry.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/opentelemetry.tf), [prometheus.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/prometheus.tf), [provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/provider.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/variables.tf) |
 
 ### cloudflare
 
-Workflow: [cloudflare-iac main.yml](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../../../snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource/action.yml).
+Workflow: [cloudflare-iac main.yml](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../references/snow-monkeys-modules/cloudflare-iac/.github/actions/server-resource/action.yml).
 
 | Project | In `list-of-resources.md` | Files |
 | --- | --- | --- |
-| `cloudflare/cloudflare_d1_database` | yes | [README_CLOUDFLARE_D1_DATABASE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/README_CLOUDFLARE_D1_DATABASE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/variables.tf) |
-| `cloudflare/cloudflare_pages_project` | yes | [README_CLOUDFLARE_PAGES_PROJECT.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/README_CLOUDFLARE_PAGES_PROJECT.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/variables.tf) |
-| `cloudflare/cloudflare_pipeline_sink` | yes | [README_CLOUDFLARE_PIPELINE_SINK.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/README_CLOUDFLARE_PIPELINE_SINK.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/variables.tf) |
-| `cloudflare/cloudflare_r2_bucket` | yes | [README_CLOUDFLARE_R2_BUCKET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/README_CLOUDFLARE_R2_BUCKET.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/variables.tf) |
-| `cloudflare/cloudflare_workers_script` | yes | [README_CLOUDFLARE_WORKERS_SCRIPT.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/README_CLOUDFLARE_WORKERS_SCRIPT.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/variables.tf) |
-| `cloudflare/dns` | no. Reached only if `resource` is this folder name | [README_DNS.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/README_DNS.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/backend.tf), [cloudflare.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/cloudflare.tf), [provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/provider.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/variables.tf) |
+| `cloudflare/cloudflare_d1_database` | yes | [README_CLOUDFLARE_D1_DATABASE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/README_CLOUDFLARE_D1_DATABASE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/variables.tf) |
+| `cloudflare/cloudflare_pages_project` | yes | [README_CLOUDFLARE_PAGES_PROJECT.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/README_CLOUDFLARE_PAGES_PROJECT.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/variables.tf) |
+| `cloudflare/cloudflare_pipeline_sink` | yes | [README_CLOUDFLARE_PIPELINE_SINK.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/README_CLOUDFLARE_PIPELINE_SINK.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/variables.tf) |
+| `cloudflare/cloudflare_r2_bucket` | yes | [README_CLOUDFLARE_R2_BUCKET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/README_CLOUDFLARE_R2_BUCKET.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/variables.tf) |
+| `cloudflare/cloudflare_workers_script` | yes | [README_CLOUDFLARE_WORKERS_SCRIPT.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/README_CLOUDFLARE_WORKERS_SCRIPT.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/variables.tf) |
+| `cloudflare/dns` | no. Reached only if `resource` is this folder name | [README_DNS.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/README_DNS.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/backend.tf), [cloudflare.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/cloudflare.tf), [provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/provider.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/variables.tf) |
 
 ### digitalocean
 
-Workflow: [digital-ocean-iac main.yml](../../../../../../snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../../../snow-monkeys-modules/digital-ocean-iac/.github/actions/server-resource/action.yml).
+Workflow: [digital-ocean-iac main.yml](../../../../references/snow-monkeys-modules/digital-ocean-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../references/snow-monkeys-modules/digital-ocean-iac/.github/actions/server-resource/action.yml).
 
 | Project | In `list-of-resources.md` | Files |
 | --- | --- | --- |
-| `digitalocean/digitalocean_droplet` | yes | [README_DIGITALOCEAN_DROPLET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/README_DIGITALOCEAN_DROPLET.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/variables.tf) |
-| `digitalocean/digitalocean_droplet_autoscale` | yes | [README_DIGITALOCEAN_DROPLET_AUTOSCALE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/README_DIGITALOCEAN_DROPLET_AUTOSCALE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/variables.tf) |
-| `digitalocean/droplet` | no. Reached only if `resource` is this folder name | [README_DROPLET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/README_DROPLET.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/backend.tf), [droplet.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/droplet.tf), [output.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/output.tf), [provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/provider.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/variables.tf) |
+| `digitalocean/digitalocean_droplet` | yes | [README_DIGITALOCEAN_DROPLET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/README_DIGITALOCEAN_DROPLET.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/variables.tf) |
+| `digitalocean/digitalocean_droplet_autoscale` | yes | [README_DIGITALOCEAN_DROPLET_AUTOSCALE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/README_DIGITALOCEAN_DROPLET_AUTOSCALE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/variables.tf) |
+| `digitalocean/droplet` | no. Reached only if `resource` is this folder name | [README_DROPLET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/README_DROPLET.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/backend.tf), [droplet.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/droplet.tf), [output.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/output.tf), [provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/provider.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/variables.tf) |
 
 ### gcp
 
-Workflow: [gcp-iac main.yml](../../../../../../snow-monkeys-modules/gcp-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../../../snow-monkeys-modules/gcp-iac/.github/actions/server-resource/action.yml).
+Workflow: [gcp-iac main.yml](../../../../references/snow-monkeys-modules/gcp-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../references/snow-monkeys-modules/gcp-iac/.github/actions/server-resource/action.yml).
 
 | Project | In `list-of-resources.md` | Files |
 | --- | --- | --- |
-| `gcp/compute` | no. Reached only if `resource` is this folder name | [README_COMPUTE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/README_COMPUTE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/backend.tf), [compute-instance.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/compute-instance.tf), [provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/provider.tf) |
-| `gcp/google_compute_instance` | yes | [README_GOOGLE_COMPUTE_INSTANCE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/variables.tf) |
-| `gcp/google_sql_database_instance` | yes | [README_GOOGLE_SQL_DATABASE_INSTANCE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/README_GOOGLE_SQL_DATABASE_INSTANCE.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/variables.tf) |
-| `gcp/google_storage_bucket` | yes | [README_GOOGLE_STORAGE_BUCKET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/README_GOOGLE_STORAGE_BUCKET.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/variables.tf) |
-| `gcp/google_storage_bucket_object` | yes | [README_GOOGLE_STORAGE_BUCKET_OBJECT.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/README_GOOGLE_STORAGE_BUCKET_OBJECT.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/variables.tf) |
+| `gcp/compute` | no. Reached only if `resource` is this folder name | [README_COMPUTE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/README_COMPUTE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/backend.tf), [compute-instance.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/compute-instance.tf), [provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/provider.tf) |
+| `gcp/google_compute_instance` | yes | [README_GOOGLE_COMPUTE_INSTANCE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/variables.tf) |
+| `gcp/google_sql_database_instance` | yes | [README_GOOGLE_SQL_DATABASE_INSTANCE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/README_GOOGLE_SQL_DATABASE_INSTANCE.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/variables.tf) |
+| `gcp/google_storage_bucket` | yes | [README_GOOGLE_STORAGE_BUCKET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/README_GOOGLE_STORAGE_BUCKET.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/variables.tf) |
+| `gcp/google_storage_bucket_object` | yes | [README_GOOGLE_STORAGE_BUCKET_OBJECT.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/README_GOOGLE_STORAGE_BUCKET_OBJECT.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/variables.tf) |
 
 ### hetzner
 
-Workflow: [hetzner-iac main.yml](../../../../../../snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../../../snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml).
+Workflow: [hetzner-iac main.yml](../../../../references/snow-monkeys-modules/hetzner-iac/.github/workflows/main.yml). Clone action: [server-resource](../../../../references/snow-monkeys-modules/hetzner-iac/.github/actions/server-resource/action.yml).
 
 | Project | In `list-of-resources.md` | Files |
 | --- | --- | --- |
-| `hetzner/hcloud_firewall` | yes | [README_HCLOUD_FIREWALL.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/README_HCLOUD_FIREWALL.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/variables.tf) |
-| `hetzner/hcloud_floating_ip` | yes | [README_HCLOUD_FLOATING_IP.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/README_HCLOUD_FLOATING_IP.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/variables.tf) |
-| `hetzner/hcloud_network` | yes | [README_HCLOUD_NETWORK.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/README_HCLOUD_NETWORK.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/variables.tf) |
-| `hetzner/hcloud_server` | yes | [README_HCLOUD_SERVER.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/README_HCLOUD_SERVER.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/variables.tf) |
-| `hetzner/hcloud_volume` | yes | [README_HCLOUD_VOLUME.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/README_HCLOUD_VOLUME.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/variables.tf) |
-| `hetzner/hcloud_volume_attachment` | yes | [README_HCLOUD_VOLUME_ATTACHMENT.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/README_HCLOUD_VOLUME_ATTACHMENT.md), [backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/backend.tf), [main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/main.tf), [outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/outputs.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/variables.tf) |
+| `hetzner/hcloud_firewall` | yes | [README_HCLOUD_FIREWALL.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/README_HCLOUD_FIREWALL.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/variables.tf) |
+| `hetzner/hcloud_floating_ip` | yes | [README_HCLOUD_FLOATING_IP.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/README_HCLOUD_FLOATING_IP.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/variables.tf) |
+| `hetzner/hcloud_network` | yes | [README_HCLOUD_NETWORK.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/README_HCLOUD_NETWORK.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/variables.tf) |
+| `hetzner/hcloud_server` | yes | [README_HCLOUD_SERVER.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/README_HCLOUD_SERVER.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/variables.tf) |
+| `hetzner/hcloud_volume` | yes | [README_HCLOUD_VOLUME.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/README_HCLOUD_VOLUME.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/variables.tf) |
+| `hetzner/hcloud_volume_attachment` | yes | [README_HCLOUD_VOLUME_ATTACHMENT.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/README_HCLOUD_VOLUME_ATTACHMENT.md), [backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/backend.tf), [main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/main.tf), [outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/outputs.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/variables.tf) |
 
 ### v1/k8s
 
-Not selected by `server-resource`. Civo `type: kubernetes` uses [deploy-image](../../../../../../snow-monkeys-modules/civo-iac/.github/actions/deploy-image/action.yml).
+Not selected by `server-resource`. Civo `type: kubernetes` uses [deploy-image](../../../../references/snow-monkeys-modules/civo-iac/.github/actions/deploy-image/action.yml).
 
 | Project | Files |
 | --- | --- |
-| `v1/k8s/civo-traefik/dev` | [README_K8S.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/README_K8S.md), [cermanager.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/cermanager.tf), [civo.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/civo.tf), [data.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/data.tf), [output.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/output.tf), [provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/provider.tf), [traefik.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/traefik.tf), [variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/variables.tf) |
+| `v1/k8s/civo-traefik/dev` | [README_K8S.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/README_K8S.md), [cermanager.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/cermanager.tf), [civo.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/civo.tf), [data.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/data.tf), [output.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/output.tf), [provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/provider.tf), [traefik.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/traefik.tf), [variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/variables.tf) |
 
 ## Code
 
@@ -106,7 +106,7 @@ The source below is the file in `iac-terraform`, unchanged.
 
 #### `.gitignore`
 
-File: [.gitignore](../../../../../../snow-monkeys-infra/iac-terraform/.gitignore)
+File: [.gitignore](../../../../references/snow-monkeys-infra/iac-terraform/.gitignore)
 
 ```text
 # Local .terraform directories
@@ -159,7 +159,7 @@ terraform.rc
 
 #### `README.md`
 
-File: [README.md](../../../../../../snow-monkeys-infra/iac-terraform/README.md)
+File: [README.md](../../../../references/snow-monkeys-infra/iac-terraform/README.md)
 
 ````markdown
 # iac-terraform
@@ -168,12 +168,12 @@ Terraform infrastructure for Snow — cloud modules and Kubernetes stacks under 
 
 ## Docs
 
-- [Project structure](docs/project-structure.md) — layout, conventions, and the full module index
+- [Project structure](../../../../references/snow-monkeys-infra/iac-terraform/docs/project-structure.md) — layout, conventions, and the full module index
 - Each project under `v1/modules/dev/<provider>/<resource>/` has a `README_<RESOURCE>.md` (implementation and usage)
-- [Terraform rules](v1/modules/dev/TERRAFORM_RULES.md) — `TF_VAR_*` inputs, layout, secrets
-- [S3 remote state](v1/modules/dev/BACKEND_S3.md) — bucket bootstrap and `terraform init`
-- [Hetzner hcloud_server](docs/modules/hetzner-hcloud-server.md) — extra overview and usage
-- [Hetzner inputs](docs/modules/hetzner-hcloud-server/inputs.md) / [outputs](docs/modules/hetzner-hcloud-server/outputs.md)
+- [Terraform rules](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md) — `TF_VAR_*` inputs, layout, secrets
+- [S3 remote state](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md) — bucket bootstrap and `terraform init`
+- [Hetzner hcloud_server](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server.md) — extra overview and usage
+- [Hetzner inputs](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/inputs.md) / [outputs](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/outputs.md)
 
 ## Layout (summary)
 
@@ -188,15 +188,15 @@ v1/
 
 - Terraform `>= 1.3`
 - Provider credentials via `TF_VAR_*` (not committed)
-- Inputs: every variable is set with `TF_VAR_<name>` ([TERRAFORM_RULES.md](v1/modules/dev/TERRAFORM_RULES.md))
-- Remote state: apply `v1/modules/dev/aws/aws_s3_bucket` first, then `terraform init` with `-backend-config` for `TF_STATE_BUCKET`, `TF_STATE_KEY_PREFIX`, `TF_STATE_REGION`, and `TF_STATE_ENCRYPT` ([BACKEND_S3.md](v1/modules/dev/BACKEND_S3.md))
+- Inputs: every variable is set with `TF_VAR_<name>` ([TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md))
+- Remote state: apply `v1/modules/dev/aws/aws_s3_bucket` first, then `terraform init` with `-backend-config` for `TF_STATE_BUCKET`, `TF_STATE_KEY_PREFIX`, `TF_STATE_REGION`, and `TF_STATE_ENCRYPT` ([BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md))
 ````
 
 ### `docs/modules`
 
 #### `aws.md`
 
-File: [docs/modules/aws.md](../../../../../../snow-monkeys-infra/iac-terraform/docs/modules/aws.md)
+File: [docs/modules/aws.md](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/aws.md)
 
 ```markdown
 
@@ -206,14 +206,14 @@ File: [docs/modules/aws.md](../../../../../../snow-monkeys-infra/iac-terraform/d
 
 #### `inputs.md`
 
-File: [docs/modules/hetzner-hcloud-server/inputs.md](../../../../../../snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/inputs.md)
+File: [docs/modules/hetzner-hcloud-server/inputs.md](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/inputs.md)
 
 ````markdown
 # Inputs — Hetzner server
 
-Module path: [`v1/modules/dev/hetzner/hcloud_server`](../../../v1/modules/dev/hetzner/hcloud_server)
+Module path: [`v1/modules/dev/hetzner/hcloud_server`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server)
 
-Source: [`variables.tf`](../../../v1/modules/dev/hetzner/hcloud_server/variables.tf)
+Source: [`variables.tf`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/variables.tf)
 
 ## Required
 
@@ -272,20 +272,20 @@ module "hetzner_server" {
 
 ## Related
 
-- [Outputs](outputs.md)
-- [Module overview](../hetzner-hcloud-server.md)
+- [Outputs](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/outputs.md)
+- [Module overview](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server.md)
 ````
 
 #### `outputs.md`
 
-File: [docs/modules/hetzner-hcloud-server/outputs.md](../../../../../../snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/outputs.md)
+File: [docs/modules/hetzner-hcloud-server/outputs.md](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/outputs.md)
 
 ````markdown
 # Outputs — Hetzner server
 
-Module path: [`v1/modules/dev/hetzner/hcloud_server`](../../../v1/modules/dev/hetzner/hcloud_server)
+Module path: [`v1/modules/dev/hetzner/hcloud_server`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server)
 
-Source: [`outputs.tf`](../../../v1/modules/dev/hetzner/hcloud_server/outputs.tf)
+Source: [`outputs.tf`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/outputs.tf)
 
 ## Outputs
 
@@ -335,22 +335,22 @@ output "hetzner_server_status" {
 
 ## Related
 
-- [Inputs](inputs.md)
-- [Module overview](../hetzner-hcloud-server.md)
+- [Inputs](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/inputs.md)
+- [Module overview](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server.md)
 ````
 
 ### `docs/modules`
 
 #### `hetzner-hcloud-server.md`
 
-File: [docs/modules/hetzner-hcloud-server.md](../../../../../../snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server.md)
+File: [docs/modules/hetzner-hcloud-server.md](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server.md)
 
 ````markdown
 # Hetzner server module
 
 Provisions a Hetzner Cloud server and an SSH key for access.
 
-**Path:** [`v1/modules/dev/hetzner/hcloud_server`](../../v1/modules/dev/hetzner/hcloud_server)
+**Path:** [`v1/modules/dev/hetzner/hcloud_server`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server)
 
 ## What it creates
 
@@ -405,14 +405,14 @@ module "hetzner_server" {
 }
 ```
 
-Do not commit tokens or keys. Set every variable with `TF_VAR_*` ([TERRAFORM_RULES.md](../../v1/modules/dev/TERRAFORM_RULES.md)).
+Do not commit tokens or keys. Set every variable with `TF_VAR_*` ([TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md)).
 
 ## Inputs and outputs
 
 | Doc | Contents |
 |---|---|
-| [Inputs](hetzner-hcloud-server/inputs.md) | Required/optional variables, defaults, how to set them |
-| [Outputs](hetzner-hcloud-server/outputs.md) | `server_id`, `server_ipv4`, `server_status`, how to read them |
+| [Inputs](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/inputs.md) | Required/optional variables, defaults, how to set them |
+| [Outputs](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/outputs.md) | `server_id`, `server_ipv4`, `server_status`, how to read them |
 
 ## Files
 
@@ -435,7 +435,7 @@ v1/modules/dev/hetzner/hcloud_server/
 
 #### `project-structure.md`
 
-File: [docs/project-structure.md](../../../../../../snow-monkeys-infra/iac-terraform/docs/project-structure.md)
+File: [docs/project-structure.md](../../../../references/snow-monkeys-infra/iac-terraform/docs/project-structure.md)
 
 ````markdown
 # Project structure
@@ -491,7 +491,7 @@ Each module directory typically owns its provider config and variables:
 - `backend.tf` — empty `backend "s3" {}`
 - `README_<RESOURCE>.md` — implementation and usage
 
-Sensitive values (`*.tfvars`, tokens, keys) are gitignored. Every variable is set with `TF_VAR_*`. See [TERRAFORM_RULES.md](../v1/modules/dev/TERRAFORM_RULES.md). Remote state: [BACKEND_S3.md](../v1/modules/dev/BACKEND_S3.md). Apply `aws/aws_s3_bucket` first.
+Sensitive values (`*.tfvars`, tokens, keys) are gitignored. Every variable is set with `TF_VAR_*`. See [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md). Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Apply `aws/aws_s3_bucket` first.
 
 ## Modules (dev)
 
@@ -499,72 +499,72 @@ Sensitive values (`*.tfvars`, tokens, keys) are gitignored. Every variable is se
 
 | Module | Path | README |
 |---|---|---|
-| S3 bucket (TF state) | [`v1/modules/dev/aws/aws_s3_bucket`](../v1/modules/dev/aws/aws_s3_bucket) | [README](../v1/modules/dev/aws/aws_s3_bucket/README_AWS_S3_BUCKET.md) |
-| EC2 instance | [`v1/modules/dev/aws/aws_instance`](../v1/modules/dev/aws/aws_instance) | [README](../v1/modules/dev/aws/aws_instance/README_AWS_INSTANCE.md) |
-| RDS instance | [`v1/modules/dev/aws/aws_db_instance`](../v1/modules/dev/aws/aws_db_instance) | [README](../v1/modules/dev/aws/aws_db_instance/README_AWS_DB_INSTANCE.md) |
-| EBS volume | [`v1/modules/dev/aws/aws_ebs_volume`](../v1/modules/dev/aws/aws_ebs_volume) | [README](../v1/modules/dev/aws/aws_ebs_volume/README_AWS_EBS_VOLUME.md) |
-| Lambda function | [`v1/modules/dev/aws/aws_lambda_function`](../v1/modules/dev/aws/aws_lambda_function) | [README](../v1/modules/dev/aws/aws_lambda_function/README_AWS_LAMBDA_FUNCTION.md) |
-| Elastic Beanstalk app | [`v1/modules/dev/aws/aws_elastic_beanstalk_application`](../v1/modules/dev/aws/aws_elastic_beanstalk_application) | [README](../v1/modules/dev/aws/aws_elastic_beanstalk_application/README_AWS_ELASTIC_BEANSTALK_APPLICATION.md) |
+| S3 bucket (TF state) | [`v1/modules/dev/aws/aws_s3_bucket`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/README_AWS_S3_BUCKET.md) |
+| EC2 instance | [`v1/modules/dev/aws/aws_instance`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/README_AWS_INSTANCE.md) |
+| RDS instance | [`v1/modules/dev/aws/aws_db_instance`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/README_AWS_DB_INSTANCE.md) |
+| EBS volume | [`v1/modules/dev/aws/aws_ebs_volume`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/README_AWS_EBS_VOLUME.md) |
+| Lambda function | [`v1/modules/dev/aws/aws_lambda_function`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/README_AWS_LAMBDA_FUNCTION.md) |
+| Elastic Beanstalk app | [`v1/modules/dev/aws/aws_elastic_beanstalk_application`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/README_AWS_ELASTIC_BEANSTALK_APPLICATION.md) |
 
 ### Azure
 
 | Module | Path | README |
 |---|---|---|
-| Linux Web App | [`v1/modules/dev/azure/azurerm_linux_web_app`](../v1/modules/dev/azure/azurerm_linux_web_app) | [README](../v1/modules/dev/azure/azurerm_linux_web_app/README_AZURERM_LINUX_WEB_APP.md) |
-| Linux Function App | [`v1/modules/dev/azure/azurerm_linux_function_app`](../v1/modules/dev/azure/azurerm_linux_function_app) | [README](../v1/modules/dev/azure/azurerm_linux_function_app/README_AZURERM_LINUX_FUNCTION_APP.md) |
-| SQL Server | [`v1/modules/dev/azure/azurerm_mssql_server`](../v1/modules/dev/azure/azurerm_mssql_server) | [README](../v1/modules/dev/azure/azurerm_mssql_server/README_AZURERM_MSSQL_SERVER.md) |
-| SQL Database | [`v1/modules/dev/azure/azurerm_mssql_database`](../v1/modules/dev/azure/azurerm_mssql_database) | [README](../v1/modules/dev/azure/azurerm_mssql_database/README_AZURERM_MSSQL_DATABASE.md) |
-| MySQL Flexible Server | [`v1/modules/dev/azure/azurerm_mysql_flexible_server`](../v1/modules/dev/azure/azurerm_mysql_flexible_server) | [README](../v1/modules/dev/azure/azurerm_mysql_flexible_server/README_AZURERM_MYSQL_FLEXIBLE_SERVER.md) |
-| MySQL Flexible Database | [`v1/modules/dev/azure/azurerm_mysql_flexible_database`](../v1/modules/dev/azure/azurerm_mysql_flexible_database) | [README](../v1/modules/dev/azure/azurerm_mysql_flexible_database/README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md) |
-| PostgreSQL Flexible Server | [`v1/modules/dev/azure/azurerm_postgresql_server`](../v1/modules/dev/azure/azurerm_postgresql_server) | [README](../v1/modules/dev/azure/azurerm_postgresql_server/README_AZURERM_POSTGRESQL_SERVER.md) |
-| PostgreSQL Flexible Database | [`v1/modules/dev/azure/azurerm_postgresql_database`](../v1/modules/dev/azure/azurerm_postgresql_database) | [README](../v1/modules/dev/azure/azurerm_postgresql_database/README_AZURERM_POSTGRESQL_DATABASE.md) |
+| Linux Web App | [`v1/modules/dev/azure/azurerm_linux_web_app`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/README_AZURERM_LINUX_WEB_APP.md) |
+| Linux Function App | [`v1/modules/dev/azure/azurerm_linux_function_app`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/README_AZURERM_LINUX_FUNCTION_APP.md) |
+| SQL Server | [`v1/modules/dev/azure/azurerm_mssql_server`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/README_AZURERM_MSSQL_SERVER.md) |
+| SQL Database | [`v1/modules/dev/azure/azurerm_mssql_database`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/README_AZURERM_MSSQL_DATABASE.md) |
+| MySQL Flexible Server | [`v1/modules/dev/azure/azurerm_mysql_flexible_server`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/README_AZURERM_MYSQL_FLEXIBLE_SERVER.md) |
+| MySQL Flexible Database | [`v1/modules/dev/azure/azurerm_mysql_flexible_database`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md) |
+| PostgreSQL Flexible Server | [`v1/modules/dev/azure/azurerm_postgresql_server`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/README_AZURERM_POSTGRESQL_SERVER.md) |
+| PostgreSQL Flexible Database | [`v1/modules/dev/azure/azurerm_postgresql_database`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/README_AZURERM_POSTGRESQL_DATABASE.md) |
 
 ### Civo
 
 | Module | Path | README |
 |---|---|---|
-| Object store | [`v1/modules/dev/civo/bucket`](../v1/modules/dev/civo/bucket) | [README](../v1/modules/dev/civo/bucket/README_BUCKET.md) |
-| Compute (stub) | [`v1/modules/dev/civo/compute`](../v1/modules/dev/civo/compute) | [README](../v1/modules/dev/civo/compute/README_COMPUTE.md) |
-| Observability (incomplete) | [`v1/modules/dev/civo/observability`](../v1/modules/dev/civo/observability) | [README](../v1/modules/dev/civo/observability/README_OBSERVABILITY.md) |
+| Object store | [`v1/modules/dev/civo/bucket`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/README_BUCKET.md) |
+| Compute (stub) | [`v1/modules/dev/civo/compute`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/README_COMPUTE.md) |
+| Observability (incomplete) | [`v1/modules/dev/civo/observability`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/README_OBSERVABILITY.md) |
 
 ### Cloudflare
 
 | Module | Path | README |
 |---|---|---|
-| D1 database | [`v1/modules/dev/cloudflare/cloudflare_d1_database`](../v1/modules/dev/cloudflare/cloudflare_d1_database) | [README](../v1/modules/dev/cloudflare/cloudflare_d1_database/README_CLOUDFLARE_D1_DATABASE.md) |
-| R2 bucket | [`v1/modules/dev/cloudflare/cloudflare_r2_bucket`](../v1/modules/dev/cloudflare/cloudflare_r2_bucket) | [README](../v1/modules/dev/cloudflare/cloudflare_r2_bucket/README_CLOUDFLARE_R2_BUCKET.md) |
-| Workers script | [`v1/modules/dev/cloudflare/cloudflare_workers_script`](../v1/modules/dev/cloudflare/cloudflare_workers_script) | [README](../v1/modules/dev/cloudflare/cloudflare_workers_script/README_CLOUDFLARE_WORKERS_SCRIPT.md) |
-| Pipeline sink | [`v1/modules/dev/cloudflare/cloudflare_pipeline_sink`](../v1/modules/dev/cloudflare/cloudflare_pipeline_sink) | [README](../v1/modules/dev/cloudflare/cloudflare_pipeline_sink/README_CLOUDFLARE_PIPELINE_SINK.md) |
-| DNS (incomplete) | [`v1/modules/dev/cloudflare/dns`](../v1/modules/dev/cloudflare/dns) | [README](../v1/modules/dev/cloudflare/dns/README_DNS.md) |
+| D1 database | [`v1/modules/dev/cloudflare/cloudflare_d1_database`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/README_CLOUDFLARE_D1_DATABASE.md) |
+| R2 bucket | [`v1/modules/dev/cloudflare/cloudflare_r2_bucket`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/README_CLOUDFLARE_R2_BUCKET.md) |
+| Workers script | [`v1/modules/dev/cloudflare/cloudflare_workers_script`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/README_CLOUDFLARE_WORKERS_SCRIPT.md) |
+| Pipeline sink | [`v1/modules/dev/cloudflare/cloudflare_pipeline_sink`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/README_CLOUDFLARE_PIPELINE_SINK.md) |
+| DNS (incomplete) | [`v1/modules/dev/cloudflare/dns`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/README_DNS.md) |
 
 ### DigitalOcean
 
 | Module | Path | README |
 |---|---|---|
-| Droplet | [`v1/modules/dev/digitalocean/digitalocean_droplet`](../v1/modules/dev/digitalocean/digitalocean_droplet) | [README](../v1/modules/dev/digitalocean/digitalocean_droplet/README_DIGITALOCEAN_DROPLET.md) |
-| Droplet autoscale | [`v1/modules/dev/digitalocean/digitalocean_droplet_autoscale`](../v1/modules/dev/digitalocean/digitalocean_droplet_autoscale) | [README](../v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/README_DIGITALOCEAN_DROPLET_AUTOSCALE.md) |
-| Droplet (legacy) | [`v1/modules/dev/digitalocean/droplet`](../v1/modules/dev/digitalocean/droplet) | [README](../v1/modules/dev/digitalocean/droplet/README_DROPLET.md) |
+| Droplet | [`v1/modules/dev/digitalocean/digitalocean_droplet`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/README_DIGITALOCEAN_DROPLET.md) |
+| Droplet autoscale | [`v1/modules/dev/digitalocean/digitalocean_droplet_autoscale`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/README_DIGITALOCEAN_DROPLET_AUTOSCALE.md) |
+| Droplet (legacy) | [`v1/modules/dev/digitalocean/droplet`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/README_DROPLET.md) |
 
 ### GCP
 
 | Module | Path | README |
 |---|---|---|
-| Compute Engine instance | [`v1/modules/dev/gcp/google_compute_instance`](../v1/modules/dev/gcp/google_compute_instance) | [README](../v1/modules/dev/gcp/google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md) |
-| Cloud SQL instance | [`v1/modules/dev/gcp/google_sql_database_instance`](../v1/modules/dev/gcp/google_sql_database_instance) | [README](../v1/modules/dev/gcp/google_sql_database_instance/README_GOOGLE_SQL_DATABASE_INSTANCE.md) |
-| Cloud Storage bucket | [`v1/modules/dev/gcp/google_storage_bucket`](../v1/modules/dev/gcp/google_storage_bucket) | [README](../v1/modules/dev/gcp/google_storage_bucket/README_GOOGLE_STORAGE_BUCKET.md) |
-| Cloud Storage object | [`v1/modules/dev/gcp/google_storage_bucket_object`](../v1/modules/dev/gcp/google_storage_bucket_object) | [README](../v1/modules/dev/gcp/google_storage_bucket_object/README_GOOGLE_STORAGE_BUCKET_OBJECT.md) |
-| Compute Engine (legacy demo) | [`v1/modules/dev/gcp/compute`](../v1/modules/dev/gcp/compute) | [README](../v1/modules/dev/gcp/compute/README_COMPUTE.md) |
+| Compute Engine instance | [`v1/modules/dev/gcp/google_compute_instance`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md) |
+| Cloud SQL instance | [`v1/modules/dev/gcp/google_sql_database_instance`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/README_GOOGLE_SQL_DATABASE_INSTANCE.md) |
+| Cloud Storage bucket | [`v1/modules/dev/gcp/google_storage_bucket`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/README_GOOGLE_STORAGE_BUCKET.md) |
+| Cloud Storage object | [`v1/modules/dev/gcp/google_storage_bucket_object`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/README_GOOGLE_STORAGE_BUCKET_OBJECT.md) |
+| Compute Engine (legacy demo) | [`v1/modules/dev/gcp/compute`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/README_COMPUTE.md) |
 
 ### Hetzner
 
 | Module | Path | README |
 |---|---|---|
-| Cloud server | [`v1/modules/dev/hetzner/hcloud_server`](../v1/modules/dev/hetzner/hcloud_server) | [README](../v1/modules/dev/hetzner/hcloud_server/README_HCLOUD_SERVER.md) |
-| Firewall | [`v1/modules/dev/hetzner/hcloud_firewall`](../v1/modules/dev/hetzner/hcloud_firewall) | [README](../v1/modules/dev/hetzner/hcloud_firewall/README_HCLOUD_FIREWALL.md) |
-| Network | [`v1/modules/dev/hetzner/hcloud_network`](../v1/modules/dev/hetzner/hcloud_network) | [README](../v1/modules/dev/hetzner/hcloud_network/README_HCLOUD_NETWORK.md) |
-| Floating IP | [`v1/modules/dev/hetzner/hcloud_floating_ip`](../v1/modules/dev/hetzner/hcloud_floating_ip) | [README](../v1/modules/dev/hetzner/hcloud_floating_ip/README_HCLOUD_FLOATING_IP.md) |
-| Volume | [`v1/modules/dev/hetzner/hcloud_volume`](../v1/modules/dev/hetzner/hcloud_volume) | [README](../v1/modules/dev/hetzner/hcloud_volume/README_HCLOUD_VOLUME.md) |
-| Volume attachment | [`v1/modules/dev/hetzner/hcloud_volume_attachment`](../v1/modules/dev/hetzner/hcloud_volume_attachment) | [README](../v1/modules/dev/hetzner/hcloud_volume_attachment/README_HCLOUD_VOLUME_ATTACHMENT.md) |
+| Cloud server | [`v1/modules/dev/hetzner/hcloud_server`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/README_HCLOUD_SERVER.md) |
+| Firewall | [`v1/modules/dev/hetzner/hcloud_firewall`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/README_HCLOUD_FIREWALL.md) |
+| Network | [`v1/modules/dev/hetzner/hcloud_network`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/README_HCLOUD_NETWORK.md) |
+| Floating IP | [`v1/modules/dev/hetzner/hcloud_floating_ip`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/README_HCLOUD_FLOATING_IP.md) |
+| Volume | [`v1/modules/dev/hetzner/hcloud_volume`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/README_HCLOUD_VOLUME.md) |
+| Volume attachment | [`v1/modules/dev/hetzner/hcloud_volume_attachment`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment) | [README](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/README_HCLOUD_VOLUME_ATTACHMENT.md) |
 
 ## Kubernetes stacks
 
@@ -576,19 +576,19 @@ Sensitive values (`*.tfvars`, tokens, keys) are gitignored. Every variable is se
 
 | Doc | Covers |
 |---|---|
-| [Terraform rules](../v1/modules/dev/TERRAFORM_RULES.md) | `TF_VAR_*` inputs, layout, secrets |
-| [S3 remote state](../v1/modules/dev/BACKEND_S3.md) | Bucket bootstrap and `terraform init` |
+| [Terraform rules](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md) | `TF_VAR_*` inputs, layout, secrets |
+| [S3 remote state](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md) | Bucket bootstrap and `terraform init` |
 | Per-project `README_<RESOURCE>.md` | Implementation and usage for that module |
-| [Hetzner hcloud_server](modules/hetzner-hcloud-server.md) | Extra overview (inputs/outputs split) |
-| [Hetzner inputs](modules/hetzner-hcloud-server/inputs.md) | Module variables |
-| [Hetzner outputs](modules/hetzner-hcloud-server/outputs.md) | Module outputs |
+| [Hetzner hcloud_server](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server.md) | Extra overview (inputs/outputs split) |
+| [Hetzner inputs](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/inputs.md) | Module variables |
+| [Hetzner outputs](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/outputs.md) | Module outputs |
 ````
 
 ### `v1/k8s/civo-traefik/dev`
 
 #### `README_K8S.md`
 
-File: [v1/k8s/civo-traefik/dev/README_K8S.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/README_K8S.md)
+File: [v1/k8s/civo-traefik/dev/README_K8S.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/README_K8S.md)
 
 ```markdown
 
@@ -596,7 +596,7 @@ File: [v1/k8s/civo-traefik/dev/README_K8S.md](../../../../../../snow-monkeys-inf
 
 #### `cermanager.tf`
 
-File: [v1/k8s/civo-traefik/dev/cermanager.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/cermanager.tf)
+File: [v1/k8s/civo-traefik/dev/cermanager.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/cermanager.tf)
 
 ```hcl
 resource "kubernetes_namespace" "certmanager" {
@@ -682,7 +682,7 @@ resource "time_sleep" "wait_for_clusterissuer" {
 
 #### `civo.tf`
 
-File: [v1/k8s/civo-traefik/dev/civo.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/civo.tf)
+File: [v1/k8s/civo-traefik/dev/civo.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/civo.tf)
 
 ```hcl
 # Kubernetes Cluster
@@ -751,7 +751,7 @@ resource "time_sleep" "wait_for_kubernetes" {
 
 #### `data.tf`
 
-File: [v1/k8s/civo-traefik/dev/data.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/data.tf)
+File: [v1/k8s/civo-traefik/dev/data.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/data.tf)
 
 ```hcl
 data "civo_loadbalancer" "traefik_lb" {
@@ -766,7 +766,7 @@ data "civo_loadbalancer" "traefik_lb" {
 
 #### `output.tf`
 
-File: [v1/k8s/civo-traefik/dev/output.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/output.tf)
+File: [v1/k8s/civo-traefik/dev/output.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/output.tf)
 
 ```hcl
 output "load_balancer_ip" {
@@ -778,7 +778,7 @@ output "load_balancer_ip" {
 
 #### `provider.tf`
 
-File: [v1/k8s/civo-traefik/dev/provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/provider.tf)
+File: [v1/k8s/civo-traefik/dev/provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/provider.tf)
 
 ```hcl
 terraform {
@@ -845,7 +845,7 @@ provider "kubectl" {
 
 #### `traefik.tf`
 
-File: [v1/k8s/civo-traefik/dev/traefik.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/traefik.tf)
+File: [v1/k8s/civo-traefik/dev/traefik.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/traefik.tf)
 
 ```hcl
 # Traefik Deployment
@@ -898,7 +898,7 @@ resource "helm_release" "traefik" {
 
 #### `variables.tf`
 
-File: [v1/k8s/civo-traefik/dev/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/variables.tf)
+File: [v1/k8s/civo-traefik/dev/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/k8s/civo-traefik/dev/variables.tf)
 
 ```hcl
 variable "civo-token" {
@@ -941,7 +941,7 @@ variable "region" {
 
 #### `BACKEND_S3.md`
 
-File: [v1/modules/dev/BACKEND_S3.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md)
+File: [v1/modules/dev/BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md)
 
 ````markdown
 # S3 remote state
@@ -1014,12 +1014,12 @@ If any of these env vars is unset, `terraform init` fails or prompts — there a
 
 #### `TERRAFORM_RULES.md`
 
-File: [v1/modules/dev/TERRAFORM_RULES.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md)
+File: [v1/modules/dev/TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md)
 
 ````markdown
 # Terraform rules
 
-Rules for every project under `v1/modules/dev/<provider>/<resource>/`. Remote state is documented in [BACKEND_S3.md](BACKEND_S3.md).
+Rules for every project under `v1/modules/dev/<provider>/<resource>/`. Remote state is documented in [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md).
 
 ## Variables
 
@@ -1063,7 +1063,7 @@ Each directory is its own root module:
 - `variables.tf` — inputs
 - `main.tf` or `<resource>.tf` — resources; provider block may live here or in `provider.tf`
 - `outputs.tf` — values other workflows need (ids, addresses). Do not output secrets.
-- `backend.tf` — empty `backend "s3" {}` plus the init comment from [BACKEND_S3.md](BACKEND_S3.md)
+- `backend.tf` — empty `backend "s3" {}` plus the init comment from [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md)
 - `README_<RESOURCE>.md` — how the project is implemented (resources, files, provider) and how to use it (`TF_VAR_*` init/apply, inputs, outputs)
 
 `required_version` is `>= 1.3`. Pin the provider with `required_providers`.
@@ -1075,7 +1075,7 @@ Do not commit `.terraform/`, `*.tfstate`, credentials, or `*.tfvars`.
 
 #### `README_AWS_DB_INSTANCE.md`
 
-File: [v1/modules/dev/aws/aws_db_instance/README_AWS_DB_INSTANCE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/README_AWS_DB_INSTANCE.md)
+File: [v1/modules/dev/aws/aws_db_instance/README_AWS_DB_INSTANCE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/README_AWS_DB_INSTANCE.md)
 
 ````markdown
 # AWS RDS instance
@@ -1105,7 +1105,7 @@ This module does not create a subnet group, parameter group, or security group. 
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_aws_access_key_id="..."
@@ -1179,7 +1179,7 @@ terraform output -raw db_instance_endpoint
 
 #### `backend.tf`
 
-File: [v1/modules/dev/aws/aws_db_instance/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/backend.tf)
+File: [v1/modules/dev/aws/aws_db_instance/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -1197,7 +1197,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/aws/aws_db_instance/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/main.tf)
+File: [v1/modules/dev/aws/aws_db_instance/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/main.tf)
 
 ```hcl
 terraform {
@@ -1250,7 +1250,7 @@ resource "aws_db_instance" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/aws/aws_db_instance/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/outputs.tf)
+File: [v1/modules/dev/aws/aws_db_instance/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/outputs.tf)
 
 ```hcl
 output "db_instance_id" {
@@ -1276,7 +1276,7 @@ output "db_instance_address" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/aws/aws_db_instance/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/variables.tf)
+File: [v1/modules/dev/aws/aws_db_instance/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_db_instance/variables.tf)
 
 ```hcl
 variable "aws_access_key_id" {
@@ -1429,7 +1429,7 @@ variable "tags" {
 
 #### `README_AWS_EBS_VOLUME.md`
 
-File: [v1/modules/dev/aws/aws_ebs_volume/README_AWS_EBS_VOLUME.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/README_AWS_EBS_VOLUME.md)
+File: [v1/modules/dev/aws/aws_ebs_volume/README_AWS_EBS_VOLUME.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/README_AWS_EBS_VOLUME.md)
 
 ````markdown
 # AWS EBS volume
@@ -1457,7 +1457,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_aws_access_key_id="..."
@@ -1518,7 +1518,7 @@ terraform output -raw volume_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/aws/aws_ebs_volume/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/backend.tf)
+File: [v1/modules/dev/aws/aws_ebs_volume/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -1536,7 +1536,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/aws/aws_ebs_volume/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/main.tf)
+File: [v1/modules/dev/aws/aws_ebs_volume/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/main.tf)
 
 ```hcl
 terraform {
@@ -1577,7 +1577,7 @@ resource "aws_ebs_volume" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/aws/aws_ebs_volume/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/outputs.tf)
+File: [v1/modules/dev/aws/aws_ebs_volume/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/outputs.tf)
 
 ```hcl
 output "volume_id" {
@@ -1598,7 +1598,7 @@ output "availability_zone" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/aws/aws_ebs_volume/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/variables.tf)
+File: [v1/modules/dev/aws/aws_ebs_volume/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_ebs_volume/variables.tf)
 
 ```hcl
 variable "aws_access_key_id" {
@@ -1683,7 +1683,7 @@ variable "tags" {
 
 #### `README_AWS_ELASTIC_BEANSTALK_APPLICATION.md`
 
-File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/README_AWS_ELASTIC_BEANSTALK_APPLICATION.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/README_AWS_ELASTIC_BEANSTALK_APPLICATION.md)
+File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/README_AWS_ELASTIC_BEANSTALK_APPLICATION.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/README_AWS_ELASTIC_BEANSTALK_APPLICATION.md)
 
 ````markdown
 # AWS Elastic Beanstalk application
@@ -1709,7 +1709,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_aws_access_key_id="..."
@@ -1763,7 +1763,7 @@ terraform output -raw application_name
 
 #### `backend.tf`
 
-File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/backend.tf)
+File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -1781,7 +1781,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/main.tf)
+File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/main.tf)
 
 ```hcl
 terraform {
@@ -1826,7 +1826,7 @@ resource "aws_elastic_beanstalk_application" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/outputs.tf)
+File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/outputs.tf)
 
 ```hcl
 output "application_name" {
@@ -1842,7 +1842,7 @@ output "application_arn" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/variables.tf)
+File: [v1/modules/dev/aws/aws_elastic_beanstalk_application/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_elastic_beanstalk_application/variables.tf)
 
 ```hcl
 variable "aws_access_key_id" {
@@ -1910,7 +1910,7 @@ variable "tags" {
 
 #### `README_AWS_INSTANCE.md`
 
-File: [v1/modules/dev/aws/aws_instance/README_AWS_INSTANCE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/README_AWS_INSTANCE.md)
+File: [v1/modules/dev/aws/aws_instance/README_AWS_INSTANCE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/README_AWS_INSTANCE.md)
 
 ````markdown
 # AWS EC2 instance
@@ -1941,7 +1941,7 @@ This module does not create a VPC, security group, or EBS volume.
 
 ## Usage
 
-Remote state is the bucket from `aws/aws_s3_bucket` ([BACKEND_S3.md](../../BACKEND_S3.md)). Set inputs with `TF_VAR_*` ([TERRAFORM_RULES.md](../../TERRAFORM_RULES.md)).
+Remote state is the bucket from `aws/aws_s3_bucket` ([BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md)). Set inputs with `TF_VAR_*` ([TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md)).
 
 ```bash
 export TF_VAR_aws_access_key_id="..."
@@ -2008,7 +2008,7 @@ Destroy with `terraform destroy` from this directory.
 
 #### `backend.tf`
 
-File: [v1/modules/dev/aws/aws_instance/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/backend.tf)
+File: [v1/modules/dev/aws/aws_instance/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -2026,7 +2026,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/aws/aws_instance/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/main.tf)
+File: [v1/modules/dev/aws/aws_instance/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/main.tf)
 
 ```hcl
 terraform {
@@ -2081,7 +2081,7 @@ resource "aws_instance" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/aws/aws_instance/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/outputs.tf)
+File: [v1/modules/dev/aws/aws_instance/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/outputs.tf)
 
 ```hcl
 output "instance_id" {
@@ -2112,7 +2112,7 @@ output "instance_state" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/aws/aws_instance/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/variables.tf)
+File: [v1/modules/dev/aws/aws_instance/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_instance/variables.tf)
 
 ```hcl
 variable "aws_access_key_id" {
@@ -2204,7 +2204,7 @@ variable "tags" {
 
 #### `README_AWS_LAMBDA_FUNCTION.md`
 
-File: [v1/modules/dev/aws/aws_lambda_function/README_AWS_LAMBDA_FUNCTION.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/README_AWS_LAMBDA_FUNCTION.md)
+File: [v1/modules/dev/aws/aws_lambda_function/README_AWS_LAMBDA_FUNCTION.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/README_AWS_LAMBDA_FUNCTION.md)
 
 ````markdown
 # AWS Lambda function
@@ -2235,7 +2235,7 @@ No VPC config is set. Supply a zip or image before apply; an empty `filename` wi
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_aws_access_key_id="..."
@@ -2301,7 +2301,7 @@ terraform output -raw lambda_function_arn
 
 #### `backend.tf`
 
-File: [v1/modules/dev/aws/aws_lambda_function/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/backend.tf)
+File: [v1/modules/dev/aws/aws_lambda_function/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -2319,7 +2319,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/aws/aws_lambda_function/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/main.tf)
+File: [v1/modules/dev/aws/aws_lambda_function/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/main.tf)
 
 ```hcl
 terraform {
@@ -2408,7 +2408,7 @@ resource "aws_lambda_function" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/aws/aws_lambda_function/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/outputs.tf)
+File: [v1/modules/dev/aws/aws_lambda_function/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/outputs.tf)
 
 ```hcl
 output "lambda_function_id" {
@@ -2429,7 +2429,7 @@ output "invoke_arn" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/aws/aws_lambda_function/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/variables.tf)
+File: [v1/modules/dev/aws/aws_lambda_function/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_lambda_function/variables.tf)
 
 ```hcl
 variable "aws_access_key_id" {
@@ -2545,7 +2545,7 @@ variable "tags" {
 
 #### `README_AWS_S3_BUCKET.md`
 
-File: [v1/modules/dev/aws/aws_s3_bucket/README_AWS_S3_BUCKET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/README_AWS_S3_BUCKET.md)
+File: [v1/modules/dev/aws/aws_s3_bucket/README_AWS_S3_BUCKET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/README_AWS_S3_BUCKET.md)
 
 ````markdown
 # AWS S3 bucket
@@ -2554,7 +2554,7 @@ Creates the Amazon S3 bucket used as remote Terraform state for every project un
 
 **Path:** `v1/modules/dev/aws/aws_s3_bucket`
 
-Apply this project first (local state), then migrate it into itself. Other modules init against this bucket. See [BACKEND_S3.md](../../BACKEND_S3.md).
+Apply this project first (local state), then migrate it into itself. Other modules init against this bucket. See [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md).
 
 ## Implementation
 
@@ -2578,7 +2578,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Do not pass `-var` or commit `terraform.tfvars`. Set inputs with `TF_VAR_*` ([TERRAFORM_RULES.md](../../TERRAFORM_RULES.md)).
+Do not pass `-var` or commit `terraform.tfvars`. Set inputs with `TF_VAR_*` ([TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md)).
 
 ```bash
 export TF_VAR_aws_access_key_id="..."
@@ -2629,12 +2629,12 @@ terraform output -raw bucket_id
 ## Docs
 
 - [aws_s3_bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket)
-- [S3 remote state](../../BACKEND_S3.md)
+- [S3 remote state](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md)
 ````
 
 #### `backend.tf`
 
-File: [v1/modules/dev/aws/aws_s3_bucket/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/backend.tf)
+File: [v1/modules/dev/aws/aws_s3_bucket/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/backend.tf)
 
 ```hcl
 # Bootstrap: first apply this module with local state
@@ -2657,7 +2657,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/aws/aws_s3_bucket/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/main.tf)
+File: [v1/modules/dev/aws/aws_s3_bucket/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/main.tf)
 
 ```hcl
 terraform {
@@ -2719,7 +2719,7 @@ resource "aws_s3_bucket_public_access_block" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/aws/aws_s3_bucket/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/outputs.tf)
+File: [v1/modules/dev/aws/aws_s3_bucket/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/outputs.tf)
 
 ```hcl
 output "bucket_id" {
@@ -2740,7 +2740,7 @@ output "bucket_region" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/aws/aws_s3_bucket/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/variables.tf)
+File: [v1/modules/dev/aws/aws_s3_bucket/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/aws/aws_s3_bucket/variables.tf)
 
 ```hcl
 variable "aws_access_key_id" {
@@ -2784,7 +2784,7 @@ variable "tags" {
 
 #### `README_AZURERM_LINUX_FUNCTION_APP.md`
 
-File: [v1/modules/dev/azure/azurerm_linux_function_app/README_AZURERM_LINUX_FUNCTION_APP.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/README_AZURERM_LINUX_FUNCTION_APP.md)
+File: [v1/modules/dev/azure/azurerm_linux_function_app/README_AZURERM_LINUX_FUNCTION_APP.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/README_AZURERM_LINUX_FUNCTION_APP.md)
 
 ````markdown
 # Azure Linux Function App
@@ -2812,7 +2812,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_subscription_id="..."
@@ -2873,7 +2873,7 @@ terraform output -raw default_hostname
 
 #### `backend.tf`
 
-File: [v1/modules/dev/azure/azurerm_linux_function_app/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/backend.tf)
+File: [v1/modules/dev/azure/azurerm_linux_function_app/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -2891,7 +2891,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/azure/azurerm_linux_function_app/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/main.tf)
+File: [v1/modules/dev/azure/azurerm_linux_function_app/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/main.tf)
 
 ```hcl
 terraform {
@@ -2934,7 +2934,7 @@ resource "azurerm_linux_function_app" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/azure/azurerm_linux_function_app/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/outputs.tf)
+File: [v1/modules/dev/azure/azurerm_linux_function_app/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/outputs.tf)
 
 ```hcl
 output "linux_function_app_id" {
@@ -2950,7 +2950,7 @@ output "default_hostname" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/azure/azurerm_linux_function_app/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/variables.tf)
+File: [v1/modules/dev/azure/azurerm_linux_function_app/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_function_app/variables.tf)
 
 ```hcl
 variable "subscription_id" {
@@ -3018,7 +3018,7 @@ variable "tags" {
 
 #### `README_AZURERM_LINUX_WEB_APP.md`
 
-File: [v1/modules/dev/azure/azurerm_linux_web_app/README_AZURERM_LINUX_WEB_APP.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/README_AZURERM_LINUX_WEB_APP.md)
+File: [v1/modules/dev/azure/azurerm_linux_web_app/README_AZURERM_LINUX_WEB_APP.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/README_AZURERM_LINUX_WEB_APP.md)
 
 ````markdown
 # Azure Linux Web App
@@ -3046,7 +3046,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state uses AWS S3 ([BACKEND_S3.md](../../BACKEND_S3.md)). Azure credentials are `TF_VAR_*`; S3 backend credentials are `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY`. Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state uses AWS S3 ([BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md)). Azure credentials are `TF_VAR_*`; S3 backend credentials are `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY`. Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_subscription_id="..."
@@ -3104,7 +3104,7 @@ terraform output -raw default_hostname
 
 #### `backend.tf`
 
-File: [v1/modules/dev/azure/azurerm_linux_web_app/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/backend.tf)
+File: [v1/modules/dev/azure/azurerm_linux_web_app/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -3122,7 +3122,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/azure/azurerm_linux_web_app/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/main.tf)
+File: [v1/modules/dev/azure/azurerm_linux_web_app/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/main.tf)
 
 ```hcl
 terraform {
@@ -3164,7 +3164,7 @@ resource "azurerm_linux_web_app" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/azure/azurerm_linux_web_app/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/outputs.tf)
+File: [v1/modules/dev/azure/azurerm_linux_web_app/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/outputs.tf)
 
 ```hcl
 output "linux_web_app_id" {
@@ -3180,7 +3180,7 @@ output "default_hostname" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/azure/azurerm_linux_web_app/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/variables.tf)
+File: [v1/modules/dev/azure/azurerm_linux_web_app/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_linux_web_app/variables.tf)
 
 ```hcl
 variable "subscription_id" {
@@ -3243,7 +3243,7 @@ variable "tags" {
 
 #### `README_AZURERM_MSSQL_DATABASE.md`
 
-File: [v1/modules/dev/azure/azurerm_mssql_database/README_AZURERM_MSSQL_DATABASE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/README_AZURERM_MSSQL_DATABASE.md)
+File: [v1/modules/dev/azure/azurerm_mssql_database/README_AZURERM_MSSQL_DATABASE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/README_AZURERM_MSSQL_DATABASE.md)
 
 ````markdown
 # Azure SQL Database
@@ -3269,7 +3269,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_subscription_id="..."
@@ -3327,7 +3327,7 @@ terraform output -raw mssql_database_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/azure/azurerm_mssql_database/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/backend.tf)
+File: [v1/modules/dev/azure/azurerm_mssql_database/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -3345,7 +3345,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/azure/azurerm_mssql_database/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/main.tf)
+File: [v1/modules/dev/azure/azurerm_mssql_database/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/main.tf)
 
 ```hcl
 terraform {
@@ -3385,7 +3385,7 @@ resource "azurerm_mssql_database" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/azure/azurerm_mssql_database/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/outputs.tf)
+File: [v1/modules/dev/azure/azurerm_mssql_database/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/outputs.tf)
 
 ```hcl
 output "mssql_database_id" {
@@ -3401,7 +3401,7 @@ output "mssql_database_name" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/azure/azurerm_mssql_database/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/variables.tf)
+File: [v1/modules/dev/azure/azurerm_mssql_database/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_database/variables.tf)
 
 ```hcl
 variable "subscription_id" {
@@ -3471,7 +3471,7 @@ variable "tags" {
 
 #### `README_AZURERM_MSSQL_SERVER.md`
 
-File: [v1/modules/dev/azure/azurerm_mssql_server/README_AZURERM_MSSQL_SERVER.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/README_AZURERM_MSSQL_SERVER.md)
+File: [v1/modules/dev/azure/azurerm_mssql_server/README_AZURERM_MSSQL_SERVER.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/README_AZURERM_MSSQL_SERVER.md)
 
 ````markdown
 # Azure SQL Server
@@ -3497,7 +3497,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_subscription_id="..."
@@ -3558,7 +3558,7 @@ terraform output -raw mssql_server_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/azure/azurerm_mssql_server/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/backend.tf)
+File: [v1/modules/dev/azure/azurerm_mssql_server/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -3576,7 +3576,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/azure/azurerm_mssql_server/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/main.tf)
+File: [v1/modules/dev/azure/azurerm_mssql_server/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/main.tf)
 
 ```hcl
 terraform {
@@ -3617,7 +3617,7 @@ resource "azurerm_mssql_server" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/azure/azurerm_mssql_server/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/outputs.tf)
+File: [v1/modules/dev/azure/azurerm_mssql_server/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/outputs.tf)
 
 ```hcl
 output "mssql_server_id" {
@@ -3633,7 +3633,7 @@ output "fully_qualified_domain_name" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/azure/azurerm_mssql_server/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/variables.tf)
+File: [v1/modules/dev/azure/azurerm_mssql_server/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mssql_server/variables.tf)
 
 ```hcl
 variable "subscription_id" {
@@ -3709,7 +3709,7 @@ variable "tags" {
 
 #### `README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/README_AZURERM_MYSQL_FLEXIBLE_DATABASE.md)
 
 ````markdown
 # Azure MySQL Flexible Database
@@ -3735,7 +3735,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_subscription_id="..."
@@ -3792,7 +3792,7 @@ terraform output -raw mysql_flexible_database_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/backend.tf)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -3810,7 +3810,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/main.tf)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/main.tf)
 
 ```hcl
 terraform {
@@ -3842,7 +3842,7 @@ resource "azurerm_mysql_flexible_database" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/outputs.tf)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/outputs.tf)
 
 ```hcl
 output "mysql_flexible_database_id" {
@@ -3858,7 +3858,7 @@ output "mysql_flexible_database_name" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/variables.tf)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_database/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_database/variables.tf)
 
 ```hcl
 variable "subscription_id" {
@@ -3915,7 +3915,7 @@ variable "collation" {
 
 #### `README_AZURERM_MYSQL_FLEXIBLE_SERVER.md`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/README_AZURERM_MYSQL_FLEXIBLE_SERVER.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/README_AZURERM_MYSQL_FLEXIBLE_SERVER.md)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/README_AZURERM_MYSQL_FLEXIBLE_SERVER.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/README_AZURERM_MYSQL_FLEXIBLE_SERVER.md)
 
 ````markdown
 # Azure MySQL Flexible Server
@@ -3941,7 +3941,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_subscription_id="..."
@@ -4003,7 +4003,7 @@ terraform output -raw fqdn
 
 #### `backend.tf`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/backend.tf)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -4021,7 +4021,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/main.tf)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/main.tf)
 
 ```hcl
 terraform {
@@ -4064,7 +4064,7 @@ resource "azurerm_mysql_flexible_server" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/outputs.tf)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/outputs.tf)
 
 ```hcl
 output "mysql_flexible_server_id" {
@@ -4080,7 +4080,7 @@ output "fqdn" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/variables.tf)
+File: [v1/modules/dev/azure/azurerm_mysql_flexible_server/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_mysql_flexible_server/variables.tf)
 
 ```hcl
 variable "subscription_id" {
@@ -4168,7 +4168,7 @@ variable "tags" {
 
 #### `README_AZURERM_POSTGRESQL_DATABASE.md`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_database/README_AZURERM_POSTGRESQL_DATABASE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/README_AZURERM_POSTGRESQL_DATABASE.md)
+File: [v1/modules/dev/azure/azurerm_postgresql_database/README_AZURERM_POSTGRESQL_DATABASE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/README_AZURERM_POSTGRESQL_DATABASE.md)
 
 ````markdown
 # Azure PostgreSQL Flexible Database
@@ -4194,7 +4194,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_subscription_id="..."
@@ -4249,7 +4249,7 @@ terraform output -raw postgresql_database_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_database/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/backend.tf)
+File: [v1/modules/dev/azure/azurerm_postgresql_database/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -4267,7 +4267,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_database/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/main.tf)
+File: [v1/modules/dev/azure/azurerm_postgresql_database/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/main.tf)
 
 ```hcl
 terraform {
@@ -4300,7 +4300,7 @@ resource "azurerm_postgresql_flexible_server_database" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_database/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/outputs.tf)
+File: [v1/modules/dev/azure/azurerm_postgresql_database/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/outputs.tf)
 
 ```hcl
 output "postgresql_database_id" {
@@ -4316,7 +4316,7 @@ output "postgresql_database_name" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_database/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/variables.tf)
+File: [v1/modules/dev/azure/azurerm_postgresql_database/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_database/variables.tf)
 
 ```hcl
 variable "subscription_id" {
@@ -4368,7 +4368,7 @@ variable "collation" {
 
 #### `README_AZURERM_POSTGRESQL_SERVER.md`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_server/README_AZURERM_POSTGRESQL_SERVER.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/README_AZURERM_POSTGRESQL_SERVER.md)
+File: [v1/modules/dev/azure/azurerm_postgresql_server/README_AZURERM_POSTGRESQL_SERVER.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/README_AZURERM_POSTGRESQL_SERVER.md)
 
 ````markdown
 # Azure PostgreSQL Flexible Server
@@ -4394,7 +4394,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_subscription_id="..."
@@ -4457,7 +4457,7 @@ terraform output -raw postgresql_server_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_server/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/backend.tf)
+File: [v1/modules/dev/azure/azurerm_postgresql_server/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -4475,7 +4475,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_server/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/main.tf)
+File: [v1/modules/dev/azure/azurerm_postgresql_server/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/main.tf)
 
 ```hcl
 terraform {
@@ -4520,7 +4520,7 @@ resource "azurerm_postgresql_flexible_server" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_server/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/outputs.tf)
+File: [v1/modules/dev/azure/azurerm_postgresql_server/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/outputs.tf)
 
 ```hcl
 output "postgresql_server_id" {
@@ -4536,7 +4536,7 @@ output "fqdn" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/azure/azurerm_postgresql_server/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/variables.tf)
+File: [v1/modules/dev/azure/azurerm_postgresql_server/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/azure/azurerm_postgresql_server/variables.tf)
 
 ```hcl
 variable "subscription_id" {
@@ -4624,7 +4624,7 @@ variable "tags" {
 
 #### `README_BUCKET.md`
 
-File: [v1/modules/dev/civo/bucket/README_BUCKET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/README_BUCKET.md)
+File: [v1/modules/dev/civo/bucket/README_BUCKET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/README_BUCKET.md)
 
 ````markdown
 # Civo object store
@@ -4659,7 +4659,7 @@ env TF_VAR_civo-token="..." terraform apply
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Other inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Other inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_region="LON1"
@@ -4703,7 +4703,7 @@ None.
 
 #### `backend.tf`
 
-File: [v1/modules/dev/civo/bucket/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/backend.tf)
+File: [v1/modules/dev/civo/bucket/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -4721,7 +4721,7 @@ terraform {
 
 #### `bucket.tf`
 
-File: [v1/modules/dev/civo/bucket/bucket.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/bucket.tf)
+File: [v1/modules/dev/civo/bucket/bucket.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/bucket.tf)
 
 ```hcl
 resource "civo_object_store" "snowmonkeysbackup" {
@@ -4738,7 +4738,7 @@ data "civo_object_store_credential" "snowmonkeysbackup" {
 
 #### `provider.tf`
 
-File: [v1/modules/dev/civo/bucket/provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/provider.tf)
+File: [v1/modules/dev/civo/bucket/provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/provider.tf)
 
 ```hcl
 terraform {
@@ -4762,7 +4762,7 @@ provider "civo" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/civo/bucket/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/variables.tf)
+File: [v1/modules/dev/civo/bucket/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/bucket/variables.tf)
 
 ```hcl
 variable "civo-token" {
@@ -4810,7 +4810,7 @@ variable "region" {
 
 #### `README_COMPUTE.md`
 
-File: [v1/modules/dev/civo/compute/README_COMPUTE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/README_COMPUTE.md)
+File: [v1/modules/dev/civo/compute/README_COMPUTE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/README_COMPUTE.md)
 
 ````markdown
 # Civo compute (stub)
@@ -4832,7 +4832,7 @@ This is not a usable compute module yet. There is no parameterized Civo instance
 
 ## Usage
 
-Init still needs remote state ([BACKEND_S3.md](../../BACKEND_S3.md)):
+Init still needs remote state ([BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md)):
 
 ```bash
 export AWS_ACCESS_KEY_ID="..."
@@ -4867,7 +4867,7 @@ None.
 
 #### `backend.tf`
 
-File: [v1/modules/dev/civo/compute/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/backend.tf)
+File: [v1/modules/dev/civo/compute/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -4885,7 +4885,7 @@ terraform {
 
 #### `provider.tf`
 
-File: [v1/modules/dev/civo/compute/provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/provider.tf)
+File: [v1/modules/dev/civo/compute/provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/compute/provider.tf)
 
 ```hcl
 terraform {
@@ -4905,7 +4905,7 @@ terraform {
 
 #### `README_OBSERVABILITY.md`
 
-File: [v1/modules/dev/civo/observability/README_OBSERVABILITY.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/README_OBSERVABILITY.md)
+File: [v1/modules/dev/civo/observability/README_OBSERVABILITY.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/README_OBSERVABILITY.md)
 
 ````markdown
 # Civo observability (incomplete)
@@ -4959,7 +4959,7 @@ terraform init \
   -backend-config="encrypt=${TF_STATE_ENCRYPT}"
 ```
 
-Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md). Remote state: [BACKEND_S3.md](../../BACKEND_S3.md).
+Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md). Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md).
 
 ## Inputs
 
@@ -4984,7 +4984,7 @@ None.
 
 #### `backend.tf`
 
-File: [v1/modules/dev/civo/observability/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/backend.tf)
+File: [v1/modules/dev/civo/observability/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -5002,7 +5002,7 @@ terraform {
 
 #### `grafana.tf`
 
-File: [v1/modules/dev/civo/observability/grafana.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/grafana.tf)
+File: [v1/modules/dev/civo/observability/grafana.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/grafana.tf)
 
 ```hcl
 
@@ -5010,7 +5010,7 @@ File: [v1/modules/dev/civo/observability/grafana.tf](../../../../../../snow-monk
 
 #### `opentelemetry.tf`
 
-File: [v1/modules/dev/civo/observability/opentelemetry.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/opentelemetry.tf)
+File: [v1/modules/dev/civo/observability/opentelemetry.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/opentelemetry.tf)
 
 ```hcl
 resource "kubernetes_namespace" "helmnamespace" {
@@ -5039,7 +5039,7 @@ resource "helm_release" "helmrelease" {
 
 #### `prometheus.tf`
 
-File: [v1/modules/dev/civo/observability/prometheus.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/prometheus.tf)
+File: [v1/modules/dev/civo/observability/prometheus.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/prometheus.tf)
 
 ```hcl
 
@@ -5047,7 +5047,7 @@ File: [v1/modules/dev/civo/observability/prometheus.tf](../../../../../../snow-m
 
 #### `provider.tf`
 
-File: [v1/modules/dev/civo/observability/provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/provider.tf)
+File: [v1/modules/dev/civo/observability/provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/provider.tf)
 
 ```hcl
 terraform {
@@ -5117,7 +5117,7 @@ provider "kubectl" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/civo/observability/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/variables.tf)
+File: [v1/modules/dev/civo/observability/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/civo/observability/variables.tf)
 
 ```hcl
 variable "namespace" {
@@ -5156,7 +5156,7 @@ variable "civo_token" {
 
 #### `README_CLOUDFLARE_D1_DATABASE.md`
 
-File: [v1/modules/dev/cloudflare/cloudflare_d1_database/README_CLOUDFLARE_D1_DATABASE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/README_CLOUDFLARE_D1_DATABASE.md)
+File: [v1/modules/dev/cloudflare/cloudflare_d1_database/README_CLOUDFLARE_D1_DATABASE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/README_CLOUDFLARE_D1_DATABASE.md)
 
 ````markdown
 # Cloudflare D1 database
@@ -5182,7 +5182,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_cloudflare_api_token="..."
@@ -5231,7 +5231,7 @@ terraform output -raw d1_database_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_d1_database/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/backend.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_d1_database/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -5249,7 +5249,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_d1_database/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/main.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_d1_database/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/main.tf)
 
 ```hcl
 terraform {
@@ -5276,7 +5276,7 @@ resource "cloudflare_d1_database" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_d1_database/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/outputs.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_d1_database/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/outputs.tf)
 
 ```hcl
 output "d1_database_id" {
@@ -5292,7 +5292,7 @@ output "d1_database_name" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_d1_database/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/variables.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_d1_database/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_d1_database/variables.tf)
 
 ```hcl
 variable "cloudflare_api_token" {
@@ -5329,7 +5329,7 @@ variable "primary_location_hint" {
 
 #### `README_CLOUDFLARE_PAGES_PROJECT.md`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pages_project/README_CLOUDFLARE_PAGES_PROJECT.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/README_CLOUDFLARE_PAGES_PROJECT.md)
+File: [v1/modules/dev/cloudflare/cloudflare_pages_project/README_CLOUDFLARE_PAGES_PROJECT.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/README_CLOUDFLARE_PAGES_PROJECT.md)
 
 ````markdown
 # Cloudflare Pages Project
@@ -5369,7 +5369,7 @@ terraform apply
 
 #### `backend.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pages_project/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/backend.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_pages_project/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -5387,7 +5387,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pages_project/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/main.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_pages_project/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/main.tf)
 
 ```hcl
 terraform {
@@ -5413,7 +5413,7 @@ resource "cloudflare_pages_project" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pages_project/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/outputs.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_pages_project/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/outputs.tf)
 
 ```hcl
 output "pages_project_id" {
@@ -5434,7 +5434,7 @@ output "pages_project_subdomain" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pages_project/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/variables.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_pages_project/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pages_project/variables.tf)
 
 ```hcl
 variable "cloudflare_api_token" {
@@ -5465,7 +5465,7 @@ variable "production_branch" {
 
 #### `README_CLOUDFLARE_PIPELINE_SINK.md`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/README_CLOUDFLARE_PIPELINE_SINK.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/README_CLOUDFLARE_PIPELINE_SINK.md)
+File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/README_CLOUDFLARE_PIPELINE_SINK.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/README_CLOUDFLARE_PIPELINE_SINK.md)
 
 ````markdown
 # Cloudflare Pipeline sink
@@ -5493,7 +5493,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_cloudflare_api_token="..."
@@ -5550,7 +5550,7 @@ terraform output -raw pipeline_sink_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/backend.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -5568,7 +5568,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/main.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/main.tf)
 
 ```hcl
 terraform {
@@ -5608,7 +5608,7 @@ resource "cloudflare_pipeline_sink" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/outputs.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/outputs.tf)
 
 ```hcl
 output "pipeline_sink_id" {
@@ -5624,7 +5624,7 @@ output "pipeline_sink_name" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/variables.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_pipeline_sink/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_pipeline_sink/variables.tf)
 
 ```hcl
 variable "cloudflare_api_token" {
@@ -5690,7 +5690,7 @@ variable "format_type" {
 
 #### `README_CLOUDFLARE_R2_BUCKET.md`
 
-File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/README_CLOUDFLARE_R2_BUCKET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/README_CLOUDFLARE_R2_BUCKET.md)
+File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/README_CLOUDFLARE_R2_BUCKET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/README_CLOUDFLARE_R2_BUCKET.md)
 
 ````markdown
 # Cloudflare R2 bucket
@@ -5716,7 +5716,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_cloudflare_api_token="..."
@@ -5765,7 +5765,7 @@ terraform output -raw r2_bucket_name
 
 #### `backend.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/backend.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -5783,7 +5783,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/main.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/main.tf)
 
 ```hcl
 terraform {
@@ -5810,7 +5810,7 @@ resource "cloudflare_r2_bucket" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/outputs.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/outputs.tf)
 
 ```hcl
 output "r2_bucket_id" {
@@ -5826,7 +5826,7 @@ output "r2_bucket_name" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/variables.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_r2_bucket/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_r2_bucket/variables.tf)
 
 ```hcl
 variable "cloudflare_api_token" {
@@ -5863,7 +5863,7 @@ variable "storage_class" {
 
 #### `README_CLOUDFLARE_WORKERS_SCRIPT.md`
 
-File: [v1/modules/dev/cloudflare/cloudflare_workers_script/README_CLOUDFLARE_WORKERS_SCRIPT.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/README_CLOUDFLARE_WORKERS_SCRIPT.md)
+File: [v1/modules/dev/cloudflare/cloudflare_workers_script/README_CLOUDFLARE_WORKERS_SCRIPT.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/README_CLOUDFLARE_WORKERS_SCRIPT.md)
 
 ````markdown
 # Cloudflare Workers script
@@ -5891,7 +5891,7 @@ This module does not create routes or custom domains.
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_cloudflare_api_token="..."
@@ -5947,7 +5947,7 @@ terraform output -raw workers_script_name
 
 #### `backend.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_workers_script/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/backend.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_workers_script/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -5965,7 +5965,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_workers_script/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/main.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_workers_script/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/main.tf)
 
 ```hcl
 terraform {
@@ -5992,7 +5992,7 @@ resource "cloudflare_workers_script" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_workers_script/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/outputs.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_workers_script/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/outputs.tf)
 
 ```hcl
 output "workers_script_id" {
@@ -6008,7 +6008,7 @@ output "workers_script_name" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/cloudflare/cloudflare_workers_script/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/variables.tf)
+File: [v1/modules/dev/cloudflare/cloudflare_workers_script/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/cloudflare_workers_script/variables.tf)
 
 ```hcl
 variable "cloudflare_api_token" {
@@ -6051,7 +6051,7 @@ variable "main_module" {
 
 #### `README_DNS.md`
 
-File: [v1/modules/dev/cloudflare/dns/README_DNS.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/README_DNS.md)
+File: [v1/modules/dev/cloudflare/dns/README_DNS.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/README_DNS.md)
 
 ````markdown
 # Cloudflare DNS (incomplete)
@@ -6107,7 +6107,7 @@ terraform init \
   -backend-config="encrypt=${TF_STATE_ENCRYPT}"
 ```
 
-Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md). Remote state: [BACKEND_S3.md](../../BACKEND_S3.md).
+Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md). Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md).
 
 ## Inputs
 
@@ -6129,7 +6129,7 @@ None.
 
 #### `backend.tf`
 
-File: [v1/modules/dev/cloudflare/dns/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/backend.tf)
+File: [v1/modules/dev/cloudflare/dns/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -6147,7 +6147,7 @@ terraform {
 
 #### `cloudflare.tf`
 
-File: [v1/modules/dev/cloudflare/dns/cloudflare.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/cloudflare.tf)
+File: [v1/modules/dev/cloudflare/dns/cloudflare.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/cloudflare.tf)
 
 ```hcl
 # Cloudflare DNS records and API Secret
@@ -6182,7 +6182,7 @@ resource "cloudflare_record" "clcreative-all-cluster" {
 
 #### `provider.tf`
 
-File: [v1/modules/dev/cloudflare/dns/provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/provider.tf)
+File: [v1/modules/dev/cloudflare/dns/provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/provider.tf)
 
 ```hcl
 terraform {
@@ -6205,7 +6205,7 @@ provider "cloudflare" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/cloudflare/dns/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/variables.tf)
+File: [v1/modules/dev/cloudflare/dns/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/cloudflare/dns/variables.tf)
 
 ```hcl
 variable "cloudflare_email" {
@@ -6232,7 +6232,7 @@ variable "cloudflare_record_name" {
 
 #### `README_DIGITALOCEAN_DROPLET.md`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet/README_DIGITALOCEAN_DROPLET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/README_DIGITALOCEAN_DROPLET.md)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet/README_DIGITALOCEAN_DROPLET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/README_DIGITALOCEAN_DROPLET.md)
 
 ````markdown
 # DigitalOcean droplet
@@ -6241,7 +6241,7 @@ Creates a Droplet and, when `ssh_public_key` is set, an SSH key.
 
 **Path:** `v1/modules/dev/digitalocean/digitalocean_droplet`
 
-Prefer this project over the older [`droplet`](../droplet/README_DROPLET.md) demo.
+Prefer this project over the older [`droplet`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/README_DROPLET.md) demo.
 
 ## Implementation
 
@@ -6261,7 +6261,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_digitalocean_token="..."
@@ -6316,7 +6316,7 @@ ssh root@$(terraform output -raw droplet_ip)
 
 #### `backend.tf`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/backend.tf)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -6334,7 +6334,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/main.tf)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/main.tf)
 
 ```hcl
 terraform {
@@ -6372,7 +6372,7 @@ resource "digitalocean_droplet" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/outputs.tf)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/outputs.tf)
 
 ```hcl
 output "droplet_id" {
@@ -6398,7 +6398,7 @@ output "droplet_status" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/variables.tf)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/variables.tf)
 
 ```hcl
 variable "digitalocean_token" {
@@ -6467,7 +6467,7 @@ variable "tags" {
 
 #### `README_DIGITALOCEAN_DROPLET_AUTOSCALE.md`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/README_DIGITALOCEAN_DROPLET_AUTOSCALE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/README_DIGITALOCEAN_DROPLET_AUTOSCALE.md)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/README_DIGITALOCEAN_DROPLET_AUTOSCALE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/README_DIGITALOCEAN_DROPLET_AUTOSCALE.md)
 
 ````markdown
 # DigitalOcean droplet autoscale pool
@@ -6494,7 +6494,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_digitalocean_token="..."
@@ -6556,7 +6556,7 @@ terraform output droplet_autoscale_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/backend.tf)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -6574,7 +6574,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/main.tf)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/main.tf)
 
 ```hcl
 terraform {
@@ -6623,7 +6623,7 @@ resource "digitalocean_droplet_autoscale" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/outputs.tf)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/outputs.tf)
 
 ```hcl
 output "droplet_autoscale_id" {
@@ -6639,7 +6639,7 @@ output "droplet_autoscale_status" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/variables.tf)
+File: [v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet_autoscale/variables.tf)
 
 ```hcl
 variable "digitalocean_token" {
@@ -6744,12 +6744,12 @@ variable "user_data" {
 
 #### `README_DROPLET.md`
 
-File: [v1/modules/dev/digitalocean/droplet/README_DROPLET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/README_DROPLET.md)
+File: [v1/modules/dev/digitalocean/droplet/README_DROPLET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/README_DROPLET.md)
 
 ````markdown
 # DigitalOcean droplet (legacy)
 
-Older Droplet project with fewer options. Prefer [`digitalocean_droplet`](../digitalocean_droplet/README_DIGITALOCEAN_DROPLET.md).
+Older Droplet project with fewer options. Prefer [`digitalocean_droplet`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/digitalocean_droplet/README_DIGITALOCEAN_DROPLET.md).
 
 **Path:** `v1/modules/dev/digitalocean/droplet`
 
@@ -6771,7 +6771,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_digitalocean_token="..."
@@ -6823,7 +6823,7 @@ Without an SSH key this Droplet is only reachable if you add a key in the Digita
 
 #### `backend.tf`
 
-File: [v1/modules/dev/digitalocean/droplet/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/backend.tf)
+File: [v1/modules/dev/digitalocean/droplet/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -6841,7 +6841,7 @@ terraform {
 
 #### `droplet.tf`
 
-File: [v1/modules/dev/digitalocean/droplet/droplet.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/droplet.tf)
+File: [v1/modules/dev/digitalocean/droplet/droplet.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/droplet.tf)
 
 ```hcl
 # Create a new Web Droplet in the nyc2 region
@@ -6855,7 +6855,7 @@ resource "digitalocean_droplet" "web" {
 
 #### `output.tf`
 
-File: [v1/modules/dev/digitalocean/droplet/output.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/output.tf)
+File: [v1/modules/dev/digitalocean/droplet/output.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/output.tf)
 
 ```hcl
 output "droplet_ip" {
@@ -6865,7 +6865,7 @@ output "droplet_ip" {
 
 #### `provider.tf`
 
-File: [v1/modules/dev/digitalocean/droplet/provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/provider.tf)
+File: [v1/modules/dev/digitalocean/droplet/provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/provider.tf)
 
 ```hcl
 terraform {
@@ -6890,7 +6890,7 @@ provider "digitalocean" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/digitalocean/droplet/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/variables.tf)
+File: [v1/modules/dev/digitalocean/droplet/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/digitalocean/droplet/variables.tf)
 
 ```hcl
 variable "digitalocean_token" {
@@ -6927,12 +6927,12 @@ variable "droplet_image" {
 
 #### `README_COMPUTE.md`
 
-File: [v1/modules/dev/gcp/compute/README_COMPUTE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/README_COMPUTE.md)
+File: [v1/modules/dev/gcp/compute/README_COMPUTE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/README_COMPUTE.md)
 
 ````markdown
 # GCP Compute Engine instance (legacy demo)
 
-Older hardcoded Compute Engine demo. Prefer [`google_compute_instance`](../google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md) for parameterized usage.
+Older hardcoded Compute Engine demo. Prefer [`google_compute_instance`](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md) for parameterized usage.
 
 **Path:** `v1/modules/dev/gcp/compute`
 
@@ -6958,7 +6958,7 @@ The provider zone (`us-central1-c`) does not match the instance zone (`us-centra
 
 This project cannot be configured with `TF_VAR_*` resource inputs. It always creates `my-vm` in the hardcoded project.
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md).
 
 ```bash
 # ADC or GOOGLE_APPLICATION_CREDENTIALS must point at a SA for project udemyiactraining
@@ -6990,12 +6990,12 @@ None.
 ## Docs
 
 - [google_compute_instance](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance)
-- Parameterized replacement: [google_compute_instance](../google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md)
+- Parameterized replacement: [google_compute_instance](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md)
 ````
 
 #### `backend.tf`
 
-File: [v1/modules/dev/gcp/compute/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/backend.tf)
+File: [v1/modules/dev/gcp/compute/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -7013,7 +7013,7 @@ terraform {
 
 #### `compute-instance.tf`
 
-File: [v1/modules/dev/gcp/compute/compute-instance.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/compute-instance.tf)
+File: [v1/modules/dev/gcp/compute/compute-instance.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/compute-instance.tf)
 
 ```hcl
 resource "google_compute_instance" "default" {
@@ -7040,7 +7040,7 @@ resource "google_compute_instance" "default" {
 
 #### `provider.tf`
 
-File: [v1/modules/dev/gcp/compute/provider.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/provider.tf)
+File: [v1/modules/dev/gcp/compute/provider.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/compute/provider.tf)
 
 ```hcl
 terraform {
@@ -7066,7 +7066,7 @@ provider "google" {
 
 #### `README_GOOGLE_COMPUTE_INSTANCE.md`
 
-File: [v1/modules/dev/gcp/google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md)
+File: [v1/modules/dev/gcp/google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/README_GOOGLE_COMPUTE_INSTANCE.md)
 
 ````markdown
 # GCP Compute Engine instance
@@ -7094,7 +7094,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_project="your-gcp-project"
@@ -7158,7 +7158,7 @@ terraform output -raw public_ip
 
 #### `backend.tf`
 
-File: [v1/modules/dev/gcp/google_compute_instance/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/backend.tf)
+File: [v1/modules/dev/gcp/google_compute_instance/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -7176,7 +7176,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/gcp/google_compute_instance/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/main.tf)
+File: [v1/modules/dev/gcp/google_compute_instance/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/main.tf)
 
 ```hcl
 terraform {
@@ -7234,7 +7234,7 @@ resource "google_compute_instance" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/gcp/google_compute_instance/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/outputs.tf)
+File: [v1/modules/dev/gcp/google_compute_instance/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/outputs.tf)
 
 ```hcl
 output "instance_id" {
@@ -7271,7 +7271,7 @@ output "private_ip" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/gcp/google_compute_instance/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/variables.tf)
+File: [v1/modules/dev/gcp/google_compute_instance/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_compute_instance/variables.tf)
 
 ```hcl
 variable "project" {
@@ -7376,7 +7376,7 @@ variable "tags" {
 
 #### `README_GOOGLE_SQL_DATABASE_INSTANCE.md`
 
-File: [v1/modules/dev/gcp/google_sql_database_instance/README_GOOGLE_SQL_DATABASE_INSTANCE.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/README_GOOGLE_SQL_DATABASE_INSTANCE.md)
+File: [v1/modules/dev/gcp/google_sql_database_instance/README_GOOGLE_SQL_DATABASE_INSTANCE.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/README_GOOGLE_SQL_DATABASE_INSTANCE.md)
 
 ````markdown
 # GCP Cloud SQL instance
@@ -7402,7 +7402,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_project="your-gcp-project"
@@ -7460,7 +7460,7 @@ terraform output -raw connection_name
 
 #### `backend.tf`
 
-File: [v1/modules/dev/gcp/google_sql_database_instance/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/backend.tf)
+File: [v1/modules/dev/gcp/google_sql_database_instance/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -7478,7 +7478,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/gcp/google_sql_database_instance/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/main.tf)
+File: [v1/modules/dev/gcp/google_sql_database_instance/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/main.tf)
 
 ```hcl
 terraform {
@@ -7525,7 +7525,7 @@ resource "google_sql_database_instance" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/gcp/google_sql_database_instance/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/outputs.tf)
+File: [v1/modules/dev/gcp/google_sql_database_instance/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/outputs.tf)
 
 ```hcl
 output "sql_instance_id" {
@@ -7551,7 +7551,7 @@ output "private_ip_address" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/gcp/google_sql_database_instance/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/variables.tf)
+File: [v1/modules/dev/gcp/google_sql_database_instance/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_sql_database_instance/variables.tf)
 
 ```hcl
 variable "project" {
@@ -7631,7 +7631,7 @@ variable "labels" {
 
 #### `README_GOOGLE_STORAGE_BUCKET.md`
 
-File: [v1/modules/dev/gcp/google_storage_bucket/README_GOOGLE_STORAGE_BUCKET.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/README_GOOGLE_STORAGE_BUCKET.md)
+File: [v1/modules/dev/gcp/google_storage_bucket/README_GOOGLE_STORAGE_BUCKET.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/README_GOOGLE_STORAGE_BUCKET.md)
 
 ````markdown
 # GCP Cloud Storage bucket
@@ -7659,7 +7659,7 @@ Upload objects with `google_storage_bucket_object`.
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_project="your-gcp-project"
@@ -7713,7 +7713,7 @@ terraform output -raw bucket_name
 
 #### `backend.tf`
 
-File: [v1/modules/dev/gcp/google_storage_bucket/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/backend.tf)
+File: [v1/modules/dev/gcp/google_storage_bucket/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -7731,7 +7731,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/gcp/google_storage_bucket/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/main.tf)
+File: [v1/modules/dev/gcp/google_storage_bucket/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/main.tf)
 
 ```hcl
 terraform {
@@ -7768,7 +7768,7 @@ resource "google_storage_bucket" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/gcp/google_storage_bucket/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/outputs.tf)
+File: [v1/modules/dev/gcp/google_storage_bucket/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/outputs.tf)
 
 ```hcl
 output "bucket_id" {
@@ -7789,7 +7789,7 @@ output "bucket_url" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/gcp/google_storage_bucket/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/variables.tf)
+File: [v1/modules/dev/gcp/google_storage_bucket/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket/variables.tf)
 
 ```hcl
 variable "project" {
@@ -7851,7 +7851,7 @@ variable "labels" {
 
 #### `README_GOOGLE_STORAGE_BUCKET_OBJECT.md`
 
-File: [v1/modules/dev/gcp/google_storage_bucket_object/README_GOOGLE_STORAGE_BUCKET_OBJECT.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/README_GOOGLE_STORAGE_BUCKET_OBJECT.md)
+File: [v1/modules/dev/gcp/google_storage_bucket_object/README_GOOGLE_STORAGE_BUCKET_OBJECT.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/README_GOOGLE_STORAGE_BUCKET_OBJECT.md)
 
 ````markdown
 # GCP Cloud Storage object
@@ -7877,7 +7877,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_project="your-gcp-project"
@@ -7940,7 +7940,7 @@ terraform output -raw media_link
 
 #### `backend.tf`
 
-File: [v1/modules/dev/gcp/google_storage_bucket_object/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/backend.tf)
+File: [v1/modules/dev/gcp/google_storage_bucket_object/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -7958,7 +7958,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/gcp/google_storage_bucket_object/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/main.tf)
+File: [v1/modules/dev/gcp/google_storage_bucket_object/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/main.tf)
 
 ```hcl
 terraform {
@@ -7989,7 +7989,7 @@ resource "google_storage_bucket_object" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/gcp/google_storage_bucket_object/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/outputs.tf)
+File: [v1/modules/dev/gcp/google_storage_bucket_object/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/outputs.tf)
 
 ```hcl
 output "object_id" {
@@ -8010,7 +8010,7 @@ output "media_link" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/gcp/google_storage_bucket_object/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/variables.tf)
+File: [v1/modules/dev/gcp/google_storage_bucket_object/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/gcp/google_storage_bucket_object/variables.tf)
 
 ```hcl
 variable "project" {
@@ -8071,7 +8071,7 @@ variable "cache_control" {
 
 #### `README_HCLOUD_FIREWALL.md`
 
-File: [v1/modules/dev/hetzner/hcloud_firewall/README_HCLOUD_FIREWALL.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/README_HCLOUD_FIREWALL.md)
+File: [v1/modules/dev/hetzner/hcloud_firewall/README_HCLOUD_FIREWALL.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/README_HCLOUD_FIREWALL.md)
 
 ````markdown
 # Hetzner Cloud firewall
@@ -8097,7 +8097,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md). Lists and objects are JSON in the env var.
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md). Lists and objects are JSON in the env var.
 
 ```bash
 export TF_VAR_hcloud_token="your-hetzner-api-token"
@@ -8149,7 +8149,7 @@ terraform apply
 
 #### `backend.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_firewall/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/backend.tf)
+File: [v1/modules/dev/hetzner/hcloud_firewall/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -8167,7 +8167,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_firewall/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/main.tf)
+File: [v1/modules/dev/hetzner/hcloud_firewall/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/main.tf)
 
 ```hcl
 terraform {
@@ -8212,7 +8212,7 @@ resource "hcloud_firewall" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_firewall/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/outputs.tf)
+File: [v1/modules/dev/hetzner/hcloud_firewall/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/outputs.tf)
 
 ```hcl
 output "firewall_id" {
@@ -8233,7 +8233,7 @@ output "firewall_rules" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_firewall/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/variables.tf)
+File: [v1/modules/dev/hetzner/hcloud_firewall/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_firewall/variables.tf)
 
 ```hcl
 variable "hcloud_token" {
@@ -8323,7 +8323,7 @@ variable "apply_to" {
 
 #### `README_HCLOUD_FLOATING_IP.md`
 
-File: [v1/modules/dev/hetzner/hcloud_floating_ip/README_HCLOUD_FLOATING_IP.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/README_HCLOUD_FLOATING_IP.md)
+File: [v1/modules/dev/hetzner/hcloud_floating_ip/README_HCLOUD_FLOATING_IP.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/README_HCLOUD_FLOATING_IP.md)
 
 ````markdown
 # Hetzner Cloud floating IP
@@ -8349,7 +8349,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_hcloud_token="your-hetzner-api-token"
@@ -8406,7 +8406,7 @@ terraform output -raw ip_address
 
 #### `backend.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_floating_ip/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/backend.tf)
+File: [v1/modules/dev/hetzner/hcloud_floating_ip/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -8424,7 +8424,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_floating_ip/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/main.tf)
+File: [v1/modules/dev/hetzner/hcloud_floating_ip/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/main.tf)
 
 ```hcl
 terraform {
@@ -8454,7 +8454,7 @@ resource "hcloud_floating_ip" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_floating_ip/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/outputs.tf)
+File: [v1/modules/dev/hetzner/hcloud_floating_ip/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/outputs.tf)
 
 ```hcl
 output "floating_ip_id" {
@@ -8480,7 +8480,7 @@ output "home_location" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_floating_ip/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/variables.tf)
+File: [v1/modules/dev/hetzner/hcloud_floating_ip/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_floating_ip/variables.tf)
 
 ```hcl
 variable "hcloud_token" {
@@ -8538,7 +8538,7 @@ variable "delete_protection" {
 
 #### `README_HCLOUD_NETWORK.md`
 
-File: [v1/modules/dev/hetzner/hcloud_network/README_HCLOUD_NETWORK.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/README_HCLOUD_NETWORK.md)
+File: [v1/modules/dev/hetzner/hcloud_network/README_HCLOUD_NETWORK.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/README_HCLOUD_NETWORK.md)
 
 ````markdown
 # Hetzner Cloud network
@@ -8566,7 +8566,7 @@ Add a subnet in Hetzner (or another module) before attaching servers.
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_hcloud_token="your-hetzner-api-token"
@@ -8617,7 +8617,7 @@ terraform output -raw network_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_network/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/backend.tf)
+File: [v1/modules/dev/hetzner/hcloud_network/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -8635,7 +8635,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_network/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/main.tf)
+File: [v1/modules/dev/hetzner/hcloud_network/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/main.tf)
 
 ```hcl
 terraform {
@@ -8663,7 +8663,7 @@ resource "hcloud_network" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_network/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/outputs.tf)
+File: [v1/modules/dev/hetzner/hcloud_network/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/outputs.tf)
 
 ```hcl
 output "network_id" {
@@ -8684,7 +8684,7 @@ output "ip_range" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_network/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/variables.tf)
+File: [v1/modules/dev/hetzner/hcloud_network/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_network/variables.tf)
 
 ```hcl
 variable "hcloud_token" {
@@ -8730,7 +8730,7 @@ variable "expose_routes_to_vswitch" {
 
 #### `README_HCLOUD_SERVER.md`
 
-File: [v1/modules/dev/hetzner/hcloud_server/README_HCLOUD_SERVER.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/README_HCLOUD_SERVER.md)
+File: [v1/modules/dev/hetzner/hcloud_server/README_HCLOUD_SERVER.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/README_HCLOUD_SERVER.md)
 
 ````markdown
 # Hetzner Cloud server
@@ -8757,7 +8757,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md) (AWS keys for S3, Hetzner token for the provider). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md) (AWS keys for S3, Hetzner token for the provider). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_hcloud_token="your-hetzner-api-token"
@@ -8810,14 +8810,14 @@ ssh root@$(terraform output -raw server_ipv4)
 
 - [hcloud_server](https://registry.terraform.io/providers/hetznercloud/hcloud/latest/docs/resources/server)
 - [hcloud_ssh_key](https://registry.terraform.io/providers/hetznercloud/hcloud/latest/docs/resources/ssh_key)
-- [Overview](../../../../../docs/modules/hetzner-hcloud-server.md)
-- [Inputs](../../../../../docs/modules/hetzner-hcloud-server/inputs.md)
-- [Outputs](../../../../../docs/modules/hetzner-hcloud-server/outputs.md)
+- [Overview](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server.md)
+- [Inputs](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/inputs.md)
+- [Outputs](../../../../references/snow-monkeys-infra/iac-terraform/docs/modules/hetzner-hcloud-server/outputs.md)
 ````
 
 #### `backend.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_server/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/backend.tf)
+File: [v1/modules/dev/hetzner/hcloud_server/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -8835,7 +8835,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_server/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/main.tf)
+File: [v1/modules/dev/hetzner/hcloud_server/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/main.tf)
 
 ```hcl
 terraform {
@@ -8878,7 +8878,7 @@ resource "hcloud_server" "cx23" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_server/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/outputs.tf)
+File: [v1/modules/dev/hetzner/hcloud_server/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/outputs.tf)
 
 ```hcl
 output "server_id" {
@@ -8896,7 +8896,7 @@ output "server_status" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_server/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/variables.tf)
+File: [v1/modules/dev/hetzner/hcloud_server/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_server/variables.tf)
 
 ```hcl
 variable "hcloud_token" {
@@ -8958,7 +8958,7 @@ variable "ipv6_enabled" {
 
 #### `README_HCLOUD_VOLUME.md`
 
-File: [v1/modules/dev/hetzner/hcloud_volume/README_HCLOUD_VOLUME.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/README_HCLOUD_VOLUME.md)
+File: [v1/modules/dev/hetzner/hcloud_volume/README_HCLOUD_VOLUME.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/README_HCLOUD_VOLUME.md)
 
 ````markdown
 # Hetzner Cloud volume
@@ -8984,7 +8984,7 @@ backend.tf     # backend "s3" {}
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_hcloud_token="your-hetzner-api-token"
@@ -9041,7 +9041,7 @@ terraform output -raw linux_device
 
 #### `backend.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_volume/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/backend.tf)
+File: [v1/modules/dev/hetzner/hcloud_volume/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -9059,7 +9059,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_volume/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/main.tf)
+File: [v1/modules/dev/hetzner/hcloud_volume/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/main.tf)
 
 ```hcl
 terraform {
@@ -9090,7 +9090,7 @@ resource "hcloud_volume" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_volume/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/outputs.tf)
+File: [v1/modules/dev/hetzner/hcloud_volume/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/outputs.tf)
 
 ```hcl
 output "volume_id" {
@@ -9116,7 +9116,7 @@ output "location" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_volume/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/variables.tf)
+File: [v1/modules/dev/hetzner/hcloud_volume/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume/variables.tf)
 
 ```hcl
 variable "hcloud_token" {
@@ -9180,7 +9180,7 @@ variable "delete_protection" {
 
 #### `README_HCLOUD_VOLUME_ATTACHMENT.md`
 
-File: [v1/modules/dev/hetzner/hcloud_volume_attachment/README_HCLOUD_VOLUME_ATTACHMENT.md](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/README_HCLOUD_VOLUME_ATTACHMENT.md)
+File: [v1/modules/dev/hetzner/hcloud_volume_attachment/README_HCLOUD_VOLUME_ATTACHMENT.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/README_HCLOUD_VOLUME_ATTACHMENT.md)
 
 ````markdown
 # Hetzner Cloud volume attachment
@@ -9208,7 +9208,7 @@ Use this when the volume was created without `server_id`. Creating a volume with
 
 ## Usage
 
-Remote state: [BACKEND_S3.md](../../BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../TERRAFORM_RULES.md).
+Remote state: [BACKEND_S3.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/BACKEND_S3.md). Inputs: [TERRAFORM_RULES.md](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/TERRAFORM_RULES.md).
 
 ```bash
 export TF_VAR_hcloud_token="your-hetzner-api-token"
@@ -9258,7 +9258,7 @@ terraform output volume_attachment_id
 
 #### `backend.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_volume_attachment/backend.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/backend.tf)
+File: [v1/modules/dev/hetzner/hcloud_volume_attachment/backend.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/backend.tf)
 
 ```hcl
 # Remote state in the bucket created by v1/modules/dev/aws/aws_s3_bucket.
@@ -9276,7 +9276,7 @@ terraform {
 
 #### `main.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_volume_attachment/main.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/main.tf)
+File: [v1/modules/dev/hetzner/hcloud_volume_attachment/main.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/main.tf)
 
 ```hcl
 terraform {
@@ -9302,7 +9302,7 @@ resource "hcloud_volume_attachment" "this" {
 
 #### `outputs.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_volume_attachment/outputs.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/outputs.tf)
+File: [v1/modules/dev/hetzner/hcloud_volume_attachment/outputs.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/outputs.tf)
 
 ```hcl
 output "volume_attachment_id" {
@@ -9323,7 +9323,7 @@ output "server_id" {
 
 #### `variables.tf`
 
-File: [v1/modules/dev/hetzner/hcloud_volume_attachment/variables.tf](../../../../../../snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/variables.tf)
+File: [v1/modules/dev/hetzner/hcloud_volume_attachment/variables.tf](../../../../references/snow-monkeys-infra/iac-terraform/v1/modules/dev/hetzner/hcloud_volume_attachment/variables.tf)
 
 ```hcl
 variable "hcloud_token" {

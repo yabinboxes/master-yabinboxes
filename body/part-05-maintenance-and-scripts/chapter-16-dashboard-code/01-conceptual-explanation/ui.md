@@ -1,6 +1,6 @@
 # Ui
 
-The UI is the Angular 21 workspace in [org-snow-angular-ui](../../../../../org-snow-angular-ui/README.md). Three projects share that workspace. `npm start` serves **dashboard**. `npm run start:docs` serves **docs**. **snow-filters** is a library the apps build before they import it. Install with `npm install --legacy-peer-deps`.
+The UI is the Angular 21 workspace in [org-snow-angular-ui](../copies/org-snow-angular-ui/README.md). Three projects share that workspace. `npm start` serves **dashboard**. `npm run start:docs` serves **docs**. **snow-filters** is a library the apps build before they import it. Install with `npm install --legacy-peer-deps`.
 
 | Project | Path | What it shows |
 | --- | --- | --- |
@@ -12,7 +12,7 @@ Stack, from the root README: Angular 21, Tailwind CSS 4, DaisyUI, Firebase Authe
 
 ## Dashboard routes
 
-Routes are `projects/dashboard/src/app/app.routes.ts`. The table matches [projects/dashboard/README.md](../../../../../org-snow-angular-ui/projects/dashboard/README.md).
+Routes are `projects/dashboard/src/app/app.routes.ts`. The table matches [projects/dashboard/README.md](../copies/org-snow-angular-ui/projects/dashboard/README.md).
 
 | Path | Access | Screen |
 | --- | --- | --- |
@@ -30,8 +30,8 @@ Routes are `projects/dashboard/src/app/app.routes.ts`. The table matches [projec
 
 `pages/dashboard/import/` is still in the tree. Its route is commented out in `app.routes.ts`. The navbar History link is `/dashboard/history`. Docs in the navbar open `https://docs.snow-monkeys.com/`.
 
-The shell is `DashboardComponent`: navbar, tabs, then the child route. [docs/ARCHITECTURE.md](../../../../../org-snow-angular-ui/docs/ARCHITECTURE.md) draws that tree. Tabs come from `HandleTabs`. The sources page lists deployments for the signed-in GitHub `actorId`.
+The shell is `DashboardComponent`: navbar, tabs, then the child route. [docs/ARCHITECTURE.md](../copies/org-snow-angular-ui/docs/ARCHITECTURE.md) draws that tree. Tabs come from `HandleTabs`. The sources page lists deployments for the signed-in GitHub `actorId`.
 
 ## Docs site
 
-The docs app has no Firebase guard. A page is a markdown file under `projects/docs/public/md/`, a route in `projects/docs/src/app/app.routes.ts`, and the component that reads the `mdFile` param. [CLAUDE.md](../../../../../org-snow-angular-ui/CLAUDE.md) states that add-a-page order.
+The docs app has no Firebase guard. A page is a markdown file under `projects/docs/public/md/`, a route in `projects/docs/src/app/app.routes.ts`, and the component that reads the `mdFile` param. [CLAUDE.md](../copies/org-snow-angular-ui/CLAUDE.md) states that add-a-page order.
