@@ -125,6 +125,7 @@ Theme: dashboard code, supporting services, tests, how the masters are implement
    - UI
    - Backend
    - Service
+2. Walkthrough
 
 ### [Chapter 17 — Dashboard Selfhosted Code](../body/part-05-maintenance-and-scripts/chapter-17-dashboard-selfhosted-code/)
 

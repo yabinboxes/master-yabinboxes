@@ -72,7 +72,7 @@ Conventions used (code style, icons, notation).
 | 13 | Common Pitfalls | pending |
 | 14 | Exercises | pending |
 | 15 | Examples | implemented |
-| 16 | Dashboard Code | pending |
+| 16 | Dashboard Code | implemented |
 | 17 | Dashboard Selfhosted Code | pending |
 | 18 | Other services | pending |
 | 19 | Test Modules | pending |
