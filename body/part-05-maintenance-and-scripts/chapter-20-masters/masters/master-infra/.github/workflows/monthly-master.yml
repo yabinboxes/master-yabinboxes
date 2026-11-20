@@ -1,0 +1,54 @@
+name: Weekly Master Run
+
+on:
+  # Weekly schedule, disabled for now. Re-enable to run every Monday at 06:00 UTC.
+  # schedule:
+  #   - cron: "0 6 * * 1"
+#  push:
+#    branches:
+#      - main
+  workflow_dispatch:
+
+concurrency:
+  group: weekly-master
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  master:
+    name: Run master plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout snow-master
+        uses: actions/checkout@v4
+
+      - name: Install Cursor CLI
+        run: |
+          curl https://cursor.com/install -fsS | bash
+          echo "$HOME/.cursor/bin" >> "$GITHUB_PATH"
+
+      - name: Authenticate git and GitHub CLI
+        env:
+          GH_TOKEN: ${{ secrets.SNOW_GITHUB_TOKEN }}
+        run: |
+          gh auth setup-git
+          git config --global user.name "yabinboxes"
+          git config --global user.email "yabin.monroy.1@gmail.com"
+          gh api user --jq '"authenticated as \(.login)"'
+
+      - name: Execute master.md
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          GITHUB_ACCESS_TOKEN: ${{ secrets.SNOW_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.SNOW_GITHUB_TOKEN }}
+          MODEL: grok-4.5
+          PROMPT: |
+            You are running non-interactively inside a GitHub Actions job on the
+            snow-monkeys-org/master repository. Read main.md and master.md in the
+            repository root and execute the plan they describe.
+            Only make changes where the plans say an update is required.
+        run: |
+          cursor-agent --force --model "$MODEL" --output-format text --print "$PROMPT"
