@@ -4,6 +4,7 @@ Every file under `yabinboxes/main-examples` is a caller. The `uses:` line is the
 
 The links below open the copies in this book.
 
+
 ## Implementation
 
 | `type` | Reusable workflow | Action | Terraform directory |
